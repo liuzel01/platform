@@ -1,0 +1,23 @@
+parameters:
+  messenger.default_transport_name: 'v65'
+framework:
+  secret: "%env(APP_SECRET)%"
+  default_locale:  zh_CN
+  php_errors:
+    log: true
+  cache:
+    prefix_seed: "%kernel.cache.hash%"
+    app: cache.adapter.filesystem
+    pools:
+      cache.object:
+        default_lifetime: 172800
+        adapter: cache.app
+        tags: cache.tags
+      cache.http:
+        default_lifetime: 172800
+        adapter: cache.app
+        tags: cache.tags
+      cache.tags:
+        adapter: cache.app
+      cache.rate_limiter:
+        adapter: cache.app

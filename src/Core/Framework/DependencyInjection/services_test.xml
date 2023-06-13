@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:monolog="http://symfony.com/schema/dic/monolog"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd http://symfony.com/schema/dic/monolog http://symfony.com/schema/dic/monolog/monolog-1.0.xsd">
+
+    <monolog:config>
+        <monolog:handler
+                id="Monolog\Handler\NullHandler"
+                name="business_event_handler_discard"
+                type="service"
+                priority="1">
+            <monolog:channels>
+                <monolog:channel>business_events</monolog:channel>
+            </monolog:channels>
+        </monolog:handler>
+    </monolog:config>
+
+    <services>
+        <defaults public="true"/>
+
+        <service id="Shuwei\Core\Framework\Test\Filesystem\Adapter\MemoryAdapterFactory">
+            <tag name="shuwei.filesystem.factory"/>
+        </service>
+
+        <service id="Shuwei\Core\Framework\Test\DataAbstractionLayer\Field\TestDefinition\NamedDefinition">
+            <tag name="shuwei.entity.definition"/>
+        </service>
+
+        <service id="Shuwei\Core\Framework\Test\DataAbstractionLayer\Field\TestDefinition\NamedOptionalGroupDefinition">
+            <tag name="shuwei.entity.definition"/>
+        </service>
+
+        <service id="Shuwei\Core\Framework\Test\DataAbstractionLayer\Field\TestDefinition\RootDefinition">
+            <tag name="shuwei.entity.definition" entity="root" />
+        </service>
+
+        <service id="Shuwei\Core\Framework\Test\DataAbstractionLayer\Field\TestDefinition\SubDefinition">
+            <tag name="shuwei.entity.definition" entity="root_sub" />
+        </service>
+
+        <service id="Shuwei\Core\Framework\Test\DataAbstractionLayer\Field\TestDefinition\SubCascadeDefinition">
+            <tag name="shuwei.entity.definition" entity="root_sub_cascade" />
+        </service>
+
+        <service id="Shuwei\Core\Framework\Test\DataAbstractionLayer\Field\TestDefinition\SubManyDefinition">
+            <tag name="shuwei.entity.definition" entity="root_sub_many" />
+        </service>
+
+        <service id="Shuwei\Core\Framework\Test\DataAbstractionLayer\Write\Validation\TestDefinition\TestDefinition">
+            <tag name="shuwei.entity.definition" entity="_test_lock" />
+        </service>
+
+        <service id="Shuwei\Core\Framework\Test\DataAbstractionLayer\Write\Validation\TestDefinition\TestTranslationDefinition">
+            <tag name="shuwei.entity.definition" entity="_test_lock_translation" />
+        </service>
+
+        <service id="Shuwei\Core\Framework\Test\DataAbstractionLayer\Field\TestDefinition\CustomFieldTestDefinition">
+            <tag name="shuwei.entity.definition" entity="attribute_test" />
+        </service>
+
+        <service id="Shuwei\Core\Framework\Test\DataAbstractionLayer\Field\TestDefinition\CustomFieldTestTranslationDefinition">
+            <tag name="shuwei.entity.definition" entity="attribute_test_translation" />
+        </service>
+
+        <service id="Shuwei\Core\Framework\Test\DataAbstractionLayer\Field\TestDefinition\WriteProtectedDefinition">
+            <tag name="shuwei.entity.definition" entity="_test_nullable" />
+        </service>
+
+        <service id="Shuwei\Core\Framework\Test\DataAbstractionLayer\Field\TestDefinition\WriteProtectedRelationDefinition">
+            <tag name="shuwei.entity.definition" entity="_test_relation" />
+        </service>
+
+        <service id="Shuwei\Core\Framework\Test\DataAbstractionLayer\Field\TestDefinition\WriteProtectedReferenceDefinition">
+            <tag name="shuwei.entity.definition" entity="_test_nullable_reference" />
+        </service>
+
+        <service id="Shuwei\Core\Framework\Test\DataAbstractionLayer\Field\TestDefinition\DateTimeDefinition">
+            <tag name="shuwei.entity.definition" entity="date_time_test" />
+        </service>
+
+        <service id="messenger.test_receiver_locator" alias="messenger.receiver_locator" public="true"/>
+        <service id="messenger.bus.test_shuwei" alias="messenger.bus.shuwei" public="true"/>
+
+        <service id="mailer.mailer" class="Symfony\Component\Mailer\Mailer">
+            <argument type="service" id="mailer.transports" />
+            <argument type="service" id="messenger.default_bus" />
+            <argument type="service" id="debug.event_dispatcher" on-invalid="ignore" />
+        </service>
+
+        <service id="test.browser" class="Shuwei\Core\Framework\Test\TestCaseHelper\TestBrowser" shared="false" public="true">
+            <argument type="service" id="kernel" />
+            <argument type="service" id="event_dispatcher"/>
+            <argument>%test.client.parameters%</argument>
+            <argument type="service" id="test.client.history" />
+            <argument type="service" id="test.client.cookiejar" />
+        </service>
+
+        <service id="Monolog\Handler\NullHandler">
+        </service>
+
+        <service id="Shuwei\Core\Framework\Test\MessageQueue\fixtures\TestMessageHandler">
+            <tag name="messenger.message_handler"/>
+        </service>
+
+        <service id="Shuwei\Core\Content\Test\Category\Service\CountingEntityReader" decorates="Shuwei\Core\Framework\DataAbstractionLayer\Read\EntityReaderInterface">
+            <argument type="service" id="Shuwei\Core\Content\Test\Category\Service\CountingEntityReader.inner"/>
+        </service>
+
+        <service id="Shuwei\Core\Content\Test\Category\Service\CountingEntitySearcher" decorates="Shuwei\Core\Framework\DataAbstractionLayer\Search\EntitySearcherInterface">
+            <argument type="service" id="Shuwei\Core\Content\Test\Category\Service\CountingEntitySearcher.inner"/>
+        </service>
+
+        <service id="Shuwei\Core\Framework\Test\TestCacheClearer">
+            <argument type="collection">
+                <argument type="service" id="cache.object" />
+                <argument type="service" id="cache.http" />
+            </argument>
+            <argument type="service" id="cache_clearer"/>
+            <argument>%kernel.cache_dir%</argument>
+        </service>
+
+
+        <service id="GuzzleHttp\Handler\MockHandler" public="true">
+            <argument type="collection">
+            </argument>
+        </service>
+
+        <service id="test.guzzle.history.middleware" class="callable">
+            <factory service="Shuwei\Core\Test\Integration\App\GuzzleHistoryCollector" method="getHistoryMiddleWare"/>
+        </service>
+
+        <service id="Shuwei\Core\Test\Integration\App\GuzzleHistoryCollector" public="true" />
+
+        <service id="Shuwei\Core\Framework\Test\Api\Acl\fixtures\AclTestController" public="true"/>
+
+        <service id="Shuwei\Core\Framework\Test\TestSessionStorageFactory" decorates="session.storage.factory.mock_file"/>
+    </services>
+
+</container>

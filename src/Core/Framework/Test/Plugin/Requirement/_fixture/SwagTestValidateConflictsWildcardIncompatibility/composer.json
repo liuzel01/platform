@@ -1,0 +1,25 @@
+{
+    "name": "swag/test-validate-conflicts-wildcard-incompatibility",
+    "description": "Test conflict handling",
+    "version": "v1.0.0",
+    "type": "shuwei-platform-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "shuwei AG",
+            "role": "Manufacturer"
+        }
+    ],
+    "conflict": {
+        "shuwei/core": "*",
+        "shuwei/storefront": "*"
+    },
+    "extra": {
+        "shuwei-plugin-class": "SwagTestValidateConflictsWildcardIncompatibility\\SwagTestValidateConflictsWildcardIncompatibility",
+        "copyright": "(c) by shuwei AG",
+        "label": {
+            "de-DE": "Test für Konflikte-Handling",
+            "en-GB": "Test for conflict handling"
+        }
+    }
+}

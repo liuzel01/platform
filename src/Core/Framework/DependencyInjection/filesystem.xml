@@ -1,0 +1,101 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <!-- Filesystem -->
+        <service id="Shuwei\Core\Framework\Adapter\Filesystem\FilesystemFactory">
+            <argument type="tagged" tag="shuwei.filesystem.factory"/>
+        </service>
+
+        <service class="League\Flysystem\FilesystemOperator" id="shuwei.filesystem.public" public="true">
+            <factory service="Shuwei\Core\Framework\Adapter\Filesystem\FilesystemFactory" method="factory"/>
+            <argument>%shuwei.filesystem.public%</argument>
+        </service>
+
+        <service class="League\Flysystem\FilesystemOperator" id="shuwei.filesystem.private" public="true">
+            <factory service="Shuwei\Core\Framework\Adapter\Filesystem\FilesystemFactory" method="privateFactory"/>
+            <argument>%shuwei.filesystem.private%</argument>
+        </service>
+
+        <service class="League\Flysystem\FilesystemOperator" id="shuwei.filesystem.temp" public="true">
+            <factory service="Shuwei\Core\Framework\Adapter\Filesystem\FilesystemFactory" method="privateFactory"/>
+            <argument>%shuwei.filesystem.temp%</argument>
+        </service>
+
+
+        <service class="League\Flysystem\FilesystemOperator" id="shuwei.filesystem.sitemap" public="true">
+            <factory service="Shuwei\Core\Framework\Adapter\Filesystem\FilesystemFactory" method="factory"/>
+            <argument>%shuwei.filesystem.sitemap%</argument>
+        </service>
+
+        <service class="League\Flysystem\FilesystemOperator" id="shuwei.filesystem.asset" public="true">
+            <factory service="Shuwei\Core\Framework\Adapter\Filesystem\FilesystemFactory" method="factory"/>
+            <argument>%shuwei.filesystem.asset%</argument>
+        </service>
+
+        <service class="Shuwei\Core\Framework\Adapter\Filesystem\Adapter\LocalFactory" id="Shuwei\Core\Framework\Adapter\Filesystem\FilesystemFactory.local">
+            <tag name="shuwei.filesystem.factory"/>
+        </service>
+
+        <service class="Shuwei\Core\Framework\Adapter\Filesystem\Adapter\AwsS3v3Factory" id="Shuwei\Core\Framework\Adapter\Filesystem\FilesystemFactory.amazon_s3">
+            <tag name="shuwei.filesystem.factory"/>
+        </service>
+
+        <service class="Shuwei\Core\Framework\Adapter\Filesystem\Adapter\GoogleStorageFactory" id="Shuwei\Core\Framework\Adapter\Filesystem\FilesystemFactory.google_storage">
+            <tag name="shuwei.filesystem.factory"/>
+        </service>
+
+        <service id="League\Flysystem\PathPrefixing\PathPrefixedAdapter">
+            <argument type="service" id="shuwei.filesystem.public"/>
+            <argument>media</argument>
+        </service>
+
+        <service id="console.command.assets_install" class="Shuwei\Core\Framework\Adapter\Asset\AssetInstallCommand">
+            <argument type="service" id="kernel"/>
+            <argument type="service" id="Shuwei\Core\Framework\Plugin\Util\AssetService"/>
+            <tag name="console.command"/>
+        </service>
+
+        <!-- Assets -->
+        <service id="shuwei.asset.public" class="Shuwei\Core\Framework\Adapter\Asset\FallbackUrlPackage" lazy="true">
+            <argument type="collection">
+
+            </argument>
+            <argument type="service" id="assets.empty_version_strategy"/>
+            <tag name="shuwei.asset" asset="public"/>
+        </service>
+
+
+        <service id="shuwei.asset.asset.version_strategy" class="Shuwei\Core\Framework\Adapter\Asset\FlysystemLastModifiedVersionStrategy">
+            <argument>asset-metaData</argument>
+            <argument type="service" id="shuwei.filesystem.asset"/>
+            <argument type="service" id="cache.object"/>
+        </service>
+
+        <service id="shuwei.asset.asset" class="Shuwei\Core\Framework\Adapter\Asset\FallbackUrlPackage" lazy="true">
+            <argument type="collection">
+                <argument>%shuwei.filesystem.asset.url%</argument>
+            </argument>
+            <argument type="service" id="shuwei.asset.asset.version_strategy"/>
+            <tag name="shuwei.asset" asset="asset"/>
+        </service>
+
+        <service id="shuwei.asset.asset_without_versioning" class="Shuwei\Core\Framework\Adapter\Asset\FallbackUrlPackage" lazy="true">
+            <argument type="collection">
+                <argument>%shuwei.filesystem.asset.url%</argument>
+            </argument>
+            <argument type="service" id="assets.empty_version_strategy"/>
+        </service>
+
+        <service id="shuwei.asset.sitemap" class="Shuwei\Core\Framework\Adapter\Asset\FallbackUrlPackage" lazy="true">
+            <argument type="collection">
+                <argument>%shuwei.filesystem.sitemap.url%</argument>
+            </argument>
+            <argument type="service" id="assets.empty_version_strategy"/>
+            <tag name="shuwei.asset" asset="sitemap"/>
+        </service>
+    </services>
+</container>

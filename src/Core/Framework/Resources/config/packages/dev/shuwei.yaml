@@ -1,0 +1,7 @@
+shuwei:
+    api:
+        api_browser:
+            auth_required: false
+
+    profiler:
+        integrations: ['Symfony']
