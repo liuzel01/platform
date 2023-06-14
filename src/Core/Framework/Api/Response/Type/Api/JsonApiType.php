@@ -6,7 +6,9 @@ use Shuwei\Core\Framework\Api\Context\AdminApiSource;
 use Shuwei\Core\Framework\Api\Context\ContextSource;
 use Shuwei\Core\Framework\Api\Response\JsonApiResponse;
 use Shuwei\Core\Framework\Api\Response\Type\JsonFactoryBase;
+use Shuwei\Core\Framework\Api\ResponseFields;
 use Shuwei\Core\Framework\Api\Serializer\JsonApiEncoder;
+use Shuwei\Core\Framework\Api\StructEncoder;
 use Shuwei\Core\Framework\Context;
 use Shuwei\Core\Framework\DataAbstractionLayer\Entity;
 use Shuwei\Core\Framework\DataAbstractionLayer\EntityDefinition;
@@ -24,6 +26,7 @@ class JsonApiType extends JsonFactoryBase
      */
     public function __construct(
         private readonly JsonApiEncoder $serializer,
+        private readonly StructEncoder $structEncoder
     ) {
     }
 
@@ -80,7 +83,10 @@ class JsonApiType extends JsonFactoryBase
 
         $aggregations = [];
         foreach ($searchResult->getAggregations() as $aggregation) {
-            $aggregations[$aggregation->getName()] = $aggregation;
+            $aggregations[$aggregation->getName()] = $this->structEncoder->encode(
+                $aggregation,
+                $fields
+            );
         }
 
         $rootNode['aggregations'] = $aggregations;

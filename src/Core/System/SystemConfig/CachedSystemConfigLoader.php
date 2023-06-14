@@ -26,12 +26,12 @@ class CachedSystemConfigLoader extends AbstractSystemConfigLoader
         return $this->decorated;
     }
 
-    public function load(?string $salesChannelId): array
+    public function load(): array
     {
-        $key = 'system-config-' . $salesChannelId;
+        $key = 'system-config-';
 
-        $value = $this->cache->get($key, function (ItemInterface $item) use ($salesChannelId) {
-            $config = $this->getDecorated()->load($salesChannelId);
+        $value = $this->cache->get($key, function (ItemInterface $item)  {
+            $config = $this->getDecorated()->load();
 
             $item->tag([self::CACHE_TAG]);
 

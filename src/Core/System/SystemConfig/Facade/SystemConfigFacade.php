@@ -43,21 +43,9 @@ class SystemConfigFacade
      *
      * @example test-config/script.twig 4 1 Read an arbitrary system_config value.
      */
-    public function get(string $key, ?string $salesChannelId = null)
+    public function get(string $key)
     {
-        if (!$salesChannelId) {
-            $salesChannelId = $this->salesChannelId;
-        }
-
-        if ($this->scriptAppInformation) {
-            $privileges = $this->fetchAppPrivileges($this->scriptAppInformation->getAppId());
-
-            if (!\in_array(self::PRIVILEGE, $privileges, true)) {
-                throw new MissingPrivilegeException([self::PRIVILEGE]);
-            }
-        }
-
-        return $this->systemConfigService->get($key, $salesChannelId);
+        return $this->systemConfigService->get($key);
     }
 
     /**
@@ -84,25 +72,5 @@ class SystemConfigFacade
         $key = $this->scriptAppInformation->getAppName() . '.config.' . $key;
 
         return $this->systemConfigService->get($key, $salesChannelId);
-    }
-
-    private function fetchAppPrivileges(string $appId): array
-    {
-        if (\array_key_exists($appId, $this->appData)) {
-            return $this->appData[$appId];
-        }
-
-        $privileges = $this->connection->fetchOne('
-            SELECT `acl_role`.`privileges` AS `privileges`
-            FROM `acl_role`
-            INNER JOIN `app` ON `app`.`acl_role_id` = `acl_role`.`id`
-            WHERE `app`.`id` = :appId
-        ', ['appId' => Uuid::fromHexToBytes($appId)]);
-
-        if (!$privileges) {
-            throw new \RuntimeException(sprintf('Privileges for app with id "%s" not found.', $appId));
-        }
-
-        return $this->appData[$appId] = json_decode((string) $privileges, true, 512, \JSON_THROW_ON_ERROR);
     }
 }

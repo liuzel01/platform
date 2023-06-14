@@ -5,6 +5,21 @@ namespace Shuwei\Core;
 class PlatformRequest
 {
     /**
+     * API Expectation headers to check requirements are fulfilled
+     */
+    public const HEADER_EXPECT_PACKAGES = 'sw-expect-packages';
+    /**
+     * Response Headers
+     */
+    public const HEADER_FRAME_OPTIONS = 'x-frame-options';
+    /**
+     * Sync controller headers
+     */
+    public const HEADER_FAIL_ON_ERROR = 'fail-on-error';
+    public const HEADER_SINGLE_OPERATION = 'single-operation';
+    public const HEADER_INDEXING_BEHAVIOR = 'indexing-behavior';
+    public const HEADER_INDEXING_SKIP = 'indexing-skip';
+    /**
      * Context headers
      */
     public const HEADER_VERSION_ID = 'sw-version-id';

@@ -1,6 +1,47 @@
 parameters:
   messenger.default_transport_name: 'v65'
+  env(MESSENGER_TRANSPORT_DSN): 'doctrine://default?auto_setup=false'
+  env(MESSENGER_TRANSPORT_FAILURE_DSN): 'doctrine://default?queue_name=failed&auto_setup=false'
+  env(MAILER_DSN): 'null://null'
 framework:
+  messenger:
+    failure_transport: failed
+    serializer:
+      default_serializer: messenger.transport.symfony_serializer
+      symfony_serializer:
+        format: json
+        context: { }
+    transports:
+      failed: "%env(MESSENGER_TRANSPORT_FAILURE_DSN)%"
+      async:
+        dsn: "%env(MESSENGER_TRANSPORT_DSN)%"
+        serializer: messenger.transport.symfony_serializer
+        retry_strategy:
+          max_retries: 3
+          delay: 1000
+          multiplier: 2
+          max_delay: 0
+    routing:
+      'Shuwei\Core\Framework\MessageQueue\AsyncMessageInterface': async
+      'Symfony\Component\Mailer\Messenger\SendEmailMessage': async
+  exceptions:
+    # Symfony exceptions
+    Symfony\Component\HttpKernel\Exception\NotFoundHttpException:
+      log_level: notice
+    Symfony\Component\Routing\Exception\MissingMandatoryParametersException:
+      log_level: notice
+    Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException:
+      log_level: notice
+    Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException:
+      log_level: notice
+    Symfony\Component\HttpKernel\Exception\BadRequestHttpException:
+      log_level: notice
+    Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException:
+      log_level: notice
+    Symfony\Component\HttpKernel\Exception\UnsupportedMediaTypeHttpException:
+      log_level: notice
+    Symfony\Component\HttpFoundation\Exception\SuspiciousOperationException:
+      log_level: notice
   secret: "%env(APP_SECRET)%"
   default_locale:  zh_CN
   php_errors:

@@ -335,55 +335,6 @@ class SystemConfigurator
         });
     }
 
-    private function getCurrencyId(string $currencyName): ?string
-    {
-        return $this->connection->fetchOne(
-            'SELECT id FROM currency WHERE LOWER(iso_code) = LOWER(:currency)',
-            ['currency' => $currencyName]
-        ) ?: null;
-    }
-
-    private function createNewCurrency(string $currencyCode): string
-    {
-        $id = Uuid::randomBytes();
-        $currencyCode = \mb_strtoupper($currencyCode);
-
-        if (!Currencies::exists($currencyCode)) {
-            throw new ShopConfigurationException(sprintf('Currency with iso code "%s" not found', $currencyCode));
-        }
-
-        $fractionDigits = Currencies::getFractionDigits($currencyCode);
-        $roundingIncrement = Currencies::getRoundingIncrement($currencyCode) === 0 ? 1 : Currencies::getRoundingIncrement($currencyCode);
-        $rounding = [
-            'decimals' => $fractionDigits,
-            'interval' => $roundingIncrement * (10 ** ($fractionDigits * -1)),
-            'roundForNet' => true,
-        ];
-
-        $this->connection->executeStatement('
-            INSERT INTO `currency` (`id`, `iso_code`, `factor`, `symbol`, `position`, `item_rounding`, `total_rounding`, `created_at`)
-            VALUES (:id, :currency, 1, :symbol, 1, :rounding, :rounding, NOW())
-        ', ['id' => $id, 'currency' => $currencyCode, 'symbol' => Currencies::getSymbol($currencyCode), 'rounding' => json_encode($rounding, \JSON_THROW_ON_ERROR)]);
-
-        $locale = $this->getCurrentSystemLocale();
-        if ($locale) {
-            $locale = str_replace('-', '_', $locale['code']);
-        } else {
-            $locale = 'en_GB';
-        }
-        $this->connection->executeStatement('
-            INSERT INTO `currency_translation` (`currency_id`, `language_id`, `short_name`, `name`, `created_at`)
-            VALUES (:currencyId, :languageId, :currency, :name, NOW())
-        ', [
-            'currencyId' => $id,
-            'languageId' => Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM),
-            'currency' => $currencyCode,
-            'name' => Currencies::getName($currencyCode, $locale),
-        ]);
-
-        return $id;
-    }
-
     /**
      * @return array<string, string>|null
      */

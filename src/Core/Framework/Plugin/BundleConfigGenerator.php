@@ -28,7 +28,7 @@ class BundleConfigGenerator implements BundleConfigGeneratorInterface
 
     public function getConfig(): array
     {
-        return array_merge($this->generatePluginConfigs(), $this->generateAppConfigs());
+        return array_merge($this->generatePluginConfigs());
     }
 
     private function generatePluginConfigs(): array

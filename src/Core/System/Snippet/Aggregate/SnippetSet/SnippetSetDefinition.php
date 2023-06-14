@@ -14,7 +14,6 @@ use Shuwei\Core\Framework\DataAbstractionLayer\Field\OneToManyAssociationField;
 use Shuwei\Core\Framework\DataAbstractionLayer\Field\StringField;
 use Shuwei\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Shuwei\Core\Framework\Log\Package;
-use Shuwei\Core\System\SalesChannel\Aggregate\SalesChannelDomain\SalesChannelDomainDefinition;
 use Shuwei\Core\System\Snippet\SnippetDefinition;
 
 #[Package('system-settings')]
@@ -51,7 +50,6 @@ class SnippetSetDefinition extends EntityDefinition
             (new StringField('iso', 'iso'))->addFlags(new ApiAware(), new Required()),
             (new CustomFields())->addFlags(new ApiAware()),
             (new OneToManyAssociationField('snippets', SnippetDefinition::class, 'snippet_set_id'))->addFlags(new ApiAware(), new CascadeDelete()),
-            (new OneToManyAssociationField('salesChannelDomains', SalesChannelDomainDefinition::class, 'snippet_set_id'))->addFlags(new RestrictDelete()),
         ]);
     }
 }

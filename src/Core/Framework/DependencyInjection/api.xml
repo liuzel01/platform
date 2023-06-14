@@ -89,6 +89,11 @@
 
         <service id="Shuwei\Core\Framework\Api\Response\Type\Api\JsonApiType">
             <argument type="service" id="Shuwei\Core\Framework\Api\Serializer\JsonApiEncoder"/>
+            <argument type="service" id="Shuwei\Core\Framework\Api\StructEncoder"/>
+        </service>
+
+        <service id="Shuwei\Core\Framework\Api\Entity\DefinitionRegistryChain">
+            <argument type="service" id="Shuwei\Core\Framework\DataAbstractionLayer\DefinitionInstanceRegistry"/>
         </service>
 
         <service id="Shuwei\Core\Framework\Api\Serializer\JsonApiEncoder"/>
@@ -99,6 +104,7 @@
 
         <service id="Shuwei\Core\Framework\Api\Response\Type\Api\JsonType">
             <argument type="service" id="Shuwei\Core\Framework\Api\Serializer\JsonEntityEncoder"/>
+            <argument type="service" id="Shuwei\Core\Framework\Api\StructEncoder"/>
         </service>
 
         <!-- Converter -->
@@ -151,6 +157,11 @@
         <service id="Shuwei\Core\Framework\Api\ApiDefinition\Generator\CachedEntitySchemaGenerator" decorates="Shuwei\Core\Framework\Api\ApiDefinition\Generator\EntitySchemaGenerator">
             <argument type="service" id="Shuwei\Core\Framework\Api\ApiDefinition\Generator\CachedEntitySchemaGenerator.inner"/>
             <argument type="service" id="cache.object"/>
+        </service>
+
+        <service id="Shuwei\Core\Framework\Api\StructEncoder">
+            <argument type="service" id="Shuwei\Core\Framework\Api\Entity\DefinitionRegistryChain"/>
+            <argument type="service" id="serializer"/>
         </service>
 
         <service id="Shuwei\Core\Framework\Api\Controller\InfoController" public="true">

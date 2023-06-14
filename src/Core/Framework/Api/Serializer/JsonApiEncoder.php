@@ -3,6 +3,7 @@
 namespace Shuwei\Core\Framework\Api\Serializer;
 
 use Shuwei\Core\Framework\Api\Exception\UnsupportedEncoderInputException;
+use Shuwei\Core\Framework\Api\ResponseFields;
 use Shuwei\Core\Framework\DataAbstractionLayer\Entity;
 use Shuwei\Core\Framework\DataAbstractionLayer\EntityCollection;
 use Shuwei\Core\Framework\DataAbstractionLayer\EntityDefinition;
@@ -14,7 +15,6 @@ use Shuwei\Core\Framework\DataAbstractionLayer\Field\ManyToOneAssociationField;
 use Shuwei\Core\Framework\DataAbstractionLayer\Field\OneToOneAssociationField;
 use Shuwei\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Shuwei\Core\Framework\Log\Package;
-use Shuwei\Core\System\SalesChannel\Api\ResponseFields;
 
 #[Package('core')]
 class JsonApiEncoder

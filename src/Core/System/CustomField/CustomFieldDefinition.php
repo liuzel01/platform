@@ -2,17 +2,14 @@
 
 namespace Shuwei\Core\System\CustomField;
 
-use Shuwei\Core\Content\Product\Aggregate\ProductSearchConfigField\ProductSearchConfigFieldDefinition;
 use Shuwei\Core\Framework\DataAbstractionLayer\EntityDefinition;
 use Shuwei\Core\Framework\DataAbstractionLayer\Field\BoolField;
 use Shuwei\Core\Framework\DataAbstractionLayer\Field\FkField;
-use Shuwei\Core\Framework\DataAbstractionLayer\Field\Flag\CascadeDelete;
 use Shuwei\Core\Framework\DataAbstractionLayer\Field\Flag\PrimaryKey;
 use Shuwei\Core\Framework\DataAbstractionLayer\Field\Flag\Required;
 use Shuwei\Core\Framework\DataAbstractionLayer\Field\IdField;
 use Shuwei\Core\Framework\DataAbstractionLayer\Field\JsonField;
 use Shuwei\Core\Framework\DataAbstractionLayer\Field\ManyToOneAssociationField;
-use Shuwei\Core\Framework\DataAbstractionLayer\Field\OneToManyAssociationField;
 use Shuwei\Core\Framework\DataAbstractionLayer\Field\StringField;
 use Shuwei\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Shuwei\Core\Framework\Log\Package;
@@ -63,7 +60,6 @@ class CustomFieldDefinition extends EntityDefinition
             new BoolField('allow_customer_write', 'allowCustomerWrite'),
             new BoolField('allow_cart_expose', 'allowCartExpose'),
             new ManyToOneAssociationField('customFieldSet', 'set_id', CustomFieldSetDefinition::class, 'id', false),
-            (new OneToManyAssociationField('productSearchConfigFields', ProductSearchConfigFieldDefinition::class, 'custom_field_id', 'id'))->addFlags(new CascadeDelete()),
         ]);
     }
 }

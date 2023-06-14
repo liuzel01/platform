@@ -2,7 +2,6 @@
 
 namespace Shuwei\Core\Framework\Plugin;
 
-use Shuwei\Core\Checkout\Payment\PaymentMethodDefinition;
 use Shuwei\Core\Framework\DataAbstractionLayer\EntityDefinition;
 use Shuwei\Core\Framework\DataAbstractionLayer\Field\BlobField;
 use Shuwei\Core\Framework\DataAbstractionLayer\Field\BoolField;
@@ -75,9 +74,7 @@ class PluginDefinition extends EntityDefinition
             new TranslatedField('supportLink'),
             new TranslatedField('changelog'),
             new TranslatedField('customFields'),
-
             (new TranslationsAssociationField(PluginTranslationDefinition::class, 'plugin_id'))->addFlags(new Required(), new CascadeDelete()),
-            (new OneToManyAssociationField('paymentMethods', PaymentMethodDefinition::class, 'plugin_id', 'id'))->addFlags(new SetNullOnDelete()),
         ]);
     }
 }

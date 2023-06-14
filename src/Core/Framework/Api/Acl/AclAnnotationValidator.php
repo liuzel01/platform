@@ -54,38 +54,9 @@ class AclAnnotationValidator implements EventSubscriberInterface
         }
 
         foreach ($privileges as $privilege) {
-            if ($privilege === 'app') {
-                if ($context->isAllowed('app.all')) {
-                    return;
-                }
-
-                $privilege = $this->getAppPrivilege($request);
-            }
-
             if (!$context->isAllowed($privilege)) {
                 throw new MissingPrivilegeException([$privilege]);
             }
         }
-    }
-
-    private function getAppPrivilege(Request $request): string
-    {
-        $actionId = $request->get('id');
-
-        if (empty($actionId)) {
-            throw new MissingPrivilegeException();
-        }
-
-        $appName = $this->connection->fetchOne(
-            '
-                SELECT `app`.`name` AS `name`
-                FROM `app`
-                INNER JOIN `app_action_button` ON `app`.`id` = `app_action_button`.`app_id`
-                WHERE `app_action_button`.`id` = :id
-            ',
-            ['id' => Uuid::fromHexToBytes($actionId)],
-        );
-
-        return 'app.' . $appName;
     }
 }

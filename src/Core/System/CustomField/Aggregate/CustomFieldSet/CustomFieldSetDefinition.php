@@ -2,9 +2,6 @@
 
 namespace Shuwei\Core\System\CustomField\Aggregate\CustomFieldSet;
 
-use Shuwei\Core\Content\Product\Aggregate\ProductCustomFieldSet\ProductCustomFieldSetDefinition;
-use Shuwei\Core\Content\Product\ProductDefinition;
-use Shuwei\Core\Framework\App\AppDefinition;
 use Shuwei\Core\Framework\DataAbstractionLayer\EntityDefinition;
 use Shuwei\Core\Framework\DataAbstractionLayer\Field\BoolField;
 use Shuwei\Core\Framework\DataAbstractionLayer\Field\FkField;
@@ -63,12 +60,8 @@ class CustomFieldSetDefinition extends EntityDefinition
             new BoolField('active', 'active'),
             new BoolField('global', 'global'),
             new IntField('position', 'position'),
-            new FkField('app_id', 'appId', AppDefinition::class),
-
             (new OneToManyAssociationField('customFields', CustomFieldDefinition::class, 'set_id'))->addFlags(new CascadeDelete()),
             (new OneToManyAssociationField('relations', CustomFieldSetRelationDefinition::class, 'set_id'))->addFlags(new CascadeDelete()),
-            (new ManyToManyAssociationField('products', ProductDefinition::class, ProductCustomFieldSetDefinition::class, 'custom_field_set_id', 'product_id'))->addFlags(new CascadeDelete(), new ReverseInherited('customFieldSets')),
-            new ManyToOneAssociationField('app', 'app_id', AppDefinition::class),
         ]);
     }
 }

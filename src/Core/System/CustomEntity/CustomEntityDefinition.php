@@ -2,7 +2,6 @@
 
 namespace Shuwei\Core\System\CustomEntity;
 
-use Shuwei\Core\Framework\App\AppDefinition;
 use Shuwei\Core\Framework\Context;
 use Shuwei\Core\Framework\DataAbstractionLayer\EntityDefinition;
 use Shuwei\Core\Framework\DataAbstractionLayer\EntityProtection\EntityProtectionCollection;
@@ -58,7 +57,6 @@ class CustomEntityDefinition extends EntityDefinition
             (new StringField('name', 'name'))->addFlags(new Required()),
             (new JsonField('fields', 'fields'))->addFlags(new Required()),
             new JsonField('flags', 'flags'),
-            new FkField('app_id', 'appId', AppDefinition::class),
             new FkField('plugin_id', 'pluginId', PluginDefinition::class),
             (new BoolField('cms_aware', 'cmsAware'))->addFlags(new Runtime()),
             (new BoolField('store_api_aware', 'storeApiAware'))->addFlags(new Runtime()),

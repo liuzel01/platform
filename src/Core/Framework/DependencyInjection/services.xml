@@ -388,15 +388,6 @@ base-uri 'self';
             <argument>%kernel.bundles%</argument>
         </service>
 
-        <service id="Shuwei\Core\Framework\Adapter\Twig\EntityTemplateLoader">
-            <argument type="service" id="Doctrine\DBAL\Connection"/>
-            <argument>%kernel.environment%</argument>
-
-            <tag name="twig.loader"/>
-            <tag name="kernel.event_subscriber"/>
-            <tag name="kernel.reset" method="reset"/>
-        </service>
-
         <service id="Shuwei\Core\Framework\Adapter\Twig\TwigVariableParser">
             <argument type="service" id="twig" />
             <deprecated package="shuwei/core" version="6.6.0.0">tag:v6.6.0 - The %service_id% service will be removed in v6.6.0.0 use "TwigVariableParserFactory" instead.</deprecated>

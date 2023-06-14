@@ -5,10 +5,7 @@ namespace Shuwei\Core\System;
 use Shuwei\Core\Framework\Bundle;
 use Shuwei\Core\Framework\Log\Package;
 use Shuwei\Core\System\CustomEntity\CustomEntityRegistrar;
-use Shuwei\Core\System\DependencyInjection\CompilerPass\RedisNumberRangeIncrementerCompilerPass;
-use Shuwei\Core\System\DependencyInjection\CompilerPass\SalesChannelEntityCompilerPass;
 use Symfony\Component\Config\FileLocator;
-use Symfony\Component\DependencyInjection\Compiler\PassConfig;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 

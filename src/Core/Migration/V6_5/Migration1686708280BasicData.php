@@ -80,8 +80,8 @@ class Migration1686708280BasicData extends MigrationStep
                     'locale_id' => $localeId,
                     'language_id' => $languageZh,
                     'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT),
-                    'name' => $locale['name']['de-DE'],
-                    'territory' => $locale['territory']['de-DE'],
+                    'name' => $locale['name']['en-US'],
+                    'territory' => $locale['territory']['en-US'],
                 ]
             );
         }

@@ -60,15 +60,9 @@ class SystemConfigController extends AbstractController
         if ($domain === '') {
             throw RoutingException::missingRequestParameter('domain');
         }
-
-        $salesChannelId = $request->query->get('salesChannelId');
-        if (!\is_string($salesChannelId)) {
-            $salesChannelId = null;
-        }
-
         $inherit = $request->query->getBoolean('inherit');
 
-        $values = $this->systemConfig->getDomain($domain, $salesChannelId, $inherit);
+        $values = $this->systemConfig->getDomain($domain, $inherit);
         if (empty($values)) {
             $json = '{}';
         } else {

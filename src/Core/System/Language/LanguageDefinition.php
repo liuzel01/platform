@@ -16,6 +16,7 @@ use Shuwei\Core\Framework\DataAbstractionLayer\Field\ParentFkField;
 use Shuwei\Core\Framework\DataAbstractionLayer\Field\StringField;
 use Shuwei\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Shuwei\Core\Framework\Log\Package;
+use Shuwei\Core\System\Locale\LocaleDefinition;
 
 #[Package('system-settings')]
 class LanguageDefinition extends EntityDefinition

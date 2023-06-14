@@ -3,7 +3,7 @@
 namespace Shuwei\Core\Framework\Routing;
 
 use Shuwei\Core\Framework\Log\Package;
-use Shuwei\Core\SalesChannelRequest;
+
 use Shuwei\Core\System\SystemConfig\SystemConfigService;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -27,15 +27,14 @@ class CanonicalRedirectService
      */
     public function getRedirect(Request $request): ?Response
     {
-        // This attribute has been set by the RequestTransformer if the requested URL was superseded.
-        $canonical = $request->attributes->get(SalesChannelRequest::ATTRIBUTE_CANONICAL_LINK);
+
         $shouldRedirect = $this->configService->get('core.seo.redirectToCanonicalUrl');
 
         if (!$shouldRedirect) {
             return null;
         }
 
-        if (!\is_string($canonical) || empty($canonical)) {
+        if ( empty($canonical)) {
             return null;
         }
 

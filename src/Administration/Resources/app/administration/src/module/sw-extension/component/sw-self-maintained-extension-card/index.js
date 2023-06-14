@@ -1,0 +1,122 @@
+import template from '../sw-extension-permissions-details-modal/sw-extension-permissions-details-modal.html.twig';
+
+/**
+ * @package merchant-services
+ * @private
+ */
+export default {
+    template,
+
+    mixins: ['sw-extension-error'],
+
+    props: {
+        extension: {
+            type: Object,
+            required: true,
+        },
+    },
+
+    computed: {
+        extensionCardClasses() {
+            return {
+                'sw-self-maintained-extension-card': true,
+                ...this.$super('extensionCardClasses'),
+            };
+        },
+
+        permissions() {
+            return Object.keys(this.extension.permissions).length ?
+                this.extension.permissions : null;
+        },
+
+        isInstalled() {
+            return this.extension.installedAt !== null;
+        },
+    },
+
+    methods: {
+        async changeExtensionStatus() {
+            // State in checkbox has already changed so we have to treat extension.active as the state to change to
+            if (this.isActive) {
+                await this.activateExtension();
+                return;
+            }
+
+            await this.deactivateExtension();
+        },
+
+        async installExtension() {
+            this.isLoading = true;
+
+            try {
+                await this.shuweiExtensionService.installExtension(
+                    this.extension.name,
+                    this.extension.type,
+                );
+
+                await this.clearCacheAndReloadPage();
+            } catch (e) {
+                this.showExtensionErrors(e);
+            } finally {
+                this.isLoading = false;
+            }
+        },
+
+        async activateExtension() {
+            try {
+                this.isLoading = true;
+
+                await this.shuweiExtensionService.activateExtension(
+                    this.extension.name,
+                    this.extension.type,
+                );
+                this.extension.active = true;
+
+                await this.clearCacheAndReloadPage();
+            } catch (e) {
+                this.extension.active = false;
+                this.showExtensionErrors(e);
+            } finally {
+                this.isLoading = false;
+            }
+        },
+
+        async deactivateExtension() {
+            try {
+                this.isLoading = true;
+
+                await this.shuweiExtensionService.deactivateExtension(
+                    this.extension.name,
+                    this.extension.type,
+                );
+                this.extension.active = false;
+
+                await this.clearCacheAndReloadPage();
+            } catch (e) {
+                this.extension.active = true;
+
+                this.showExtensionErrors(e);
+            } finally {
+                this.isLoading = false;
+            }
+        },
+
+        async removeExtension() {
+            try {
+                this.showRemovalModal = false;
+                this.isLoading = true;
+
+                await this.shuweiExtensionService.removeExtension(
+                    this.extension.name,
+                    this.extension.type,
+                );
+                this.extension.active = false;
+                await this.clearCacheAndReloadPage();
+            } catch (e) {
+                this.showExtensionErrors(e);
+            } finally {
+                this.isLoading = false;
+            }
+        },
+    },
+};

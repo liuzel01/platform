@@ -7,8 +7,7 @@
     <services>
         <service id="Shuwei\Core\System\SystemConfig\Validation\SystemConfigValidator">
             <argument type="service" id="Shuwei\Core\System\SystemConfig\Service\ConfigurationService"/>
-            <argument type="service" id="Shuwei\Core\Framework\Validation\DataValidator"></argument>
-
+            <argument type="service" id="Shuwei\Core\Framework\Validation\DataValidator"/>
             <tag name="shuwei.system_config.validation" />
         </service>
 
