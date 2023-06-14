@@ -61,7 +61,6 @@
         "framework:schema:dump": "@php bin/console -e prod framework:schema -s 'entity-schema' src/Administration/Resources/app/administration/test/_mocks_/entity-schema.json",
         "init:js": [
             "@npm:admin clean-install --no-audit --prefer-offline",
-            "export PROJECT_ROOT=\"$PWD\"; \"$PROJECT_ROOT\"/bin/install-extension-npm"
         ],
         "init:db": [
             "@php bin/console system:install --drop-database --basic-setup --force --no-assign-theme"
