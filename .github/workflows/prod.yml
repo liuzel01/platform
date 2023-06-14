@@ -23,14 +23,13 @@ jobs:
         options: '--mount="type=tmpfs,destination=/var/lib/mysql" --health-cmd="mysqladmin ping -h 127.0.0.1" --health-interval=5s --health-timeout=2s --health-retries=3'
         ports:
           - "3306:3306"
+    container:
+      image: php:8.1-cli
+      option: --name php8.1 --entrypoint /bin/sh
     steps:
       - name: Clone platform
         uses: actions/checkout@v3
 
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '8.1'
-      - name: Install Shuwei Platform
+      - name: Install composer dependencies
         run: |
           composer install
