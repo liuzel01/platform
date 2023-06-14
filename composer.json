@@ -62,9 +62,7 @@
         "init:js": [
             "@npm:admin clean-install --no-audit --prefer-offline"
         ],
-        "init:db": [
-            "@php bin/console system:install --drop-database --basic-setup --force --no-assign-theme"
-        ],
+        "init:db": "@php bin/console system:install --drop-database --basic-setup --force --no-assign-theme",
         "setup": [
             "@composer install -o",
             "mkdir -p config/jwt || true",
