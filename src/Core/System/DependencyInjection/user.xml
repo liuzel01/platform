@@ -13,10 +13,6 @@
             <tag name="shuwei.entity.definition"/>
         </service>
 
-        <service id="Shuwei\Core\System\User\Aggregate\UserAccessKey\UserAccessKeyDefinition">
-            <tag name="shuwei.entity.definition"/>
-        </service>
-
         <service id="Shuwei\Core\System\User\Aggregate\UserRecovery\UserRecoveryDefinition">
             <tag name="shuwei.entity.definition"/>
         </service>

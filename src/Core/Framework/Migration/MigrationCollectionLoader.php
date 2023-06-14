@@ -84,7 +84,7 @@ class MigrationCollectionLoader
         $safeMajorVersion = $this->getLastSafeMajorVersion($version, $mode);
 
         $namespaces = [];
-        for ($major = 3; $safeMajorVersion >= 3 && $major <= $safeMajorVersion; ++$major) {
+        for ($major = 5; $safeMajorVersion >= 5 && $major <= $safeMajorVersion; ++$major) {
             $namespaces[] = $this->getSource('core.V6_' . $major);
         }
         $namespaces[] = $this->getSource('core');

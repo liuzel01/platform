@@ -55,8 +55,8 @@
             <tag name="console.command"/>
         </service>
 
-        <service id="Shuwei\Core\Maintenance\System\Command\SystemConfigureShopCommand">
-            <argument type="service" id="Shuwei\Core\Maintenance\System\Service\ShopConfigurator"/>
+        <service id="Shuwei\Core\Maintenance\System\Command\SystemConfigureCommand">
+            <argument type="service" id="Shuwei\Core\Maintenance\System\Service\SystemConfigurator"/>
             <argument type="service" id="Shuwei\Core\Framework\Adapter\Cache\CacheClearer"/>
 
             <tag name="console.command"/>
@@ -73,7 +73,7 @@
 
         <service id="shuwei.maintenance.client" class="GuzzleHttp\Client"/>
 
-        <service id="Shuwei\Core\Maintenance\System\Service\ShopConfigurator">
+        <service id="Shuwei\Core\Maintenance\System\Service\SystemConfigurator">
             <argument type="service" id="Doctrine\DBAL\Connection"/>
         </service>
 

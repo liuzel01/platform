@@ -13,6 +13,7 @@ use Shuwei\Core\Framework\DependencyInjection\CompilerPass\DisableTwigCacheWarme
 use Shuwei\Core\Framework\DependencyInjection\CompilerPass\EntityCompilerPass;
 use Shuwei\Core\Framework\DependencyInjection\CompilerPass\FeatureFlagCompilerPass;
 use Shuwei\Core\Framework\DependencyInjection\CompilerPass\FilesystemConfigMigrationCompilerPass;
+use Shuwei\Core\Framework\DependencyInjection\CompilerPass\FrameworkMigrationReplacementCompilerPass;
 use Shuwei\Core\Framework\DependencyInjection\CompilerPass\RateLimiterCompilerPass;
 use Shuwei\Core\Framework\DependencyInjection\CompilerPass\RedisPrefixCompilerPass;
 use Shuwei\Core\Framework\DependencyInjection\CompilerPass\RouteScopeCompilerPass;
@@ -99,6 +100,7 @@ class Framework extends Bundle
         $container->addCompilerPass(new RateLimiterCompilerPass());
         $container->addCompilerPass(new AutoconfigureCompilerPass(), PassConfig::TYPE_BEFORE_OPTIMIZATION, 1000);
 
+        $container->addCompilerPass(new FrameworkMigrationReplacementCompilerPass());
 
         parent::build($container);
     }

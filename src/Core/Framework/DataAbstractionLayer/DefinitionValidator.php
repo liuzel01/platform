@@ -37,32 +37,7 @@ use Symfony\Component\String\Inflector\EnglishInflector;
 class DefinitionValidator
 {
     private const IGNORE_FIELDS = [
-        'product.cover',
-        'order_line_item.cover',
-        'customer.defaultBillingAddress',
-        'customer.defaultShippingAddress',
-        'customer.activeShippingAddress',
-        'customer.activeBillingAddress',
-        'customer.createdBy',
-        'customer.updatedBy',
-        'product_configurator_setting.selected',
-        'sales_channel.wishlists',
-        'product.wishlists',
-        'order.billingAddress',
-        'order.createdBy',
-        'order.updatedBy',
-        'product_search_config.excludedTerms',
-        'integration.writeAccess',
-        'media.metaDataRaw',
-        'product.sortedProperties',
-        'product.cheapestPriceContainer',
-        'product.cheapest_price',
-        'product.cheapest_price_accessor',
 
-        // @deprecated tag:v6.6.0 - Deprecated columns
-        'shipping_method_price.currency',
-        'payment_method.shortName',
-        'state_machine_history.entityId',
     ];
 
     private const PLURAL_EXCEPTIONS = [
@@ -100,7 +75,6 @@ class DefinitionValidator
         'app_config',
         'cart',
         'migration',
-        'sales_channel_api_context',
         'elasticsearch_index_task',
         'increment',
         'messenger_messages',
@@ -131,7 +105,6 @@ class DefinitionValidator
     private const IGNORED_PARENT_DEFINITION = [
         // is a root definition, but is in aggregate namespace
         'customer_group',
-        'sales_channel_type',
         'flow_template',
         'import_export_file',
         'import_export_log',

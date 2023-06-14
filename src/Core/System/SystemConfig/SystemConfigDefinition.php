@@ -4,16 +4,14 @@ namespace Shuwei\Core\System\SystemConfig;
 
 use Shuwei\Core\Framework\DataAbstractionLayer\EntityDefinition;
 use Shuwei\Core\Framework\DataAbstractionLayer\Field\ConfigJsonField;
-use Shuwei\Core\Framework\DataAbstractionLayer\Field\FkField;
 use Shuwei\Core\Framework\DataAbstractionLayer\Field\Flag\ApiAware;
 use Shuwei\Core\Framework\DataAbstractionLayer\Field\Flag\PrimaryKey;
 use Shuwei\Core\Framework\DataAbstractionLayer\Field\Flag\Required;
 use Shuwei\Core\Framework\DataAbstractionLayer\Field\IdField;
-use Shuwei\Core\Framework\DataAbstractionLayer\Field\ManyToOneAssociationField;
 use Shuwei\Core\Framework\DataAbstractionLayer\Field\StringField;
 use Shuwei\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Shuwei\Core\Framework\Log\Package;
-use Shuwei\Core\System\SalesChannel\SalesChannelDefinition;
+
 
 #[Package('system-settings')]
 class SystemConfigDefinition extends EntityDefinition
@@ -46,8 +44,6 @@ class SystemConfigDefinition extends EntityDefinition
             (new IdField('id', 'id'))->addFlags(new ApiAware(), new PrimaryKey(), new Required()),
             (new StringField('configuration_key', 'configurationKey'))->addFlags(new ApiAware(), new Required()),
             (new ConfigJsonField('configuration_value', 'configurationValue'))->addFlags(new ApiAware(), new Required()),
-            (new FkField('sales_channel_id', 'salesChannelId', SalesChannelDefinition::class))->addFlags(new ApiAware()),
-            (new ManyToOneAssociationField('salesChannel', 'sales_channel_id', SalesChannelDefinition::class, 'id', false))->addFlags(new ApiAware()),
         ]);
     }
 }

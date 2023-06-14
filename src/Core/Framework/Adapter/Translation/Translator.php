@@ -207,7 +207,7 @@ class Translator extends AbstractTranslator
         $this->localeBeforeInject = $this->getLocale();
         $this->salesChannelId = $salesChannelId;
         $this->setLocale($locale);
-        $this->resolveSnippetSetId($salesChannelId, $languageId, $locale);
+        $this->resolveSnippetSetId($languageId, $locale);
         $this->getCatalogue($locale);
     }
 
@@ -266,9 +266,9 @@ class Translator extends AbstractTranslator
         return mb_strpos($catalog->getLocale(), '-') !== false;
     }
 
-    private function resolveSnippetSetId(string $salesChannelId, string $languageId, string $locale): void
+    private function resolveSnippetSetId(string $languageId, string $locale): void
     {
-        $snippetSetId = $this->snippetService->findSnippetSetId($salesChannelId, $languageId, $locale);
+        $snippetSetId = $this->snippetService->findSnippetSetId( $languageId, $locale);
 
         $this->snippetSetId = $snippetSetId;
     }

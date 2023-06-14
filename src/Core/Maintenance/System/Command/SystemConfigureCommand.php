@@ -5,7 +5,7 @@ namespace Shuwei\Core\Maintenance\System\Command;
 use Shuwei\Core\Framework\Adapter\Cache\CacheClearer;
 use Shuwei\Core\Framework\Adapter\Console\ShuweiStyle;
 use Shuwei\Core\Framework\Log\Package;
-use Shuwei\Core\Maintenance\System\Service\ShopConfigurator;
+use Shuwei\Core\Maintenance\System\Service\SystemConfigurator;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -20,11 +20,11 @@ use Symfony\Component\Console\Output\OutputInterface;
     description: 'Configure shop',
 )]
 #[Package('core')]
-class SystemConfigureShopCommand extends Command
+class SystemConfigureCommand extends Command
 {
     public function __construct(
-        private readonly ShopConfigurator $shopConfigurator,
-        private readonly CacheClearer $cacheClearer
+        private readonly SystemConfigurator $systemConfigurator,
+        private readonly CacheClearer       $cacheClearer
     ) {
         parent::__construct();
     }
@@ -43,7 +43,7 @@ class SystemConfigureShopCommand extends Command
     {
         $output = new ShuweiStyle($input, $output);
 
-        $this->shopConfigurator->updateBasicInformation($input->getOption('shop-name'), $input->getOption('shop-email'));
+        $this->systemConfigurator->updateBasicInformation($input->getOption('shop-name'), $input->getOption('shop-email'));
 
         $output->writeln('Shop configured successfully');
         $output->writeln('');
@@ -57,7 +57,7 @@ class SystemConfigureShopCommand extends Command
                 }
             }
 
-            $this->shopConfigurator->setDefaultLanguage($input->getOption('shop-locale'));
+            $this->systemConfigurator->setDefaultLanguage($input->getOption('shop-locale'));
             $output->writeln('Successfully changed shop default language');
             $output->writeln('');
         }
@@ -71,7 +71,7 @@ class SystemConfigureShopCommand extends Command
                 }
             }
 
-            $this->shopConfigurator->setDefaultCurrency($input->getOption('shop-currency'));
+            $this->systemConfigurator->setDefaultCurrency($input->getOption('shop-currency'));
             $output->writeln('Successfully changed shop default currency');
             $output->writeln('');
         }

@@ -33,17 +33,6 @@ class SystemConfigLoader extends AbstractSystemConfigLoader
 
         $query->from('system_config');
         $query->select(['configuration_key', 'configuration_value']);
-
-        if ($salesChannelId === null) {
-            $query
-                ->andWhere('sales_channel_id IS NULL');
-        } else {
-            $query->andWhere('sales_channel_id = :salesChannelId OR system_config.sales_channel_id IS NULL');
-            $query->setParameter('salesChannelId', Uuid::fromHexToBytes($salesChannelId));
-        }
-
-        $query->addOrderBy('sales_channel_id', 'ASC');
-
         $result = $query->executeQuery();
 
         return $this->buildSystemConfigArray($result->fetchAllKeyValue());
@@ -80,7 +69,6 @@ class SystemConfigLoader extends AbstractSystemConfigLoader
         $key = \array_shift($keys);
 
         if (empty($keys)) {
-            // Configs can be overwritten with sales_channel_id
             $inheritedValuePresent = \array_key_exists($key, $configValues);
             $valueConsideredEmpty = !\is_bool($value) && empty($value);
 

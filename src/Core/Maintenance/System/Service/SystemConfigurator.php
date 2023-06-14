@@ -11,7 +11,7 @@ use Shuwei\Core\Maintenance\System\Exception\ShopConfigurationException;
 use Symfony\Component\Intl\Currencies;
 
 #[Package('core')]
-class ShopConfigurator
+class SystemConfigurator
 {
     /**
      * @internal
@@ -99,50 +99,6 @@ class ShopConfigurator
         }
     }
 
-    public function setDefaultCurrency(string $currencyCode): void
-    {
-        $currentCurrencyIso = $this->connection->fetchOne(
-            'SELECT iso_code FROM currency WHERE id = :currencyId',
-            ['currencyId' => Uuid::fromHexToBytes(Defaults::CURRENCY)]
-        );
-
-        if (!$currentCurrencyIso) {
-            throw new ShopConfigurationException('Default currency not found');
-        }
-
-        if (\mb_strtoupper((string) $currentCurrencyIso) === \mb_strtoupper($currencyCode)) {
-            return;
-        }
-
-        $newDefaultCurrencyId = $this->getCurrencyId($currencyCode);
-        if (!$newDefaultCurrencyId) {
-            $newDefaultCurrencyId = $this->createNewCurrency($currencyCode);
-        }
-
-        RetryableTransaction::retryable($this->connection, function (Connection $conn) use ($newDefaultCurrencyId, $currencyCode): void {
-            $stmt = $conn->prepare('UPDATE currency SET id = :newId WHERE id = :oldId');
-
-            // assign new uuid to old DEFAULT
-            $stmt->executeStatement([
-                'newId' => Uuid::randomBytes(),
-                'oldId' => Uuid::fromHexToBytes(Defaults::CURRENCY),
-            ]);
-
-            // change id to DEFAULT
-            $stmt->executeStatement([
-                'newId' => Uuid::fromHexToBytes(Defaults::CURRENCY),
-                'oldId' => $newDefaultCurrencyId,
-            ]);
-
-            $conn->executeStatement(
-                'SET @fixFactor = (SELECT 1/factor FROM currency WHERE iso_code = :newDefault);
-                 UPDATE currency
-                 SET factor = IF(iso_code = :newDefault, 1, factor * @fixFactor);',
-                ['newDefault' => $currencyCode]
-            );
-        });
-    }
-
     /**
      * @param array<int|string, mixed> $defaultTranslations
      */
@@ -184,7 +140,7 @@ class ShopConfigurator
         $id = $this->connection->fetchOne('
             SELECT `id`
             FROM `system_config`
-            WHERE `configuration_key` = :key AND `sales_channel_id` IS NULL
+            WHERE `configuration_key` = :key
         ', ['key' => $key]);
 
         if (!$id) {
@@ -192,8 +148,8 @@ class ShopConfigurator
         }
 
         $this->connection->executeStatement('
-            INSERT INTO `system_config` (`id`, `configuration_key`, `configuration_value`, `sales_channel_id`, `created_at`)
-            VALUES (:id, :key, :value, NULL, NOW())
+            INSERT INTO `system_config` (`id`, `configuration_key`, `configuration_value`, `created_at`)
+            VALUES (:id, :key, :value, NOW())
             ON DUPLICATE KEY UPDATE
                 `configuration_value` = :value,
                 `updated_at` = NOW()

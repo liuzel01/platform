@@ -189,24 +189,8 @@ class SnippetService
         return $snippetSet;
     }
 
-    public function findSnippetSetId(string $salesChannelId, string $languageId, string $locale): string
+    public function findSnippetSetId(string $languageId, string $locale): string
     {
-        $snippetSetId = $this->connection->fetchOne(
-            'SELECT LOWER(HEX(`snippet_set`.`id`))
-            FROM `sales_channel_domain`
-            INNER JOIN `snippet_set` ON `sales_channel_domain`.`snippet_set_id` = `snippet_set`.`id`
-            WHERE `sales_channel_domain`.`sales_channel_id` = :salesChannelId AND `sales_channel_domain`.`language_id` = :languageId
-            LIMIT 1',
-            [
-                'salesChannelId' => Uuid::fromHexToBytes($salesChannelId),
-                'languageId' => Uuid::fromHexToBytes($languageId),
-            ]
-        );
-
-        if ($snippetSetId) {
-            return $snippetSetId;
-        }
-
         $sets = $this->connection->fetchAllKeyValue(
             'SELECT iso, LOWER(HEX(id)) FROM snippet_set WHERE iso IN (:locales) LIMIT 2',
             ['locales' => array_unique([$locale, 'en-GB'])],
@@ -218,24 +202,6 @@ class SnippetService
         }
 
         return array_pop($sets);
-    }
-
-    /**
-     * @param list<string> $usingThemes
-     *
-     * @return list<string>
-     */
-    protected function getUnusedThemes(array $usingThemes = []): array
-    {
-        if (!$this->container->has(StorefrontPluginRegistry::class)) {
-            return [];
-        }
-
-        $themeRegistry = $this->container->get(StorefrontPluginRegistry::class);
-
-        $unusedThemes = $themeRegistry->getConfigurations()->getThemes()->filter(fn (StorefrontPluginConfiguration $theme) => !\in_array($theme->getTechnicalName(), $usingThemes, true))->map(fn (StorefrontPluginConfiguration $theme) => $theme->getTechnicalName());
-
-        return array_values($unusedThemes);
     }
 
     /**

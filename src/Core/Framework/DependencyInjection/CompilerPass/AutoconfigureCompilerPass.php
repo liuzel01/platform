@@ -46,10 +46,6 @@ class AutoconfigureCompilerPass implements CompilerPassInterface
             ->addTag('shuwei.entity.definition');
 
         $container
-            ->registerForAutoconfiguration(SalesChannelDefinition::class)
-            ->addTag('shuwei.sales_channel.entity.definition');
-
-        $container
             ->registerForAutoconfiguration(AbstractRouteScope::class)
             ->addTag('shuwei.route_scope');
 
@@ -58,36 +54,9 @@ class AutoconfigureCompilerPass implements CompilerPassInterface
             ->addTag('shuwei.entity.extension');
 
         $container
-            ->registerForAutoconfiguration(CartProcessorInterface::class)
-            ->addTag('shuwei.cart.processor');
-
-        $container
-            ->registerForAutoconfiguration(CartDataCollectorInterface::class)
-            ->addTag('shuwei.cart.collector');
-
-        $container
             ->registerForAutoconfiguration(ScheduledTask::class)
             ->addTag('shuwei.scheduled.task');
 
-        $container
-            ->registerForAutoconfiguration(CartValidatorInterface::class)
-            ->addTag('shuwei.cart.validator');
-
-        $container
-            ->registerForAutoconfiguration(LineItemFactoryInterface::class)
-            ->addTag('shuwei.cart.line_item.factory');
-
-        $container
-            ->registerForAutoconfiguration(LineItemGroupPackagerInterface::class)
-            ->addTag('lineitem.group.packager');
-
-        $container
-            ->registerForAutoconfiguration(LineItemGroupSorterInterface::class)
-            ->addTag('lineitem.group.sorter');
-
-        $container
-            ->registerForAutoconfiguration(LegacyEncoderInterface::class)
-            ->addTag('shuwei.legacy_encoder');
 
         $container
             ->registerForAutoconfiguration(EntityIndexer::class)
@@ -97,61 +66,14 @@ class AutoconfigureCompilerPass implements CompilerPassInterface
             ->registerForAutoconfiguration(ExceptionHandlerInterface::class)
             ->addTag('shuwei.dal.exception_handler');
 
-        $container
-            ->registerForAutoconfiguration(AbstractDocumentRenderer::class)
-            ->addTag('document.renderer');
-
-        $container
-            ->registerForAutoconfiguration(SynchronousPaymentHandlerInterface::class)
-            ->addTag('shuwei.payment.method.sync');
-
-        $container
-            ->registerForAutoconfiguration(FilterSorterInterface::class)
-            ->addTag('promotion.filter.sorter');
-
-        $container
-            ->registerForAutoconfiguration(FilterPickerInterface::class)
-            ->addTag('promotion.filter.picker');
-
-        $container
-            ->registerForAutoconfiguration(Rule::class)
-            ->addTag('shuwei.rule.definition');
-
-        $container
-            ->registerForAutoconfiguration(AbstractTaxProvider::class)
-            ->addTag('shuwei.tax.provider');
-
-        $container
-            ->registerForAutoconfiguration(CmsElementResolverInterface::class)
-            ->addTag('shuwei.cms.data_resolver');
 
         $container
             ->registerForAutoconfiguration(FieldSerializerInterface::class)
             ->addTag('shuwei.field_serializer');
 
         $container
-            ->registerForAutoconfiguration(FlowStorer::class)
-            ->addTag('flow.storer');
-
-        $container
-            ->registerForAutoconfiguration(AbstractUrlProvider::class)
-            ->addTag('shuwei.sitemap_url_provider');
-
-        $container
             ->registerForAutoconfiguration(AdapterFactoryInterface::class)
             ->addTag('shuwei.filesystem.factory');
-
-        $container
-            ->registerForAutoconfiguration(AbstractValueGenerator::class)
-            ->addTag('shuwei.value_generator_pattern');
-
-        $container
-            ->registerForAutoconfiguration(TaxRuleTypeFilterInterface::class)
-            ->addTag('tax.rule_type_filter');
-
-        $container
-            ->registerForAutoconfiguration(SeoUrlRouteInterface::class)
-            ->addTag('shuwei.seo_url.route');
 
         $container
             ->registerForAutoconfiguration(TemplateNamespaceHierarchyBuilderInterface::class)

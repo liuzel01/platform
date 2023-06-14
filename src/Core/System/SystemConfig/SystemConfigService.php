@@ -156,23 +156,11 @@ class SystemConfigService implements ResetInterface
             ->select(['configuration_key', 'configuration_value'])
             ->from('system_config');
 
-        if ($inherit) {
-            $queryBuilder->where('sales_channel_id IS NULL OR sales_channel_id = :salesChannelId');
-        } elseif ($salesChannelId === null) {
-            $queryBuilder->where('sales_channel_id IS NULL');
-        } else {
-            $queryBuilder->where('sales_channel_id = :salesChannelId');
-        }
-
         $domain = rtrim($domain, '.') . '.';
         $escapedDomain = str_replace('%', '\\%', $domain);
 
-        $salesChannelId = $salesChannelId ? Uuid::fromHexToBytes($salesChannelId) : null;
-
         $queryBuilder->andWhere('configuration_key LIKE :prefix')
-            ->addOrderBy('sales_channel_id', 'ASC')
-            ->setParameter('prefix', $escapedDomain . '%')
-            ->setParameter('salesChannelId', $salesChannelId);
+            ->setParameter('prefix', $escapedDomain . '%');
 
         $configs = $queryBuilder->executeQuery()->fetchAllNumeric();
 
@@ -222,13 +210,11 @@ class SystemConfigService implements ResetInterface
      */
     public function setMultiple(array $values, ?string $salesChannelId = null): void
     {
-        $where = $salesChannelId ? 'sales_channel_id = :salesChannelId' : 'sales_channel_id IS NULL';
 
         $existingIds = $this->connection
             ->fetchAllKeyValue(
-                'SELECT configuration_key, id FROM system_config WHERE ' . $where . ' and configuration_key IN (:configurationKeys)',
+                'SELECT configuration_key, id FROM system_config WHERE  configuration_key IN (:configurationKeys)',
                 [
-                    'salesChannelId' => $salesChannelId ? Uuid::fromHexToBytes($salesChannelId) : null,
                     'configurationKeys' => array_keys($values),
                 ],
                 [
@@ -279,7 +265,6 @@ class SystemConfigService implements ResetInterface
                     'id' => Uuid::randomBytes(),
                     'configuration_key' => $key,
                     'configuration_value' => Json::encode(['_value' => $value]),
-                    'sales_channel_id' => $salesChannelId ? Uuid::fromHexToBytes($salesChannelId) : null,
                     'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT),
                 ],
             );
@@ -293,13 +278,6 @@ class SystemConfigService implements ResetInterface
                 ->createQueryBuilder()
                 ->where('configuration_key IN (:keys)')
                 ->setParameter('keys', $toBeDeleted, ArrayParameterType::STRING);
-
-            if ($salesChannelId) {
-                $qb->andWhere('sales_channel_id = :salesChannelId')
-                    ->setParameter('salesChannelId', Uuid::fromHexToBytes($salesChannelId));
-            } else {
-                $qb->andWhere('sales_channel_id IS NULL');
-            }
 
             $qb->delete('system_config')
                 ->executeStatement();

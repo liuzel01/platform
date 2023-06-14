@@ -14,12 +14,6 @@ class FrameworkMigrationReplacementCompilerPass implements CompilerPassInterface
     {
         $bundleRoot = \dirname(__DIR__, 3);
 
-        $migrationSourceV3 = $container->getDefinition(MigrationSource::class . '.core.V6_3');
-        $migrationSourceV3->addMethodCall('addDirectory', [$bundleRoot . '/Migration/V6_3', 'Shuwei\Core\Migration\V6_3']);
-
-        $migrationSourceV4 = $container->getDefinition(MigrationSource::class . '.core.V6_4');
-        $migrationSourceV4->addMethodCall('addDirectory', [$bundleRoot . '/Migration/V6_4', 'Shuwei\Core\Migration\V6_4']);
-
         $migrationSourceV5 = $container->getDefinition(MigrationSource::class . '.core.V6_5');
         $migrationSourceV5->addMethodCall('addDirectory', [$bundleRoot . '/Migration/V6_5', 'Shuwei\Core\Migration\V6_5']);
 

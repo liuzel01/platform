@@ -7,11 +7,9 @@ use Shuwei\Core\Defaults;
 use Shuwei\Core\Framework\Context;
 use Shuwei\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Shuwei\Core\Framework\DataAbstractionLayer\Search\Criteria;
-use Shuwei\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Shuwei\Core\Framework\Log\Package;
 use Shuwei\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
-use Shuwei\Core\Maintenance\System\Service\ShopConfigurator;
-use Shuwei\Core\System\Currency\CurrencyEntity;
+use Shuwei\Core\Maintenance\System\Service\SystemConfigurator;
 use Shuwei\Core\System\SystemConfig\SystemConfigService;
 
 /**
@@ -22,13 +20,13 @@ class ShopConfiguratorTest extends TestCase
 {
     use IntegrationTestBehaviour;
 
-    private ShopConfigurator $shopConfigurator;
+    private SystemConfigurator $shopConfigurator;
 
     private SystemConfigService $systemConfigService;
 
     protected function setUp(): void
     {
-        $this->shopConfigurator = $this->getContainer()->get(ShopConfigurator::class);
+        $this->shopConfigurator = $this->getContainer()->get(SystemConfigurator::class);
         $this->systemConfigService = $this->getContainer()->get(SystemConfigService::class);
     }
 
@@ -79,64 +77,4 @@ class ShopConfiguratorTest extends TestCase
         static::assertEquals('Deutsch', $lang->getName());
     }
 
-    public function testSwitchDefaultCurrencyWithNewCurrency(): void
-    {
-        $this->shopConfigurator->setDefaultCurrency('RUB');
-
-        /** @var EntityRepository $langRepo */
-        $langRepo = $this->getContainer()->get('currency.repository');
-
-        /** @var CurrencyEntity $currency */
-        $currency = $langRepo->search(new Criteria([Defaults::CURRENCY]), Context::createDefaultContext())
-            ->first();
-
-        static::assertEquals('RUB', $currency->getSymbol());
-        static::assertEquals('Russian Ruble', $currency->getName());
-        static::assertEquals('RUB', $currency->getShortName());
-        static::assertEquals('RUB', $currency->getIsoCode());
-        static::assertEquals(1, $currency->getFactor());
-        static::assertEquals(2, $currency->getItemRounding()->getDecimals());
-        static::assertEquals(0.01, $currency->getItemRounding()->getInterval());
-        static::assertTrue($currency->getItemRounding()->roundForNet());
-        static::assertEquals(2, $currency->getTotalRounding()->getDecimals());
-        static::assertEquals(0.01, $currency->getTotalRounding()->getInterval());
-        static::assertTrue($currency->getTotalRounding()->roundForNet());
-    }
-
-    public function testSwitchDefaultCurrencyWithDefaultCurrency(): void
-    {
-        $this->shopConfigurator->setDefaultCurrency('EUR');
-
-        /** @var EntityRepository $langRepo */
-        $langRepo = $this->getContainer()->get('currency.repository');
-
-        /** @var CurrencyEntity $currency */
-        $currency = $langRepo->search(new Criteria([Defaults::CURRENCY]), Context::createDefaultContext())
-            ->first();
-
-        static::assertEquals('Euro', $currency->getName());
-    }
-
-    public function testSwitchDefaultCurrencyWithExistingCurrency(): void
-    {
-        $this->shopConfigurator->setDefaultCurrency('GBP');
-
-        /** @var EntityRepository $langRepo */
-        $langRepo = $this->getContainer()->get('currency.repository');
-
-        /** @var CurrencyEntity $currency */
-        $currency = $langRepo->search(new Criteria([Defaults::CURRENCY]), Context::createDefaultContext())
-            ->first();
-
-        static::assertEquals('Pound', $currency->getName());
-        static::assertEquals(1, $currency->getFactor());
-
-        $criteria = new Criteria();
-        $criteria->addFilter(new EqualsFilter('isoCode', 'EUR'));
-        $oldDefault = $langRepo->search($criteria, Context::createDefaultContext())
-            ->first();
-
-        static::assertEquals('Euro', $oldDefault->getName());
-        static::assertEquals(1.1216169229561, $oldDefault->getFactor());
-    }
 }

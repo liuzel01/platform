@@ -33,8 +33,6 @@ use Shuwei\Core\Framework\DataAbstractionLayer\Field\TimeZoneField;
 use Shuwei\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Shuwei\Core\Framework\Log\Package;
 use Shuwei\Core\System\Locale\LocaleDefinition;
-use Shuwei\Core\System\StateMachine\Aggregation\StateMachineHistory\StateMachineHistoryDefinition;
-use Shuwei\Core\System\User\Aggregate\UserAccessKey\UserAccessKeyDefinition;
 use Shuwei\Core\System\User\Aggregate\UserConfig\UserConfigDefinition;
 use Shuwei\Core\System\User\Aggregate\UserRecovery\UserRecoveryDefinition;
 
@@ -92,20 +90,10 @@ class UserDefinition extends EntityDefinition
             (new TimeZoneField('time_zone', 'timeZone'))->addFlags(new Required()),
             new CustomFields(),
             new ManyToOneAssociationField('locale', 'locale_id', LocaleDefinition::class, 'id', false),
-            new FkField('avatar_id', 'avatarId', MediaDefinition::class),
-            new ManyToOneAssociationField('avatarMedia', 'avatar_id', MediaDefinition::class),
-            (new OneToManyAssociationField('media', MediaDefinition::class, 'user_id'))->addFlags(new SetNullOnDelete()),
-            (new OneToManyAssociationField('accessKeys', UserAccessKeyDefinition::class, 'user_id', 'id'))->addFlags(new CascadeDelete()),
             (new OneToManyAssociationField('configs', UserConfigDefinition::class, 'user_id', 'id'))->addFlags(new CascadeDelete()),
-            new OneToManyAssociationField('stateMachineHistoryEntries', StateMachineHistoryDefinition::class, 'user_id', 'id'),
-            (new OneToManyAssociationField('importExportLogEntries', ImportExportLogDefinition::class, 'user_id', 'id'))->addFlags(new SetNullOnDelete()),
             new ManyToManyAssociationField('aclRoles', AclRoleDefinition::class, AclUserRoleDefinition::class, 'user_id', 'acl_role_id'),
             new OneToOneAssociationField('recoveryUser', 'id', 'user_id', UserRecoveryDefinition::class, false),
             (new StringField('store_token', 'storeToken'))->removeFlag(ApiAware::class),
-            new OneToManyAssociationField('createdOrders', OrderDefinition::class, 'created_by_id', 'id'),
-            new OneToManyAssociationField('updatedOrders', OrderDefinition::class, 'updated_by_id', 'id'),
-            new OneToManyAssociationField('createdCustomers', CustomerDefinition::class, 'created_by_id', 'id'),
-            new OneToManyAssociationField('updatedCustomers', CustomerDefinition::class, 'updated_by_id', 'id'),
         ]);
     }
 }
