@@ -292,7 +292,7 @@ class Kernel extends HttpKernel
                 'kernel.shuwei_version_revision' => $this->shuweiVersionRevision,
                 'kernel.shuwei_core_dir' => $coreDir,
                 'kernel.plugin_dir' => $pluginDir,
-                'kernel.app_dir' => rtrim($this->getProjectDir(), '/') . '/custom/apps',
+                'kernel.app_dir' => rtrim($this->getProjectDir(), '/') . '/apps',
                 'kernel.active_plugins' => $activePluginMeta,
                 'kernel.plugin_infos' => $this->pluginLoader->getPluginInfos(),
                 'kernel.supported_api_versions' => [2, 3, 4],

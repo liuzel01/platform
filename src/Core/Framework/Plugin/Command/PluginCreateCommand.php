@@ -114,7 +114,7 @@ EOL;
 
         $name = ucfirst((string) $name);
 
-        $directory = $this->projectDir . '/custom/plugins/' . $name;
+        $directory = $this->projectDir . '/plugins/' . $name;
 
         if (file_exists($directory)) {
             throw new \RuntimeException(sprintf('Plugin directory %s already exists', $directory));

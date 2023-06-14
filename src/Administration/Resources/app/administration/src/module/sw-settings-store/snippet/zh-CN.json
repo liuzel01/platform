@@ -1,0 +1,16 @@
+{
+  "sw-settings-store": {
+    "general": {
+      "mainMenuItemGeneral": "Shuwei Account",
+      "textHeadline": "Shuwei Account",
+      "description": "Change your Shuwei Account settings here.",
+      "buttonSave": "Save",
+      "messageSaveSuccess": "Your Shuwei Account information have been saved."
+    },
+    "detail": {
+      "titleCard": "Settings",
+      "labelHost": "Licence domain",
+      "placeholderHost": "Enter the licence domain (shop domain), specified in your Shuwei Account."
+    }
+  }
+}

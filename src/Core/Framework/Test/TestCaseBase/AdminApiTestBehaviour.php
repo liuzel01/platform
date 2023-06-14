@@ -135,8 +135,7 @@ trait AdminApiTestBehaviour
 
         $user = [
             'id' => $userId,
-            'first_name' => $username,
-            'last_name' => '',
+            'name' => $username,
             'username' => $username,
             'password' => password_hash($password, \PASSWORD_BCRYPT),
             'locale_id' => $this->getLocaleOfSystemLanguage($connection),

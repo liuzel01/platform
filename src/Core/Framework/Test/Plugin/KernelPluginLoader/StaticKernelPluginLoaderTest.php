@@ -141,7 +141,7 @@ class StaticKernelPluginLoaderTest extends TestCase
         $projectDir = TEST_PROJECT_DIR;
 
         $loader = new StaticKernelPluginLoader($this->classLoader);
-        static::assertSame($projectDir . '/custom/plugins', $loader->getPluginDir($projectDir));
+        static::assertSame($projectDir . '/plugins', $loader->getPluginDir($projectDir));
 
         $loader = new StaticKernelPluginLoader($this->classLoader, 'foo/bar');
         static::assertSame($projectDir . '/foo/bar', $loader->getPluginDir($projectDir));
@@ -151,8 +151,8 @@ class StaticKernelPluginLoaderTest extends TestCase
     {
         $projectDir = TEST_PROJECT_DIR;
 
-        $loader = new StaticKernelPluginLoader($this->classLoader, $projectDir . '/custom/plugins');
-        static::assertSame($projectDir . '/custom/plugins', $loader->getPluginDir($projectDir));
+        $loader = new StaticKernelPluginLoader($this->classLoader, $projectDir . '/plugins');
+        static::assertSame($projectDir . '/plugins', $loader->getPluginDir($projectDir));
 
         $loader = new StaticKernelPluginLoader($this->classLoader, '/foo/bar');
         static::assertSame('/foo/bar', $loader->getPluginDir($projectDir));
@@ -310,7 +310,7 @@ class StaticKernelPluginLoaderTest extends TestCase
         $classLoader = $this->createMock(ClassLoader::class);
 
         $plugin = $this->getInstalledInactivePlugin();
-        $plugin->setPath(TEST_PROJECT_DIR . '/custom/plugins/TestPlugin');
+        $plugin->setPath(TEST_PROJECT_DIR . '/plugins/TestPlugin');
         $plugin->setAutoload([
             'psr-0' => [
                 'Test_' => 'src',
@@ -318,7 +318,7 @@ class StaticKernelPluginLoaderTest extends TestCase
         ]);
 
         $classLoader->expects(static::once())->method('add')->with('Test_', [
-            TEST_PROJECT_DIR . '/custom/plugins/TestPlugin/src',
+            TEST_PROJECT_DIR . '/plugins/TestPlugin/src',
         ], false);
 
         $loader = new StaticKernelPluginLoader($classLoader, null, [$plugin->jsonSerialize()]);
@@ -330,7 +330,7 @@ class StaticKernelPluginLoaderTest extends TestCase
         $classLoader = $this->createMock(ClassLoader::class);
 
         $plugin = $this->getInstalledInactivePlugin();
-        $plugin->setPath('/custom/plugins/TestPlugin');
+        $plugin->setPath('/plugins/TestPlugin');
         $plugin->setAutoload([
             'psr-0' => [
                 'Test_' => 'src',
@@ -338,7 +338,7 @@ class StaticKernelPluginLoaderTest extends TestCase
         ]);
 
         $this->expectException(KernelPluginLoaderException::class);
-        $this->expectExceptionMessage('Failed to load plugin "SwagTest". Reason: Plugin dir /custom/plugins/TestPlugin needs to be a sub-directory of the project dir ' . TEST_PROJECT_DIR);
+        $this->expectExceptionMessage('Failed to load plugin "SwagTest". Reason: Plugin dir /plugins/TestPlugin needs to be a sub-directory of the project dir ' . TEST_PROJECT_DIR);
 
         $loader = new StaticKernelPluginLoader($classLoader, null, [$plugin->jsonSerialize()]);
         $loader->initializePlugins(TEST_PROJECT_DIR);
@@ -349,7 +349,7 @@ class StaticKernelPluginLoaderTest extends TestCase
         $classLoader = $this->createMock(ClassLoader::class);
 
         $plugin = $this->getInstalledInactivePlugin();
-        $plugin->setPath('custom/plugins/TestPlugin');
+        $plugin->setPath('plugins/TestPlugin');
         $plugin->setAutoload([
             'psr-0' => [
                 'Test_' => 'src',
@@ -357,7 +357,7 @@ class StaticKernelPluginLoaderTest extends TestCase
         ]);
 
         $classLoader->expects(static::once())->method('add')->with('Test_', [
-            TEST_PROJECT_DIR . '/custom/plugins/TestPlugin/src',
+            TEST_PROJECT_DIR . '/plugins/TestPlugin/src',
         ], false);
 
         $loader = new StaticKernelPluginLoader($classLoader, null, [$plugin->jsonSerialize()]);
@@ -369,7 +369,7 @@ class StaticKernelPluginLoaderTest extends TestCase
         $classLoader = $this->createMock(ClassLoader::class);
 
         $plugin = $this->getInstalledInactivePlugin();
-        $plugin->setPath('custom/plugins/TestPlugin');
+        $plugin->setPath('plugins/TestPlugin');
         $plugin->setAutoload([
             'psr-0' => [
                 'Test_' => ['src', 'components'],
@@ -377,8 +377,8 @@ class StaticKernelPluginLoaderTest extends TestCase
         ]);
 
         $classLoader->expects(static::once())->method('add')->with('Test_', [
-            TEST_PROJECT_DIR . '/custom/plugins/TestPlugin/src',
-            TEST_PROJECT_DIR . '/custom/plugins/TestPlugin/components',
+            TEST_PROJECT_DIR . '/plugins/TestPlugin/src',
+            TEST_PROJECT_DIR . '/plugins/TestPlugin/components',
         ], false);
 
         $loader = new StaticKernelPluginLoader($classLoader, null, [$plugin->jsonSerialize()]);

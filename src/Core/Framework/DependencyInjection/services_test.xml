@@ -103,14 +103,6 @@
             <tag name="messenger.message_handler"/>
         </service>
 
-        <service id="Shuwei\Core\Content\Test\Category\Service\CountingEntityReader" decorates="Shuwei\Core\Framework\DataAbstractionLayer\Read\EntityReaderInterface">
-            <argument type="service" id="Shuwei\Core\Content\Test\Category\Service\CountingEntityReader.inner"/>
-        </service>
-
-        <service id="Shuwei\Core\Content\Test\Category\Service\CountingEntitySearcher" decorates="Shuwei\Core\Framework\DataAbstractionLayer\Search\EntitySearcherInterface">
-            <argument type="service" id="Shuwei\Core\Content\Test\Category\Service\CountingEntitySearcher.inner"/>
-        </service>
-
         <service id="Shuwei\Core\Framework\Test\TestCacheClearer">
             <argument type="collection">
                 <argument type="service" id="cache.object" />

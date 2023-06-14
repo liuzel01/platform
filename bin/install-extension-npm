@@ -39,7 +39,7 @@ jq -c '.[]' "var/plugins.json" | while read -r config; do
   name=$(echo "$config" | jq -r '.technicalName')
 
   for bundlePath in "${bundlePaths[@]}"; do
-    if [[ $path == "custom/plugins/"* && -f "$bundlePath/../package.json" && ! -d "$bundlePath/../node_modules" ]]; then
+    if [[ $path == "plugins/"* && -f "$bundlePath/../package.json" && ! -d "$bundlePath/../node_modules" ]]; then
       bundleName="administration"
 
       if [[ "$bundlePath" == *"storefront"* ]]; then

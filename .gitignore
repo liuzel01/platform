@@ -121,7 +121,7 @@ config/jwt/
 config/packages/
 config/services*
 
-custom
+plugins
 files/*
 install.lock
 docker-compose.override.yaml

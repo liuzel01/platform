@@ -265,7 +265,7 @@ class KernelPluginIntegrationTest extends TestCase
             'kernel.shuwei_version' => self::getTestVersion(),
             'kernel.shuwei_version_revision' => self::getTestRevision(),
             'kernel.project_dir' => TEST_PROJECT_DIR,
-            'kernel.plugin_dir' => TEST_PROJECT_DIR . '/custom/plugins',
+            'kernel.plugin_dir' => TEST_PROJECT_DIR . '/plugins',
         ];
 
         $actualParameters = [];

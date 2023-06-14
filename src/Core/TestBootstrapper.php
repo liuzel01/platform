@@ -53,7 +53,7 @@ class TestBootstrapper
             \define('TEST_PROJECT_DIR', $_SERVER['PROJECT_ROOT']);
         }
 
-        $commercialComposerJson = $_SERVER['PROJECT_ROOT'] . '/custom/plugins/SwagCommercial/composer.json';
+        $commercialComposerJson = $_SERVER['PROJECT_ROOT'] . '/plugins/SwagCommercial/composer.json';
 
         if ($this->commercialEnabled && file_exists($commercialComposerJson)) {
             $this->addCallingPlugin($commercialComposerJson);
@@ -129,7 +129,7 @@ class TestBootstrapper
             return $this->projectDir = $_ENV['PROJECT_ROOT'];
         }
 
-        // only test cwd if it's not platform embedded (custom/plugins)
+        // only test cwd if it's not platform embedded (plugins)
         if (!$this->platformEmbedded && \is_dir('vendor')) {
             return $this->projectDir = (string) getcwd();
         }
