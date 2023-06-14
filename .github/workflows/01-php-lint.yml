@@ -1,0 +1,43 @@
+name: PHP Lint
+
+on:
+  push:
+    branches:
+      - trunk
+  pull_request:
+    paths:
+      - composer.json
+      - 'changelog/**/*.md'
+      - 'src/**/snippet/**/*.json'
+      - '**.php'
+      - '.github/workflows/01-php-lint.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: "PHP Analyse"
+
+    steps:
+      - name: Clone platform
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: '0'
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+
+      - name: Install Shopware
+        run: |
+          composer install
+
+      - name: Check Code
+        run: |
+          composer run ecs -- --no-progress-bar
+          composer run phpstan -- --error-format=github --no-progress | tee phpstan-report.json
+          composer run lint:changelog
+          composer run lint:snippets
+          git remote add bc-checker-upstream https://github.com/shopware/platform.git
+          git fetch bc-checker-upstream
+          composer run bc-check
