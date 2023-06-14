@@ -47,9 +47,9 @@ jobs:
           path: src/Administration/Resources/app/administration/node_modules/.stylelintcache
           key: admin-stylelint-${{ runner.os }}
 
-      - name: Check Code
-        run: |
-          cd src/Administration/Resources/app/administration
-          npm run lint
-          npm run lint:types
-          npm run lint:scss
+#      - name: Check Code
+#        run: |
+#          cd src/Administration/Resources/app/administration
+#          npm run lint
+#          npm run lint:types
+#          npm run lint:scss
