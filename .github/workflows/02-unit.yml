@@ -65,7 +65,6 @@ jobs:
       DATABASE_URL: mysql://root:root@database:3306/root
       APP_URL: http://localhost:8000
       APP_SECRET: devsecret
-      OPENSEARCH_URL: elasticsearch:9200
       BLUE_GREEN_DEPLOYMENT: 1
 
     steps:
