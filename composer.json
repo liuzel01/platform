@@ -10,7 +10,7 @@
     "license": "Apache-2.0",
     "replace": {
         "shuwei/core": "self.version",
-        "shuwei/administration": "self.version",
+        "shuwei/administration": "self.version"
     },
     "support": {
         "issues": "https://issues.shuwei.com",
