@@ -10,10 +10,10 @@ permissions:
   contents: read
 
 jobs:
-  build:
-
+  php:
     runs-on: ubuntu-latest
-
+    environment:
+      name: prod
     steps:
       - name: Clone platform
         uses: actions/checkout@v3
@@ -22,6 +22,15 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.1'
-      - name: Install Shopware
+      - name: Install Shuwei Platform
         run: |
           composer install
+    services:
+      database:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: ${{secrets.MYSQL_USER}}
+          MYSQL_DATABASE: ${{secrets.MYSQL_PWD}}
+        options: '--mount="type=tmpfs,destination=/var/lib/mysql" --health-cmd="mysqladmin ping -h 127.0.0.1" --health-interval=5s --health-timeout=2s --health-retries=3'
+        ports:
+          - "3306:3306"
