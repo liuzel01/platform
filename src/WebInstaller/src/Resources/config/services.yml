@@ -1,0 +1,14 @@
+services:
+  _defaults:
+    autoconfigure: true
+    autowire: true
+    public: false
+
+  Shuwei\WebInstaller\:
+    resource: '../../*'
+    exclude: '../../{Command,Controller,Resources,Tests}'
+
+  Shuwei\WebInstaller\Controller\:
+    resource: '../../Controller'
+    public: true
+    tags: ['controller.service_arguments']
