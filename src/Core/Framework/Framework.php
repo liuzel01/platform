@@ -97,6 +97,7 @@ class Framework extends Bundle
         $container->addCompilerPass(new RouteScopeCompilerPass());
         $container->addCompilerPass(new AssetRegistrationCompilerPass());
         $container->addCompilerPass(new FilesystemConfigMigrationCompilerPass());
+        $container->addCompilerPass(new IncrementerGatewayCompilerPass());
         $container->addCompilerPass(new RateLimiterCompilerPass());
         $container->addCompilerPass(new AutoconfigureCompilerPass(), PassConfig::TYPE_BEFORE_OPTIMIZATION, 1000);
 

@@ -50,7 +50,6 @@ import type ExtensionHelperService from './app/service/extension-helper.service'
 import type AsyncComponentFactory from './core/factory/async-component.factory';
 import type FilterFactory from './core/factory/filter.factory';
 import type StateStyleService from './app/service/state-style.service';
-import type RuleConditionService from './app/service/rule-condition.service';
 import type SystemConfigApiService from './core/service/api/system-config.api.service';
 import type ConfigApiService from './core/service/api/config.api.service';
 import type WorkerNotificationFactory from './core/factory/worker-notification.factory';
@@ -119,7 +118,6 @@ declare global {
         validationService: $TSFixMe,
         entityValidationService: EntityValidationService,
         timezoneService: $TSFixMe,
-        ruleConditionDataProviderService: RuleConditionService,
         productStreamConditionService: $TSFixMe,
         customFieldDataProviderService: $TSFixMe,
         extensionHelperService: ExtensionHelperService,

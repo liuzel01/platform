@@ -79,7 +79,7 @@ class ApiController extends AbstractController
     ) {
     }
 
-    #[Route(path: '/api/_action/clone/{entity}/{id}', name: 'api.clone', methods: ['POST'], requirements: ['version' => '\d+', 'entity' => '[a-zA-Z-]+', 'id' => '[0-9a-f]{32}'])]
+    #[Route(path: '/api/_action/clone/{entity}/{id}', name: 'api.clone', requirements: ['version' => '\d+', 'entity' => '[a-zA-Z-]+', 'id' => '[0-9a-f]{32}'], methods: ['POST'])]
     public function clone(Context $context, string $entity, string $id, Request $request): JsonResponse
     {
         $behavior = new CloneBehavior(
@@ -114,7 +114,7 @@ class ApiController extends AbstractController
         return new JsonResponse(['id' => $newId]);
     }
 
-    #[Route(path: '/api/_action/version/{entity}/{id}', name: 'api.createVersion', methods: ['POST'], requirements: ['version' => '\d+', 'entity' => '[a-zA-Z-]+', 'id' => '[0-9a-f]{32}'])]
+    #[Route(path: '/api/_action/version/{entity}/{id}', name: 'api.createVersion', requirements: ['version' => '\d+', 'entity' => '[a-zA-Z-]+', 'id' => '[0-9a-f]{32}'], methods: ['POST'])]
     public function createVersion(Request $request, Context $context, string $entity, string $id): Response
     {
         $entity = $this->urlToSnakeCase($entity);
@@ -146,7 +146,7 @@ class ApiController extends AbstractController
         ]);
     }
 
-    #[Route(path: '/api/_action/version/merge/{entity}/{versionId}', name: 'api.mergeVersion', methods: ['POST'], requirements: ['version' => '\d+', 'entity' => '[a-zA-Z-]+', 'versionId' => '[0-9a-f]{32}'])]
+    #[Route(path: '/api/_action/version/merge/{entity}/{versionId}', name: 'api.mergeVersion', requirements: ['version' => '\d+', 'entity' => '[a-zA-Z-]+', 'versionId' => '[0-9a-f]{32}'], methods: ['POST'])]
     public function mergeVersion(Context $context, string $entity, string $versionId): JsonResponse
     {
         $entity = $this->urlToSnakeCase($entity);
@@ -166,7 +166,7 @@ class ApiController extends AbstractController
         return new JsonResponse(null, Response::HTTP_NO_CONTENT);
     }
 
-    #[Route(path: '/api/_action/version/{versionId}/{entity}/{entityId}', name: 'api.deleteVersion', methods: ['POST'], requirements: ['version' => '\d+', 'entity' => '[a-zA-Z-]+', 'id' => '[0-9a-f]{32}'])]
+    #[Route(path: '/api/_action/version/{versionId}/{entity}/{entityId}', name: 'api.deleteVersion', requirements: ['version' => '\d+', 'entity' => '[a-zA-Z-]+', 'id' => '[0-9a-f]{32}'], methods: ['POST'])]
     public function deleteVersion(Context $context, string $entity, string $entityId, string $versionId): JsonResponse
     {
         if (!Uuid::isValid($versionId)) {

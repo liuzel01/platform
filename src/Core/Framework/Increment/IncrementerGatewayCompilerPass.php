@@ -2,12 +2,10 @@
 
 namespace Shuwei\Core\Framework\Increment;
 
-use Shuwei\Core\Framework\Adapter\Cache\RedisConnectionFactory;
 use Shuwei\Core\Framework\Log\Package;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
-use Symfony\Component\DependencyInjection\Reference;
 
 /**
  * @deprecated tag:v6.6.0 - reason:becomes-internal - Compiler passes are always internal
@@ -85,30 +83,8 @@ class IncrementerGatewayCompilerPass implements CompilerPassInterface
                 $definition = new Definition($referenceDefinition->getClass());
                 $definition->setArguments($referenceDefinition->getArguments());
                 $definition->setTags($referenceDefinition->getTags());
-
                 $container->setDefinition($active, $definition);
-
                 return $active;
-            case 'redis':
-                $definition = new Definition('Redis');
-
-                if (!\array_key_exists('url', $config)) {
-                    return $active;
-                }
-
-                $definition->setFactory([new Reference(RedisConnectionFactory::class), 'create'])->addArgument($config['url']);
-
-                $adapter = sprintf('shuwei.increment.%s.redis_adapter', $pool);
-
-                $container->setDefinition($adapter, $definition);
-
-                $definition = new Definition(RedisIncrementer::class);
-                $definition->addArgument(new Reference($adapter));
-
-                $container->setDefinition($active, $definition);
-
-                return $active;
-
             default:
                 return $active;
         }
