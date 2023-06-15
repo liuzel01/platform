@@ -66,8 +66,7 @@
       },
       "user-grid": {
         "labelUsername": "User name",
-        "labelFirstName": "First name",
-        "labelLastName": "Last name",
+        "labelName": "name",
         "labelRoles": "Roles",
         "labelEmail": "Email address",
         "contextMenuEdit": "Edit",
