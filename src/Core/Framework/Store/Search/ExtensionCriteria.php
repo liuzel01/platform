@@ -56,7 +56,6 @@ class ExtensionCriteria extends Struct
                 $criteria->addFilter($filter);
             }
         }
-
         return $criteria;
     }
 
