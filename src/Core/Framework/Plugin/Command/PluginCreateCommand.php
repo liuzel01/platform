@@ -32,8 +32,8 @@ class PluginCreateCommand extends Command
   "extra": {
     "shuwei-plugin-class": "#namespace#\\\\#class#",
     "label": {
-      "de-DE": "Skeleton plugin",
-      "en-GB": "Skeleton plugin"
+      "zh-CN": "插件结构",
+      "en-US": "Skeleton plugin"
     }
   }
 }
