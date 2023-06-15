@@ -7,7 +7,8 @@
   "scripts": {
     "preinstall": "node src/scripts/validate-package-json/index.mjs",
     "postinstall": "patch-package",
-    "dev": "mode=development webpack-dev-server",
+    "dev-serve": "mode=development webpack-dev-server",
+    "dev": "mode=development webpack",
     "build": "mode=production webpack",
     "create-test": "node src/scripts/create-spec-file/index.mjs",
     "unit": "jest --config jest.config.js --ci",
