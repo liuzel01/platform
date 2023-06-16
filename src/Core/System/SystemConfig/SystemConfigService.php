@@ -232,7 +232,8 @@ class SystemConfigService implements ResetInterface
 
             $event = new BeforeSystemConfigChangedEvent($key, $value);
             $this->eventDispatcher->dispatch($event);
-
+            // Use modified value provided by potential event subscribers.
+            $value = $event->getValue();
             // On null value, delete the config
             if ($value === null) {
                 $toBeDeleted[] = $key;
