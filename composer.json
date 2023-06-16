@@ -75,6 +75,18 @@
             "@init:db",
             "@init:js",
             "@build:admin:js"
+        ],
+        "hook:pre-commit": [
+            "bin/pre-commit"
+        ],
+        "hook:pre-commit:install": [
+            "ln -sf $PWD/bin/pre-commit .git/hooks/pre-commit"
+        ],
+        "hook:pre-push": [
+            "bin/pre-commit"
+        ],
+        "hook:pre-push:install": [
+            "ln -sf $PWD/bin/pre-push .git/hooks/pre-push"
         ]
     },
 
