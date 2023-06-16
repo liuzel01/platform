@@ -44,7 +44,7 @@ class InstallerLocaleListenerTest extends TestCase
 
         yield 'falls back to en if no locale can be found' => [
             $request,
-            'en',
+            'zh',
         ];
 
         $request = new Request();
@@ -53,7 +53,7 @@ class InstallerLocaleListenerTest extends TestCase
 
         yield 'falls back to en if browser header is not supported' => [
             $request,
-            'en',
+            'zh',
         ];
 
         $request = new Request();
@@ -100,7 +100,7 @@ class InstallerLocaleListenerTest extends TestCase
     {
         $request = new Request(['language' => 'de']);
         $session = new Session(new MockArraySessionStorage());
-        $session->set('language', 'en');
+        $session->set('language', 'zh');
         $request->setSession($session);
 
         $listener = new InstallerLocaleListener();

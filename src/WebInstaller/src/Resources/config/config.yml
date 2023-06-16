@@ -6,7 +6,7 @@ framework:
   default_locale: en
   http_method_override: false
   translator:
-    fallbacks: [ 'en' ]
+    fallbacks: [ 'zh' ]
     cache_dir: null
     default_path: '%kernel.project_dir%/Resources/translations'
   session:

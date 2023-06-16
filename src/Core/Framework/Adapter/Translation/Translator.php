@@ -194,7 +194,7 @@ class Translator extends AbstractTranslator
         if ($this->translator instanceof SymfonyTranslator) {
             // Reset FallbackLocale in memory cache of symfony implementation
             // set fallback values from Framework/Resources/config/translation.yaml
-            $this->translator->setFallbackLocales(['en_GB', 'en']);
+            $this->translator->setFallbackLocales(['zh_CN', 'zh']);
         }
     }
 
