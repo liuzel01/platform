@@ -53,7 +53,6 @@ import type StateStyleService from './app/service/state-style.service';
 import type SystemConfigApiService from './core/service/api/system-config.api.service';
 import type ConfigApiService from './core/service/api/config.api.service';
 import type WorkerNotificationFactory from './core/factory/worker-notification.factory';
-import type ImportExportService from './module/sw-import-export/service/importExport.service';
 
 // trick to make it an "external module" to support global type extension
 
@@ -149,7 +148,6 @@ declare global {
         filterFactory: FilterFactoryData,
         systemConfigApiService: SystemConfigApiService,
         configService: ConfigApiService,
-        importExport: ImportExportService,
     }
     // eslint-disable-next-line @typescript-eslint/no-empty-interface
     interface InitContainer extends SubContainer<'init'>{

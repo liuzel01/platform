@@ -16,32 +16,32 @@
       "CONTENT__INVALID_CUSTOM_ENTITY_FIELD_TYPE": "Field type cannot be rendered. Please contact your administrator."
     },
     "default": {
-      "add": "Add",
-      "apply": "Apply",
-      "cancel": "Cancel",
-      "delete": "Delete",
-      "remove": "Remove",
-      "edit": "Edit",
-      "duplicate": "Duplicate",
-      "copy": "Copy",
-      "error": "Error",
-      "warning": "Warning",
-      "save": "Save",
-      "success": "Success",
-      "info": "Info",
-      "yes": "Yes",
-      "no": "No",
-      "confirm": "Confirm",
+      "add": "添加",
+      "apply": "申请",
+      "cancel": "取消",
+      "delete": "删除",
+      "remove": "移除",
+      "edit": "编辑",
+      "duplicate": "副本",
+      "copy": "复制",
+      "error": "错误",
+      "warning": "警告",
+      "save": "保存",
+      "success": "成功",
+      "info": "信息",
+      "yes": "是",
+      "no": "否",
+      "confirm": "确认",
       "view": "View",
       "ascending": "Ascending",
       "descending": "Descending",
       "xTimesIn": "{n} times in",
-      "open": "Open",
-      "close": "Close",
-      "from": "From",
-      "to": "To",
-      "bulkEdit": "Bulk edit",
-      "discard": "Discard"
+      "open": "打开",
+      "close": "关闭",
+      "from": "从",
+      "to": "到",
+      "bulkEdit": "批量编辑",
+      "discard": "丢弃"
     },
     "notification": {
       "notificationSaveErrorMessage": "An error occurred while saving the entity \"{entityName}\".",
@@ -56,10 +56,10 @@
     },
     "notification-center": {
       "title": "通知",
-      "emptyText": "Nothing going on lately.",
+      "emptyText": "暂无信息.",
       "deleteModal": {
-        "title": "Delete notifications",
-        "textConfirm": "Are you sure you really want to delete all notifications?"
+        "title": "删除通知",
+        "textConfirm": "您确定要删除所有通知吗?"
       },
       "worker-listener": {
         "thumbnailGeneration": {
@@ -141,7 +141,7 @@
       }
     },
     "sw-admin-menu": {
-      "linkLogout": "Logout",
+      "linkLogout": "退出",
       "linkMinimizeMenu": "Collapse menu",
       "textShuweiAdmin": "Shuwei Administration",
       "textProjectName": "Administration",

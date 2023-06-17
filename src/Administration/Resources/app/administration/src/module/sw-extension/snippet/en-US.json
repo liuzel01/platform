@@ -28,8 +28,8 @@
       "account": {
         "headline": "Shuwei Account",
         "isLoggedIn": "Shuwei Account succesfully connected. Go to the \"App\" or \"Themes\" tab and check if your purchased extensions are listed. If not, check head over to your Showare Account and make sure the correct domain for extensions has been set.",
-        "login": "Login",
-        "logout": "Logout",
+        "login": "登陆",
+        "logout": "退出",
         "loginMessage": "Login with you Shuwei Account to access extensions you bought on store.shuwei.com",
         "register": "Sign up now and become part of the Shuwei community!",
         "registerNow": "Sign up now",

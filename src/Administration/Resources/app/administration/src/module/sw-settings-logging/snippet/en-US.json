@@ -1,28 +1,28 @@
 {
   "sw-settings-logging": {
     "general": {
-      "mainMenuItemGeneral": "事件日志",
-      "placeholderSearchBar": "查找日志..."
+      "mainMenuItemGeneral": "Event logs",
+      "placeholderSearchBar": "Search logs..."
     },
     "list": {
-      "title": "日志列表",
-      "columnDate": "时间",
-      "columnMessage": "消息",
-      "columnLevel": "优先级",
-      "columnContent": "内容",
-      "actionShowInfo": "显示详情...",
-      "levelDebug": "调试",
+      "title": "Logs",
+      "columnDate": "Date",
+      "columnMessage": "Message",
+      "columnLevel": "Priority",
+      "columnContent": "Contents",
+      "actionShowInfo": "View details...",
+      "levelDebug": "Debug",
       "levelInfo": "Info",
-      "levelNotice": "通知",
-      "levelWarning": "警告",
-      "levelError": "错误",
+      "levelNotice": "Notice",
+      "levelWarning": "Warning",
+      "levelError": "Error",
       "levelCritical": "Critical",
       "levelAlert": "Alert",
       "levelEmergency": "Emergency",
       "titleSidebarItemRefresh": "Refresh"
     },
     "entryInfo": {
-      "title": "日志信息",
+      "title": "Log information",
       "tabRaw": "Raw",
       "actionClose": "Close"
     },

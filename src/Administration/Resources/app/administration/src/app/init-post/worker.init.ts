@@ -89,12 +89,6 @@ function enableAdminWorker(
         getWorker().postMessage({ type: 'logout' });
     });
 
-    const importExportService = Shuwei.Service('importExport');
-
-    importExportService.addOnProgressStartedListener(() => {
-        getWorker().postMessage({ ...getMessage(), ...{ type: 'consumeReset' } });
-    });
-
     enabled = true;
 }
 

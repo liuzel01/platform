@@ -26,10 +26,10 @@
         "update": "更新时间"
       },
       "account": {
-        "headline": "Shuwei Account",
+        "headline": "官方账号",
         "isLoggedIn": "Shuwei Account succesfully connected. Go to the \"App\" or \"Themes\" tab and check if your purchased extensions are listed. If not, check head over to your Showare Account and make sure the correct domain for extensions has been set.",
-        "login": "Login",
-        "logout": "Logout",
+        "login": "登陆",
+        "logout": "退出",
         "loginMessage": "Login with you Shuwei Account to access extensions you bought on store.shuwei.com",
         "register": "Sign up now and become part of the Shuwei community!",
         "registerNow": "Sign up now",
@@ -140,8 +140,8 @@
       }
     },
     "detail": {
-      "labelButtonAddExtension": "Add extension",
-      "labelButtonAddTheme": "Add theme",
+      "labelButtonAddExtension": "添加插件",
+      "labelButtonAddTheme": "添加主题",
       "labelButtonOpenExtension": "Open extension",
       "labelButtonOpenTheme": "Open theme",
       "labelButtonInstallExtension": "Install extension",
@@ -149,16 +149,16 @@
       "labelBy": "by",
       "numberOfRatings": "{count} review | {count} reviews",
       "noRatings": "No ratings yet",
-      "cardTitleInformation": "Information",
-      "labelButtonReadMore": "Read more",
-      "cardTitleDetails": "Details",
+      "cardTitleInformation": "基本信息",
+      "labelButtonReadMore": "阅读更多",
+      "cardTitleDetails": "详细信息",
       "details": {
         "labelCategory": "Category | Categories",
-        "labelVersion": "Version",
-        "labelUpdatedAt": "Last updated",
-        "labelLanguages": "Languages",
-        "labelWebsite": "Developer website",
-        "labelPrivacy": "Privacy policy"
+        "labelVersion": "版本",
+        "labelUpdatedAt": "最后更新时间",
+        "labelLanguages": "语言",
+        "labelWebsite": "开发者网站",
+        "labelPrivacy": "隐私条款"
       },
       "cardTitleFAQ": "FAQ",
       "cardTitleChangelog": "Changelog",
@@ -231,10 +231,10 @@
           "labelExtensionVersion": "Version: {extensionVersion}"
         },
         "sw-extension-ratings-card": {
-          "cardTitle": "Ratings and reviews",
-          "labelMoreReviewsBtn": "Read more reviews",
-          "footerHeadline": "Add a review",
-          "labelNoReviews": "This extension hasn't received any ratings or reviews yet."
+          "cardTitle": "评分和评论",
+          "labelMoreReviewsBtn": "更多评论",
+          "footerHeadline": "添加评论",
+          "labelNoReviews": "此扩展程序尚未收到任何评分或评论."
         },
         "sw-extension-review-creation-inputs": {
           "title": "Rate extension",
@@ -244,7 +244,7 @@
           "labelText": "Review (optional)"
         },
         "sw-extension-rating-modal": {
-          "title": "Create a review"
+          "title": "创建评论"
         }
       },
       "sw-extension-card-base": {
