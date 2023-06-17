@@ -80,12 +80,7 @@ class SystemInstallCommand extends Command
                 '--version-selection-mode' => 'all',
             ],
             [
-                'command' => 'system:configure-shop',
-                '--shop-name' => $input->getOption('shop-name'),
-                '--shop-email' => $input->getOption('shop-email'),
-                '--shop-locale' => $input->getOption('shop-locale'),
-                '--shop-currency' => $input->getOption('shop-currency'),
-                '--no-interaction' => true,
+                'command' => 'system:configure-system',
             ],
             [
                 'command' => 'dal:refresh:index',

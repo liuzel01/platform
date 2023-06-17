@@ -9,6 +9,7 @@ $bundles = [
     Symfony\Bundle\DebugBundle\DebugBundle::class => ['dev' => true, 'test' => true],
     Shuwei\Core\Framework\Framework::class => ['all' => true],
     Shuwei\Core\System\System::class => ['all' => true],
+    Shuwei\Core\Content\Content::class => ['all' => true],
     Shuwei\Core\DevOps\DevOps::class => ['all' => true],
     Shuwei\Core\Maintenance\Maintenance::class => ['all' => true],
     Shuwei\Administration\Administration::class => ['all' => true],

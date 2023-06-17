@@ -31,9 +31,35 @@ class Configuration implements ConfigurationInterface
                 ->append($this->createStoreSection())
                 ->append($this->createProfilerSection())
                 ->append($this->createLoggerSection())
+                ->append($this->createMediaSection())
+                ->append($this->createCdnSection())
             ->end();
 
         return $treeBuilder;
+    }
+    private function createCdnSection(): ArrayNodeDefinition
+    {
+        $rootNode = (new TreeBuilder('cdn'))->getRootNode();
+        $rootNode
+            ->children()
+                ->scalarNode('url')->end()
+                ->scalarNode('strategy')->end()
+            ->end();
+
+        return $rootNode;
+    }
+    private function createMediaSection(): ArrayNodeDefinition
+    {
+        $rootNode = (new TreeBuilder('media'))->getRootNode();
+        $rootNode
+            ->children()
+                ->booleanNode('enable_url_upload_feature')->end()
+                ->booleanNode('enable_url_validation')->end()
+                ->scalarNode('url_upload_max_size')->defaultValue(0)
+                    ->validate()->always()->then(fn ($value) => abs(MemorySizeCalculator::convertToBytes((string) $value)))->end()
+            ->end();
+
+        return $rootNode;
     }
     private function createLoggerSection(): ArrayNodeDefinition
     {

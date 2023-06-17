@@ -385,7 +385,6 @@ export default class VueAdapter extends ViewAdapter {
             // @ts-expect-error - key is safe because we iterate through the registry
             messages[key] = localeMessages;
         });
-        console.log(messages);
         const lastKnownLocale = this.localeFactory.getLastKnownLocale();
         void store.dispatch('setAdminLocale', lastKnownLocale);
 

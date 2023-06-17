@@ -148,7 +148,7 @@
       "administrator": "Administrator",
       "navigation": {
         "mainMenuItemCatalogue": "Catalogues",
-        "mainMenuItemContent": "Content",
+        "mainMenuItemContent": "内容",
         "mainMenuItemMarketing": "Marketing"
       }
     },
@@ -180,7 +180,7 @@
       }
     },
     "sw-file-input": {
-      "buttonChoose": "Choose file",
+      "buttonChoose": "选择文件",
       "notification": {
         "invalidFileType": {
           "message": "The selected file \"{name}\" has an unsupported format. Please use one of the following types: {supportedTypes}."
@@ -264,40 +264,40 @@
       "labelContextMenuDissolve": "Dissolve",
       "notification": {
         "errorBlankItemName": {
-          "message": "Folder could not be saved: Please enter a name."
+          "message": "无法保存文件夹：请输入名称."
         },
         "renamingError": {
-          "message": "Error saving folder."
+          "message": "保存文件夹时出错."
         },
         "errorInvalidItemName": {
-          "message": "Folder could not be saved: Please enter a valid name."
+          "message": "无法保存文件夹：请输入有效名称."
         }
       }
     },
     "sw-media-media-item": {
-      "labelContextMenuCopyLink": "Copy Link",
-      "labelContextMenuReplace": "Replace",
-      "labelContextMenuRename": "Rename",
-      "labelContextMenuDetail": "Details",
-      "labelContextMenuMove": "Move",
+      "labelContextMenuCopyLink": "复制链接",
+      "labelContextMenuReplace": "替换",
+      "labelContextMenuRename": "重命名",
+      "labelContextMenuDetail": "详情",
+      "labelContextMenuMove": "移动",
       "notification": {
         "errorBlankItemName": {
-          "message": "Media item could not be saved: Please enter a name."
+          "message": "无法保存媒体项：请输入名称."
         },
         "renamingSuccess": {
-          "message": "Media item has been renamed."
+          "message": "媒体项已重命名."
         },
         "renamingError": {
-          "message": "Error saving file."
+          "message": "保存文件时出错."
         }
       },
-      "labelUploading": "Uploading..."
+      "labelUploading": "上传中..."
     },
     "sw-media-modal-delete": {
       "titleModal": {
-        "media": "Delete media files",
-        "folder": "Delete folders",
-        "mediaAndFolder": "Delete folders and media files"
+        "media": "删除媒体文件",
+        "folder": "删除目录",
+        "mediaAndFolder": "同时删除目录和媒体文件"
       },
       "deleteMessage": {
         "media": "Are you sure you want to delete \"{name}\"? | Are you sure you want to delete these {count} media files?",
@@ -560,19 +560,19 @@
       "messageNoResults": "No results found for \"{term}\"."
     },
     "sw-search-bar": {
-      "messageNoResults": "No results found for \"{term}\".",
-      "messageNoTypeResults": "No type found.",
-      "placeholderSearchField": "Find products, customers, orders...",
-      "placeholderTypeSearchField": "Search \"{entity}\"...",
+      "messageNoResults": "未找到结果 \"{term}\".",
+      "messageNoTypeResults": "未找到类型.",
+      "placeholderSearchField": "查找...",
+      "placeholderTypeSearchField": "搜索 \"{entity}\"...",
       "placeholderShortcutInfo": "Hint: Press the \"f\" key to get to the search bar faster.",
       "placeholderSearchShortcutInfo": "<strong>Tip:</strong> Press <span>f</span> to open the search from anywhere.",
       "placeholderESSearchShortcutInfo": "<strong>Tip:</strong> You can use Elasticsearch's <a href=\"https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-simple-query-string-query.html#simple-query-string-syntax\" target=\"_blank\">simple query string</a> to get a more precise result.",
-      "moduleFiltersHeadline": "Module filters",
-      "placeholderFilterShortcutInfo": "Type <span>#products</span> in the search to set the module filter.",
-      "searchTypeAll": "All",
-      "moduleFilter": "Module filter",
-      "messageNoResultsV2": "No exact matches found for \"{term}\".",
-      "messageNoResultsDetailV2": "Try using different keywords or check your search configuration.",
+      "moduleFiltersHeadline": "过滤模块",
+      "placeholderFilterShortcutInfo": "Type <span>#setting</span> in the search to set the module filter.",
+      "searchTypeAll": "所有",
+      "moduleFilter": "过滤模块",
+      "messageNoResultsV2": "未找到完全匹配项 \"{term}\".",
+      "messageNoResultsDetailV2": "尝试使用其他关键字或检查搜索配置.",
       "addNew": "add new"
     },
     "sw-search-bar-item": {
@@ -714,8 +714,8 @@
           "error-message": "Condition type {type} was not found. The condition includes the field: {fields} | The condition type {type} was not found. The conditions include the fields: {fields}"
         },
         "lineItemCondition": {
-          "any": "At least one",
-          "all": "All"
+          "any": "至少一个",
+          "all": "所有"
         },
         "AddAndCondition": "Add AND condition",
         "AddOrCondition": "Add OR condition",
@@ -1026,9 +1026,9 @@
       "custom-field-set": "Custom field set",
       "store_settings": "Product sorting",
       "flow": "Flow Builder",
-      "module": "Module",
-      "frequently_used": "Frequently used",
-      "recently_searched": "Recently searched"
+      "module": "模块",
+      "frequently_used": "常用",
+      "recently_searched": "最近搜索"
     },
     "day-of-week": {
       "monday": "Monday",
@@ -1338,11 +1338,11 @@
     "addNewRule": "Create new rule..."
   },
   "sw-shortcut-overview": {
-    "title": "Keyboard shortcuts",
-    "iconTooltip": "Press `{key}` to show a list of available shortcuts",
-    "modalTitle": "Keyboard shortcuts",
-    "sectionAddingItems": "Adding items",
-    "sectionNavigation": "Navigation",
+    "title": "键盘快捷键",
+    "iconTooltip": "按 `{key}` 显示可用快捷方式的列表\n",
+    "modalTitle": "键盘快捷键",
+    "sectionAddingItems": "添加项",
+    "sectionNavigation": "导航",
     "sectionSpecialShortcuts": "Special shortcuts",
     "function": "Function",
     "keyboardShortcut": "Keyboard shortcut",
@@ -1522,12 +1522,12 @@
     "resetButton": "Reset all"
   },
   "sw-empty-state": {
-    "messageNoResultTitle": "Nothing found",
-    "messageNoResultSublineSimple": "Edit your filters or search terms to find results.",
-    "messageNoResultSubline": "Edit your filters or your search terms to find results. Please also check the configuration of your search.",
-    "messageNoResultSublineBefore": "Edit your filters or your search terms to find results. Please also check",
-    "messageNoResultSublineLink": "the configuration",
-    "messageNoResultSublineAfter": "of your search."
+    "messageNoResultTitle": "未找到任何内容",
+    "messageNoResultSublineSimple": "修改过滤条件或搜索字词以查找结果.",
+    "messageNoResultSubline": "编辑过滤条件或搜索字词以查找结果。还请检查您的搜索配置.",
+    "messageNoResultSublineBefore": "编辑过滤条件或搜索字词以查找结果。也请检查你的",
+    "messageNoResultSublineLink": "配置",
+    "messageNoResultSublineAfter": ""
   },
   "sw-restricted-rules": {
     "restrictedAssignment": {
