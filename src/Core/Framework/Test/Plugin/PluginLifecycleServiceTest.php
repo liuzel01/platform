@@ -796,7 +796,7 @@ class PluginLifecycleServiceTest extends TestCase
 
     private function resetSystemLanguage(): void
     {
-        $this->setNewSystemLanguage('en-GB');
+        $this->setNewSystemLanguage('zh-CN');
     }
 
     private function getIsoId(string $iso): string

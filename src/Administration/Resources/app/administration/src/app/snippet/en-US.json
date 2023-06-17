@@ -45,8 +45,8 @@
     },
     "notification": {
       "notificationSaveErrorMessage": "An error occurred while saving the entity \"{entityName}\".",
-      "notificationSaveErrorMessageRequiredFieldsInvalid": "请填写所有必填项.",
-      "unspecifiedSaveErrorMessage": "发生了一个错误.",
+      "notificationSaveErrorMessageRequiredFieldsInvalid": "Please fill in all required fields.",
+      "unspecifiedSaveErrorMessage": "An error occurred.",
       "notificationSaveSuccessMessage": "The entity \"{entityName}\" has been saved.",
       "messageDeleteSuccess": "\"{name}\" deleted.",
       "messageDeleteFailed": "The entity \"{entityName}\" is still in use by the following modules: ",
@@ -55,7 +55,7 @@
       "notificationLoadingDataErrorMessage": "Error loading data"
     },
     "notification-center": {
-      "title": "通知",
+      "title": "Notifications",
       "emptyText": "Nothing going on lately.",
       "deleteModal": {
         "title": "Delete notifications",
@@ -1283,8 +1283,8 @@
     "configLoadErrorMessage": "Encountered an error while loading the configuration: | There were errors loading the configuration:"
   },
   "locale": {
-    "en-US": "German",
-    "zh-CN": "English (GB)",
+    "de-DE": "German",
+    "en-GB": "English (GB)",
     "bg-BG": "Bulgarian",
     "bs-BA": "Bosnian",
     "cs-CZ": "Czech",

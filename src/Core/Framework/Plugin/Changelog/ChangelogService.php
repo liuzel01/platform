@@ -9,7 +9,7 @@ use Symfony\Component\Finder\Finder;
 #[Package('core')]
 class ChangelogService
 {
-    private const FALLBACK_LOCALE = 'en-GB';
+    private const FALLBACK_LOCALE = 'zh-CN';
 
     /**
      * @internal

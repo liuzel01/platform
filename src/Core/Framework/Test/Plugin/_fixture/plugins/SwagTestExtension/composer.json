@@ -23,21 +23,21 @@
     "plugin-icon": "src/Resources/public/plugin.png",
     "copyright": "(c) by shuwei AG",
     "label": {
-      "de-DE": "Deutscher Pluginname",
+      "en-US": "Deutscher Pluginname",
       "de-CH": "Schweizerdeutsch Pluginname",
-      "en-GB": "English plugin name"
+      "zh-CN": "English plugin name"
     },
     "description": {
-      "de-DE": "Deutsche Beschreibung",
-      "en-GB": "English description"
+      "en-US": "Deutsche Beschreibung",
+      "zh-CN": "English description"
     },
     "manufacturerLink": {
-      "de-DE": "https://www.example.com/de/",
-      "en-GB": "https://www.example.com/"
+      "en-US": "https://www.example.com/de/",
+      "zh-CN": "https://www.example.com/"
     },
     "supportLink": {
-      "de-DE": "https://www.example.com/de/support",
-      "en-GB": "https://www.example.com/support"
+      "en-US": "https://www.example.com/de/support",
+      "zh-CN": "https://www.example.com/support"
     }
   },
   "autoload": {

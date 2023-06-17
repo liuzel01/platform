@@ -58,7 +58,7 @@ class InstallerLocaleListenerTest extends TestCase
 
         $request = new Request();
         $request->setSession(new Session(new MockArraySessionStorage()));
-        $request->headers = new HeaderBag(['HTTP_ACCEPT_LANGUAGE' => 'de-DE']);
+        $request->headers = new HeaderBag(['HTTP_ACCEPT_LANGUAGE' => 'en-US']);
 
         yield 'uses browser header if it is supported with long iso code' => [
             $request,

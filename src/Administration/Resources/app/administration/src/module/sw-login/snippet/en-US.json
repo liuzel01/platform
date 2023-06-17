@@ -5,14 +5,14 @@
       "description": "Shuwei login"
     },
     "index": {
-      "headlineMain": "你好!",
-      "subheadlineMain": "欢迎回来.",
-      "headlineForm": "登录你的数维平台",
-      "labelUsername": "用户名",
-      "labelPassword": "密码",
-      "placeholderUsername": "输入你的用户名...",
-      "placeholderPassword": "输入你的密码...",
-      "buttonLogin": "登录",
+      "headlineMain": "Hello!",
+      "subheadlineMain": "Welcome back.",
+      "headlineForm": "Log in to your Shuwei store",
+      "labelUsername": "Username",
+      "labelPassword": "Password",
+      "placeholderUsername": "Enter your username...",
+      "placeholderPassword": "Enter your password...",
+      "buttonLogin": "Log in",
       "messageUnsupportedGrantType": "Authorization grant type not supported by authorization server.",
       "messageInvalidRequest": "Invalid request.",
       "messageInvalidClient": "Client authentication failed.",
@@ -23,7 +23,7 @@
       "messageAccessDenied": "Request denied by authorization server.",
       "messageGeneralRequestError": "Something went wrong requesting \"{url}\".",
       "messageAuthThrottled": "Too many login attempts. Please wait {seconds} seconds before trying to log in again.",
-      "forgottenPasswordLink": "忘记密码?"
+      "forgottenPasswordLink": "Did you forget your password?"
     },
     "recovery" : {
       "info": {

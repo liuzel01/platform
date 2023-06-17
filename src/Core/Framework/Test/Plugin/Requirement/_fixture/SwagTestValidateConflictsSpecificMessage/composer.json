@@ -17,8 +17,8 @@
         "shuwei-plugin-class": "SwagTestValidateConflictsSpecificMessage\\SwagTestValidateConflictsSpecificMessage",
         "copyright": "(c) by shuwei AG",
         "label": {
-            "de-DE": "Test für Konflikte-Handling",
-            "en-GB": "Test for conflict handling"
+            "en-US": "Test für Konflikte-Handling",
+            "zh-CN": "Test for conflict handling"
         }
     }
 }

@@ -53,7 +53,7 @@ class ExtensionStoreLicensesServiceTest extends TestCase
         static::assertEquals(
             [
                 'shuweiVersion' => '___VERSION___',
-                'language' => 'en-GB',
+                'language' => 'zh-CN',
                 'domain' => 'localhost',
             ],
             Query::parse($lastRequest->getUri()->getQuery())

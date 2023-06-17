@@ -240,12 +240,12 @@ class PluginService
          * {
          *     "shuwei-plugin-class":"Swag\\MyDemoData\\MyDemoData",
          *     "label":{
-         *         "de-DE":"Label für das Plugin MyDemoData",
-         *         "en-GB":"Label for the plugin MyDemoData"
+         *         "en-US":"Label für das Plugin MyDemoData",
+         *         "zh-CN":"Label for the plugin MyDemoData"
          *     },
          *     "description":{
-         *         "de-DE":"Beschreibung für das Plugin MyDemoData",
-         *         "en-GB":"Description for the plugin MyDemoData"
+         *         "en-US":"Beschreibung für das Plugin MyDemoData",
+         *         "zh-CN":"Description for the plugin MyDemoData"
          *     }
          * }
          */
@@ -272,9 +272,9 @@ class PluginService
             return $translations;
         }
 
-        // if the plugin has no system translation, check if en-GB can be used as fallback
-        if (isset($localeMapping['en-GB'])) {
-            $translations[Defaults::LANGUAGE_SYSTEM] = $localeMapping['en-GB'];
+        // if the plugin has no system translation, check if zh-CN can be used as fallback
+        if (isset($localeMapping['zh-CN'])) {
+            $translations[Defaults::LANGUAGE_SYSTEM] = $localeMapping['zh-CN'];
 
             return $translations;
         }

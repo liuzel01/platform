@@ -2,6 +2,7 @@
 
 namespace Shuwei\Core\Installer\Configuration;
 
+use Defuse\Crypto\Exception\EnvironmentIsBrokenException;
 use Defuse\Crypto\Key;
 use Shuwei\Core\Framework\Log\Package;
 use Shuwei\Core\Installer\Controller\SystemConfigurationController;
@@ -11,7 +12,7 @@ use Shuwei\Core\Maintenance\System\Struct\DatabaseConnectionInformation;
 /**
  * @internal
  *
- * @phpstan-import-type Shop from SystemConfigurationController
+ * @phpstan-import-type System from SystemConfigurationController
  */
 #[Package('core')]
 class EnvConfigWriter
@@ -23,17 +24,6 @@ class EnvConfigWriter
 LOCK_DSN=flock
 ###< symfony/lock ###
 
-###> symfony/messenger ###
-# Choose one of the transports below
-# MESSENGER_TRANSPORT_DSN=doctrine://default
-# MESSENGER_TRANSPORT_DSN=amqp://guest:guest@localhost:5672/%2f/messages
-# MESSENGER_TRANSPORT_DSN=redis://localhost:6379/messages
-###< symfony/messenger ###
-
-###> symfony/mailer ###
-# MAILER_DSN=null://null
-###< symfony/mailer ###
-
 ###> shuwei/core ###
 APP_ENV=prod
 APP_URL=http://127.0.0.1:8000
@@ -42,24 +32,6 @@ INSTANCE_ID=INSTANCEID_PLACEHOLDER
 BLUE_GREEN_DEPLOYMENT=0
 DATABASE_URL=mysql://root:root@localhost/shuwei
 ###< shuwei/core ###
-
-###> shuwei/elasticsearch ###
-OPENSEARCH_URL=http://localhost:9200
-SHUWEI_ES_ENABLED=0
-SHUWEI_ES_INDEXING_ENABLED=0
-SHUWEI_ES_INDEX_PREFIX=sw
-SHUWEI_ES_THROW_EXCEPTION=1
-ADMIN_OPENSEARCH_URL=http://localhost:9200
-SHUWEI_ADMIN_ES_INDEX_PREFIX=sw-admin
-SHUWEI_ADMIN_ES_ENABLED=0
-SHUWEI_ADMIN_ES_REFRESH_INDICES=0
-###< shuwei/elasticsearch ###
-
-###> shuwei/storefront ###
-STOREFRONT_PROXY_URL=http://localhost
-SHUWEI_HTTP_CACHE_ENABLED=1
-SHUWEI_HTTP_DEFAULT_TTL=7200
-###< shuwei/storefront ###
 EOT;
 
     public function __construct(
@@ -69,9 +41,11 @@ EOT;
     }
 
     /**
-     * @param Shop $shop
+     * @param DatabaseConnectionInformation $info
+     * @param array $system
+     * @throws EnvironmentIsBrokenException
      */
-    public function writeConfig(DatabaseConnectionInformation $info, array $shop): void
+    public function writeConfig(DatabaseConnectionInformation $info, array $system): void
     {
         $uniqueId = $this->idGenerator->getUniqueId();
         $secret = Key::createNewRandomKey()->saveToAsciiSafeString();
@@ -95,7 +69,7 @@ EOT;
         $newEnv = [];
 
         $newEnv[] = 'APP_SECRET=' . $secret;
-        $newEnv[] = 'APP_URL=' . $shop['schema'] . '://' . $shop['host'] . $shop['basePath'];
+        $newEnv[] = 'APP_URL=' . $system['schema'] . '://' . $system['host'] . $system['basePath'];
         $newEnv[] = 'DATABASE_URL=' . $info->asDsn();
 
         if (!empty($info->getSslCaPath())) {
@@ -116,7 +90,7 @@ EOT;
 
         $newEnv[] = 'COMPOSER_HOME=' . $this->projectDir . '/var/cache/composer';
         $newEnv[] = 'INSTANCE_ID=' . $uniqueId;
-        $newEnv[] = 'BLUE_GREEN_DEPLOYMENT=' . (int) $shop['blueGreenDeployment'];
+        $newEnv[] = 'BLUE_GREEN_DEPLOYMENT=' . (int) $system['blueGreenDeployment'];
         $newEnv[] = 'OPENSEARCH_URL=http://localhost:9200';
         $newEnv[] = 'ADMIN_OPENSEARCH_URL=http://localhost:9200';
 

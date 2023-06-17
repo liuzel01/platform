@@ -18,8 +18,8 @@
         "shuwei-plugin-class": "SwagRequirementValidSubpackageWildcardTest\\SwagRequirementValidSubpackageWildcardTest",
         "copyright": "(c) by shuwei AG",
         "label": {
-            "de-DE": "Test für Requirement Validator",
-            "en-GB": "Test for requirement validator"
+            "en-US": "Test für Requirement Validator",
+            "zh-CN": "Test for requirement validator"
         }
     }
 }

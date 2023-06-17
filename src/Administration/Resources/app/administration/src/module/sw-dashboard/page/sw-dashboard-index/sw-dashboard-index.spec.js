@@ -1,7 +1,7 @@
 import { shallowMount } from '@vue/test-utils';
 import 'src/app/component/utils/sw-external-link';
 import swDashboardIndex from 'src/module/sw-dashboard/page/sw-dashboard-index';
-import dictionary from 'src/module/sw-dashboard/snippet/en-GB.json';
+import dictionary from 'src/module/sw-dashboard/snippet/zh-CN.json';
 
 Shuwei.Component.register('sw-dashboard-index', swDashboardIndex);
 
@@ -18,9 +18,9 @@ async function createWrapper(privileges = []) {
         mocks: {
             $tc: (...args) => JSON.stringify([...args]),
             $i18n: {
-                locale: 'en-GB',
+                locale: 'zh-CN',
                 messages: {
-                    'en-GB': dictionary,
+                    'zh-CN': dictionary,
                 },
             },
         },

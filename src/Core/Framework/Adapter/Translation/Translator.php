@@ -319,7 +319,7 @@ class Translator extends AbstractTranslator
             return $this->languageLocaleProvider->getLocaleForLanguageId(Defaults::LANGUAGE_SYSTEM);
         } catch (ConnectionException) {
             // this allows us to use the translator even if there's no db connection yet
-            return 'en-GB';
+            return 'zh-CN';
         }
     }
 

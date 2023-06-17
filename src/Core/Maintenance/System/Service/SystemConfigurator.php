@@ -91,7 +91,7 @@ class SystemConfigurator
      */
     private function changeDefaultLanguageData(string $newDefaultLanguageId, array $currentLocaleData, string $locale): void
     {
-        $enGbLanguageId = $this->getLanguageId('en-GB');
+        $enGbLanguageId = $this->getLanguageId('zh-CN');
         $currentLocaleId = $currentLocaleData['id'];
         $name = $locale;
 

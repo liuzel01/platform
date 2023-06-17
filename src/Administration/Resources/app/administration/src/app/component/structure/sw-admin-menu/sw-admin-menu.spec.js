@@ -79,8 +79,8 @@ describe('src/app/component/structure/sw-admin-menu', () => {
     let wrapper;
 
     beforeAll(() => {
-        Shuwei.State.get('session').currentLocale = 'en-GB';
-        Shuwei.Context.app.fallbackLocale = 'en-GB';
+        Shuwei.State.get('session').currentLocale = 'zh-CN';
+        Shuwei.Context.app.fallbackLocale = 'zh-CN';
 
         if (Shuwei.State.get('settingsItems')) {
             Shuwei.State.unregisterModule('settingsItems');

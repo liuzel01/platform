@@ -4,8 +4,8 @@
             "name": "my-first-block",
             "category": "text-image",
             "label": {
-                "en-GB": "First block from app",
-                "de-DE": "Erster Block einer App"
+                "zh-CN": "First block from app",
+                "en-US": "Erster Block einer App"
             },
             "slots": {
                 "left": {
@@ -55,8 +55,8 @@
             "name": "my-second-block",
             "category": "text-image",
             "label": {
-                "en-GB": "Second block from app",
-                "de-DE": "Zweiter Block einer App"
+                "zh-CN": "Second block from app",
+                "en-US": "Zweiter Block einer App"
             },
             "slots": {
                 "left": {

@@ -2,8 +2,8 @@
   "sw-extension": {
     "store": {
       "tabs": {
-        "apps": "插件",
-        "themes": "主题"
+        "apps": "Apps",
+        "themes": "Themes"
       },
       "listing": {
         "anyOption": "Any",
@@ -12,18 +12,18 @@
     },
     "my-extensions": {
       "listing": {
-        "initialSearchType": "扩展",
-        "placeholderSearchBar": "查找插件...",
+        "initialSearchType": "Extensions",
+        "placeholderSearchBar": "Find extensions...",
         "controls": {
-          "labelActiveStateSwitch": "隐藏未激活的插件",
+          "labelActiveStateSwitch": "Hide inactive extensions",
           "filterOptions": {
-            "last-updated": "最近更新",
+            "last-updated": "Last updated",
             "name-asc": "Name A - Z.",
             "name-desc": "Name Z - A."
           }
         },
-        "version": "版本号",
-        "update": "更新时间"
+        "version": "Version",
+        "update": "Update"
       },
       "account": {
         "headline": "Shuwei Account",
@@ -43,15 +43,15 @@
         "loginNotificationMessage": "You are logged in to the Shuwei Account."
       },
       "tabs": {
-        "app": "插件",
-        "theme": "主题",
-        "recommendation": "推荐",
-        "shuweiAccount": "官方账号"
+        "app": "Apps",
+        "theme": "Themes",
+        "recommendation": "Recommendations",
+        "shuweiAccount": "Shuwei Account"
       },
       "fileUpload": {
-        "buttonFileUpload": "上传插件",
-        "messageUploadSuccess": "插件上传完毕",
-        "titleWarningModal": "警告",
+        "buttonFileUpload": "Upload extension",
+        "messageUploadSuccess": "Extension uploaded.",
+        "titleWarningModal": "Warning",
         "descriptionWarningModal": "Extensions from outside the Shuwei Store have not been reviewed by us and could potentially pose a risk to your store. We recommend using extensions from the Shuwei Store whenever possible.",
         "textHideWarning": "Do not show again"
       }
@@ -89,9 +89,9 @@
       }
     },
     "mainMenu": {
-      "mainMenuItemExtensionStore": "扩展",
-      "store": "插件市场",
-      "purchased": "我的插件",
+      "mainMenuItemExtensionStore": "Extensions",
+      "store": "Store",
+      "purchased": "My extensions",
       "support": "Support"
     },
     "sw-extension-app-module-error-page": {
@@ -251,9 +251,9 @@
         "subscriptionLabel": "Subscription:",
         "inactiveLabel": "(inactive)",
         "purchasedLabel": "Purchased:",
-        "installedLabel": "安装时间:",
+        "installedLabel": "Installed:",
         "openExtensionLabel": "Open",
-        "installExtensionLabel": "安装",
+        "installExtensionLabel": "Install",
         "labelAcceptAndInstall": "Accept and install",
         "allowDisableTooltip": "This app uses its own data structures, that affect your system. Therefore, the app cannot be deactivated.",
         "contextMenu": {
@@ -263,7 +263,7 @@
           "privacyAndSafetyLabel": "Data privacy & safety",
           "removeLabel": "Remove",
           "cancelAndRemoveLabel": "Cancel and remove",
-          "uninstallLabel": "卸载",
+          "uninstallLabel": "Uninstall",
           "updateLabel": "Update to {version}",
           "rateLabel": "Rate extension",
           "policyExtensions": "Privacy policy extensions",

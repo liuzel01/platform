@@ -22,7 +22,7 @@
 
         <parameter key="shuwei.installer.tosUrls" type="collection">
             <parameter key="de">https://api.shuwei.com/gtc/de_DE.html</parameter>
-            <parameter key="en">https://api.shuwei.com/gtc/en_GB.html</parameter>
+            <parameter key="en">https://api.shuwei.com/gtc/zh_CN.html</parameter>
         </parameter>
     </parameters>
     <services>

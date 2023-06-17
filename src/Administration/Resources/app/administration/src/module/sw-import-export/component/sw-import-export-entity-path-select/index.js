@@ -243,7 +243,7 @@ export default {
             pathParts.forEach((propertyName) => {
                 const property = actualDefinition.properties[propertyName];
 
-                // Return if propertyName does not exist in the definition, e.g. "DEFAULT", "en_GB"
+                // Return if propertyName does not exist in the definition, e.g. "DEFAULT", "zh_CN"
                 if (!property) {
                     return;
                 }

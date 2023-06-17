@@ -53,7 +53,7 @@ class ShopConfiguratorTest extends TestCase
 
     public function testSwitchLanguageWithDefaultLocale(): void
     {
-        $this->shopConfigurator->setDefaultLanguage('en-GB');
+        $this->shopConfigurator->setDefaultLanguage('zh-CN');
 
         /** @var EntityRepository $langRepo */
         $langRepo = $this->getContainer()->get('language.repository');
@@ -66,7 +66,7 @@ class ShopConfiguratorTest extends TestCase
 
     public function testSwitchLanguageWithExistingLanguage(): void
     {
-        $this->shopConfigurator->setDefaultLanguage('de-DE');
+        $this->shopConfigurator->setDefaultLanguage('en-US');
 
         /** @var EntityRepository $langRepo */
         $langRepo = $this->getContainer()->get('language.repository');

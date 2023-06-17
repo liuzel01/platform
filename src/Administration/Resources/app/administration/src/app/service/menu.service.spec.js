@@ -102,8 +102,8 @@ describe('src/app/service/menu.service', () => {
         });
 
         it('respects the current locale for apps', async () => {
-            Shuwei.Context.app.fallbackLocale = 'en-GB';
-            Shuwei.State.get('session').currentLocale = 'de-DE';
+            Shuwei.Context.app.fallbackLocale = 'zh-CN';
+            Shuwei.State.get('session').currentLocale = 'en-US';
 
             const navigation = menuService.getNavigationFromApps(testApps);
             expect(navigation).toEqual([
@@ -136,7 +136,7 @@ describe('src/app/service/menu.service', () => {
         });
 
         it('uses fallback locale for apps if current locale is not translated', async () => {
-            Shuwei.Context.app.fallbackLocale = 'en-GB';
+            Shuwei.Context.app.fallbackLocale = 'zh-CN';
             Shuwei.State.get('session').currentLocale = 'ru-RU';
 
             const navigation = menuService.getNavigationFromApps(testApps);

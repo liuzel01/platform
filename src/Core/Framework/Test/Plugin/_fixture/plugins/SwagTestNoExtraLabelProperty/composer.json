@@ -17,16 +17,16 @@
         "shuwei-plugin-class": "SwagTestNoExtraLabelProperty\\SwagTestNoExtraLabelProperty",
         "copyright": "(c) by shuwei AG",
         "description": {
-            "de-DE": "Deutsche Beschreibung",
-            "en-GB": "English description"
+            "en-US": "Deutsche Beschreibung",
+            "zh-CN": "English description"
         },
         "manufacturerLink": {
-            "de-DE": "https://www.test.de/",
-            "en-GB": "https://www.test.com/"
+            "en-US": "https://www.test.de/",
+            "zh-CN": "https://www.test.com/"
         },
         "supportLink": {
-            "de-DE": "https://www.test.de/support",
-            "en-GB": "https://www.test.com/support"
+            "en-US": "https://www.test.de/support",
+            "zh-CN": "https://www.test.com/support"
         }
     },
     "autoload": {
