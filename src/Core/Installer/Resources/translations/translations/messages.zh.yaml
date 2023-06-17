@@ -16,6 +16,7 @@ shuwei.installer:
     forward: 下一步
     start: 开始
     start_installation: '开始安装'
+    select_language_zh: 中文
     select_language_de: German
     select_language_en: English (United Kingdom)
     select_language_us: English (United States of America)
@@ -280,22 +281,22 @@ shuwei.installer:
     select_country_yem: Yemen
     select_country_zmb: Zambia
     select_country_zwe: Zimbabwe
-    language-selection_welcome_title: 'Welcome to Shuwei 6'
-    language-selection_select_language: 'Installation wizard language'
-    language-selection_header: 'Your Shuwei installation'
-    language-selection_info_message: 'The language selected here only applies to this installation wizard. If you like, you can specify another language for your shop later.'
-    language-selection_welcome_message: 'We are delighted you want to join our fantastic, global Shuwei community. We will now take you through the installation process step by step. If you have any queries, simply take a look in our <a class="is--nowrap" href="https://forum.shuwei.com" target="_blank">forum</a>, give us a call on <a class="is--nowrap" href="tel:0080074676260">00 800 746 7626 0 (free of charge)</a> or send us an <a class="is--nowrap" href="mailto:info@shuwei.com">email</a>.'
-    requirements_header: 'System requirements'
-    requirements_header_files: 'Files and directories'
-    requirements_header_system: System
-    requirements_files_info: 'The following files and directories must be present and have write permissions.'
+    language-selection_welcome_title: '欢迎使用数维平台'
+    language-selection_select_language: '安装向导语言'
+    language-selection_header: '系统安装程序'
+    language-selection_info_message: '此处选择的语言仅适用于此安装向导。如果您愿意，可以稍后为您的系统指定其他语言。'
+    language-selection_welcome_message: '我们很高兴您想使用数维平台。现在，我们将逐步引导您完成安装过程。如果您有任何疑问，只需查看我们的论坛或给我们发送电子邮件。'
+    requirements_header: '系统要求'
+    requirements_header_files: '目录和文件'
+    requirements_header_system: '系统'
+    requirements_files_info: '以下文件和目录必须存在并有写入权限.'
     requirements_table_files_col_check: File/directory
     requirements_table_files_col_status: Status
     requirements_error: 'Not all of the requirements for successful installation have been met.'
     requirements_error_title: 'Your system is not yet ready for Shuwei 6'
-    requirements_success: 'All of the requirements for successful installation have been met.'
-    requirements_success_title: 'Your system is ready for Shuwei 6'
-    requirements_php_info: 'Your server must meet the following system requirements in order to run Shuwei.'
+    requirements_success: '满足所有安装要求.'
+    requirements_success_title: '您的系统已准备好安装数维平台'
+    requirements_php_info: '你的服务器必须满足以下系统要求，才能运行数维平台.'
     requirements_php_max_compatible_version: 'This Shuwei version supports PHP up to version %s. There is no guarantee that everything will work with newer PHP versions.'
     requirements_system_col_check: Requirement
     requirements_system_col_required: Required
@@ -306,52 +307,52 @@ shuwei.installer:
     requirements_status_error: Error
     requirements_status_warning: Warning
     requirements_status_ready: Ready
-    license_agreement_header: 'General Terms and Conditions of Business ("GTC")'
-    license_agreement_info: 'These are our General Terms and Conditions of Business. You will have to read and accept the GTC in order to successfully install Shuwei 6. The Community Edition is completely free of charge and has been released under the MIT License.'
-    license_agreement_error: 'Please accept our GTC.'
+    license_agreement_header: '一般商业条款和条件("GTC")'
+    license_agreement_info: '这些是我们的一般商业条款和条件。您必须阅读并接受GTC，才能成功安装数维平台.'
+    license_agreement_error: '请接受我们的GTC.'
     license_agreement_checkbox: 'I agree to the General Terms and Conditions of Business (GTC)'
-    database-configuration_header: 'Configure database'
-    database-configuration_field_host: 'Server:'
-    database-configuration_advanced_settings: 'Advanced settings'
-    database-configuration_field_port: 'Port:'
-    database-configuration_field_user: 'User:'
-    database-configuration_field_password: 'Password:'
-    database-configuration_field_database: 'Database name:'
-    database-configuration_field_new_database: 'New database:'
-    database-configuration_info: 'In order to install Shuwei on your system, you will need the access credentials to your database. If you are not sure what to put here, contact your administrator/hosting service.'
-    database-configuration-create_new_database: 'Create new database'
-    database-configuration_non_empty_database: 'The selected database already contains data. Please select an empty database or create a new one from scratch.'
-    database-configuration_error_required_fields: 'Please fill in all the blanks.'
-    database-configuration_field_ssl_ca_path: 'SSL certificate authority path'
+    database-configuration_header: '配置数据库'
+    database-configuration_field_host: '服务器地址:'
+    database-configuration_advanced_settings: '高级设置'
+    database-configuration_field_port: '端口:'
+    database-configuration_field_user: '用户:'
+    database-configuration_field_password: '密码:'
+    database-configuration_field_database: '数据库名称:'
+    database-configuration_field_new_database: '新数据库:'
+    database-configuration_info: '为了在你的系统上安装数维平台，你需要配置你的数据库访问凭证。如果你不确定这里要放什么，请联系你的管理员/托管服务'
+    database-configuration-create_new_database: '创建数据库'
+    database-configuration_non_empty_database: '选的数据库已经包含数据。请选择一个空的数据库或从头开始创建一个新的数据库.'
+    database-configuration_error_required_fields: '请填写所有空白处.'
+    database-configuration_field_ssl_ca_path: 'SSL证书授权路径'
     database-configuration_field_ssl_cert_path: 'SSL certificate path'
-    database-configuration_field_ssl_cert_key_path: 'SSL certificate key path'
-    database-configuration_field_ssl_dont_verify_cert: 'Don''t verify server certificate'
-    database-import_header: Installation
-    database-import_skip_import: Skip
-    database-import_progress: 'Progress: '
-    database-import-hint: '<strong>Note:</strong> If there are any Shuwei tables found in the configured database, they will be removed by the installation/update!'
-    database-import_info_text: 'Installing Shuwei 6 using the selected database. This process may take several minutes, depending on your overall system.'
-    database_import_success: 'Shuwei 6 has been installed!'
-    database_import_install_label: 'Database installation:'
+    database-configuration_field_ssl_cert_key_path: 'SSL证书路径'
+    database-configuration_field_ssl_dont_verify_cert: '不验证服务器证书'
+    database-import_header: 安装
+    database-import_skip_import: 跳过
+    database-import_progress: '进度: '
+    database-import-hint: '<strong>注意:</strong> 如果在配置的数据库中发现有任何数维表，它们将被安装/更新所删除!'
+    database-import_info_text: '使用选定的数据库安装数维平台。这个过程可能需要几分钟，取决于你的整个系统。'
+    database_import_success: '数维平台安装完毕'
+    database_import_install_label: '安装数据库:'
     database_import_install_step_text: Step
     database_import_install_from_text: of
-    migration_counter_text_migrations: 'Updating database'
+    migration_counter_text_migrations: '更新数据库'
     migration_counter_text_snippets: 'Updating text snippets'
-    migration_update_success: 'Database has been imported!'
+    migration_update_success: '数据库导入完成!'
     edition_header: 'Have you already purchased a Shuwei licence?'
     edition_info: 'Shuwei is available in different versions. There is the free <a href="https://en.shuwei.com/pricing/" target="_blank">Community Edition</a>, and there are the <a href="https://en.shuwei.com/pricing/" target="_blank">Professional or Enterprise Edition</a>, that are available for a one time fee.'
     edition_ce: 'No, I would like to use the free <a href="https://en.shuwei.com/pricing/" target="_blank">Community Edition</a>.'
     edition_cm: 'Yes, I have already purchased a Shuwei licence (<a href="https://en.shuwei.com/pricing/" target="_blank">Professional or Enterprise</a>).'
     edition_license: 'Please enter your licence key here. You can find it in your Shuwei Account under "Licences" → "Product licences" → "Details / Download":'
     edition_license_error: 'A valid licence is required in order to install any of the Shuwei versions that come with a fee.'
-    configuration_header: Configuration
-    configuration_sconfig_text: 'Almost done. You just need to make some few basic settings in your shop, Shuwei 6 will be installed completely afterwards.'
+    configuration_header: 系统设置
+    configuration_sconfig_text: '即将完成，你只需要做一些基本的设置，之后数维平台就会被完全安装.'
     configuration_sconfig_name: 'Shop name'
     configuration_sconfig_name_info: 'Please enter the name of your shop.'
     configuration_sconfig_mail: 'Shop email address:'
     configuration_sconfig_mail_info: 'Please enter an email address for outgoing emails'
     configuration_sconfig_domain: 'Shop domain:'
-    configuration_sconfig_language: 'Default system language:'
+    configuration_sconfig_language: '默认系统语言:'
     configuration_sconfig_currency: 'Default currency:'
     configuration_sconfig_country: 'Default country:'
     configuration_sconfig_currency_info: 'This currency will be used as the standard currency, everytime item prices are set.'
@@ -364,19 +365,18 @@ shuwei.installer:
     configuration_admin_currency_dkk: 'Danish kroner'
     configuration_admin_currency_nok: 'Norwegian kroner'
     configuration_admin_currency_czk: 'Czech koruna'
-    configuration_admin_username: 'Admin login name:'
-    configuration_admin_mail: 'Admin email:'
-    configuration_admin_firstName: 'Admin first name:'
-    configuration_admin_lastName: 'Admin last name:'
-    configuration_defaults_warning: 'Beware! The settings for your default system language as well as the default currency are permanent and cannot be changed ever again.'
+    configuration_admin_username: '管理员用户名:'
+    configuration_admin_mail: '管理员邮箱:'
+    configuration_admin_name: '管理员姓名:'
+    configuration_defaults_warning: '请注意！你的默认系统语言的设置是永久性的，再也不能改变！你的默认系统语言的设置是永久性的，不能再改变.'
     configuration_admin_currency_headline: 'Available currencies'
     configuration_admin_currency_text: 'Add more currencies to your Shuwei shop. If you want to add currencies afterwards, you can create them at any time in the Administration.'
     configuration_email_help_text: 'This email address will be used for outgoing shop emails.'
     configuration_admin_language_de: German
     configuration_admin_language_en: English
-    configuration_admin_password: 'Admin password:'
-    finish_header: 'Installation completed'
-    finish_info: 'You have successfully installed Shuwei!'
+    configuration_admin_password: '管理员密码:'
+    finish_header: '安装完成'
+    finish_info: '您已经成功地安装了数维平台!'
     finish_info_heading: Hooray!
     finish_first_steps: '"First steps" guide'
     finish_frontend: 'Open Storefront'

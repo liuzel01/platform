@@ -55,81 +55,7 @@ class SystemConfigurator
             $newDefaultLanguageId = $this->createNewLanguageEntry($locale);
         }
 
-        if ($locale === 'de-DE' && $currentLocale['code'] === 'en-GB') {
-            $defaultCountryStateTranslations = $this->connection->fetchAllKeyValue('
-            SELECT short_code, name FROM country_state_translation
-            INNER JOIN country_state ON country_state.id = country_state_translation.country_state_id
-            WHERE country_state_translation.language_id = :languageId', [
-                'languageId' => Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM),
-            ]);
-
-            if (!empty($defaultCountryStateTranslations)) {
-                $correctDeTranslations = [
-                    'DE-BW' => 'Baden-Württemberg',
-                    'DE-BY' => 'Bayern',
-                    'DE-BE' => 'Berlin',
-                    'DE-BB' => 'Brandenburg',
-                    'DE-HB' => 'Bremen',
-                    'DE-HH' => 'Hamburg',
-                    'DE-HE' => 'Hessen',
-                    'DE-NI' => 'Niedersachsen',
-                    'DE-MV' => 'Mecklenburg-Vorpommern',
-                    'DE-NW' => 'Nordrhein-Westfalen',
-                    'DE-RP' => 'Rheinland-Pfalz',
-                    'DE-SL' => 'Saarland',
-                    'DE-SN' => 'Sachsen',
-                    'DE-ST' => 'Sachsen-Anhalt',
-                    'DE-SH' => 'Schleswig-Holstein',
-                    'DE-TH' => 'Thüringen',
-                ];
-
-                foreach ($defaultCountryStateTranslations as $shortCode => $deTranslation) {
-                    if (!\array_key_exists($shortCode, $correctDeTranslations)) {
-                        continue;
-                    }
-
-                    $defaultCountryStateTranslations[$shortCode] = $correctDeTranslations[$shortCode];
-                }
-            }
-
-            $this->swapDefaultLanguageId($newDefaultLanguageId);
-            $this->addMissingCountryStates($defaultCountryStateTranslations);
-        } else {
-            $this->changeDefaultLanguageData($newDefaultLanguageId, $currentLocale, $locale);
-        }
-    }
-
-    /**
-     * @param array<int|string, mixed> $defaultTranslations
-     */
-    private function addMissingCountryStates(array $defaultTranslations): void
-    {
-        $missingTranslations = $this->connection->fetchAllKeyValue('
-            SELECT id, short_code FROM `country_state`
-            WHERE id NOT IN (
-                SELECT country_state_id FROM country_state_translation WHERE language_id = :languageId GROUP BY country_state_id
-            )', [
-            'languageId' => Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM),
-        ]);
-
-        if (empty($missingTranslations)) {
-            return;
-        }
-
-        $storageDate = (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT);
-
-        foreach ($missingTranslations as $stateId => $shortCode) {
-            if (!\array_key_exists($shortCode, $defaultTranslations)) {
-                continue;
-            }
-
-            $this->connection->insert('country_state_translation', [
-                'language_id' => Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM),
-                'country_state_id' => $stateId,
-                'name' => $defaultTranslations[$shortCode],
-                'created_at' => $storageDate,
-            ]);
-        }
+        $this->changeDefaultLanguageData($newDefaultLanguageId, $currentLocale, $locale);
     }
 
     private function setSystemConfig(string $key, string $value): void
@@ -311,30 +237,6 @@ class SystemConfigurator
 
         return $id;
     }
-
-    private function swapDefaultLanguageId(string $newLanguageId): void
-    {
-        RetryableTransaction::retryable($this->connection, function (Connection $connection) use ($newLanguageId): void {
-            $stmt = $connection->prepare(
-                'UPDATE language
-             SET id = :newId
-             WHERE id = :oldId'
-            );
-
-            // assign new uuid to old DEFAULT
-            $stmt->executeStatement([
-                'newId' => Uuid::randomBytes(),
-                'oldId' => Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM),
-            ]);
-
-            // change id to DEFAULT
-            $stmt->executeStatement([
-                'newId' => Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM),
-                'oldId' => $newLanguageId,
-            ]);
-        });
-    }
-
     /**
      * @return array<string, string>|null
      */

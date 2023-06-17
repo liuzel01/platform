@@ -5,19 +5,7 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
     <parameters>
         <parameter key="shuwei.installer.supportedLanguages" type="collection">
-            <parameter key="de">de-DE</parameter>
-            <parameter key="en">en-GB</parameter>
-            <parameter key="us">en-US</parameter>
-            <parameter key="cs">cs-CZ</parameter>
-            <parameter key="es">es-ES</parameter>
-            <parameter key="fr">fr-FR</parameter>
-            <parameter key="it">it-IT</parameter>
-            <parameter key="nl">nl-NL</parameter>
-            <parameter key="pl">pl-PL</parameter>
-            <parameter key="pt">pt-PT</parameter>
-            <parameter key="sv">sv-SE</parameter>
-            <parameter key="da">da-DK</parameter>
-            <parameter key="nb">nb-NO</parameter>
+            <parameter key="zh">zh-CN</parameter>
         </parameter>
 
         <parameter key="shuwei.installer.supportedCurrencies" type="collection">
@@ -141,10 +129,10 @@
             </call>
         </service>
 
-        <service id="Shuwei\Core\Installer\Controller\ShopConfigurationController" public="true">
+        <service id="Shuwei\Core\Installer\Controller\SystemConfigurationController" public="true">
             <argument type="service" id="Shuwei\Core\Maintenance\System\Service\DatabaseConnectionFactory"/>
             <argument type="service" id="Shuwei\Core\Installer\Configuration\EnvConfigWriter"/>
-            <argument type="service" id="Shuwei\Core\Installer\Configuration\ShopConfigurationService"/>
+            <argument type="service" id="Shuwei\Core\Installer\Configuration\SystemConfigurationService"/>
             <argument type="service" id="Shuwei\Core\Installer\Configuration\AdminConfigurationService"/>
             <argument type="service" id="translator"/>
             <argument>%shuwei.installer.supportedLanguages%</argument>
@@ -187,7 +175,7 @@
             <argument type="service" id="Shuwei\Core\Installer\Finish\UniqueIdGenerator"/>
         </service>
 
-        <service id="Shuwei\Core\Installer\Configuration\ShopConfigurationService"/>
+        <service id="Shuwei\Core\Installer\Configuration\SystemConfigurationService"/>
 
         <service id="Shuwei\Core\Installer\Configuration\AdminConfigurationService"/>
 

@@ -1,0 +1,99 @@
+{% extends '@Installer/installer/base.html.twig' %}
+
+{% block base_content %}
+    <div class="card__title">
+        <h2>{{ "shuwei.installer.configuration_header"|trans }}</h2>
+    </div>
+
+    <form id="shop-configuration" action="{{ url('installer.configuration') }}" method="post">
+        <div class="card__body">
+            {% if error %}
+                <div class="alert alert-error">
+                    <pre>{{ error }}</pre>
+                </div>
+            {% endif %}
+
+            <p>{{ "shuwei.installer.configuration_sconfig_text"|trans }}</p>
+
+            <div class="form-group form-group--50">
+                <div class="input-group">
+                    <label for="config_system_language">{{ "shuwei.installer.configuration_sconfig_language"|trans }}</label>
+                    <div class="select-wrapper">
+                        <select name="config_system_language" id="config_system_language">
+                            {% for iso, iso3 in languageIsos %}
+                                <option value="{{ iso3 }}" {% if parameters.config_shop_language == iso3 %}selected{% endif %}>
+                                    {{ ("shuwei.installer.select_language_" ~ iso) |trans }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="alert alert-warning">
+                <span class="icon-warning"></span>
+                {{ "shuwei.installer.configuration_defaults_warning"|trans }}
+            </div>
+            <hr>
+
+
+
+            <div class="form-group form-group--50">
+
+                <p>
+                    <label for="config_admin_email">{{ "shuwei.installer.configuration_admin_mail"|trans }}</label>
+                    <input type="email"
+                           value="{{ parameters.config_admin_email ?? '' }}"
+                           name="config_admin_email"
+                           id="config_admin_email"
+                           required="required"/>
+                </p>
+                <p>
+                    <label for="config_admin_name">{{ "shuwei.installer.configuration_admin_name"|trans }}</label>
+                    <input type="text"
+                           value="{{ parameters.config_admin_name ?? '' }}"
+                           name="config_admin_mame"
+                           id="config_admin_name"
+                           required="required" />
+                </p>
+            </div>
+
+            <div class="form-group form-group--50">
+                <p>
+                    <label for="config_admin_username">{{ "shuwei.installer.configuration_admin_username"|trans }}</label>
+                    <input type="text"
+                           value="{{ parameters.config_admin_username ?? '' }}"
+                           name="config_admin_username"
+                           id="config_admin_username"
+                           required="required"/>
+                </p>
+
+                <p>
+                    <label for="config_admin_password">{{ "shuwei.installer.configuration_admin_password"|trans }}</label>
+                    <input type="password"
+                           value="{{ parameters.config_admin_password ?? '' }}"
+                           name="config_admin_password"
+                           id="config_admin_password"
+                           required="required"/>
+                </p>
+            </div>
+        </div>
+
+
+        <div class="card__footer flex-container">
+            <a href="{{ url('installer.database-import') }}" class="btn btn-default flex-item">{{ "shuwei.installer.back"|trans }}</a>
+            <button type="submit"
+                    class="btn btn-primary flex-item flex-right"
+                    onclick="document.getElementById('shop-configuration').classList.add('is--submitted'); setLastActivity();">
+            {{ "shuwei.installer.forward"|trans }}
+            </button>
+        </div>
+    </form>
+
+
+    <script>
+        function setLastActivity() {
+            document.cookie = 'lastActivity='+Math.round(Date.now() / 1000)+';path=/admin';
+        }
+    </script>
+{% endblock %}

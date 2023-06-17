@@ -104,47 +104,17 @@ class SystemConfigurationController extends InstallerController
             }
         }
 
-        if (!$request->request->has('config_shop_language')) {
-            $request->request->set('config_shop_language', $this->supportedLanguages[$request->attributes->get('_locale')]);
+        if (!$request->request->has('config_system_language')) {
+            $request->request->set('config_system_language', $this->supportedLanguages[$request->attributes->get('_locale')]);
         }
 
         return $this->renderInstaller(
-            '@Installer/installer/shop-configuration.html.twig',
+            '@Installer/installer/system-configuration.html.twig',
             [
                 'error' => $error,
-                'countryIsos' => $this->getCountryIsos($connection, $request->attributes->get('_locale')),
                 'languageIsos' => $this->supportedLanguages,
-                'currencyIsos' => $this->supportedCurrencies,
                 'parameters' => $request->request->all(),
             ]
         );
-    }
-
-    /**
-     * @return array<int, array{iso3: string, default: bool}>
-     */
-    private function getCountryIsos(Connection $connection, string $currentLocale): array
-    {
-        /** @var array<int, array{iso3: string, iso: string}> $countries */
-        $countries = $connection->fetchAllAssociative('SELECT iso3, iso FROM country');
-
-        // formatting string e.g. "en-GB" to "GB"
-        $localeIsoCode = mb_substr($this->supportedLanguages[$currentLocale], -2, 2);
-
-        // flattening array
-        $countryIsos = array_map(fn ($country) => [
-            'iso3' => $country['iso3'],
-            'default' => $country['iso'] === $localeIsoCode,
-            'translated' => $this->translator->trans('shuwei.installer.select_country_' . mb_strtolower((string) $country['iso3'])),
-        ], $countries);
-
-        usort(/**
-         * sorting country by translated
-         *
-         * @param array<string, string> $first
-         * @param array<string, string> $second
-         */ $countryIsos, fn (array $first, array $second) => strcmp((string) $first['translated'], (string) $second['translated']));
-
-        return $countryIsos;
     }
 }
