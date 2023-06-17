@@ -7,33 +7,32 @@
     },
     "index": {
       "buttonSaveLabel": "保存",
-      "titleInfoCard": "Profile information",
-      "titleImageCard": "Profile image",
-      "titlePasswordCard": "Password",
-      "labelFirstNameField": "First name",
-      "labelLastNameField": "Last name",
-      "labelUsernameField": "Username",
-      "labelEmailField": "Email address",
+      "titleInfoCard": "个人资料",
+      "titleImageCard": "个人资料图片",
+      "titlePasswordCard": "密码",
+      "labelNameField": "姓名",
+      "labelUsernameField": "用户名",
+      "labelEmailField": "邮箱地址",
       "labelTimezoneField": "Timezone",
-      "labelOldPassword": "Old password",
-      "placeholderOldPassword": "Enter old password...",
-      "labelNewPassword": "New password",
-      "placeholderNewPassword": "Enter new password...",
-      "labelNewPasswordConfirm": "Confirm password",
-      "placeholderNewPasswordConfirm": "Re-enter new password...",
-      "notificationPasswordErrorMessage": "The submitted passwords do not match.",
-      "notificationNewPasswordIsSameAsOldErrorMessage": "The new password is identical with your old one. Please choose a new password.",
-      "notificationInvalidEmailErrorMessage": "Please enter a valid email address.",
+      "labelOldPassword": "旧密码",
+      "placeholderOldPassword": "输入旧密码...",
+      "labelNewPassword": "新密码",
+      "placeholderNewPassword": "输入新密码...",
+      "labelNewPasswordConfirm": "确认密码",
+      "placeholderNewPasswordConfirm": "重新输入新密码...",
+      "notificationPasswordErrorMessage": "提交的密码不匹配.",
+      "notificationNewPasswordIsSameAsOldErrorMessage": "新密码与旧密码相同。请选择新密码.",
+      "notificationInvalidEmailErrorMessage": "请输入有效的电子邮件地址.",
       "notificationSaveSuccessMessage": "Profile information have been saved.",
       "notificationSaveErrorMessage": "Profile information could not be saved.",
-      "labelUploadAvatar": "Upload avatar",
-      "labelUseAsAvatar": "Use as avatar"
+      "labelUploadAvatar": "上传头像",
+      "labelUseAsAvatar": "用作头像"
     },
     "tabGeneral": {
-      "title": "General"
+      "title": "基本"
     },
     "tabSearchPreferences": {
-      "title": "Search preferences",
+      "title": "搜索首选项",
       "alert_elasticsearch": {
         "title": "Elasticsearch is now enabled",
         "text": "You have enabled the elasticsearch for the admin search, these fields are searchable and you can't turn it off, however you can turn off which entities are searchable"

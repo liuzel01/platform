@@ -410,11 +410,11 @@
       "textNoMedia": "No media available"
     },
     "sw-media-upload": {
-      "buttonFileUpload": "Upload file",
-      "buttonUrlUpload": "Upload file from URL",
-      "buttonSwitchToFileUpload": "Upload file from your computer",
-      "buttonSwitchToUrlUpload": "Upload file from URL",
-      "buttonOpenMedia": "Open media",
+      "buttonFileUpload": "上传文件",
+      "buttonUrlUpload": "从网址上传文件",
+      "buttonSwitchToFileUpload": "从本地上传文件",
+      "buttonSwitchToUrlUpload": "从网址上传文件",
+      "buttonOpenMedia": "打开媒体库",
       "notification": {
         "success": {
           "message": "No file has been saved. | File has been saved. | {count} / {total} files have been saved."
