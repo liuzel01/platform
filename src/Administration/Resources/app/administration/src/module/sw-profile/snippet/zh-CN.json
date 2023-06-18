@@ -141,7 +141,7 @@
   "sw-privileges": {
     "additional_permissions": {
       "user": {
-        "update_profile": "Update own profile"
+        "update_profile": "更新自己的个人资料"
       }
     }
   }

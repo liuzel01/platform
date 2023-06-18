@@ -497,18 +497,18 @@
       "placeholderDefaultFolder": "Select entity..."
     },
     "sw-media-add-thumbnail-form": {
-      "labelMaximumSize": "Maximum size"
+      "labelMaximumSize": "最大尺寸"
     },
     "sw-sidebar-media-item": {
-      "title": "Media",
-      "placeholderSearch": "Search...",
-      "labelLoadMore": "Load more items"
+      "title": "媒体",
+      "placeholderSearch": "搜索...",
+      "labelLoadMore": "加载更多"
     },
     "sw-media-list-selection-item": {
-      "buttonRemove": "Remove"
+      "buttonRemove": "移除"
     },
     "sw-media-list-selection-item-v2": {
-      "buttonRemove": "Remove"
+      "buttonRemove": "移除"
     },
     "sw-select": {
       "messageNoResults": "No results found for \"{term}\"."
@@ -544,8 +544,8 @@
     "sw-entity-advanced-selection-modal": {
       "link": "Use advanced selection",
       "title": "Advanced selection: {entity}",
-      "searchPlaceholder": "Search...",
-      "filter": "Filter",
+      "searchPlaceholder": "搜索...",
+      "filter": "过滤",
       "resetFilters": "Reset filters",
       "applySelection": "Apply selection",
       "entity": {
@@ -569,7 +569,7 @@
       "placeholderESSearchShortcutInfo": "<strong>Tip:</strong> You can use Elasticsearch's <a href=\"https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-simple-query-string-query.html#simple-query-string-syntax\" target=\"_blank\">simple query string</a> to get a more precise result.",
       "moduleFiltersHeadline": "过滤模块",
       "placeholderFilterShortcutInfo": "Type <span>#setting</span> in the search to set the module filter.",
-      "searchTypeAll": "所有",
+      "searchTypeAll": "全部",
       "moduleFilter": "过滤模块",
       "messageNoResultsV2": "未找到完全匹配项 \"{term}\".",
       "messageNoResultsDetailV2": "尝试使用其他关键字或检查搜索配置.",
@@ -715,7 +715,7 @@
         },
         "lineItemCondition": {
           "any": "至少一个",
-          "all": "所有"
+          "all": "全部"
         },
         "AddAndCondition": "Add AND condition",
         "AddOrCondition": "Add OR condition",
@@ -950,7 +950,7 @@
       }
     },
     "sw-simple-search-field": {
-      "defaultPlaceholder": "Search..."
+      "defaultPlaceholder": "搜索..."
     },
     "sw-tabs-item": {
       "tooltipTabHasErrors": "This page contains errors.",
@@ -1204,7 +1204,7 @@
   },
   "sw-tree": {
     "general": {
-      "placeholderSearch": "Search...",
+      "placeholderSearch": "搜索...",
       "treeHeadSelected": "{count} selected",
       "treeHeadline": "Tree structure",
       "buttonCreate": "Create element",

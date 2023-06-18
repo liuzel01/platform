@@ -1,7 +1,7 @@
 {
   "sw-login": {
     "general": {
-      "mainMenuItemIndex": "Login",
+      "mainMenuItemIndex": "登录",
       "description": "Shuwei login"
     },
     "index": {

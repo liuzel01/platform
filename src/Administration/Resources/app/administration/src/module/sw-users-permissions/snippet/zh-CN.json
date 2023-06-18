@@ -52,8 +52,8 @@
         }
       },
       "tabs": {
-        "general": "General",
-        "detailed": "Detailed privileges"
+        "general": "常规",
+        "detailed": "权限详细"
       }
     },
     "users": {
@@ -166,41 +166,41 @@
   },
   "sw-privileges": {
     "roles": {
-      "all": "All",
-      "viewer": "View",
-      "editor": "Edit",
-      "creator": "Create",
-      "deleter": "Delete"
+      "all": "全部",
+      "viewer": "查看",
+      "editor": "编辑",
+      "creator": "创建",
+      "deleter": "删除"
     },
     "permissionType": {
-      "read": "Read",
-      "update": "Update",
-      "create": "Create",
-      "delete": "Delete"
+      "read": "查看",
+      "update": "更新",
+      "create": "创建",
+      "delete": "删除"
     },
     "permissions": {
       "parents": {
         "catalogues": "Catalogues",
-        "content": "Content",
+        "content": "内容",
         "customers": "Customers",
         "marketing": "Marketing",
-        "other": "Other",
+        "other": "其他",
         "orders": "Orders",
-        "settings": "Settings"
+        "settings": "设置"
       },
       "users_and_permissions": {
-        "label": "Users & permissions"
+        "label": "用户 & 权限"
       },
       "routes": {
-        "label": "Routes"
+        "label": "路由"
       }
     },
     "additional_permissions": {
       "system": {
-        "label": "Settings"
+        "label": "设置"
       },
       "user": {
-        "label": "User"
+        "label": "用户"
       },
       "marketing": {
         "label": "Marketing"
@@ -209,7 +209,7 @@
         "label": "Orders"
       },
       "routes": {
-        "label": "Routes",
+        "label": "路由",
         "api_action_access-key_integration": "Create API keys",
         "api_acl_privileges_get": "Read all ACL privileges",
         "api_acl_privileges_route_get": "Read ACL route privileges",

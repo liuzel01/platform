@@ -637,7 +637,7 @@
   "sw-privileges": {
     "additional_permissions": {
       "system": {
-        "extension_store": "Shuwei Store"
+        "extension_store": "官方商城"
       }
     }
   }
