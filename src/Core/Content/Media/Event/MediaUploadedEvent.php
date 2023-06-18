@@ -2,23 +2,18 @@
 
 namespace Shuwei\Core\Content\Media\Event;
 
-use Shuwei\Core\Content\Flow\Dispatching\Action\FlowMailVariables;
-use Shuwei\Core\Content\Flow\Dispatching\Aware\MediaUploadedAware;
-use Shuwei\Core\Content\Flow\Dispatching\Aware\ScalarValuesAware;
 use Shuwei\Core\Framework\Context;
 use Shuwei\Core\Framework\Event\EventData\EventDataCollection;
 use Shuwei\Core\Framework\Event\EventData\ScalarValueType;
 use Shuwei\Core\Framework\Event\FlowEventAware;
 use Shuwei\Core\Framework\Log\Package;
-use Shuwei\Core\Framework\Webhook\AclPrivilegeCollection;
-use Shuwei\Core\Framework\Webhook\Hookable;
 use Symfony\Contracts\EventDispatcher\Event;
 
 /**
  * @deprecated tag:v6.6.0 - reason:class-hierarchy-change - MediaUploadedAware is deprecated and will be removed in v6.6.0
  */
 #[Package('content')]
-class MediaUploadedEvent extends Event implements MediaUploadedAware, ScalarValuesAware, FlowEventAware, Hookable
+class MediaUploadedEvent extends Event implements FlowEventAware
 {
     public const EVENT_NAME = 'media.uploaded';
 
@@ -42,7 +37,7 @@ class MediaUploadedEvent extends Event implements MediaUploadedAware, ScalarValu
     public function getValues(): array
     {
         return [
-            FlowMailVariables::MEDIA_ID => $this->mediaId,
+
         ];
     }
 
@@ -54,17 +49,5 @@ class MediaUploadedEvent extends Event implements MediaUploadedAware, ScalarValu
     public function getContext(): Context
     {
         return $this->context;
-    }
-
-    public function getWebhookPayload(): array
-    {
-        return [
-            'mediaId' => $this->mediaId,
-        ];
-    }
-
-    public function isAllowed(string $appId, AclPrivilegeCollection $permissions): bool
-    {
-        return $permissions->isAllowed('media', 'read');
     }
 }

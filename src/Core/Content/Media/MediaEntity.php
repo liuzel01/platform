@@ -3,6 +3,7 @@
 namespace Shuwei\Core\Content\Media;
 
 use Shuwei\Core\Content\Media\Aggregate\MediaFolder\MediaFolderEntity;
+use Shuwei\Core\Content\Media\Aggregate\MediaThumbnail\MediaThumbnailCollection;
 use Shuwei\Core\Content\Media\Aggregate\MediaTranslation\MediaTranslationCollection;
 use Shuwei\Core\Content\Media\MediaType\MediaType;
 use Shuwei\Core\Framework\DataAbstractionLayer\Entity;
@@ -84,6 +85,10 @@ class MediaEntity extends Entity
      * @var string|null
      */
     protected $fileName;
+    /**
+     * @var MediaThumbnailCollection|null
+     */
+    protected $thumbnails;
 
     /**
      * @var UserEntity|null
@@ -94,10 +99,54 @@ class MediaEntity extends Entity
      * @var MediaTranslationCollection|null
      */
     protected $translations;
+    /**
+     * @internal
+     *
+     * @var string|null
+     */
+    protected $thumbnailsRo;
 
+    /**
+     * @var bool
+     */
+    protected $private = false;
 
+    /**
+     * @internal
+     */
+    public function getThumbnailsRo(): ?string
+    {
+        $this->checkIfPropertyAccessIsAllowed('thumbnailsRo');
 
+        return $this->thumbnailsRo;
+    }
 
+    public function isPrivate(): bool
+    {
+        return $this->private;
+    }
+
+    public function setPrivate(bool $private): void
+    {
+        $this->private = $private;
+    }
+    /**
+     * @internal
+     */
+    public function setThumbnailsRo(string $thumbnailsRo): void
+    {
+        $this->thumbnailsRo = $thumbnailsRo;
+    }
+
+    public function getThumbnails(): ?MediaThumbnailCollection
+    {
+        return $this->thumbnails;
+    }
+
+    public function setThumbnails(MediaThumbnailCollection $thumbnailCollection): void
+    {
+        $this->thumbnails = $thumbnailCollection;
+    }
     public function get(string $property)
     {
         if ($property === 'hasFile') {

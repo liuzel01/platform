@@ -5,7 +5,6 @@ namespace Shuwei\Core\Framework;
 use PHPUnit\Framework\TestCase;
 use Shuwei\Core\DevOps\Environment\EnvironmentHelper;
 use Shuwei\Core\Framework\Log\Package;
-use Shuwei\Core\Framework\Script\Debugging\ScriptTraces;
 
 /**
  * @phpstan-type FeatureFlagConfig array{name?: string, default?: boolean, major?: boolean, description?: string}
@@ -167,9 +166,6 @@ class Feature
             throw new \RuntimeException($message);
         }
 
-        if (\PHP_SAPI !== 'cli') {
-            ScriptTraces::addDeprecationNotice($message);
-        }
     }
 
     public static function triggerDeprecationOrThrow(string $majorFlag, string $message): void
@@ -179,9 +175,6 @@ class Feature
         }
 
         if (!isset(self::$silent[$majorFlag]) || !self::$silent[$majorFlag]) {
-            if (\PHP_SAPI !== 'cli') {
-                ScriptTraces::addDeprecationNotice($message);
-            }
 
             trigger_deprecation('shuwei/core', '', $message);
         }

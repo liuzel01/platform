@@ -9,11 +9,6 @@
     {% set status = collector.deprecationCount > 0 ? 'yellow' %}
 
     {% set text %}
-        <div class="sf-toolbar-info-piece">
-            <b>Hooks</b>
-            {# @var collector \Shuwei\Core\Framework\Script\Debugging\ScriptTraces #}
-            <span>{{ collector.hookCount }}</span>
-        </div>
 
         <div class="sf-toolbar-info-piece">
             <b>Scripts</b>
