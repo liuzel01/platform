@@ -72,8 +72,7 @@ type SalutationFilterEntityType = {
         displayName: string
     },
     title: string,
-    firstName: string,
-    lastName: string,
+    name: string,
     [key: string]: unknown
 };
 

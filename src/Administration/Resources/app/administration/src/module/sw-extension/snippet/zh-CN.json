@@ -112,11 +112,11 @@
       "retryButton": "Retry",
       "activationSuccessTitle": "Activated successfully",
       "activationSuccessDescription": "Have fun exploring the Shuwei Store.",
-      "label": "Now available",
-      "activationDescriptionTitleFirst": "Explore and buy extensions easily -",
-      "activationDescriptionTitleSecond": "right from within your own Shuwei shop.",
-      "activationDescriptionTitleDescription": "Activate the Shuwei Store and get access to loads of helpful extensions and modern themes that can be integrated into your shop seemlessly - without any programming skills.",
-      "activate": "Activate"
+      "label": "当前可用",
+      "activationDescriptionTitleFirst": "使用插件市场 -",
+      "activationDescriptionTitleSecond": "非常轻松的浏览和购买扩展.",
+      "activationDescriptionTitleDescription": "激活官方商店，访问大量有用的扩展程序和现代主题，这些扩展程序和现代主题可以无缝集成到您的商店中 - 无需任何编程技能.",
+      "activate": "激活"
     },
     "title": "Store",
     "descriptionTextModule": "Manage your extensions",

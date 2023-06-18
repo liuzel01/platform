@@ -4,6 +4,10 @@
     .sw-settings__tabs {
         display: grid;
         grid-template-columns: minmax(126px, 1fr) minmax(0, $content-width) 1fr;
+        .sw-tabs-item{
+            font-size: 16px;
+            font-weight: 700;
+        }
     }
 
     .sw-settings__content-grid {
