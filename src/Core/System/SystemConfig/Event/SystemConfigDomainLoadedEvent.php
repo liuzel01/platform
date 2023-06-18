@@ -11,8 +11,6 @@ class SystemConfigDomainLoadedEvent extends Event
     public function __construct(
         private readonly string $domain,
         private array $config,
-        private readonly bool $inherit,
-        private readonly ?string $salesChannelId
     ) {
     }
 
@@ -29,15 +27,5 @@ class SystemConfigDomainLoadedEvent extends Event
     public function getDomain(): string
     {
         return $this->domain;
-    }
-
-    public function isInherit(): bool
-    {
-        return $this->inherit;
-    }
-
-    public function getSalesChannelId(): ?string
-    {
-        return $this->salesChannelId;
     }
 }
