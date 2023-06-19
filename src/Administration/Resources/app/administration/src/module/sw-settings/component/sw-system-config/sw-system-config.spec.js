@@ -233,7 +233,7 @@ function createConfig() {
     return [
         {
             name: null,
-            title: { 'en-GB': 'First card' },
+            title: { 'zh-CN': 'First card' },
             elements: [
                 {
                     name: 'ConfigRenderer.config.textField',
@@ -241,7 +241,7 @@ function createConfig() {
                     config: {
                         required: true,
                         label: {
-                            'en-GB': 'text field',
+                            'zh-CN': 'text field',
                         },
                         defaultValue: 'Amazing field',
                     },
@@ -262,7 +262,7 @@ function createConfig() {
                     type: 'textarea',
                     config: {
                         label: {
-                            'en-GB': 'textarea field',
+                            'zh-CN': 'textarea field',
                         },
                         defaultValue: 'This is a textarea with much content.',
                     },
@@ -284,7 +284,7 @@ function createConfig() {
                     config: {
                         defaultValue: 'https://www.shuwei.com',
                         label: {
-                            'en-GB': 'url field',
+                            'zh-CN': 'url field',
                         },
                     },
                     _test: {
@@ -309,7 +309,7 @@ function createConfig() {
                     config: {
                         defaultValue: 'V3RY_S3CR3T',
                         label: {
-                            'en-GB': 'password field',
+                            'zh-CN': 'password field',
                         },
                     },
                     _test: {
@@ -330,7 +330,7 @@ function createConfig() {
                     config: {
                         defaultValue: 7,
                         label: {
-                            'en-GB': 'int field',
+                            'zh-CN': 'int field',
                         },
                     },
                     _test: {
@@ -356,7 +356,7 @@ function createConfig() {
                     config: {
                         defaultValue: 1.23,
                         label: {
-                            'en-GB': 'float field',
+                            'zh-CN': 'float field',
                         },
                     },
                     _test: {
@@ -382,7 +382,7 @@ function createConfig() {
                     config: {
                         defaultValue: true,
                         label: {
-                            'en-GB': 'bool field',
+                            'zh-CN': 'bool field',
                         },
                     },
                     _test: {
@@ -405,7 +405,7 @@ function createConfig() {
                     config: {
                         defaultValue: true,
                         label: {
-                            'en-GB': 'checkbox field',
+                            'zh-CN': 'checkbox field',
                         },
                     },
                     _test: {
@@ -428,7 +428,7 @@ function createConfig() {
                     config: {
                         defaultValue: '2000-01-01T12:00:00+00:00',
                         label: {
-                            'en-GB': 'datetime field',
+                            'zh-CN': 'datetime field',
                         },
                     },
                     _test: {
@@ -449,7 +449,7 @@ function createConfig() {
                     config: {
                         defaultValue: '2000-01-01T00:00:00+00:00',
                         label: {
-                            'en-GB': 'date field',
+                            'zh-CN': 'date field',
                         },
                     },
                     _test: {
@@ -470,7 +470,7 @@ function createConfig() {
                     config: {
                         defaultValue: '12:00:00+00:00',
                         label: {
-                            'en-GB': 'time field',
+                            'zh-CN': 'time field',
                         },
                     },
                     _test: {
@@ -491,7 +491,7 @@ function createConfig() {
                     config: {
                         defaultValue: '#123abc',
                         label: {
-                            'en-GB': 'colorpicker field',
+                            'zh-CN': 'colorpicker field',
                         },
                     },
                     _test: {
@@ -512,28 +512,28 @@ function createConfig() {
                     config: {
                         defaultValue: 'blue',
                         label: {
-                            'en-GB': 'single-select field',
+                            'zh-CN': 'single-select field',
                         },
                         options: [
                             {
                                 id: 'yellow',
                                 value: 'yellow',
                                 name: {
-                                    'en-GB': 'yellow',
+                                    'zh-CN': 'yellow',
                                 },
                             },
                             {
                                 id: 'blue',
                                 value: 'blue',
                                 name: {
-                                    'en-GB': 'blue',
+                                    'zh-CN': 'blue',
                                 },
                             },
                             {
                                 id: 'green',
                                 value: 'green',
                                 name: {
-                                    'en-GB': 'green',
+                                    'zh-CN': 'green',
                                 },
                             },
                         ],
@@ -563,25 +563,25 @@ function createConfig() {
                     config: {
                         defaultValue: ['blue'],
                         label: {
-                            'en-GB': 'multi-select field',
+                            'zh-CN': 'multi-select field',
                         },
                         options: [
                             {
                                 id: 'yellow',
                                 name: {
-                                    'en-GB': 'yellow',
+                                    'zh-CN': 'yellow',
                                 },
                             },
                             {
                                 id: 'blue',
                                 name: {
-                                    'en-GB': 'blue',
+                                    'zh-CN': 'blue',
                                 },
                             },
                             {
                                 id: 'green',
                                 name: {
-                                    'en-GB': 'green',
+                                    'zh-CN': 'green',
                                 },
                             },
                         ],
@@ -616,7 +616,7 @@ function createConfig() {
                         componentName: 'sw-entity-single-select',
                         entity: 'product',
                         label: {
-                            'en-GB': 'Choose a product',
+                            'zh-CN': 'Choose a product',
                         },
                     },
                     _test: {
@@ -649,7 +649,7 @@ function createConfig() {
                         defaultValue: uuid.get('funny-image'),
                         componentName: 'sw-media-field',
                         label: {
-                            'en-GB': 'Upload media or choose one from the media manager',
+                            'zh-CN': 'Upload media or choose one from the media manager',
                         },
                     },
                     _test: {
@@ -680,7 +680,7 @@ function createConfig() {
                         defaultValue: '<p>I am a paragraph</p>',
                         componentName: 'sw-text-editor',
                         label: {
-                            'en-GB': 'Write some nice text with WYSIWYG editor',
+                            'zh-CN': 'Write some nice text with WYSIWYG editor',
                         },
                     },
                     _test: {
@@ -700,7 +700,7 @@ function createConfig() {
         },
         {
             name: null,
-            title: { 'en-GB': 'Card with AI badge' },
+            title: { 'zh-CN': 'Card with AI badge' },
             elements: [],
             aiBadge: true,
         },

@@ -63,6 +63,7 @@ $sw-login-error-animation-duration: 0.15s;
     .sw-login__content-headline {
         font-size: $font-size-l;
         font-weight: $font-weight-semi-bold;
+        text-align: center;
     }
 
     .sw-button {
@@ -96,31 +97,6 @@ $sw-login-error-animation-duration: 0.15s;
         outline: none;
     }
 
-    .sw-login__badge {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 64px;
-        height: 64px;
-        position: absolute;
-        top: -10px;
-        right: -10px;
-        z-index: 420;
-        background: $sw-login-badge-color-background;
-        transition:
-            top $sw-login-media-query-animation-duration ease-in-out,
-            right $sw-login-media-query-animation-duration ease-in-out;
-
-        svg {
-            fill: $color-white;
-        }
-
-        @media screen and (max-width: 600px) {
-            top: 0;
-            right: 0;
-        }
-    }
-
     .sw-login__submit {
         text-align: right;
 
@@ -145,7 +121,7 @@ $sw-login-error-animation-duration: 0.15s;
         flex-direction: row;
         overflow: hidden;
         background-color: lighten($sw-login-color-background, 10%);
-        background-image: url("https://login-image.shuwei.com/login/login.jpg"), url("../img/sw-login-background.png");
+        background-image: url("../img/sw-login-background.png");
         background-position: center center;
         background-size: cover;
         opacity: 1;

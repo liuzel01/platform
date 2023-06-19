@@ -9,7 +9,7 @@
 export default function createContext(context = {}) {
     // set initial context
     Shuwei.State.commit('context/setAppEnvironment', process.env.NODE_ENV);
-    Shuwei.State.commit('context/setAppFallbackLocale', 'en-GB');
+    Shuwei.State.commit('context/setAppFallbackLocale', 'zh-CN');
 
     // assign unknown context information
     Object.entries(context).forEach(([key, value]) => {

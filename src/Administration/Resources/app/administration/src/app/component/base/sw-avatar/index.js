@@ -30,7 +30,7 @@ const colors = [
  * <div style="display: flex; align-items: center;">
  * <sw-avatar color="#dd4800"
  *            size="48px"
- *            firstName="John"
+ *            name="John"
  *            style="margin: 0 10px;"
  *            lastName="Doe"></sw-avatar>
  *
@@ -57,12 +57,7 @@ Component.register('sw-avatar', {
             required: false,
             default: null,
         },
-        firstName: {
-            type: String,
-            required: false,
-            default: '',
-        },
-        lastName: {
+        name: {
             type: String,
             required: false,
             default: '',
@@ -110,10 +105,7 @@ Component.register('sw-avatar', {
         },
 
         avatarInitials() {
-            const firstNameLetter = this.firstName ? this.firstName[0] : '';
-            const lastNameLetter = this.lastName ? this.lastName[0] : '';
-
-            return firstNameLetter + lastNameLetter;
+            return this.name ? this.name[0] : '';
         },
 
         avatarInitialsSize() {
@@ -146,10 +138,7 @@ Component.register('sw-avatar', {
                 };
             }
 
-            const firstNameLength = this.firstName ? this.firstName.length : 0;
-            const lastNameLength = this.lastName ? this.lastName.length : 0;
-
-            const nameLength = firstNameLength + lastNameLength;
+            const nameLength = this.name ? this.name.length : 0;
             const color = colors[nameLength % colors.length];
 
             return {

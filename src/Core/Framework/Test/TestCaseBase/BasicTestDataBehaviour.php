@@ -25,7 +25,7 @@ trait BasicTestDataBehaviour
         $repository = $this->getContainer()->get('language.repository');
 
         $criteria = new Criteria();
-        $criteria->addFilter(new EqualsFilter('language.translationCode.code', 'de-DE'));
+        $criteria->addFilter(new EqualsFilter('language.translationCode.code', 'en-US'));
 
         /** @var LanguageEntity $language */
         $language = $repository->search($criteria, Context::createDefaultContext())->first();

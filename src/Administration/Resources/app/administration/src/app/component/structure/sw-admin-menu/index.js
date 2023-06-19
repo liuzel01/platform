@@ -171,7 +171,7 @@ The admin menu only supports up to three levels of nesting.`,
                 return '';
             }
 
-            return `${this.currentUser.firstName} ${this.currentUser.lastName}`;
+            return `${this.currentUser.name}`;
         },
 
         avatarUrl() {
@@ -182,14 +182,9 @@ The admin menu only supports up to three levels of nesting.`,
             return null;
         },
 
-        firstName() {
-            return this.currentUser ? this.currentUser.firstName : '';
+        name() {
+            return this.currentUser ? this.currentUser.name : '';
         },
-
-        lastName() {
-            return this.currentUser ? this.currentUser.lastName : '';
-        },
-
         extensionMenuItems() {
             return Shuwei.State.get('menuItem').menuItems;
         },

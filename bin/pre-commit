@@ -19,10 +19,8 @@ changed_files() {
 PHP_FILES="$(changed_files '^src/.*\.(php)$')"
 SCSS_FILES="$(changed_files '\.(scss)$')"
 SCSS_ADMIN_FILES="$(changed_files '^src/Administration/Resources/app/administration/.*\.(scss)$')"
-SCSS_STOREFRONT_FILES="$(changed_files '^src/Storefront/Resources/app/storefront/.*\.(scss)$')"
 JS_ADMIN_FILES="$(changed_files '^src/Administration/Resources/app/administration/.*\.(js)$')"
 JS_E2E_FILES="$(changed_files '^src/Administration/Resources/app/administration/test/e2e/.*\.(js)$')"
-JS_STOREFRONT_FILES="$(changed_files '^src/Storefront/Resources/app/storefront/src/.*\.(js)$')"
 JS_FILES="$(changed_files '\.(js)$')"
 
 # exit on non-zero return code
@@ -75,16 +73,6 @@ then
     fi
 fi
 
-if [[ -n "$SCSS_STOREFRONT_FILES" ]]
-then
-    if [[ -x src/Storefront/Resources/app/storefront/node_modules/.bin/stylelint ]]
-    then
-        composer run stylelint:admin -- --fix ${SCSS_STOREFRONT_FILES}
-    else
-        echo "Skipped Stylelint checks on administration, because it's not installed."
-    fi
-fi
-
 if [[ -n "$JS_ADMIN_FILES" ]]
 then
     if [[ -x src/Administration/Resources/app/administration/node_modules/.bin/eslint ]]
@@ -95,14 +83,4 @@ then
     fi
 fi
 
-if [[ -n "$JS_STOREFRONT_FILES" ]]
-then
-    if [[ -x src/Storefront/Resources/app/storefront/node_modules/.bin/eslint ]]
-    then
-        echo composer run eslint:storefront -- --fix ${JS_STOREFRONT_FILES}
-    else
-        echo "Skipped ESLint checks on Storefront, because it's not installed."
-    fi
-fi
-
-git add ${SCSS_ADMIN_FILES} ${SCSS_STOREFRONT_FILES} ${JS_ADMIN_FILES} ${JS_E2E_FILES} ${JS_STOREFRONT_FILES} ${PHP_FILES}
+git add ${SCSS_ADMIN_FILES} ${JS_ADMIN_FILES} ${JS_E2E_FILES} ${PHP_FILES}

@@ -1,4 +1,7 @@
 shuwei:
+    media:
+        enable_url_upload_feature: true
+        enable_url_validation: false
     filesystem:
         private:
             type: "memory"

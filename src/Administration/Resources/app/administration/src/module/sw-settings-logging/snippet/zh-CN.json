@@ -1,28 +1,28 @@
 {
   "sw-settings-logging": {
     "general": {
-      "mainMenuItemGeneral": "Event logs",
-      "placeholderSearchBar": "Search logs..."
+      "mainMenuItemGeneral": "事件日志",
+      "placeholderSearchBar": "查找日志..."
     },
     "list": {
-      "title": "Logs",
-      "columnDate": "Date",
-      "columnMessage": "Message",
-      "columnLevel": "Priority",
-      "columnContent": "Contents",
-      "actionShowInfo": "View details...",
-      "levelDebug": "Debug",
+      "title": "日志列表",
+      "columnDate": "时间",
+      "columnMessage": "消息",
+      "columnLevel": "优先级",
+      "columnContent": "内容",
+      "actionShowInfo": "显示详情...",
+      "levelDebug": "调试",
       "levelInfo": "Info",
-      "levelNotice": "Notice",
-      "levelWarning": "Warning",
-      "levelError": "Error",
+      "levelNotice": "通知",
+      "levelWarning": "警告",
+      "levelError": "错误",
       "levelCritical": "Critical",
       "levelAlert": "Alert",
       "levelEmergency": "Emergency",
       "titleSidebarItemRefresh": "Refresh"
     },
     "entryInfo": {
-      "title": "Log information",
+      "title": "日志信息",
       "tabRaw": "Raw",
       "actionClose": "Close"
     },
@@ -36,7 +36,7 @@
   "sw-privileges": {
     "additional_permissions": {
       "system": {
-        "logging": "Event logs"
+        "logging": "事件日志"
       }
     }
   }

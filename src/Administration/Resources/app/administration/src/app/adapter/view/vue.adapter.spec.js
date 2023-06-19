@@ -108,7 +108,7 @@ describe('ASYNC app/adapter/view/vue.adapter.js', () => {
         vueAdapter.initLocales({
             subscribe: () => {},
             dispatch: () => {},
-            state: { session: { currentLocale: 'en-GB' } },
+            state: { session: { currentLocale: 'zh-CN' } },
         });
 
         expect(vueAdapter.setLocaleFromUser).toHaveBeenCalled();
@@ -504,8 +504,8 @@ describe('ASYNC app/adapter/view/vue.adapter.js', () => {
             application.addInitializer('router', initializeRouter);
 
             const locale = Shuwei.Application.getContainer('factory').locale;
-            if (!locale.getLocaleByName('en-GB')) {
-                locale.register('en-GB', {
+            if (!locale.getLocaleByName('zh-CN')) {
+                locale.register('zh-CN', {
                     global: {
                         'sw-admin-menu': {
                             textShuweiAdmin: 'Text Shuwei Admin',

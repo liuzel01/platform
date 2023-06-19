@@ -2,15 +2,15 @@
   {
     "name": "testAppA",
     "label": {
-      "de-DE": "test App A deutsch",
-      "en-GB": "test App A english"
+      "en-US": "test App A deutsch",
+      "zh-CN": "test App A english"
     },
     "modules": [
       {
         "name": "standardModule",
         "label": {
-          "de-DE": "Standardmodul",
-          "en-GB": "Standard module"
+          "en-US": "Standardmodul",
+          "zh-CN": "Standard module"
         },
         "parent": "sw-catalogue",
         "position": "50",
@@ -19,8 +19,8 @@
       {
         "name": "noPosition",
         "label": {
-          "de-DE": "Modul ohne Position",
-          "en-GB": "Module without position"
+          "en-US": "Modul ohne Position",
+          "zh-CN": "Module without position"
         },
         "parent": "sw.second.top.level",
         "source": "https:\/\/shuwei.apps\/"
@@ -33,15 +33,15 @@
   {
     "name": "testAppB",
     "label": {
-      "de-DE": "test App B deutsch",
-      "en-GB": "test App B english"
+      "en-US": "test App B deutsch",
+      "zh-CN": "test App B english"
     },
     "modules": [
       {
         "name": "default",
         "label": {
-          "de-DE": "Standard Modul",
-          "en-GB": "Default module"
+          "en-US": "Standard Modul",
+          "zh-CN": "Default module"
         },
         "parent": "app-testAppB-structure",
         "source": "https:\/\/shuwei.apps\/",
@@ -50,8 +50,8 @@
       {
         "name": "structure",
         "label": {
-          "de-DE": "Struktur Modul",
-          "en-GB": "Structure module"
+          "en-US": "Struktur Modul",
+          "zh-CN": "Structure module"
         },
         "parent": "sw.first.top.level",
         "position": 50,

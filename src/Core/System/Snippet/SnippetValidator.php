@@ -83,9 +83,9 @@ class SnippetValidator implements SnippetValidatorInterface
     {
         $return = preg_match('/([a-z]{2}-[A-Z]{2})(?:\.base)?\.json$/', $fileName, $matches);
 
-        // Snippet file name not known, return 'en-GB' per default
+        // Snippet file name not known, return 'zh-CN' per default
         if (!$return) {
-            return 'en-GB';
+            return 'zh-CN';
         }
 
         return $matches[1];

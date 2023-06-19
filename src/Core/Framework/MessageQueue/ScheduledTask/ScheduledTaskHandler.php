@@ -10,11 +10,10 @@ use Shuwei\Core\Framework\Log\Package;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 use Symfony\Component\Messenger\Handler\MessageSubscriberInterface;
 
-/**
- * @deprecated tag:v6.6.0 - reason:class-hierarchy-change - Won't implement MessageSubscriberInterface anymore, tag all ScheduledTaskHandlers with #[AsMessageHandler] instead
- */
+
 #[Package('core')]
-abstract class ScheduledTaskHandler implements MessageSubscriberInterface
+#[AsMessageHandler]
+abstract class ScheduledTaskHandler
 {
     protected EntityRepository $scheduledTaskRepository;
 

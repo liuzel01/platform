@@ -55,7 +55,7 @@ class StoreClientTest extends TestCase
 
         static::assertEquals([
             'shuweiVersion' => $this->getShuweiVersion(),
-            'language' => 'en-GB',
+            'language' => 'zh-CN',
             'domain' => 'shuwei-test',
         ], Query::parse($lastRequest->getUri()->getQuery()));
 
@@ -81,7 +81,7 @@ class StoreClientTest extends TestCase
 
         static::assertEquals([
             'shuweiVersion' => $this->getShuweiVersion(),
-            'language' => 'en-GB',
+            'language' => 'zh-CN',
             'domain' => 'shuwei-test',
         ], Query::parse($lastRequest->getUri()->getQuery()));
 
@@ -194,7 +194,7 @@ class StoreClientTest extends TestCase
     public function testMissingConnectionBecauseYouAreInGermanCellularInternet(): void
     {
         $this->getRequestHandler()->append(new ConnectException(
-            'cURL error 7: Failed to connect to api.shuwei.com port 443 after 4102 ms: Network is unreachable (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://api.shuwei.com/swplatform/pluginupdates?shuweiVersion=6.4.12.0&language=de-DE&domain=',
+            'cURL error 7: Failed to connect to api.shuwei.com port 443 after 4102 ms: Network is unreachable (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://api.shuwei.com/swplatform/pluginupdates?shuweiVersion=6.4.12.0&language=en-US&domain=',
             $this->createMock(RequestInterface::class)
         ));
 

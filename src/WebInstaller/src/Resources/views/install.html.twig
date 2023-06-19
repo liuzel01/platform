@@ -1,0 +1,45 @@
+{% extends "base.html.twig" %}
+
+{% block main %}
+    <div class="card__title">
+        <h2>{{ 'shuwei.update.steps.install.title'|trans }}</h2>
+    </div>
+
+    <div class="card__body">
+        <p>
+            {{ 'shuwei.update.steps.install.info'|trans|raw }}
+        </p>
+
+        <p>
+            <label for="shuweiVersion">{{ "shuwei.update.steps.install.shuweiVersion"|trans }}</label>
+            <select id="shuweiVersion" name="shuweiVersion" required="required">
+                {% set foundStable = false %}
+                {% for version in versions %}
+                    {% set isSelected = false %}
+                    {% if 'rc' not in version and foundStable == false %}
+                        {% set isSelected = true %}
+                        {% set foundStable = true %}
+                    {% endif %}
+
+                    <option value="{{ version }}"{% if isSelected %} selected{% endif %}>{{ version }}{% if 'rc' in version %} {{ 'shuwei.update.rc_hint'|trans }}{% endif %}</option>
+                {% endfor %}
+            </select>
+        </p>
+
+        <div class="alert alert-info" role="alert">
+            {{ 'shuwei.update.steps.install.after_install'|trans|raw }}
+        </div>
+
+        <div class="alert alert-error" id="log-error" style="display: none">{{ 'shuwei.update.steps.install.error'|trans|raw }}</div>
+
+        <div id="log-card" style="display: none;">
+            <pre class="form-control" id="log-output" style="height: 60vh;"></pre>
+        </div>
+
+    </div>
+
+    <div class="card__footer flex-container">
+        <a class="btn flex-item flex-left" href="{{ url('configure') }}">{{ 'shuwei.update.back'|trans }}</a>
+        <button type="submit" class="btn btn-primary flex-item flex-right" id="install-start">{{ 'shuwei.update.steps.install.submit'|trans }}</button>
+    </div>
+{% endblock %}

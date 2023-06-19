@@ -1,8 +1,8 @@
 {
   "sw-settings-store": {
     "general": {
-      "mainMenuItemGeneral": "Shuwei Account",
-      "textHeadline": "Shuwei Account",
+      "mainMenuItemGeneral": "官方账号",
+      "textHeadline": "官方账号",
       "description": "Change your Shuwei Account settings here.",
       "buttonSave": "Save",
       "messageSaveSuccess": "Your Shuwei Account information have been saved."

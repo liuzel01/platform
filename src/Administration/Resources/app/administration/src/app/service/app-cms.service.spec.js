@@ -22,7 +22,7 @@ describe('src/app/service/app-cms.service', () => {
         vueAdapter = new VueAdapter({
             getContainer: () => ({
                 component: '',
-                locale: { getLocaleRegistry: () => [], getLastKnownLocale: () => 'en-GB' },
+                locale: { getLocaleRegistry: () => [], getLastKnownLocale: () => 'zh-CN' },
             }),
         });
 
@@ -73,11 +73,11 @@ describe('src/app/service/app-cms.service', () => {
 
     it('should register the block label to the global locale factory', async () => {
         service.registerBlockSnippets('fooBar', {
-            'en-GB': 'MyFooBarBlock',
+            'zh-CN': 'MyFooBarBlock',
             'pt-PT': 'MyFooBarBlock',
         });
 
-        const translations = Shuwei.Locale.getByName('en-GB');
+        const translations = Shuwei.Locale.getByName('zh-CN');
         expect(translations).toStrictEqual({
             'sw-app-system-cms': {
                 'label-fooBar': 'MyFooBarBlock',
@@ -96,7 +96,7 @@ describe('src/app/service/app-cms.service', () => {
         service.registerCmsBlock({
             category: 'foobar',
             label: {
-                'de-DE': 'MyBlockLabel',
+                'en-US': 'MyBlockLabel',
             },
         });
 

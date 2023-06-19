@@ -1,0 +1,148 @@
+{
+  "sw-profile": {
+    "general": {
+      "mainMenuItemGeneral": "Profiles",
+      "description": "Manage your profile here.",
+      "headlineProfile": "个人中心"
+    },
+    "index": {
+      "buttonSaveLabel": "保存",
+      "titleInfoCard": "个人资料",
+      "titleImageCard": "个人资料图片",
+      "titlePasswordCard": "密码",
+      "labelNameField": "姓名",
+      "labelUsernameField": "用户名",
+      "labelEmailField": "邮箱地址",
+      "labelTimezoneField": "Timezone",
+      "labelOldPassword": "旧密码",
+      "placeholderOldPassword": "输入旧密码...",
+      "labelNewPassword": "新密码",
+      "placeholderNewPassword": "输入新密码...",
+      "labelNewPasswordConfirm": "确认密码",
+      "placeholderNewPasswordConfirm": "重新输入新密码...",
+      "notificationPasswordErrorMessage": "提交的密码不匹配.",
+      "notificationNewPasswordIsSameAsOldErrorMessage": "新密码与旧密码相同。请选择新密码.",
+      "notificationInvalidEmailErrorMessage": "请输入有效的电子邮件地址.",
+      "notificationSaveSuccessMessage": "Profile information have been saved.",
+      "notificationSaveErrorMessage": "Profile information could not be saved.",
+      "labelUploadAvatar": "上传头像",
+      "labelUseAsAvatar": "用作头像"
+    },
+    "tabGeneral": {
+      "title": "基本"
+    },
+    "tabSearchPreferences": {
+      "title": "搜索首选项",
+      "alert_elasticsearch": {
+        "title": "Elasticsearch is now enabled",
+        "text": "You have enabled the elasticsearch for the admin search, these fields are searchable and you can't turn it off, however you can turn off which entities are searchable"
+      },
+      "cardSearchableElements": {
+        "title": "Searchable elements",
+        "description": "Set the searchable content for each module and entry.",
+        "buttonSelect": "Select all",
+        "buttonDeselect": "Deselect all",
+        "buttonReset": "Reset to default"
+      },
+      "modules": {
+        "order": {
+          "countryName": "Country",
+          "city": "City",
+          "street": "Street",
+          "company": "Company",
+          "zipcode": "Postal code",
+          "name": "姓名",
+          "phoneNumber": "Phone number",
+          "additionalAddressLine1": "Additional address line 1",
+          "additionalAddressLine2": "Additional address line 2",
+          "trackingCodes": "Tracking codes",
+          "amountTotal": "Amount total",
+          "orderNumber": "Order number",
+          "email": "Email address",
+          "tagsName": "Tags",
+          "customerNumber": "Customer number",
+          "documentNumber": "Document number",
+          "promotionCode": "Applied promotion codes"
+        },
+        "customer": {
+          "tagsName": "Tags",
+          "email": "Email address",
+          "company": "Company",
+          "name": "name",
+          "customerNumber": "Customer number",
+          "countryName": "Country",
+          "city": "City",
+          "street": "Street",
+          "zipcode": "Postal code",
+          "phoneNumber": "Phone number",
+          "additionalAddressLine1": "Additional address line 1",
+          "additionalAddressLine2": "Additional address line 2"
+        },
+        "product": {
+          "ean": "GTIN/EAN",
+          "name": "Name",
+          "tagsName": "Tags",
+          "productNumber": "Product number",
+          "manufacturerNumber": "Manufacturer number",
+          "customSearchKeywords": "SEO keywords"
+        },
+        "media": {
+          "alt": "Alt text",
+          "tagsName": "Tags",
+          "title": "Title",
+          "fileName": "Name",
+          "mediaFolderName": "Folder"
+        },
+        "landing_page": {
+          "name": "Name",
+          "tagsName": "Tags"
+        },
+        "category": {
+          "name": "Name",
+          "tagsName": "Tags"
+        },
+        "shipping_method": {
+          "name": "Name"
+        },
+        "payment_method": {
+          "name": "Name"
+        },
+        "customer_group": {
+          "name": "Name"
+        },
+        "sales_channel": {
+          "name": "Name"
+        },
+        "property": {
+          "name": "Name"
+        },
+        "property_group": {
+          "name": "Name"
+        },
+        "promotion": {
+          "name": "Name",
+          "code": "Code"
+        },
+        "product_stream": {
+          "name": "Name"
+        },
+        "newsletter_recipient": {
+          "email": "Email address"
+        },
+        "product_manufacturer": {
+          "name": "Name"
+        },
+        "cms_page": {
+          "name": "Name"
+        }
+      }
+    }
+  },
+  "sw-privileges": {
+    "additional_permissions": {
+      "user": {
+        "update_profile": "更新自己的个人资料"
+      }
+    }
+  }
+}

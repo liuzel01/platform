@@ -23,7 +23,7 @@ describe('src/core/service/utils/format.utils.js', () => {
         const setTimeZone = (timeZone) => Shuwei.State.commit('setCurrentUser', { timeZone });
 
         beforeEach(async () => {
-            setLocale('en-GB');
+            setLocale('zh-CN');
             setTimeZone('UTC');
         });
 
@@ -31,8 +31,8 @@ describe('src/core/service/utils/format.utils.js', () => {
             expect(date(null)).toBe('');
         });
 
-        it('should convert the date correctly with timezone UTC in en-GB', async () => {
-            setLocale('en-GB');
+        it('should convert the date correctly with timezone UTC in zh-CN', async () => {
+            setLocale('zh-CN');
             setTimeZone('UTC');
 
             expect(date('2000-06-18T08:30:00.000+00:00')).toBe('18 June 2000 at 08:30');
@@ -45,15 +45,15 @@ describe('src/core/service/utils/format.utils.js', () => {
             expect(date('2000-06-18T08:30:00.000+00:00')).toBe('June 18, 2000 at 8:30 AM');
         });
 
-        it('should convert the date correctly with timezone UTC in de-DE', async () => {
-            setLocale('de-DE');
+        it('should convert the date correctly with timezone UTC in en-US', async () => {
+            setLocale('en-US');
             setTimeZone('UTC');
 
             expect(date('2000-06-18T08:30:00.000+00:00')).toBe('18. Juni 2000 um 08:30');
         });
 
-        it('should convert the date correctly with timezone America/New_York in en-GB', async () => {
-            setLocale('en-GB');
+        it('should convert the date correctly with timezone America/New_York in zh-CN', async () => {
+            setLocale('zh-CN');
             setTimeZone('America/New_York');
 
             expect(date('2000-06-18T08:30:00.000+00:00')).toBe('18 June 2000 at 04:30');
@@ -66,15 +66,15 @@ describe('src/core/service/utils/format.utils.js', () => {
             expect(date('2000-06-18T08:30:00.000+00:00')).toBe('June 18, 2000 at 4:30 AM');
         });
 
-        it('should convert the date correctly with timezone America/New_York in de-DE', async () => {
-            setLocale('de-DE');
+        it('should convert the date correctly with timezone America/New_York in en-US', async () => {
+            setLocale('en-US');
             setTimeZone('America/New_York');
 
             expect(date('2000-06-18T08:30:00.000+00:00')).toBe('18. Juni 2000 um 04:30');
         });
 
-        it('should not convert the date correctly with timezone America/New_York in de-DE', async () => {
-            setLocale('de-DE');
+        it('should not convert the date correctly with timezone America/New_York in en-US', async () => {
+            setLocale('en-US');
             setTimeZone('America/New_York');
 
             expect(date('2000-06-18T08:30:00.000+00:00', {
@@ -91,7 +91,7 @@ describe('src/core/service/utils/format.utils.js', () => {
         const setTimeZone = (timeZone) => Shuwei.State.commit('setCurrentUser', { timeZone });
 
         beforeEach(async () => {
-            setLocale('en-GB');
+            setLocale('zh-CN');
             setTimeZone('UTC');
         });
 
@@ -135,16 +135,16 @@ describe('src/core/service/utils/format.utils.js', () => {
 
         it('should use a different fallback language', async () => {
             Shuwei.State.commit('setAdminLocale', {
-                locales: ['de-DE'],
-                locale: 'de-DE',
+                locales: ['en-US'],
+                locale: 'en-US',
                 languageId: '2fbb5fe2e29a4d70aa5854ce7ce3e20b',
             });
 
             expect(currencyFilter(42, 'EUR', 0)).toBe('42 €');
 
             Shuwei.State.commit('setAdminLocale', {
-                locales: ['en-GB'],
-                locale: 'en-GB',
+                locales: ['zh-CN'],
+                locale: 'zh-CN',
                 languageId: '2fbb5fe2e29a4d70aa5854ce7ce3e20b',
             });
         });

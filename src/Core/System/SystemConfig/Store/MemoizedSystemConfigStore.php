@@ -26,7 +26,13 @@ final class MemoizedSystemConfigStore implements EventSubscriberInterface, Reset
             ],
         ];
     }
-    public function setConfig( array $config): void
+
+    public function onValueChanged(SystemConfigChangedEvent $event): void
+    {
+        $this->removeConfig();
+    }
+
+    public function setConfig(array $config): void
     {
         $this->configs[$this->getKey()] = $config;
     }
@@ -38,7 +44,7 @@ final class MemoizedSystemConfigStore implements EventSubscriberInterface, Reset
 
     public function removeConfig(): void
     {
-        unset($this->configs[$this->getKey()]);
+        $this->reset();
     }
 
     public function reset(): void

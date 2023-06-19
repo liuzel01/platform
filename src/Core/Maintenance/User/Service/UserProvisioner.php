@@ -39,7 +39,7 @@ class UserProvisioner
 
         $userPayload = [
             'id' => Uuid::randomBytes(),
-            'name' => $additionalData['lastName'] ?? $username,
+            'name' => $additionalData['name'] ?? $username,
             'email' => $additionalData['email'] ?? 'info@shuwei.com',
             'username' => $username,
             'password' => password_hash($password, \PASSWORD_BCRYPT),

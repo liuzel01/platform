@@ -11,7 +11,7 @@ abstract class AbstractSnippetFile
      * Returns the displayed name.
      *
      * Example:
-     * storefront.en-GB
+     * storefront.zh-CN
      */
     abstract public function getName(): string;
 
@@ -19,7 +19,7 @@ abstract class AbstractSnippetFile
      * Returns the path to the json language file.
      *
      * Example:
-     * /appPath/subDirectory/storefront.en-GB.json
+     * /appPath/subDirectory/storefront.zh-CN.json
      */
     abstract public function getPath(): string;
 
@@ -27,8 +27,8 @@ abstract class AbstractSnippetFile
      * Returns the associated language ISO.
      *
      * Example:
-     * en-GB
-     * de-DE
+     * zh-CN
+     * en-US
      */
     abstract public function getIso(): string;
 

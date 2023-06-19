@@ -10,32 +10,35 @@
     >
         <sw-container v-bind="{ columns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '0 30px' }">
             <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-            {% block sw_profile_index_general_information_firstname %}
+            {% block sw_profile_index_general_information_name %}
             <sw-text-field
-                v-model="user.firstName"
-                :label="$tc('sw-profile.index.labelFirstNameField')"
+                v-model="user.name"
+                :label="$tc('sw-profile.index.labelNameField')"
                 :disabled="isDisabled || !acl.can('user.update_profile')"
             />
             {% endblock %}
 
             <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-            {% block sw_profile_index_general_information_lastname %}
-            <sw-text-field
-                v-model="user.lastName"
-                :label="$tc('sw-profile.index.labelLastNameField')"
-                :disabled="isDisabled || !acl.can('user.update_profile')"
-            />
+            {% block sw_profile_index_general_information_username %}
+                <sw-text-field
+                        v-model="user.username"
+                        :label="$tc('sw-profile.index.labelUsernameField')"
+                        :disabled="isDisabled || !acl.can('user.update_profile')"
+                />
             {% endblock %}
         </sw-container>
 
         <sw-container v-bind="{ columns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '0 30px' }">
             <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-            {% block sw_profile_index_general_information_username %}
-            <sw-text-field
-                v-model="user.username"
-                :label="$tc('sw-profile.index.labelUsernameField')"
-                :disabled="isDisabled || !acl.can('user.update_profile')"
-            />
+            {% block sw_profile_index_general_information_email %}
+                <sw-text-field
+                        v-model="user.email"
+                        validation="email"
+                        name="sw-field--email"
+                        required
+                        :label="$tc('sw-profile.index.labelEmailField')"
+                        :disabled="!acl.can('user.update_profile')"
+                />
             {% endblock %}
 
             <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
@@ -59,17 +62,7 @@
         </sw-container>
 
         <sw-container v-bind="{ columns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '0 30px' }">
-            <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-            {% block sw_profile_index_general_information_email %}
-            <sw-text-field
-                v-model="user.email"
-                validation="email"
-                name="sw-field--email"
-                required
-                :label="$tc('sw-profile.index.labelEmailField')"
-                :disabled="!acl.can('user.update_profile')"
-            />
-            {% endblock %}
+
 
             <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
             {% block sw_profile_index_general_information_timezone %}

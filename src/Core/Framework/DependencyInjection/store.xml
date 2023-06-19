@@ -89,9 +89,14 @@
             <argument type="service" id="user.repository" />
             <argument>%kernel.plugin_dir%</argument>
             <argument>%kernel.project_dir%</argument>
-
             <tag name="console.command"/>
         </service>
+
+        <service id="Shuwei\Core\Framework\Store\Command\StoreUploadCommand">
+            <argument type="service" id="Shuwei\Core\Framework\Store\Services\StoreClient" />
+            <tag name="console.command"/>
+        </service>
+
 
         <service id="Shuwei\Core\Framework\Store\Command\StoreLoginCommand">
             <argument type="service" id="Shuwei\Core\Framework\Store\Services\StoreClient" />

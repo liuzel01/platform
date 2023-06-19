@@ -29,7 +29,7 @@ describe('src/app/mixin/sw-inline-snippet.mixin.ts', () => {
     let wrapper;
 
     beforeEach(async () => {
-        Shuwei.Context.app.fallbackLocale = 'de-DE';
+        Shuwei.Context.app.fallbackLocale = 'en-US';
         wrapper = await createWrapper();
 
         await flushPromises();
@@ -61,7 +61,7 @@ describe('src/app/mixin/sw-inline-snippet.mixin.ts', () => {
 
     it('should return correct value with locale using the getInlineSnippet method without value', () => {
         const result = wrapper.vm.getInlineSnippet({
-            'en-GB': 'English',
+            'zh-CN': 'English',
         });
 
         expect(result).toBe('English');
@@ -70,7 +70,7 @@ describe('src/app/mixin/sw-inline-snippet.mixin.ts', () => {
     it('should return correct fallback value with locale using the getInlineSnippet method without value', () => {
         const result = wrapper.vm.getInlineSnippet({
             'fr-FR': 'French',
-            'de-DE': 'German',
+            'en-US': 'German',
         });
 
         expect(result).toBe('German');

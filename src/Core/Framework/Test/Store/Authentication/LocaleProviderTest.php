@@ -57,7 +57,7 @@ class LocaleProviderTest extends TestCase
     {
         $locale = $this->localeProvider->getLocaleFromContext(Context::createDefaultContext());
 
-        static::assertEquals('en-GB', $locale);
+        static::assertEquals('zh-CN', $locale);
     }
 
     public function testGetLocaleFromContextReturnsEnglishForIntegrations(): void
@@ -66,6 +66,6 @@ class LocaleProviderTest extends TestCase
             Context::createDefaultContext(new AdminApiSource(null, Uuid::randomHex()))
         );
 
-        static::assertEquals('en-GB', $locale);
+        static::assertEquals('zh-CN', $locale);
     }
 }

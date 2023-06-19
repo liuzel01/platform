@@ -10,9 +10,7 @@
     "license": "Apache-2.0",
     "replace": {
         "shuwei/core": "self.version",
-        "shuwei/storefront": "self.version",
-        "shuwei/administration": "self.version",
-        "shuwei/elasticsearch": "self.version"
+        "shuwei/administration": "self.version"
     },
     "support": {
         "issues": "https://issues.shuwei.com",
@@ -56,6 +54,13 @@
             "@npm:admin run build",
             "@php bin/console assets:install"
         ],
+        "watch:admin": [
+            "Composer\\Config::disableProcessTimeout",
+            "@php bin/console feature:dump",
+            "@php bin/console bundle:dump",
+            "@admin:generate-entity-schema-types",
+            "@npm:admin run dev"
+        ],
         "npm:admin": "@npm:admin:bin npm",
         "npm:admin:bin": "export PROJECT_ROOT=\"$PWD\"; cd src/Administration/Resources/app/administration; export PATH=\"$PWD/node_modules/.bin/:$PATH\"; \"$PROJECT_ROOT\"/bin/exec-with-env ",
         "framework:schema:dump": "@php bin/console -e prod framework:schema -s 'entity-schema' src/Administration/Resources/app/administration/test/_mocks_/entity-schema.json",
@@ -70,6 +75,18 @@
             "@init:db",
             "@init:js",
             "@build:admin:js"
+        ],
+        "hook:pre-commit": [
+            "bin/pre-commit"
+        ],
+        "hook:pre-commit:install": [
+            "ln -sf $PWD/bin/pre-commit .git/hooks/pre-commit"
+        ],
+        "hook:pre-push": [
+            "bin/pre-commit"
+        ],
+        "hook:pre-push:install": [
+            "ln -sf $PWD/bin/pre-push .git/hooks/pre-push"
         ]
     },
 
@@ -99,6 +116,7 @@
         "doctrine/annotations": "^1.14 || ^2.0",
         "doctrine/dbal": "^3.6",
         "doctrine/inflector": "^2.0",
+        "doctrine/sql-formatter": "^1.1",
         "dompdf/dompdf": "2.0.3",
         "erusev/parsedown-extra": "0.8.1",
         "ezyang/htmlpurifier": "~4.16",
@@ -134,6 +152,7 @@
         "symfony/debug-bundle": "~6.3.0",
         "symfony/dependency-injection": "~6.3.0",
         "symfony/deprecation-contracts": "~3.1.0",
+        "symfony/doctrine-bridge": "^6.3",
         "symfony/doctrine-messenger": "~6.3.0",
         "symfony/dotenv": "~6.3.0",
         "symfony/error-handler": "~6.3.0",

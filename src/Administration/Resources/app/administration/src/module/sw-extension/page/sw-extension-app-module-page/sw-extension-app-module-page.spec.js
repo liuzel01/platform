@@ -13,7 +13,7 @@ Shuwei.Component.register('sw-extension-my-apps-error-page', SwExtensionsAppModu
  */
 describe('src/module/sw-extension/page/sw-extension-app-module-page/index.js', () => {
     beforeEach(() => {
-        Shuwei.State.get('session').currentLocale = 'en-GB';
+        Shuwei.State.get('session').currentLocale = 'zh-CN';
         Shuwei.State.commit('shuweiApps/setApps', testApps);
     });
 

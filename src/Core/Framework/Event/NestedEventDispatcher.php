@@ -45,7 +45,7 @@ class NestedEventDispatcher implements EventDispatcherInterface
         $this->dispatcher->addSubscriber($subscriber);
     }
 
-    public function removeListener(string $eventName, callable $listener): void
+    public function removeListener(string $eventName, callable|array $listener): void
     {
         /** @var callable(object): void $listener - Specify generic callback interface callers can provide more specific implementations */
         $this->dispatcher->removeListener($eventName, $listener);
@@ -64,7 +64,7 @@ class NestedEventDispatcher implements EventDispatcherInterface
         return $this->dispatcher->getListeners($eventName);
     }
 
-    public function getListenerPriority(string $eventName, callable $listener): ?int
+    public function getListenerPriority(string $eventName, callable|array $listener): ?int
     {
         /** @var callable(object): void $listener - Specify generic callback interface callers can provide more specific implementations */
         return $this->dispatcher->getListenerPriority($eventName, $listener);

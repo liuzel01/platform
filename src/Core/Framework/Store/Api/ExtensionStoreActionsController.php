@@ -40,7 +40,7 @@ class ExtensionStoreActionsController extends AbstractController
         return new Response('', Response::HTTP_NO_CONTENT);
     }
 
-    #[Route(path: '/api/_action/extension/upload', name: 'api.extension.upload', methods: ['POST'], defaults: ['_acl' => ['system.plugin_upload']])]
+    #[Route(path: '/api/_action/extension/upload', name: 'api.extension.upload', defaults: ['_acl' => ['system.plugin_upload']], methods: ['POST'])]
     public function uploadExtensions(Request $request, Context $context): Response
     {
         /** @var UploadedFile|null $file */

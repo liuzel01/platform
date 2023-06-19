@@ -1,8 +1,8 @@
 import './page/index';
 
 import type { Route } from 'vue-router';
-import deDE from './snippet/de-DE.json';
-import enGB from './snippet/en-GB.json';
+import enUS from './snippet/en-US.json';
+import zhCN from './snippet/zh-CN.json';
 
 const { Module } = Shuwei;
 
@@ -21,8 +21,8 @@ Module.register('sw-inactivity-login', {
     color: '#F19D12',
 
     snippets: {
-        'de-DE': deDE,
-        'en-GB': enGB,
+        'en-US': enUS,
+        'zh-CN': zhCN,
     },
 
     routes: {

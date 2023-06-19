@@ -12,7 +12,6 @@ Shuwei.Service('privileges')
                     'user:read',
                     'acl_role:read',
                     'user_access_key:read',
-                    'media_default_folder:read',
                     'app:read',
                     'user_config:read',
                     'user_config:create',

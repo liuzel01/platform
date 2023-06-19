@@ -1,0 +1,10 @@
+/vendor
+/.phpunit.cache
+/shop
+/backup.zip
+/shuwei.sql
+/install.zip
+/update.zip
+/node_modules
+/vendor-bin/*/vendor
+/shuwei-installer.phar.php

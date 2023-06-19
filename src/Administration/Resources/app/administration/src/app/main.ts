@@ -20,7 +20,6 @@ import EntityMappingService from 'src/core/service/entity-mapping.service';
 import JsonApiParser from 'src/core/service/jsonapi-parser.service';
 import ValidationService from 'src/core/service/validation.service';
 import TimezoneService from 'src/core/service/timezone.service';
-import RuleConditionService from 'src/app/service/rule-condition.service';
 import ProductStreamConditionService from 'src/app/service/product-stream-condition.service';
 import StateStyleService from 'src/app/service/state-style.service';
 import CustomFieldService from 'src/app/service/custom-field.service';
@@ -126,9 +125,6 @@ Application
     })
     .addServiceProvider('timezoneService', () => {
         return new TimezoneService();
-    })
-    .addServiceProvider('ruleConditionDataProviderService', () => {
-        return new RuleConditionService();
     })
     .addServiceProvider('productStreamConditionService', () => {
         return new ProductStreamConditionService();

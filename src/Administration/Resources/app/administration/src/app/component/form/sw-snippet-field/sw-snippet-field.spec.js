@@ -42,14 +42,14 @@ async function createWrapper(systemLanguageIso = '', translations = [], customOp
                         if (entity === 'snippet_set') {
                             return Promise.resolve(createEntityCollection([
                                 {
-                                    name: 'Base en-GB',
-                                    iso: 'en-GB',
-                                    id: uuid.get('en-GB'),
+                                    name: 'Base zh-CN',
+                                    iso: 'zh-CN',
+                                    id: uuid.get('zh-CN'),
                                 },
                                 {
-                                    name: 'Base de-DE',
-                                    iso: 'de-DE',
-                                    id: uuid.get('de-DE'),
+                                    name: 'Base en-US',
+                                    iso: 'en-US',
+                                    id: uuid.get('en-US'),
                                 },
                             ]));
                         }
@@ -96,16 +96,16 @@ describe('src/app/component/form/sw-snippet-field', () => {
     });
 
     it('should show admin language translation of snippet field', async () => {
-        Shuwei.State.get('session').currentLocale = 'de-DE';
+        Shuwei.State.get('session').currentLocale = 'en-US';
 
-        const wrapper = await createWrapper('en-GB', [{
+        const wrapper = await createWrapper('zh-CN', [{
             author: 'testUser',
             id: null,
             value: 'english',
             origin: null,
             resetTo: 'english',
             translationKey: 'test.snippet',
-            setId: uuid.get('en-GB'),
+            setId: uuid.get('zh-CN'),
         }, {
             author: 'testUser',
             id: null,
@@ -113,7 +113,7 @@ describe('src/app/component/form/sw-snippet-field', () => {
             origin: null,
             resetTo: 'deutsch',
             translationKey: 'test.snippet',
-            setId: uuid.get('de-DE'),
+            setId: uuid.get('en-US'),
         }]);
 
         await flushPromises();
@@ -125,14 +125,14 @@ describe('src/app/component/form/sw-snippet-field', () => {
     it('should show system default language translation of snippet field', async () => {
         Shuwei.State.get('session').currentLocale = 'nl-NL';
 
-        const wrapper = await createWrapper('de-DE', [{
+        const wrapper = await createWrapper('en-US', [{
             author: 'testUser',
             id: null,
             value: 'english',
             origin: null,
             resetTo: 'english',
             translationKey: 'test.snippet',
-            setId: uuid.get('en-GB'),
+            setId: uuid.get('zh-CN'),
         }, {
             author: 'testUser',
             id: null,
@@ -140,7 +140,7 @@ describe('src/app/component/form/sw-snippet-field', () => {
             origin: null,
             resetTo: 'deutsch',
             translationKey: 'test.snippet',
-            setId: uuid.get('de-DE'),
+            setId: uuid.get('en-US'),
         }]);
 
         await flushPromises();
@@ -149,7 +149,7 @@ describe('src/app/component/form/sw-snippet-field', () => {
         expect(textField.element.value).toBe('deutsch');
     });
 
-    it('should show en-GB language translation of snippet field', async () => {
+    it('should show zh-CN language translation of snippet field', async () => {
         Shuwei.State.get('session').currentLocale = 'nl-NL';
 
         const wrapper = await createWrapper('nl-NL', [{
@@ -159,7 +159,7 @@ describe('src/app/component/form/sw-snippet-field', () => {
             origin: null,
             resetTo: 'english',
             translationKey: 'test.snippet',
-            setId: uuid.get('en-GB'),
+            setId: uuid.get('zh-CN'),
         }, {
             author: 'testUser',
             id: null,
@@ -167,7 +167,7 @@ describe('src/app/component/form/sw-snippet-field', () => {
             origin: null,
             resetTo: 'deutsch',
             translationKey: 'test.snippet',
-            setId: uuid.get('de-DE'),
+            setId: uuid.get('en-US'),
         }]);
 
         await flushPromises();
@@ -188,12 +188,12 @@ describe('src/app/component/form/sw-snippet-field', () => {
     });
 
     it('should display and hide edit modal', async () => {
-        Shuwei.State.get('session').currentLocale = 'en-GB';
+        Shuwei.State.get('session').currentLocale = 'zh-CN';
         Shuwei.State.get('session').currentUser = {
             username: 'testUser',
         };
 
-        const wrapper = await createWrapper('en-GB', []);
+        const wrapper = await createWrapper('zh-CN', []);
 
         await flushPromises();
 

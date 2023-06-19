@@ -16,37 +16,37 @@
       "CONTENT__INVALID_CUSTOM_ENTITY_FIELD_TYPE": "Field type cannot be rendered. Please contact your administrator."
     },
     "default": {
-      "add": "Add",
-      "apply": "Apply",
-      "cancel": "Cancel",
-      "delete": "Delete",
-      "remove": "Remove",
-      "edit": "Edit",
-      "duplicate": "Duplicate",
-      "copy": "Copy",
-      "error": "Error",
-      "warning": "Warning",
-      "save": "Save",
-      "success": "Success",
-      "info": "Info",
-      "yes": "Yes",
-      "no": "No",
-      "confirm": "Confirm",
+      "add": "添加",
+      "apply": "申请",
+      "cancel": "取消",
+      "delete": "删除",
+      "remove": "移除",
+      "edit": "编辑",
+      "duplicate": "副本",
+      "copy": "复制",
+      "error": "错误",
+      "warning": "警告",
+      "save": "保存",
+      "success": "成功",
+      "info": "信息",
+      "yes": "是",
+      "no": "否",
+      "confirm": "确认",
       "view": "View",
       "ascending": "Ascending",
       "descending": "Descending",
       "xTimesIn": "{n} times in",
-      "open": "Open",
-      "close": "Close",
-      "from": "From",
-      "to": "To",
-      "bulkEdit": "Bulk edit",
-      "discard": "Discard"
+      "open": "打开",
+      "close": "关闭",
+      "from": "从",
+      "to": "到",
+      "bulkEdit": "批量编辑",
+      "discard": "丢弃"
     },
     "notification": {
       "notificationSaveErrorMessage": "An error occurred while saving the entity \"{entityName}\".",
-      "notificationSaveErrorMessageRequiredFieldsInvalid": "Please fill in all required fields.",
-      "unspecifiedSaveErrorMessage": "An error occurred.",
+      "notificationSaveErrorMessageRequiredFieldsInvalid": "请填写所有必填项.",
+      "unspecifiedSaveErrorMessage": "发生了一个错误.",
       "notificationSaveSuccessMessage": "The entity \"{entityName}\" has been saved.",
       "messageDeleteSuccess": "\"{name}\" deleted.",
       "messageDeleteFailed": "The entity \"{entityName}\" is still in use by the following modules: ",
@@ -55,11 +55,11 @@
       "notificationLoadingDataErrorMessage": "Error loading data"
     },
     "notification-center": {
-      "title": "Notifications",
-      "emptyText": "Nothing going on lately.",
+      "title": "通知",
+      "emptyText": "暂无信息.",
       "deleteModal": {
-        "title": "Delete notifications",
-        "textConfirm": "Are you sure you really want to delete all notifications?"
+        "title": "删除通知",
+        "textConfirm": "您确定要删除所有通知吗?"
       },
       "worker-listener": {
         "thumbnailGeneration": {
@@ -141,14 +141,14 @@
       }
     },
     "sw-admin-menu": {
-      "linkLogout": "Logout",
+      "linkLogout": "退出",
       "linkMinimizeMenu": "Collapse menu",
       "textShuweiAdmin": "Shuwei Administration",
       "textProjectName": "Administration",
       "administrator": "Administrator",
       "navigation": {
         "mainMenuItemCatalogue": "Catalogues",
-        "mainMenuItemContent": "Content",
+        "mainMenuItemContent": "内容",
         "mainMenuItemMarketing": "Marketing"
       }
     },
@@ -180,7 +180,7 @@
       }
     },
     "sw-file-input": {
-      "buttonChoose": "Choose file",
+      "buttonChoose": "选择文件",
       "notification": {
         "invalidFileType": {
           "message": "The selected file \"{name}\" has an unsupported format. Please use one of the following types: {supportedTypes}."
@@ -264,40 +264,40 @@
       "labelContextMenuDissolve": "Dissolve",
       "notification": {
         "errorBlankItemName": {
-          "message": "Folder could not be saved: Please enter a name."
+          "message": "无法保存文件夹：请输入名称."
         },
         "renamingError": {
-          "message": "Error saving folder."
+          "message": "保存文件夹时出错."
         },
         "errorInvalidItemName": {
-          "message": "Folder could not be saved: Please enter a valid name."
+          "message": "无法保存文件夹：请输入有效名称."
         }
       }
     },
     "sw-media-media-item": {
-      "labelContextMenuCopyLink": "Copy Link",
-      "labelContextMenuReplace": "Replace",
-      "labelContextMenuRename": "Rename",
-      "labelContextMenuDetail": "Details",
-      "labelContextMenuMove": "Move",
+      "labelContextMenuCopyLink": "复制链接",
+      "labelContextMenuReplace": "替换",
+      "labelContextMenuRename": "重命名",
+      "labelContextMenuDetail": "详情",
+      "labelContextMenuMove": "移动",
       "notification": {
         "errorBlankItemName": {
-          "message": "Media item could not be saved: Please enter a name."
+          "message": "无法保存媒体项：请输入名称."
         },
         "renamingSuccess": {
-          "message": "Media item has been renamed."
+          "message": "媒体项已重命名."
         },
         "renamingError": {
-          "message": "Error saving file."
+          "message": "保存文件时出错."
         }
       },
-      "labelUploading": "Uploading..."
+      "labelUploading": "上传中..."
     },
     "sw-media-modal-delete": {
       "titleModal": {
-        "media": "Delete media files",
-        "folder": "Delete folders",
-        "mediaAndFolder": "Delete folders and media files"
+        "media": "删除媒体文件",
+        "folder": "删除目录",
+        "mediaAndFolder": "同时删除目录和媒体文件"
       },
       "deleteMessage": {
         "media": "Are you sure you want to delete \"{name}\"? | Are you sure you want to delete these {count} media files?",
@@ -410,11 +410,11 @@
       "textNoMedia": "No media available"
     },
     "sw-media-upload": {
-      "buttonFileUpload": "Upload file",
-      "buttonUrlUpload": "Upload file from URL",
-      "buttonSwitchToFileUpload": "Upload file from your computer",
-      "buttonSwitchToUrlUpload": "Upload file from URL",
-      "buttonOpenMedia": "Open media",
+      "buttonFileUpload": "上传文件",
+      "buttonUrlUpload": "从网址上传文件",
+      "buttonSwitchToFileUpload": "从本地上传文件",
+      "buttonSwitchToUrlUpload": "从网址上传文件",
+      "buttonOpenMedia": "打开媒体库",
       "notification": {
         "success": {
           "message": "No file has been saved. | File has been saved. | {count} / {total} files have been saved."
@@ -497,18 +497,18 @@
       "placeholderDefaultFolder": "Select entity..."
     },
     "sw-media-add-thumbnail-form": {
-      "labelMaximumSize": "Maximum size"
+      "labelMaximumSize": "最大尺寸"
     },
     "sw-sidebar-media-item": {
-      "title": "Media",
-      "placeholderSearch": "Search...",
-      "labelLoadMore": "Load more items"
+      "title": "媒体",
+      "placeholderSearch": "搜索...",
+      "labelLoadMore": "加载更多"
     },
     "sw-media-list-selection-item": {
-      "buttonRemove": "Remove"
+      "buttonRemove": "移除"
     },
     "sw-media-list-selection-item-v2": {
-      "buttonRemove": "Remove"
+      "buttonRemove": "移除"
     },
     "sw-select": {
       "messageNoResults": "No results found for \"{term}\"."
@@ -544,8 +544,8 @@
     "sw-entity-advanced-selection-modal": {
       "link": "Use advanced selection",
       "title": "Advanced selection: {entity}",
-      "searchPlaceholder": "Search...",
-      "filter": "Filter",
+      "searchPlaceholder": "搜索...",
+      "filter": "过滤",
       "resetFilters": "Reset filters",
       "applySelection": "Apply selection",
       "entity": {
@@ -560,19 +560,19 @@
       "messageNoResults": "No results found for \"{term}\"."
     },
     "sw-search-bar": {
-      "messageNoResults": "No results found for \"{term}\".",
-      "messageNoTypeResults": "No type found.",
-      "placeholderSearchField": "Find products, customers, orders...",
-      "placeholderTypeSearchField": "Search \"{entity}\"...",
+      "messageNoResults": "未找到结果 \"{term}\".",
+      "messageNoTypeResults": "未找到类型.",
+      "placeholderSearchField": "查找...",
+      "placeholderTypeSearchField": "搜索 \"{entity}\"...",
       "placeholderShortcutInfo": "Hint: Press the \"f\" key to get to the search bar faster.",
       "placeholderSearchShortcutInfo": "<strong>Tip:</strong> Press <span>f</span> to open the search from anywhere.",
       "placeholderESSearchShortcutInfo": "<strong>Tip:</strong> You can use Elasticsearch's <a href=\"https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-simple-query-string-query.html#simple-query-string-syntax\" target=\"_blank\">simple query string</a> to get a more precise result.",
-      "moduleFiltersHeadline": "Module filters",
-      "placeholderFilterShortcutInfo": "Type <span>#products</span> in the search to set the module filter.",
-      "searchTypeAll": "All",
-      "moduleFilter": "Module filter",
-      "messageNoResultsV2": "No exact matches found for \"{term}\".",
-      "messageNoResultsDetailV2": "Try using different keywords or check your search configuration.",
+      "moduleFiltersHeadline": "过滤模块",
+      "placeholderFilterShortcutInfo": "Type <span>#setting</span> in the search to set the module filter.",
+      "searchTypeAll": "全部",
+      "moduleFilter": "过滤模块",
+      "messageNoResultsV2": "未找到完全匹配项 \"{term}\".",
+      "messageNoResultsDetailV2": "尝试使用其他关键字或检查搜索配置.",
       "addNew": "add new"
     },
     "sw-search-bar-item": {
@@ -714,8 +714,8 @@
           "error-message": "Condition type {type} was not found. The condition includes the field: {fields} | The condition type {type} was not found. The conditions include the fields: {fields}"
         },
         "lineItemCondition": {
-          "any": "At least one",
-          "all": "All"
+          "any": "至少一个",
+          "all": "全部"
         },
         "AddAndCondition": "Add AND condition",
         "AddOrCondition": "Add OR condition",
@@ -950,7 +950,7 @@
       }
     },
     "sw-simple-search-field": {
-      "defaultPlaceholder": "Search..."
+      "defaultPlaceholder": "搜索..."
     },
     "sw-tabs-item": {
       "tooltipTabHasErrors": "This page contains errors.",
@@ -1026,9 +1026,9 @@
       "custom-field-set": "Custom field set",
       "store_settings": "Product sorting",
       "flow": "Flow Builder",
-      "module": "Module",
-      "frequently_used": "Frequently used",
-      "recently_searched": "Recently searched"
+      "module": "模块",
+      "frequently_used": "常用",
+      "recently_searched": "最近搜索"
     },
     "day-of-week": {
       "monday": "Monday",
@@ -1204,7 +1204,7 @@
   },
   "sw-tree": {
     "general": {
-      "placeholderSearch": "Search...",
+      "placeholderSearch": "搜索...",
       "treeHeadSelected": "{count} selected",
       "treeHeadline": "Tree structure",
       "buttonCreate": "Create element",
@@ -1283,8 +1283,8 @@
     "configLoadErrorMessage": "Encountered an error while loading the configuration: | There were errors loading the configuration:"
   },
   "locale": {
-    "de-DE": "German",
-    "en-GB": "English (GB)",
+    "en-US": "German",
+    "zh-CN": "English (GB)",
     "bg-BG": "Bulgarian",
     "bs-BA": "Bosnian",
     "cs-CZ": "Czech",
@@ -1338,11 +1338,11 @@
     "addNewRule": "Create new rule..."
   },
   "sw-shortcut-overview": {
-    "title": "Keyboard shortcuts",
-    "iconTooltip": "Press `{key}` to show a list of available shortcuts",
-    "modalTitle": "Keyboard shortcuts",
-    "sectionAddingItems": "Adding items",
-    "sectionNavigation": "Navigation",
+    "title": "键盘快捷键",
+    "iconTooltip": "按 `{key}` 显示可用快捷方式的列表\n",
+    "modalTitle": "键盘快捷键",
+    "sectionAddingItems": "添加项",
+    "sectionNavigation": "导航",
     "sectionSpecialShortcuts": "Special shortcuts",
     "function": "Function",
     "keyboardShortcut": "Keyboard shortcut",
@@ -1522,12 +1522,12 @@
     "resetButton": "Reset all"
   },
   "sw-empty-state": {
-    "messageNoResultTitle": "Nothing found",
-    "messageNoResultSublineSimple": "Edit your filters or search terms to find results.",
-    "messageNoResultSubline": "Edit your filters or your search terms to find results. Please also check the configuration of your search.",
-    "messageNoResultSublineBefore": "Edit your filters or your search terms to find results. Please also check",
-    "messageNoResultSublineLink": "the configuration",
-    "messageNoResultSublineAfter": "of your search."
+    "messageNoResultTitle": "未找到任何内容",
+    "messageNoResultSublineSimple": "修改过滤条件或搜索字词以查找结果.",
+    "messageNoResultSubline": "编辑过滤条件或搜索字词以查找结果。还请检查您的搜索配置.",
+    "messageNoResultSublineBefore": "编辑过滤条件或搜索字词以查找结果。也请检查你的",
+    "messageNoResultSublineLink": "配置",
+    "messageNoResultSublineAfter": ""
   },
   "sw-restricted-rules": {
     "restrictedAssignment": {

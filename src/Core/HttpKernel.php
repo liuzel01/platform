@@ -10,6 +10,7 @@ use Doctrine\DBAL\DriverManager;
 use Doctrine\DBAL\Exception;
 use Shuwei\Core\Framework\Adapter\Cache\CacheIdLoader;
 use Shuwei\Core\Framework\Adapter\Database\MySQLFactory;
+use Shuwei\Core\Framework\Adapter\Storage\MySQLKeyValueStorage;
 use Shuwei\Core\Framework\Event\BeforeSendRedirectResponseEvent;
 use Shuwei\Core\Framework\Event\BeforeSendResponseEvent;
 use Shuwei\Core\Framework\Log\Package;
@@ -171,7 +172,8 @@ class HttpKernel
 
         $pluginLoader = $this->createPluginLoader($connection);
 
-        $cacheId = (new CacheIdLoader($connection))->load();
+        $storage = new MySQLKeyValueStorage($connection);
+        $cacheId = (new CacheIdLoader($storage))->load();
 
         return $this->kernel = new static::$kernelClass(
             $this->environment,

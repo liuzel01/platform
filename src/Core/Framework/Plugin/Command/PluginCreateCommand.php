@@ -32,8 +32,8 @@ class PluginCreateCommand extends Command
   "extra": {
     "shuwei-plugin-class": "#namespace#\\\\#class#",
     "label": {
-      "de-DE": "Skeleton plugin",
-      "en-GB": "Skeleton plugin"
+      "zh-CN": "插件结构",
+      "en-US": "Skeleton plugin"
     }
   }
 }
@@ -71,12 +71,12 @@ EOL;
         xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shuwei/platform/trunk/src/Core/System/SystemConfig/Schema/config.xsd">
     <card>
         <title>#pluginName# Settings</title>
-        <title lang="de-DE">#pluginName# Einstellungen</title>
+        <title lang="en-US">#pluginName# Einstellungen</title>
 
         <input-field type="bool">
             <name>active</name>
             <label>Active</label>
-            <label lang="de-DE">Aktiviert</label>
+            <label lang="en-US">Aktiviert</label>
         </input-field>
     </card>
 </config>

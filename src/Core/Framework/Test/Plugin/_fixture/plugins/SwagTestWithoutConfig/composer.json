@@ -15,8 +15,8 @@
     "extra": {
         "shuwei-plugin-class": "SwagTestWithoutConfig\\SwagTestWithoutConfig",
         "label": {
-            "de-DE": "Deutscher Pluginname",
-            "en-GB": "English plugin name"
+            "en-US": "Deutscher Pluginname",
+            "zh-CN": "English plugin name"
         }
     },
     "autoload": {

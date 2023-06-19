@@ -15,7 +15,6 @@ use Shuwei\Core\Framework\Uuid\Exception\InvalidUuidException;
 use Shuwei\Core\Framework\Uuid\Uuid;
 use Shuwei\Core\System\SystemConfig\Event\BeforeSystemConfigChangedEvent;
 use Shuwei\Core\System\SystemConfig\Event\SystemConfigChangedEvent;
-use Shuwei\Core\System\SystemConfig\Event\SystemConfigChangedHook;
 use Shuwei\Core\System\SystemConfig\Event\SystemConfigDomainLoadedEvent;
 use Shuwei\Core\System\SystemConfig\Exception\BundleConfigNotFoundException;
 use Shuwei\Core\System\SystemConfig\Exception\InvalidDomainException;
@@ -145,7 +144,7 @@ class SystemConfigService implements ResetInterface
      *
      * @return array<mixed>
      */
-    public function getDomain(string $domain, bool $inherit = false): array
+    public function getDomain(string $domain): array
     {
         $domain = trim($domain);
         if ($domain === '') {
@@ -155,7 +154,6 @@ class SystemConfigService implements ResetInterface
         $queryBuilder = $this->connection->createQueryBuilder()
             ->select(['configuration_key', 'configuration_value'])
             ->from('system_config');
-
         $domain = rtrim($domain, '.') . '.';
         $escapedDomain = str_replace('%', '\\%', $domain);
 
@@ -191,7 +189,7 @@ class SystemConfigService implements ResetInterface
             $merged[$key] = $value;
         }
 
-        $event = new SystemConfigDomainLoadedEvent($domain, $merged, $inherit);
+        $event = new SystemConfigDomainLoadedEvent($domain, $merged);
         $this->eventDispatcher->dispatch($event);
 
         return $event->getConfig();
@@ -210,10 +208,9 @@ class SystemConfigService implements ResetInterface
      */
     public function setMultiple(array $values): void
     {
-
         $existingIds = $this->connection
             ->fetchAllKeyValue(
-                'SELECT configuration_key, id FROM system_config WHERE  configuration_key IN (:configurationKeys)',
+                'SELECT configuration_key, id FROM system_config WHERE configuration_key IN (:configurationKeys)',
                 [
                     'configurationKeys' => array_keys($values),
                 ],
@@ -241,7 +238,6 @@ class SystemConfigService implements ResetInterface
 
                 continue;
             }
-
             if (isset($existingIds[$key])) {
                 $this->connection->update(
                     'system_config',
@@ -278,7 +274,6 @@ class SystemConfigService implements ResetInterface
                 ->createQueryBuilder()
                 ->where('configuration_key IN (:keys)')
                 ->setParameter('keys', $toBeDeleted, ArrayParameterType::STRING);
-
             $qb->delete('system_config')
                 ->executeStatement();
         }
@@ -408,4 +403,5 @@ class SystemConfigService implements ResetInterface
             throw new InvalidKeyException('key may not be empty');
         }
     }
+
 }

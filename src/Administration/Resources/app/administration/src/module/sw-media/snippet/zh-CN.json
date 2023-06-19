@@ -1,0 +1,109 @@
+{
+  "sw-media": {
+    "general": {
+      "mainMenuItemGeneral": "媒体",
+      "descriptionTextModule": "在此处管理媒体资源.",
+      "placeholderSearchBar": "在当前目录搜索...",
+      "notification": {
+        "urlCopied": {
+          "message": "URL has been copied to clipboard."
+        }
+      }
+    },
+    "sidebar": {
+      "labelHeadlineMultiple": "{count} files selected",
+      "labelNoMediaSelected": "未选择媒体",
+      "actions": {
+        "copyLink": "复制链接",
+        "delete": "删除",
+        "dissolve": "Dissolve",
+        "download": "下载",
+        "move": "移动",
+        "replace": "替换",
+        "settings": "设置"
+      },
+      "sections": {
+        "actions": "Actions",
+        "preview": "预览",
+        "metadata": "Meta data",
+        "usage": "Used in",
+        "selectedFiles": "Selected files"
+      },
+      "infoMissingFile": {
+        "titleMissingFile": "File not found",
+        "descriptionMissingFile": "Unable to find requested file. Upload new file(s) or delete placeholder."
+      },
+      "metadata": {
+        "name": "名称",
+        "fileType": "文件类型",
+        "altText": "Alt text",
+        "title": "标题",
+        "mimeType": "MIME-Type",
+        "fileSize": "大小",
+        "createdAt": "创建时间",
+        "width": "宽度",
+        "height": "高度",
+        "totalSize": "A total of"
+      },
+      "usage": {
+        "tooltipFoundInProducts": "Found in products",
+        "tooltipFoundInCategories": "Found in categories",
+        "tooltipFoundInManufacturers": "Found in manufacturers",
+        "tooltipFoundInMailTemplate": "Found in mail templates",
+        "tooltipFoundInDocument": "Found in Document",
+        "tooltipFoundInUser": "Found in User",
+        "tooltipFoundInPayment": "Found in Payment",
+        "tooltipFoundShipping": "Found in Shipping",
+        "tooltipFoundLayout": "Found in Shopping Experiences",
+        "titleMediaNotUsed": "Unused medium",
+        "labelMediaNotUsed": "This media item is currently not in use."
+      }
+    },
+    "index": {
+      "buttonCreateFolder": "创建新目录",
+      "rootFolderName": "Media"
+    },
+    "mediaLibrary": {
+      "labelButtonLoadMore": "加载更多",
+      "titleEmptyState": "暂无媒体项目",
+      "descriptionEmptyState": "在此处管理媒体."
+    },
+    "sorting": {
+      "labelSort": "排序:",
+      "labelSortByNameAsc": "Name, A-Z",
+      "labelSortByNameDsc": "Name, Z-A",
+      "labelSortBySizeAsc": "Size, asc.",
+      "labelSortBySizeDsc": "Size, desc.",
+      "labelSortByCreatedAsc": "Creation date, asc.",
+      "labelSortByCreatedDsc": "Creation date, desc."
+    },
+    "presentation": {
+      "labelPresentation": "外观:",
+      "labelPresentationSmall": "Small preview",
+      "labelPresentationMedium": "Regular preview",
+      "labelPresentationLarge": "Large preview",
+      "labelPresentationList": "List"
+    },
+    "sw-media-modal": {
+      "titleModal": "Choose media",
+      "labelTabItemLibrary": "Media Library",
+      "labelTabItemUpload": "Upload files",
+      "labelButtonCancel": "Cancel",
+      "labelButtonSaveSelection": "Add media"
+    },
+    "sw-media-modal-v2": {
+      "titleModal": "Choose media",
+      "labelTabItemLibrary": "Media Library",
+      "labelTabItemUpload": "Upload files",
+      "labelButtonCancel": "Cancel",
+      "labelButtonSaveSelection": "Add media"
+    }
+  },
+  "sw-privileges": {
+    "permissions": {
+      "media": {
+        "label": "媒体"
+      }
+    }
+  }
+}

@@ -11,15 +11,15 @@ $sw-admin-menu-transition: 0.4s cubic-bezier(0.5, 0.32, 0.01, 1);
 $sw-admin-menu-off-canvas-transition: 0.4s cubic-bezier(0.3, 0, 0.15, 1);
 $sw-admin-menu-sub-menu-transition: 0.35s cubic-bezier(0.5, 0.32, 0.01, 1);
 $sw-admin-menu-flyout-transition: 0.2s cubic-bezier(0.5, 0.32, 0.01, 1);
-$sw-admin-menu-color-active: #172b4f;
+$sw-admin-menu-color-active: #323c52;
 $sw-admin-menu-color-hover: #293f65;
 $sw-admin-menu-shop-status-ok: $color-emerald-500;
 $sw-admin-menu-background: #1C232C;
-$sw-admin-menu-background-hover: #293f65;
+$sw-admin-menu-background-hover: #303a4f;
 $sw-admin-menu-divider: #344865;
-$sw-admin-menu-background-active-first-level: #172b4f;
-$sw-admin-menu-background-active-hover: #1a315b;
-$sw-admin-menu-background-active-second-level: #0d2145;
+$sw-admin-menu-background-active-first-level: #303a4f;
+$sw-admin-menu-background-active-hover: #303a4f;
+$sw-admin-menu-background-active-second-level: #303a4f;
 $sw-admin-menu-color-text-primary: #bcc9dc;
 $sw-admin-menu-active-text: $color-white;
 
@@ -106,8 +106,7 @@ $sw-admin-menu-active-text: $color-white;
         padding: 25px 23px;
         display: flex;
         position: relative;
-        height: 85px;
-        margin-bottom: 10px;
+        height: 80px;
     }
 
     .sw-version__status {
@@ -130,6 +129,7 @@ $sw-admin-menu-active-text: $color-white;
         flex: 1 1 0;
         order: 2;
         overflow: hidden;
+        box-shadow: 0 0 9px 2px #0000004d;
     }
 
     .sw-admin-menu__body {
@@ -276,6 +276,7 @@ $sw-admin-menu-active-text: $color-white;
     .sw-admin-menu__toggle {
         color: $sw-admin-menu-color-text-primary;
         display: block;
+        background: none;
         padding: 20px 32px;
         text-decoration: none;
         font-size: $font-size-xs;
@@ -284,7 +285,6 @@ $sw-admin-menu-active-text: $color-white;
         cursor: pointer;
         white-space: nowrap;
         text-align: left;
-        background: none;
         border: 0 none;
         outline: none;
 
@@ -313,7 +313,7 @@ $sw-admin-menu-active-text: $color-white;
     }
 
     .sw-admin-menu__user-actions-toggle {
-        background: $sw-admin-menu-background-active-first-level;
+        background: var(--sw-menu-expand-background);
         padding: 25px 20px;
         display: flex;
         cursor: pointer;

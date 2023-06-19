@@ -208,7 +208,7 @@ const baseConfig = ({ pluginPath, pluginFilepath }) => ({
     },
 
     // devtool: isDev ? 'eval-source-map' : '#source-map',
-    devtool: isDev ? 'eval-source-map' : 'eval-source-map',
+    devtool: 'eval-source-map',
 
 
     optimization: {

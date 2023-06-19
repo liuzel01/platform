@@ -80,12 +80,7 @@ class SystemInstallCommand extends Command
                 '--version-selection-mode' => 'all',
             ],
             [
-                'command' => 'system:configure-shop',
-                '--shop-name' => $input->getOption('shop-name'),
-                '--shop-email' => $input->getOption('shop-email'),
-                '--shop-locale' => $input->getOption('shop-locale'),
-                '--shop-currency' => $input->getOption('shop-currency'),
-                '--no-interaction' => true,
+                'command' => 'system:configure-system',
             ],
             [
                 'command' => 'dal:refresh:index',
@@ -136,7 +131,7 @@ class SystemInstallCommand extends Command
                     'command' => 'sales-channel:create:storefront',
                     '--name' => $input->getOption('shop-name') ?? 'Storefront',
                     '--url' => (string) EnvironmentHelper::getVariable('APP_URL', 'http://localhost'),
-                    '--isoCode' => $input->getOption('shop-locale') ?? 'en-GB',
+                    '--isoCode' => $input->getOption('shop-locale') ?? 'zh-CN',
                 ];
             }
 
