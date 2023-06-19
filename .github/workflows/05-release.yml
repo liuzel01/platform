@@ -1,0 +1,24 @@
+name: Generate Release Info
+
+on:
+  release:
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - uses: denoland/setup-deno@v1
+        with:
+          deno-version: 1.29.1
+
+      - name: Generate Release Info
+        run: |
+          mkdir generated
+          cd generated
+          deno run --allow-read --allow-write --allow-net --allow-env ../.github/release_info_generator.ts
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
