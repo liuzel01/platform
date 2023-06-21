@@ -13,49 +13,49 @@
       "placeholderUsername": "输入你的用户名...",
       "placeholderPassword": "输入你的密码...",
       "buttonLogin": "登录",
-      "messageUnsupportedGrantType": "Authorization grant type not supported by authorization server.",
-      "messageInvalidRequest": "Invalid request.",
+      "messageUnsupportedGrantType": "授权服务器不支持的授权类型.",
+      "messageInvalidRequest": "无效的请求.",
       "messageInvalidClient": "Client authentication failed.",
-      "messageInvalidScope": "Invalid scope request.",
-      "messageInvalidCredentials": "Incorrect user credentials.",
-      "messageServerError": "The authorization server encountered an unexpected condition.",
-      "messageInvalidRefreshToken": "Invalid refresh token.",
-      "messageAccessDenied": "Request denied by authorization server.",
-      "messageGeneralRequestError": "Something went wrong requesting \"{url}\".",
-      "messageAuthThrottled": "Too many login attempts. Please wait {seconds} seconds before trying to log in again.",
+      "messageInvalidScope": "无效的请求域.",
+      "messageInvalidCredentials": "用户名或密码不正确.",
+      "messageServerError": "授权服务器遇到意外情况.",
+      "messageInvalidRefreshToken": "无效的刷新令牌.",
+      "messageAccessDenied": "请求被授权服务器拒绝.",
+      "messageGeneralRequestError": "请求时出错 \"{url}\".",
+      "messageAuthThrottled": "登录尝试次数过多。请等待 {seconds} 秒，然后再尝试再次登录.",
       "forgottenPasswordLink": "忘记密码?"
     },
     "recovery" : {
       "info": {
-        "headline": "Back to login",
-        "info": "If the entered email address is valid, you'll receive your password recovery mail within a few minutes.",
-        "warning": "Please note, that the recovery link will only be valid for 2 hours."
+        "headline": "返回登陆",
+        "info": "如果输入的电子邮件地址有效，您将在几分钟内收到密码恢复邮件.",
+        "warning": "请注意，恢复链接的有效期仅为 2 小时."
       },
       "recovery": {
-        "headline": "Password recovery",
+        "headline": "密码恢复",
         "newPasswordField": {
-          "label": "Enter your new password..."
+          "label": "输入你的新密码..."
         },
         "passwordConfirmField": {
-          "label": "Repeat your new password..."
+          "label": "重复你的新密码..."
         },
         "submit": {
-          "label": "Update password"
+          "label": "更新密码"
         },
-        "errorMessage": "Your recovery link has expired or is invalid!"
+        "errorMessage": "您的恢复链接已过期或无效!"
       },
-      "headline": "Password recovery",
-      "text": "Enter the email address linked to your account.",
+      "headline": "密码恢复",
+      "text": "输入与您的帐户关联的电子邮件地址.",
       "email": {
-        "label": "Email address:",
+        "label": "邮箱地址:",
         "placeholder": "shop@example.com"
       },
-      "submit": "Send recovery link"
+      "submit": "发送恢复链接"
     }
   },
   "global": {
     "sw-admin-menu": {
-      "textShuweiAdmin": "Shuwei Administration"
+      "textShuweiAdmin": "数维平台管理系统"
     }
   }
 }

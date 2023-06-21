@@ -1,7 +1,7 @@
 {
   "global": {
     "error-codes": {
-      "FRAMEWORK__MISSING_PRIVILEGE_ERROR": "Missing permissions.",
+      "FRAMEWORK__MISSING_PRIVILEGE_ERROR": "暂无权限.",
       "FRAMEWORK__DELETE_RESTRICTED": "Deletion failed.",
       "c1051bb4-d103-4f74-8988-acbcafc7fdc3": "This field must not be empty.",
       "INVALID_MEDIA_URL": "Please enter a valid URL to upload a file.",
@@ -142,10 +142,10 @@
     },
     "sw-admin-menu": {
       "linkLogout": "退出",
-      "linkMinimizeMenu": "Collapse menu",
+      "linkMinimizeMenu": "折叠菜单",
       "textShuweiAdmin": "Shuwei Administration",
-      "textProjectName": "Administration",
-      "administrator": "Administrator",
+      "textProjectName": "系统管理员",
+      "administrator": "系统管理员",
       "navigation": {
         "mainMenuItemCatalogue": "Catalogues",
         "mainMenuItemContent": "内容",
@@ -237,13 +237,13 @@
       "maximumSelectionExceed": "Maximum amount of items selected"
     },
     "sw-pagination": {
-      "labelItemsPerPage": "Items per page:"
+      "labelItemsPerPage": "每页条数:"
     },
     "sw-modal": {
-      "labelClose": "Close"
+      "labelClose": "关闭"
     },
     "sw-text-preview": {
-      "showMoreButton": "Show more"
+      "showMoreButton": "显示更多"
     },
     "sw-time-ago": {
       "justNow": "Just now",
@@ -1257,17 +1257,17 @@
   },
   "sw-license-violation": {
     "title": "Extension warning",
-    "reload": "Reload",
+    "reload": "重新加载",
     "alertText": "We have detected a license violation for at least one of your extensions in this installation. To fix the license violation and avoid legal consequences, book a subscription or buy/rent the extension (according to inflicted violation type). You do not use the extension anymore? Then delete it via the \"Delete extension permanently\" button or via My Extensions. If none of these measures are taken, shuwei AG reserves the right to charge penalty fees for any license violation.",
     "deletePlugin": "Delete extension permanently",
     "messageDeleteConfirm": "Do you want to delete the extension \"{pluginName}\" completely?",
     "checkboxMessage": "I have taken notice of this message and eventually accruing consequences.",
-    "closeModal": "Close notification",
+    "closeModal": "关闭通知",
     "ignorePlugin": "Ignore permanently",
     "successfullyDeleted": "Extension has been deleted",
     "table": {
-      "plugin": "Extension",
-      "warning": "Warning"
+      "plugin": "插件",
+      "warning": "警告"
     }
   },
   "sw-sales-channel-switch": {
@@ -1492,18 +1492,18 @@
     }
   },
   "sw-wizard": {
-    "backButton": "Back",
-    "closeButton": "Close",
-    "finishButton": "Finish",
-    "nextButton": "Next"
+    "backButton": "返回",
+    "closeButton": "关闭",
+    "finishButton": "完成",
+    "nextButton": "继续"
   },
   "sw-meteor": {
     "navigation": {
-      "backButton": "Back"
+      "backButton": "返回"
     }
   },
   "sw-base-filter": {
-    "resetButton": "Reset"
+    "resetButton": "重制"
   },
   "sw-boolean-filter": {
     "placeholder": "All",

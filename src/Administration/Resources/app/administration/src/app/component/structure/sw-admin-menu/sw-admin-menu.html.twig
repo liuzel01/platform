@@ -52,6 +52,7 @@
                         :key="`${entry.id || entry.path}-${entry.children.length}`"
                         :class="{ 'is--entry-expanded': currentExpandedMenuEntries.includes(entry) }"
                         :sidebar-expanded="isExpanded"
+                        :displayIcon = "true"
                         :entry="entry"
                         @menu-item-click="onMenuItemClick"
                         @menu-item-enter="onMenuItemEnter"
