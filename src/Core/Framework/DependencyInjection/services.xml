@@ -601,6 +601,7 @@ base-uri 'self';
             <argument>%shuwei.html_sanitizer.cache_enabled%</argument>
             <argument>%shuwei.html_sanitizer.sets%</argument>
             <argument>%shuwei.html_sanitizer.fields%</argument>
+            <argument>%shuwei.html_sanitizer.enabled%</argument>
         </service>
 
         <service id="Shuwei\Core\Framework\Log\Monolog\ExcludeExceptionHandler" decorates="monolog.handler.main" decoration-on-invalid="ignore">

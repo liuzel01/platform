@@ -147,6 +147,7 @@ class InfoController extends AbstractController
             'settings' => [
                 'appUrlReachable' => $this->appUrlVerifier->isAppUrlReachable($request),
                 'private_allowed_extensions' => $this->params->get('shuwei.filesystem.private_allowed_extensions'),
+                'enableHtmlSanitizer' => $this->params->get('shuwei.html_sanitizer.enabled'),
             ],
         ]);
     }

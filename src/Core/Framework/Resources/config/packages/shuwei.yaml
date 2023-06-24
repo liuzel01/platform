@@ -51,6 +51,7 @@ shuwei:
   auto_update:
     enabled: true
   html_sanitizer:
+    enabled: true
     cache_dir: '%kernel.cache_dir%'
     cache_enabled: true
     sets:

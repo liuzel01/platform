@@ -125,6 +125,9 @@ class Configuration implements ConfigurationInterface
         $rootNode = $treeBuilder->getRootNode();
         $rootNode
             ->children()
+                ->booleanNode('enabled')
+                    ->defaultTrue()
+                ->end()
                 ->variableNode('cache_dir')
                     ->defaultValue('%kernel.cache_dir%')
                 ->end()
