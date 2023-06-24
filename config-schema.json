@@ -10,14 +10,8 @@
                     "$ref": "#/definitions/parameters"
                 },
                 "shopware": {
-                    "$ref": "#/definitions/shopware"
+                    "$ref": "#/definitions/shuwei"
                 },
-                "storefront": {
-                    "$ref": "#/definitions/storefront"
-                },
-                "elasticsearch": {
-                    "$ref": "#/definitions/elasticsearch"
-                }
             },
             "title": "Root"
         },

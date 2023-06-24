@@ -318,12 +318,16 @@ base-uri 'self';
             <argument>%twig.cache%</argument>
             <argument type="service"
                       id="Shuwei\Core\Framework\Adapter\Twig\NamespaceHierarchy\NamespaceHierarchyBuilder"/>
-
+            <argument type="service" id="Shuwei\Core\Framework\Adapter\Twig\TemplateScopeDetector"/>
             <tag name="kernel.reset" method="reset"/>
         </service>
 
         <service id="Shuwei\Core\Framework\Adapter\Twig\NamespaceHierarchy\NamespaceHierarchyBuilder">
             <argument type="tagged" tag="shuwei.twig.hierarchy_builder"/>
+        </service>
+
+        <service id="Shuwei\Core\Framework\Adapter\Twig\TemplateScopeDetector">
+            <argument type="service" id="request_stack"/>
         </service>
 
         <service id="Shuwei\Core\Framework\Adapter\Twig\NamespaceHierarchy\BundleHierarchyBuilder">
@@ -335,6 +339,7 @@ base-uri 'self';
 
         <service id="Shuwei\Core\Framework\Adapter\Twig\Extension\NodeExtension">
             <argument type="service" id="Shuwei\Core\Framework\Adapter\Twig\TemplateFinder"/>
+            <argument type="service" id="Shuwei\Core\Framework\Adapter\Twig\TemplateScopeDetector"/>
             <tag name="twig.extension"/>
         </service>
 

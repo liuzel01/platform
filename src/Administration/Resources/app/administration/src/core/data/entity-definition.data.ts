@@ -34,11 +34,13 @@ export function getJsonTypes() {
 
 // eslint-disable-next-line sw-deprecation-rules/private-feature-declarations
 export default class EntityDefinition<EntityName extends keyof EntitySchema.Entities> {
+    // @ts-ignore
     readonly entity: EntitySchema.Entity<EntityName>;
 
     readonly properties: Properties;
 
-    constructor({ entity, properties }: { entity: EntitySchema.Entity<EntityName>, properties: Properties }) {
+    constructor({ entity, properties }: { // @ts-ignore
+        entity: EntitySchema.Entity<EntityName>, properties: Properties }) {
         this.entity = entity;
         this.properties = properties;
     }
