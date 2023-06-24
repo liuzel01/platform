@@ -436,19 +436,19 @@
       "caption": "Drag files here to upload"
     },
     "sw-media-upload-v2": {
-      "buttonFileUpload": "Upload file",
+      "buttonFileUpload": "上传文件",
       "buttonFilesUpload": "Upload files",
-      "buttonUrlUpload": "Upload file from URL",
-      "buttonSwitchToFileUpload": "Upload file from your computer",
+      "buttonUrlUpload": "从网址上传文件",
+      "buttonSwitchToFileUpload": "从本地上传文件",
       "buttonSwitchToUrlUpload": "Upload file from url",
-      "buttonOpenMedia": "Open media",
+      "buttonOpenMedia": "打开媒体库",
       "notification": {
         "success": {
-          "title": "Media upload",
-          "message": "No file has been saved. | File has been saved. | {count} / {total} files have been saved."
+          "title": "媒体上传",
+          "message": "未保存任何文件. | 文件已保存. | {count} / {total} 文件已保存."
         },
         "failure": {
-          "message": "Error while uploading file."
+          "message": "上传文件时出错."
         },
         "illegalFilename": {
           "title": "Invalid filename",
