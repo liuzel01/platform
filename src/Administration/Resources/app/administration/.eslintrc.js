@@ -45,7 +45,7 @@ module.exports = {
     },
 
     globals: {
-        Shuwei: true,
+        Shopware: true,
         VueJS: true,
         Cypress: true,
         cy: true,

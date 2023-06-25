@@ -312,13 +312,13 @@
       },
       "sw-extension-my-extensions-listing": {
         "apps": {
-          "noActivePlugins": "No active apps found.",
-          "titleEmptyState": "No apps installed yet",
-          "textEmptyState": "If you install apps, they will be listed here."
+          "noActivePlugins": "没有发现活动的插件.",
+          "titleEmptyState": "尚未安装任何插件",
+          "textEmptyState": "如果你安装了插件，它们会在这里列出."
         },
         "themes": {
-          "noActivePlugins": "No active themes found.",
-          "titleEmptyState": "No themes installed yet",
+          "noActivePlugins": "没有找到活动的主题.",
+          "titleEmptyState": "尚未安装任何主题",
           "textEmptyState": "If you install themes, they will be listed here."
         },
         "btnOpenStore": "Open store"

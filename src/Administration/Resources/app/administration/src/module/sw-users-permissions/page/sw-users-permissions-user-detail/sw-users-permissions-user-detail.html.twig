@@ -67,26 +67,14 @@
                         class="sw-settings-user-detail__grid"
                     >
                         <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-                        {% block sw_settings_user_detail_content_first_name %}
+                        {% block sw_settings_user_detail_content_name %}
                         <sw-text-field
-                            v-model="user.firstName"
-                            class="sw-settings-user-detail__grid-firstName"
+                            v-model="user.name"
+                            class="sw-settings-user-detail__grid-name"
                             :disabled="!acl.can('users_and_permissions.editor')"
-                            :error="userFirstNameError"
+                            :error="userNameError"
                             required
-                            :label="$tc('sw-users-permissions.users.user-detail.labelFirstName')"
-                        />
-                        {% endblock %}
-
-                        <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-                        {% block sw_settings_user_detail_content_last_name %}
-                        <sw-text-field
-                            v-model="user.lastName"
-                            class="sw-settings-user-detail__grid-lastName"
-                            :disabled="!acl.can('users_and_permissions.editor')"
-                            :error="userLastNameError"
-                            required
-                            :label="$tc('sw-users-permissions.users.user-detail.labelLastName')"
+                            :label="$tc('sw-users-permissions.users.user-detail.labelName')"
                         />
                         {% endblock %}
 
@@ -237,83 +225,6 @@
                     {% endblock %}
                 </sw-card>
                 {% endblock %}
-
-                {%  block sw_setting_user_detail_card_integrations %}
-                <sw-card
-                    :title="$tc('sw-users-permissions.users.user-detail.labelIntegrationsCard')"
-                    position-identifier="sw-users-permissions-user-detail"
-                >
-                    <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-                    {% block sw_settings_user_detail_grid_toolbar %}
-                    <template #toolbar>
-                        <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-                        {% block sw_settings_user_detail_grid_add_key %}
-                        <sw-button
-                            variant="primary"
-                            size="small"
-                            :disabled="!$route.params.id || !acl.can('users_and_permissions.editor')"
-                            @click="addAccessKey"
-                        >
-                            {{ $tc('sw-users-permissions.users.user-detail.addAccessKey') }}
-                        </sw-button>
-                        {% endblock %}
-                    </template>
-                    {% endblock %}
-
-                    <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-                    {% block sw_settings_user_detail_key_grid %}
-                    <template #grid>
-                        <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-                        {% block sw_settings_user_detail_key_grid_content %}
-                        <sw-data-grid
-                            :is-loading="isLoading"
-                            :data-source="integrations"
-                            :columns="integrationColumns"
-                            identifier="user-grid"
-                            :show-settings="true"
-                            :skeleton-item-amount="skeletonItemAmount"
-                        >
-
-                            <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-                            {% block sw_settings_user_detail_grid_columns_actions %}
-                            <template #actions="{ item }">
-                                <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-                                {% block sw_settings_user_detail_grid_columns_actions_edit %}
-                                <sw-context-menu-item
-                                    class="sw-settings-user-detail__grid-context-menu-edit sw-product-list__edit-action"
-                                    :disabled="!acl.can('users_and_permissions.editor')"
-                                    @click="onShowDetailModal(item.id)"
-                                >
-                                    {{ $tc('sw-users-permissions.users.user-detail.contextMenuEdit') }}
-                                </sw-context-menu-item>
-                                {% endblock %}
-
-                                <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-                                {% block sw_settings_user_detail_grid_columns_actions_delete %}
-                                <sw-context-menu-item
-                                    class="sw-settings-user-detail__grid-context-menu-delete"
-                                    :disabled="!acl.can('users_and_permissions.editor')"
-                                    variant="danger"
-                                    @click="showDeleteModal = item.id"
-                                >
-                                    {{ $tc('sw-users-permissions.users.user-detail.contextMenuDelete') }}
-                                </sw-context-menu-item>
-                                {% endblock %}
-                            </template>
-                            {% endblock %}
-                        </sw-data-grid>
-                        <sw-empty-state
-                            v-if="integrations.length === 0"
-                            :absolute="false"
-                            :title="$tc('sw-users-permissions.users.user-detail.noAccessKeysTitle')"
-                            :subline="$tc('sw-users-permissions.users.user-detail.noAccessKeysSubline')"
-                            auto-height
-                        />
-                        {% endblock %}
-                    </template>
-                    {% endblock %}
-                </sw-card>
-                {% endblock %}
             </div>
             {% endblock %}
         </sw-card-view>
@@ -353,113 +264,6 @@
         </sw-modal>
         {% endblock %}
 
-        <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-        {% block sw_settings_user_detail_detail_modal %}
-        <sw-modal
-            v-if="currentIntegration"
-            size="550px"
-            class="sw-settings-user-detail__detail"
-            :is-loading="isModalLoading"
-            :title="showSecretAccessKey ? $tc('global.default.warning') : $tc('sw-users-permissions.users.user-detail.modal.detailModalTitleEdit')"
-            @modal-close="onCloseDetailModal"
-        >
-            <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-            {% block sw_settings_user_detail_detail_modal_inner %}
-
-            <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-            {% block sw_settings_user_detail_detail_modal_inner_field_access_key %}
-            <sw-field
-                v-model="currentIntegration.accessKey"
-                :label="$tc('sw-users-permissions.users.user-detail.modal.idFieldLabel')"
-                :disabled="true"
-                :copy-able="true"
-                :copy-able-tooltip="true"
-            />
-            {% endblock %}
-
-            <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-            {% block sw_settings_user_detail_detail_modal_inner_field_secret_access_key %}
-            <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-            {% block sw_settings_user_detail_detail_modal_inner_field_secret_access_key_field %}
-            <sw-field
-                v-if="showSecretAccessKey"
-                v-model="currentIntegration.secretAccessKey"
-                :type="secretAccessKeyFieldType"
-                :label="$tc('sw-users-permissions.users.user-detail.modal.secretFieldLabel')"
-                :disabled="true"
-                :password-toggle-able="false"
-                :copy-able="showSecretAccessKey"
-                :copy-able-tooltip="true"
-            />
-            {% endblock %}
-
-            <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-            {% block sw_settings_user_detail_detail_modal_inner_field_secret_access_key_button %}
-            <sw-button
-                v-if="!showSecretAccessKey"
-                class="sw-settings-user-detail__secret-help-text-button sw-field"
-                variant="danger"
-                :block="true"
-                @click="addAccessKey"
-            >
-                {{ $tc('sw-users-permissions.users.user-detail.modal.buttonCreateNewApiKeys') }}
-            </sw-button>
-            {% endblock %}
-
-            <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-            {% block sw_settings_user_detail_detail_modal_inner_field_help_text %}
-            <sw-alert
-                v-if="!showSecretAccessKey"
-                variant="warning"
-                class="sw-settings-user-detail__secret-help-text-alert"
-            >
-                {{ $tc('sw-users-permissions.users.user-detail.modal.hintCreateNewApiKeys') }}
-            </sw-alert>
-            {% endblock %}
-            {% endblock %}
-
-            <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-            {% block sw_settings_user_detail_detail_modal_inner_help_text %}
-            <sw-alert
-                v-else
-                variant="warning"
-                class="sw-settings-user-detail__secret-help-text-alert"
-            >
-                {{ $tc('sw-users-permissions.users.user-detail.modal.secretHelpText') }}
-            </sw-alert>
-            {% endblock %}
-
-            <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-            {% block sw_settings_user_detail_detail_modal_inner_footer %}
-            <template #modal-footer>
-                <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-                {% block sw_settings_user_detail_detail_modal_inner_footer_cancel %}
-                <sw-button
-                    size="small"
-                    :disabled="isModalLoading"
-                    @click="onCloseDetailModal"
-                >
-                    {{ $tc('sw-users-permissions.users.user-detail.modal.buttonCancel') }}
-                </sw-button>
-                {% endblock %}
-
-                <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-                {% block sw_settings_user_detail_detail_modal_inner_footer_apply %}
-                <sw-button
-                    size="small"
-                    class="sw-settings-user-detail__save-action"
-                    :disabled="isModalLoading && !!currentIntegration.label"
-                    variant="primary"
-                    @click="onSaveIntegration"
-                >
-                    {{ showSecretAccessKey ? $tc('sw-users-permissions.users.user-detail.modal.buttonApply') : $tc('sw-users-permissions.users.user-detail.modal.buttonApplyEdit') }}
-                </sw-button>
-                {% endblock %}
-            </template>
-            {% endblock %}
-            {% endblock %}
-        </sw-modal>
-        {% endblock %}
     </template>
     {% endblock %}
 </sw-page>

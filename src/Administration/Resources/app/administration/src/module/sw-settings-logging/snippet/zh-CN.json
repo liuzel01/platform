@@ -12,7 +12,7 @@
       "columnContent": "内容",
       "actionShowInfo": "显示详情...",
       "levelDebug": "调试",
-      "levelInfo": "Info",
+      "levelInfo": "信息",
       "levelNotice": "通知",
       "levelWarning": "警告",
       "levelError": "错误",
@@ -24,7 +24,7 @@
     "entryInfo": {
       "title": "日志信息",
       "tabRaw": "Raw",
-      "actionClose": "Close"
+      "actionClose": "关闭"
     },
     "mailInfo": {
       "tabHTML": "HTML",

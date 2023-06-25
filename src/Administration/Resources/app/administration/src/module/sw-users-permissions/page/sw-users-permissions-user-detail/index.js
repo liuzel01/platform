@@ -40,8 +40,6 @@ export default {
             user: null,
             currentUser: null,
             languages: [],
-            integrations: [],
-            currentIntegration: null,
             mediaItem: null,
             newPassword: '',
             newPasswordConfirm: '',
@@ -66,8 +64,7 @@ export default {
 
     computed: {
         ...mapPropertyErrors('user', [
-            'firstName',
-            'lastName',
+            'name',
             'email',
             'username',
             'localeId',
@@ -88,8 +85,6 @@ export default {
 
         userCriteria() {
             const criteria = new Criteria(1, 25);
-
-            criteria.addAssociation('accessKeys');
             criteria.addAssociation('locale');
             criteria.addAssociation('aclRoles');
 
@@ -248,33 +243,12 @@ export default {
                 if (this.user.avatarId) {
                     this.mediaItem = this.user.avatarMedia;
                 }
-
-                this.keyRepository = this.repositoryFactory.create(user.accessKeys.entity, this.user.accessKeys.source);
-                this.loadKeys();
             });
         },
 
         loadCurrentUser() {
             return this.userService.getUser().then((response) => {
                 this.currentUser = response.data;
-            });
-        },
-
-        loadKeys() {
-            this.integrations = this.user.accessKeys;
-        },
-
-        addAccessKey() {
-            const newKey = this.keyRepository.create();
-
-            this.isModalLoading = true;
-            newKey.quantityStart = 1;
-            this.integrationService.generateKey({}, {}, true).then((response) => {
-                newKey.accessKey = response.accessKey;
-                newKey.secretAccessKey = response.secretAccessKey;
-                this.currentIntegration = newKey;
-                this.isModalLoading = false;
-                this.showSecretAccessKey = true;
             });
         },
 
@@ -415,47 +389,6 @@ export default {
 
             this.$set(this.user, 'password', password);
         },
-
-        onShowDetailModal(id) {
-            if (!id) {
-                this.addAccessKey();
-                return;
-            }
-
-            this.currentIntegration = this.user.accessKeys.get(id);
-        },
-
-        onCloseDetailModal() {
-            this.currentIntegration = null;
-            this.showSecretAccessKey = false;
-            this.isModalLoading = false;
-        },
-
-        onSaveIntegration() {
-            if (!this.currentIntegration) {
-                return;
-            }
-
-            if (!this.user.accessKeys.has(this.currentIntegration.id)) {
-                this.user.accessKeys.add(this.currentIntegration);
-            }
-
-            this.onCloseDetailModal();
-        },
-
-        onCloseDeleteModal() {
-            this.showDeleteModal = null;
-        },
-
-        onConfirmDelete(id) {
-            if (!id) {
-                return;
-            }
-
-            this.onCloseDeleteModal();
-            this.user.accessKeys.remove(id);
-        },
-
         onCloseConfirmPasswordModal() {
             this.confirmPasswordModal = false;
         },

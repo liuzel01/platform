@@ -38,7 +38,7 @@
       },
       "grid": {
         "title": "权限",
-        "disabledCheckboxMessage": "To disable this option, you must first disable other active options."
+        "disabledCheckboxMessage": "要禁用此选项，必须首先禁用其他活动选项."
       },
       "additional-permissions": {
         "title": "附加权限"
@@ -91,32 +91,31 @@
       "user-detail": {
         "labelCard": "基础信息",
         "labelIntegrationsCard": "Integrations",
-        "labelFirstName": "First name",
-        "labelLastName": "Last name",
-        "labelEmail": "Email address",
-        "errorEmailUsed": "This email address is already in use.",
-        "errorUsernameUsed": "This username is already in use.",
-        "labelUsername": "User name",
-        "labelPassword": "Password",
-        "labelProfilePicture": "Profile picture",
-        "labelLanguage": "User interface language",
-        "labelLanguagePlaceholder": "Choose language...",
-        "labelChangePassword": "Change password",
-        "labelAdministrator": "Administrator",
-        "labelTimezone": "Timezone",
+        "labelName": "姓名",
+        "labelEmail": "邮箱",
+        "errorEmailUsed": "此电子邮件地址已被使用.",
+        "errorUsernameUsed": "此用户名已被使用.",
+        "labelUsername": "用户名",
+        "labelPassword": "密码",
+        "labelProfilePicture": "头像",
+        "labelLanguage": "用户界面语言",
+        "labelLanguagePlaceholder": "选择语言...",
+        "labelChangePassword": "修改密码",
+        "labelAdministrator": "系统管理员",
+        "labelTimezone": "时区",
         "labelJobTitle": "Job title",
-        "labelRoles": "Roles",
-        "labelNewPassword": "New password",
-        "labelNewUser": "New user",
-        "placeholderNewPassword": "Enter new password...",
-        "placeholderNewPasswordConfirm": "Confirm new password...",
-        "labelButtonCancel": "Cancel",
-        "labelButtonChangePassword": "Change",
+        "labelRoles": "角色",
+        "labelNewPassword": "新密码",
+        "labelNewUser": "创建用户",
+        "placeholderNewPassword": "输入新密码...",
+        "placeholderNewPasswordConfirm": "确认新密码...",
+        "labelButtonCancel": "取消",
+        "labelButtonChangePassword": "更换",
         "labelButtonSave": "保存",
-        "writeAccess": "Write",
-        "readAccess": "Read",
-        "contextMenuEdit": "Edit",
-        "contextMenuDelete": "Delete",
+        "writeAccess": "写",
+        "readAccess": "读",
+        "contextMenuEdit": "编辑",
+        "contextMenuDelete": "删除",
         "textChangePassword": "Pressing the \"change\" button will immediately save the new password!",
         "addAccessKey": "Create access key",
         "noAccessKeysTitle": "No access keys available",
@@ -125,13 +124,13 @@
         "labelPermissions": "Permissions",
         "disabledRoleSelectWarning": "Roles are only available for users that don't have administrator rights.",
         "passwordConfirmation": {
-          "titleConfirmPasswordModal": "Confirm password",
-          "labelConfirmPassword": "Password",
-          "placeholderConfirmPassword": "Enter your current password...",
-          "labelButtonCancel": "Cancel",
-          "labelButtonConfirm": "Confirm",
-          "notificationPasswordErrorTitle": "Error",
-          "notificationPasswordErrorMessage": "Please submit your current password correctly."
+          "titleConfirmPasswordModal": "确认密码",
+          "labelConfirmPassword": "密码",
+          "placeholderConfirmPassword": "输入当前登录系统密码...",
+          "labelButtonCancel": "取消",
+          "labelButtonConfirm": "确定",
+          "notificationPasswordErrorTitle": "错误",
+          "notificationPasswordErrorMessage": "请正确提交当前密码."
         },
         "modal": {
           "detailModalTitle": "Create integration",
@@ -153,13 +152,13 @@
         },
         "notification": {
           "saveError": {
-            "message": "The user \"{name}\" could not be saved."
+            "message": "用户 \"{name}\" 无法保存."
           },
           "saveSuccess": {
-            "message": "User \"{name}\" saved."
+            "message": "用户 \"{name}\" 已保存."
           },
-          "invalidEmailErrorMessage": "Please enter a valid email address.",
-          "duplicateEmailErrorMessage": "This email address has been registered already."
+          "invalidEmailErrorMessage": "请输入有效的电子邮件地址.",
+          "duplicateEmailErrorMessage": "该邮箱已经被注册了."
         }
       }
     }
@@ -226,7 +225,7 @@
       },
       "app": {
         "label": "Apps",
-        "all": "All",
+        "all": "全部",
         "disabledCheckboxMessage": "To deactivate this option, you must first deactivate the All option."
       }
     }

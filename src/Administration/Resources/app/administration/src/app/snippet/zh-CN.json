@@ -564,11 +564,11 @@
       "messageNoTypeResults": "未找到类型.",
       "placeholderSearchField": "查找...",
       "placeholderTypeSearchField": "搜索 \"{entity}\"...",
-      "placeholderShortcutInfo": "Hint: Press the \"f\" key to get to the search bar faster.",
+      "placeholderShortcutInfo": "提示: 按 \"f\" 键 以便更快地进入搜索栏.",
       "placeholderSearchShortcutInfo": "<strong>Tip:</strong> Press <span>f</span> to open the search from anywhere.",
       "placeholderESSearchShortcutInfo": "<strong>Tip:</strong> You can use Elasticsearch's <a href=\"https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-simple-query-string-query.html#simple-query-string-syntax\" target=\"_blank\">simple query string</a> to get a more precise result.",
       "moduleFiltersHeadline": "过滤模块",
-      "placeholderFilterShortcutInfo": "Type <span>#setting</span> in the search to set the module filter.",
+      "placeholderFilterShortcutInfo": "输入 <span>#setting</span> 在搜索中设置模块筛选器.",
       "searchTypeAll": "全部",
       "moduleFilter": "过滤模块",
       "messageNoResultsV2": "未找到完全匹配项 \"{term}\".",
@@ -579,10 +579,10 @@
       "typeLabelCustomer": "Customer",
       "typeLabelProduct": "Product",
       "typeLabelOrder": "Order",
-      "typeLabelMedia": "Media",
+      "typeLabelMedia": "媒体",
       "typeLabelCategory": "Category",
       "typeLabelCms": "CMS",
-      "typeLabelModule": "Module",
+      "typeLabelModule": "模块",
       "typeLabelAction": "Action",
       "addNewEntity": "Add new {entity}",
       "shortcuts": {
@@ -957,7 +957,7 @@
       "tooltipTabHasWarnings": "This page contains warnings."
     },
     "entities": {
-      "all": "All",
+      "all": "全部",
       "custom_field": "Custom field | Custom fields",
       "cart": "Cart | Carts",
       "category": "Category | Categories",
@@ -1506,12 +1506,12 @@
     "resetButton": "重制"
   },
   "sw-boolean-filter": {
-    "placeholder": "All",
-    "active": "Active",
-    "inactive": "Inactive"
+    "placeholder": "全部",
+    "active": "激活",
+    "inactive": "未激活"
   },
   "sw-existence-filter": {
-    "placeholder": "All",
+    "placeholder": "全部",
     "noCriteria": "No {criteriaName}",
     "hasCriteria": "Has {criteriaName}"
   },
