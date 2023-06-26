@@ -88,7 +88,7 @@
                     "$ref": "#/definitions/dompdf"
                 }
             },
-            "title": "Shopware"
+            "title": "Shuwei"
         },
         "profiler": {
             "type": "object",
@@ -752,7 +752,7 @@
                     "type": "boolean"
                 }
             },
-            "title": "Shopware store"
+            "title": "Shuwei store"
         },
         "sales_channel_context": {
             "type": "object",
