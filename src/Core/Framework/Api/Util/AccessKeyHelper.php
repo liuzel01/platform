@@ -19,7 +19,7 @@ class AccessKeyHelper
     public static $mapping = [
         self::USER_IDENTIFIER => 'user',
         self::INTEGRATION_IDENTIFIER => 'integration',
-        self::SALES_CHANNEL_IDENTIFIER => 'sales-channel',
+        self::SALES_CHANNEL_IDENTIFIER => 'website',
         self::PRODUCT_EXPORT_IDENTIFIER => 'product-export',
     ];
 
@@ -48,9 +48,9 @@ class AccessKeyHelper
     {
         $mapping = array_flip(self::$mapping);
 
-        if (!isset($mapping[$origin])) {
-            throw new \RuntimeException('Given identifier for access key is invalid.');
-        }
+//        if (!isset($mapping[$origin])) {
+//            throw new \RuntimeException('Given identifier for access key is invalid.');
+//        }
 
         return $mapping[$origin];
     }
