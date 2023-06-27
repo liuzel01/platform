@@ -9,9 +9,6 @@ use Shuwei\Core\Framework\DataAbstractionLayer\EntityCollection;
 use Shuwei\Core\Framework\DataAbstractionLayer\EntityDefinition;
 use Shuwei\Core\Framework\Log\Package;
 use Shuwei\Core\Framework\Struct\Collection;
-use Shuwei\Core\System\SalesChannel\Entity\PartialSalesChannelEntityLoadedEvent;
-use Shuwei\Core\System\SalesChannel\Entity\SalesChannelEntityLoadedEvent;
-use Shuwei\Core\System\SalesChannel\SalesChannelContext;
 
 /**
  * @internal
@@ -47,48 +44,14 @@ class EntityLoadedEventFactory
         return $this->buildEvents($mapping, $generator, $context);
     }
 
-    /**
-     * @param list<mixed> $entities
-     *
-     * @return EntityLoadedContainerEvent[]
-     */
-    public function createForSalesChannel(array $entities, SalesChannelContext $context): array
-    {
-        $mapping = $this->recursion($entities, []);
 
-        $generator = fn (EntityDefinition $definition, array $entities) => new EntityLoadedEvent($definition, $entities, $context->getContext());
 
-        $salesGenerator = fn (EntityDefinition $definition, array $entities) => new SalesChannelEntityLoadedEvent($definition, $entities, $context);
 
-        return [
-            $this->buildEvents($mapping, $generator, $context->getContext()),
-            $this->buildEvents($mapping, $salesGenerator, $context->getContext()),
-        ];
-    }
-
-    /**
-     * @param list<mixed> $entities
-     *
-     * @return EntityLoadedContainerEvent[]
-     */
-    public function createPartialForSalesChannel(array $entities, SalesChannelContext $context): array
-    {
-        $mapping = $this->recursion($entities, []);
-
-        $generator = fn (EntityDefinition $definition, array $entities) => new PartialEntityLoadedEvent($definition, $entities, $context->getContext());
-
-        $salesGenerator = fn (EntityDefinition $definition, array $entities) => new PartialSalesChannelEntityLoadedEvent($definition, $entities, $context);
-
-        return [
-            $this->buildEvents($mapping, $generator, $context->getContext()),
-            $this->buildEvents($mapping, $salesGenerator, $context->getContext()),
-        ];
-    }
 
     /**
      * @param array<string, list<Entity>> $mapping
      */
-    private function buildEvents(array $mapping, \Closure $generator, Context $context): EntityLoadedContainerEvent
+    protected function buildEvents(array $mapping, \Closure $generator, Context $context): EntityLoadedContainerEvent
     {
         $events = [];
         foreach ($mapping as $name => $entities) {
@@ -106,7 +69,7 @@ class EntityLoadedEventFactory
      *
      * @return array<string, list<Entity>>
      */
-    private function recursion(array $entities, array $mapping): array
+    protected function recursion(array $entities, array $mapping): array
     {
         foreach ($entities as $entity) {
             if (!$entity instanceof Entity && !$entity instanceof EntityCollection) {

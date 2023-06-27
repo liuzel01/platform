@@ -75,7 +75,7 @@ describe('src/app/init-post/worker.init.ts', () => {
         'Shuwei\\Core\\Content\\ProductStream\\DataAbstractionLayer\\ProductStreamIndexingMessage',
         'Shuwei\\Core\\Content\\Category\\DataAbstractionLayer\\CategoryIndexingMessage',
         'Shuwei\\Core\\Content\\Media\\DataAbstractionLayer\\MediaIndexingMessage',
-        'Shuwei\\Core\\System\\SalesChannel\\DataAbstractionLayer\\SalesChannelIndexingMessage',
+        'Shuwei\\Core\\System\\Website\\DataAbstractionLayer\\SalesChannelIndexingMessage',
         'Shuwei\\Core\\Content\\Rule\\DataAbstractionLayer\\RuleIndexingMessage',
         'Shuwei\\Core\\Content\\Product\\DataAbstractionLayer\\ProductIndexingMessage',
         'Shuwei\\Elasticsearch\\Framework\\Indexing\\ElasticsearchIndexingMessage',

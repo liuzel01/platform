@@ -15,16 +15,21 @@ class Migration1686727795CustomEntity extends MigrationStep
     public function update(Connection $connection): void
     {
         $connection->executeStatement('
-            CREATE TABLE IF NOT EXISTS `custom_entity` (
+            CREATE TABLE `custom_entity` (
               `id` binary(16) NOT NULL,
               `name` varchar(255) NOT NULL,
-              `fields` json NOT NULL,
-
-              `created_at` DATETIME(3) NOT NULL,
-              `updated_at` DATETIME(3) NULL,
+              `fields` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL CHECK (json_valid(`fields`)),
+              `created_at` datetime(3) NOT NULL,
+              `updated_at` datetime(3) DEFAULT NULL,
+              `flags` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL CHECK (json_valid(`flags`)),
+              `plugin_id` binary(16) DEFAULT NULL,
+              `custom_fields_aware` tinyint(1) DEFAULT 0,
+              `label_property` varchar(255) DEFAULT NULL,
               PRIMARY KEY (`id`),
-              UNIQUE `name` (`name`),
-              CONSTRAINT `json.custom_entity.fields` CHECK (JSON_VALID(`fields`))
+              UNIQUE KEY `name` (`name`),
+              KEY `fk.custom_entity.plugin_id` (`plugin_id`),
+              CONSTRAINT `fk.custom_entity.plugin_id` FOREIGN KEY (`plugin_id`) REFERENCES `plugin` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+              CONSTRAINT `json.custom_entity.fields` CHECK (json_valid(`fields`))
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
         ');
     }

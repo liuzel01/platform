@@ -46,14 +46,6 @@ class CustomEntityPersister
                 'DELETE FROM custom_entity WHERE plugin_id = :id',
                 ['id' => Uuid::fromHexToBytes($extensionId)]
             );
-        } elseif ($extensionEntityType === AppEntity::class && $extensionId) {
-            $this->connection->executeStatement(
-                'DELETE FROM custom_entity WHERE app_id = :id',
-                ['id' => Uuid::fromHexToBytes($extensionId)]
-            );
-        } else {
-            // custom entity without any app or plugin id --> created by the user and not by any extension
-            $this->connection->executeStatement('DELETE FROM custom_entity WHERE app_id IS NULL AND plugin_id IS NULL');
         }
 
         $inserts = new MultiInsertQueryQueue($this->connection, 25, false, true);
@@ -61,7 +53,6 @@ class CustomEntityPersister
             unset($customEntity['cmsAware']);
 
             $customEntity['plugin_id'] = $extensionEntityType === PluginEntity::class && $extensionId ? Uuid::fromHexToBytes($extensionId) : null;
-            $customEntity['app_id'] = $extensionEntityType === AppEntity::class && $extensionId ? Uuid::fromHexToBytes($extensionId) : null;
 
             $customEntity['flags'] = json_encode($customEntity['flags'], \JSON_THROW_ON_ERROR | \JSON_PRESERVE_ZERO_FRACTION);
             $customEntity['fields'] = json_encode($customEntity['fields'], \JSON_THROW_ON_ERROR | \JSON_PRESERVE_ZERO_FRACTION);
