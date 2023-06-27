@@ -4,8 +4,8 @@ namespace Shuwei\Core\Framework\Adapter\Cache;
 
 use Shuwei\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Shuwei\Core\Framework\Log\Package;
-use Shuwei\Core\System\SalesChannel\SalesChannelContext;
-use Shuwei\Core\System\SalesChannel\StoreApiResponse;
+use SwagFrontend\FrontendContext;
+use SwagFrontend\Website\FrontendApiResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Contracts\EventDispatcher\Event;
 
@@ -15,8 +15,8 @@ class StoreApiRouteCacheTagsEvent extends Event
     public function __construct(
         protected array $tags,
         protected Request $request,
-        private readonly StoreApiResponse $response,
-        protected SalesChannelContext $context,
+        private readonly FrontendApiResponse $response,
+        protected FrontendContext $context,
         protected ?Criteria $criteria
     ) {
     }
@@ -31,7 +31,7 @@ class StoreApiRouteCacheTagsEvent extends Event
         return $this->request;
     }
 
-    public function getContext(): SalesChannelContext
+    public function getContext(): FrontendContext
     {
         return $this->context;
     }
@@ -53,10 +53,10 @@ class StoreApiRouteCacheTagsEvent extends Event
 
     public function getSalesChannelId(): string
     {
-        return $this->context->getSalesChannelId();
+        return $this->context->getWebsiteId();
     }
 
-    public function getResponse(): StoreApiResponse
+    public function getResponse(): FrontendApiResponse
     {
         return $this->response;
     }
