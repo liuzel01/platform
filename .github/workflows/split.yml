@@ -12,9 +12,7 @@ jobs:
     steps:
       - name: Clone platform
         uses: actions/checkout@v2
-      - name: Get branch name
-        id: branch-name
-        uses: tj-actions/branch-names@v7
+
       - name: Split packages
         run: |
           for package in Administration Core; do
