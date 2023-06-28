@@ -4,8 +4,8 @@ on:
     branches:
       - trunk
     paths:
-      - src/Administration
-      - src/Core
+      - src/Administration/**/*
+      - src/Core/**/*
 jobs:
   build:
     runs-on: ubuntu-latest
