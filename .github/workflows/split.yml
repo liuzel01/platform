@@ -15,6 +15,6 @@ jobs:
                 name: Release
                 uses: antalaron/action-splitsh@master
                 with:
-                    split: 'owner/sub-repo'
+                    split: 'git@github.com:58shuwei/administration.git'
                     split_deploy_key: ${{ secrets.GITHUB_SSH_KEY }}
                     split_prefix: 'src/Administration/'
