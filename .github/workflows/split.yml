@@ -1,0 +1,20 @@
+name: Release Split
+
+on: [ push ]
+
+jobs:
+    release:
+        runs-on: ubuntu-latest
+        steps:
+            -
+                name: Checkout
+                uses: actions/checkout@v2
+                with:
+                    fetch-depth: 0
+            -
+                name: Release
+                uses: antalaron/action-splitsh@master
+                with:
+                    split: 'owner/sub-repo'
+                    split_deploy_key: ${{ secrets.GITHUB_SSH_KEY }}
+                    split_prefix: 'src/Administration/'
