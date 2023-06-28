@@ -16,10 +16,10 @@ jobs:
         run: |
           
           for package in Administration Core; do
-            .github/bin/split.sh split_repo "${package}"
+            ./.github/bin/split.sh split_repo "${package}"
           done
       - name: Push split
         run: |
           for package in Administration Core; do
-            .github/bin/split.sh push "${package}" git@github.com:58shuwei ${GITHUB_HEAD_REF}
+            ./.github/bin/split.sh push "${package}" git@github.com:58shuwei ${GITHUB_HEAD_REF}
           done
