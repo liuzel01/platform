@@ -20,6 +20,7 @@ jobs:
           done
       - name: Push split
         run: |
+          echo "Base branch: ${{ steps.branch-name.outputs.base_ref_branch }}"
           for package in Administration Core; do
-            ./.github/bin/split.sh push "${package}" git@github.com:58shuwei "${{ steps.branch-name.outputs.current_branch }}"
+            ./.github/bin/split.sh push "${package}" git@github.com:58shuwei "${{ steps.branch-name.outputs.base_ref_branch }}"
           done
