@@ -134,6 +134,7 @@ declare global {
         userService: UserApiService,
         shuweiDiscountCampaignService: ShuweiDiscountCampaignService,
         searchRankingService: $TSFixMe,
+        appAclService: $TSFixMe,
         searchPreferencesService: $TSFixMe,
         storeService: StoreApiService,
         contextStoreService: StoreContextService,

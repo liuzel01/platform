@@ -44,10 +44,10 @@
       "discard": "丢弃"
     },
     "notification": {
-      "notificationSaveErrorMessage": "An error occurred while saving the entity \"{entityName}\".",
+      "notificationSaveErrorMessage": "保存实体时发生错误 \"{entityName}\".",
       "notificationSaveErrorMessageRequiredFieldsInvalid": "请填写所有必填项.",
       "unspecifiedSaveErrorMessage": "发生了一个错误.",
-      "notificationSaveSuccessMessage": "The entity \"{entityName}\" has been saved.",
+      "notificationSaveSuccessMessage": "实体 \"{entityName}\" 已被保存.",
       "messageDeleteSuccess": "\"{name}\" deleted.",
       "messageDeleteFailed": "The entity \"{entityName}\" is still in use by the following modules: ",
       "noTitle": "Title is not defined",

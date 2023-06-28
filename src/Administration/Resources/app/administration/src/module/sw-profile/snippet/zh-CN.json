@@ -1,8 +1,8 @@
 {
   "sw-profile": {
     "general": {
-      "mainMenuItemGeneral": "Profiles",
-      "description": "Manage your profile here.",
+      "mainMenuItemGeneral": "资料",
+      "description": "在此管理您的个人资料.",
       "headlineProfile": "个人中心"
     },
     "index": {

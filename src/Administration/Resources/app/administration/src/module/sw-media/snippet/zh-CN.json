@@ -85,18 +85,18 @@
       "labelPresentationList": "List"
     },
     "sw-media-modal": {
-      "titleModal": "Choose media",
-      "labelTabItemLibrary": "Media Library",
-      "labelTabItemUpload": "Upload files",
-      "labelButtonCancel": "Cancel",
-      "labelButtonSaveSelection": "Add media"
+      "titleModal": "选择资源",
+      "labelTabItemLibrary": "资源库",
+      "labelTabItemUpload": "上传文件",
+      "labelButtonCancel": "取消",
+      "labelButtonSaveSelection": "添加资源"
     },
     "sw-media-modal-v2": {
-      "titleModal": "Choose media",
-      "labelTabItemLibrary": "Media Library",
-      "labelTabItemUpload": "Upload files",
-      "labelButtonCancel": "Cancel",
-      "labelButtonSaveSelection": "Add media"
+      "titleModal": "选择资源",
+      "labelTabItemLibrary": "资源库",
+      "labelTabItemUpload": "上传文件",
+      "labelButtonCancel": "取消",
+      "labelButtonSaveSelection": "添加资源"
     }
   },
   "sw-privileges": {

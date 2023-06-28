@@ -27,20 +27,20 @@
       },
       "account": {
         "headline": "官方账号",
-        "isLoggedIn": "Shuwei Account succesfully connected. Go to the \"App\" or \"Themes\" tab and check if your purchased extensions are listed. If not, check head over to your Showare Account and make sure the correct domain for extensions has been set.",
-        "login": "登陆",
+        "isLoggedIn": "数维平台官方帐号连接成功. 转到\"插件\"或\"主题\"选项卡，检查是否列出了您购买的扩展. 如果没有, 检查您的数维平台官方帐户.",
+        "login": "登录",
         "logout": "退出",
-        "loginMessage": "Login with you Shuwei Account to access extensions you bought on store.shuwei.com",
-        "register": "Sign up now and become part of the Shuwei community!",
-        "registerNow": "Sign up now",
-        "registerUrl": "https://account.shuwei.com/register?lang=en",
-        "mailLabel": "Email address",
-        "mailPlaceholder": "Enter your email address...",
-        "passwordLabel": "Password",
-        "passwordPlaceholder": "Enter your password...",
-        "recoveryUrl": "https://account.shuwei.com/recovery?lang=en",
-        "passwordForgot": "Did you forget your password?",
-        "loginNotificationMessage": "You are logged in to the Shuwei Account."
+        "loginMessage": "登录您的数维官方帐户，以访问您在store.58shuwei.com上购买的扩展",
+        "register": "现在注册并成为数维官方社区的一部分!",
+        "registerNow": "立即注册",
+        "registerUrl": "https://account.58shuwei.com/register?lang=zh",
+        "mailLabel": "邮箱",
+        "mailPlaceholder": "输入你的邮箱地址...",
+        "passwordLabel": "密码",
+        "passwordPlaceholder": "输入你的密码...",
+        "recoveryUrl": "https://account.58shuwei.com/recovery?lang=zh",
+        "passwordForgot": "忘记密码?",
+        "loginNotificationMessage": "你已登录数维官方账号."
       },
       "tabs": {
         "app": "插件",
@@ -249,7 +249,7 @@
       },
       "sw-extension-card-base": {
         "subscriptionLabel": "Subscription:",
-        "inactiveLabel": "(inactive)",
+        "inactiveLabel": "(未激活)",
         "purchasedLabel": "Purchased:",
         "installedLabel": "安装时间:",
         "openExtensionLabel": "Open",
@@ -264,7 +264,7 @@
           "removeLabel": "Remove",
           "cancelAndRemoveLabel": "Cancel and remove",
           "uninstallLabel": "卸载",
-          "updateLabel": "Update to {version}",
+          "updateLabel": "更新至 {version}",
           "rateLabel": "Rate extension",
           "policyExtensions": "Privacy policy extensions",
           "permissions": "See permissions",
@@ -319,9 +319,9 @@
         "themes": {
           "noActivePlugins": "没有找到活动的主题.",
           "titleEmptyState": "尚未安装任何主题",
-          "textEmptyState": "If you install themes, they will be listed here."
+          "textEmptyState": "如果您安装了主题，它们将在这里列出."
         },
-        "btnOpenStore": "Open store"
+        "btnOpenStore": "前往插件市场"
       },
       "sw-extension-removal-modal": {
         "titleCancel": "\"{extensionName}\" cancel and remove",
@@ -333,12 +333,12 @@
         "labelRemove": "Remove"
       },
       "sw-extension-uninstall-modal": {
-        "title": "\"{extensionName}\" uninstall",
-        "description": "If you uninstall the extension, you can no longer use it.",
-        "alert": "Are you sure you want to uninstall the extension?",
-        "buttonLabel": "Uninstall",
-        "labelRemovePluginData": "Remove all app data permanently",
-        "helpTextRemovePluginData": "Warning: All data of the app will be removed permanently. This process is irreversible."
+        "title": "\"{extensionName}\" 卸载",
+        "description": "如果你卸载了扩展，你就不能再使用它了.",
+        "alert": "您确定要卸载扩展程序吗?",
+        "buttonLabel": "卸载",
+        "labelRemovePluginData": "永久删除所有应用数据",
+        "helpTextRemovePluginData": "警告: 该应用程序的所有数据将被永久删除。这个过程是不可逆的."
       },
       "sw-extension-listing-card": {
         "labelInstalled": "Installed",
