@@ -105,12 +105,12 @@
   },
   "sw-extension-store": {
     "landing-page": {
-      "enablingShuweiStore": "Activating the Shuwei Store...",
-      "takeMinutes": "This may take a few minutes.",
-      "activationErrorTitle": "Error during activation",
-      "activationErrorDescription": "Please try again. If that doesn't work, ask your administrator for help.",
-      "retryButton": "Retry",
-      "activationSuccessTitle": "Activated successfully",
+      "enablingShuweiStore": "激活数维平台插件市场...",
+      "takeMinutes": "这可能需要几分钟.",
+      "activationErrorTitle": "激活时出错",
+      "activationErrorDescription": "请再试一次。如果这不起作用，请向管理员寻求帮助.",
+      "retryButton": "重试",
+      "activationSuccessTitle": "激活成功",
       "activationSuccessDescription": "Have fun exploring the Shuwei Store.",
       "label": "当前可用",
       "activationDescriptionTitleFirst": "使用插件市场 -",
@@ -119,14 +119,14 @@
       "activate": "激活"
     },
     "title": "Store",
-    "descriptionTextModule": "Manage your extensions",
+    "descriptionTextModule": "管理您的扩展",
     "general": {
       "labelPrice": "Free | {price}/month | {price}",
       "labelDiscountedPrice": "Free | <s>{price}</s> <strong>{discountedPrice}</strong>/month | <s>{price}</s> <strong>{discountedPrice}</strong>"
     },
     "listing": {
       "tabs": {
-        "themes": "Themes"
+        "themes": "主题"
       },
       "placeHolderCategories": "All categories",
       "placeholderRatings": "All ratings",

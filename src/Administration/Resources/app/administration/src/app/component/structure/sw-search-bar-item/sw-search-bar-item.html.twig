@@ -17,6 +17,41 @@
     {% endblock %}
 
     <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
+    {% block sw_search_bar_item_customer %}
+    <router-link
+        v-if="type === 'customer'"
+        ref="routerLink"
+        class="sw-search-bar-item__link"
+        :to="{ name: 'sw.customer.detail.base', params: { id: item.id } }"
+        @click.native="onClickSearchResult('customer', item.id)"
+    >
+        <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
+        {% block sw_search_bar_item_customer_label %}
+        <span
+            class="sw-search-bar-item__label"
+        >
+            <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
+            {% block sw_search_bar_item_customer_label_name %}
+            <sw-highlight-text
+                :search-term="searchTerm"
+                :text="`${item.firstName} ${item.lastName}`"
+            />
+            {% endblock %}
+
+            <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
+            {% block sw_search_bar_item_customer_label_number %}
+            <sw-highlight-text
+                :search-term="searchTerm"
+                :text="item.customerNumber"
+            />
+            {% endblock %}
+        </span>
+        {% endblock %}
+
+    </router-link>
+    {% endblock %}
+
+    <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
     {% block sw_search_bar_item_product %}
     <router-link
         v-else-if="type === 'product'"
