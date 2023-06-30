@@ -31,7 +31,6 @@ import ShortcutService from 'src/app/service/shortcut.service';
 import LocaleToLanguageService from 'src/app/service/locale-to-language.service';
 import addPluginUpdatesListener from 'src/core/service/plugin-updates-listener.service';
 import addShuweiUpdatesListener from 'src/core/service/shuwei-updates-listener.service';
-import addCustomerGroupRegistrationListener from 'src/core/service/customer-group-registration-listener.service';
 import LocaleHelperService from 'src/app/service/locale-helper.service';
 import FilterService from 'src/app/service/filter.service';
 import AppCmsService from 'src/app/service/app-cms.service';
@@ -105,7 +104,6 @@ Application
 
         addPluginUpdatesListener(loginService, serviceContainer);
         addShuweiUpdatesListener(loginService, serviceContainer);
-        addCustomerGroupRegistrationListener(loginService);
 
         return loginService;
     })
