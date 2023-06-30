@@ -4,7 +4,6 @@ namespace Shuwei\Core\Framework\Api\ApiDefinition;
 
 use Shuwei\Core\Framework\DataAbstractionLayer\EntityDefinition;
 use Shuwei\Core\Framework\Log\Package;
-use Shuwei\Core\System\SalesChannel\Entity\SalesChannelDefinitionInterface;
 
 /**
  * @internal
@@ -20,7 +19,7 @@ interface ApiDefinitionGeneratorInterface
     public function supports(string $format, string $api): bool;
 
     /**
-     * @param array<string, EntityDefinition>|list<EntityDefinition&SalesChannelDefinitionInterface> $definitions
+     * @param array<string, EntityDefinition>|list<EntityDefinition> $definitions
      *
      * @phpstan-param  Api $api
      * @phpstan-param ApiType $apiType
@@ -30,7 +29,7 @@ interface ApiDefinitionGeneratorInterface
     public function generate(array $definitions, string $api, string $apiType): array;
 
     /**
-     * @param array<string, EntityDefinition>|list<EntityDefinition&SalesChannelDefinitionInterface> $definitions
+     * @param array<string, EntityDefinition>|list<EntityDefinition> $definitions
      *
      * @return ApiSchema
      */

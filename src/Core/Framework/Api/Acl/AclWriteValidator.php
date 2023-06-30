@@ -5,7 +5,6 @@ namespace Shuwei\Core\Framework\Api\Acl;
 use Shuwei\Core\Framework\Api\Acl\Event\CommandAclValidationEvent;
 use Shuwei\Core\Framework\Api\Acl\Role\AclRoleDefinition;
 use Shuwei\Core\Framework\Api\Context\AdminApiSource;
-use Shuwei\Core\Framework\Api\Context\AdminSalesChannelApiSource;
 use Shuwei\Core\Framework\Api\Exception\MissingPrivilegeException;
 use Shuwei\Core\Framework\Context;
 use Shuwei\Core\Framework\DataAbstractionLayer\EntityTranslationDefinition;
@@ -41,11 +40,6 @@ class AclWriteValidator implements EventSubscriberInterface
     {
         $context = $event->getContext();
         $source = $event->getContext()->getSource();
-        if ($source instanceof AdminSalesChannelApiSource) {
-            $context = $source->getOriginalContext();
-            $source = $context->getSource();
-        }
-
         if ($context->getScope() === Context::SYSTEM_SCOPE || !$source instanceof AdminApiSource || $source->isAdmin()) {
             return;
         }

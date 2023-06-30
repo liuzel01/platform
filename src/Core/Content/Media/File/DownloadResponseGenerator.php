@@ -11,7 +11,6 @@ use Shuwei\Core\Content\Media\MediaService;
 use Shuwei\Core\Content\Media\Pathname\UrlGeneratorInterface;
 use Shuwei\Core\Framework\Context;
 use Shuwei\Core\Framework\Log\Package;
-use Shuwei\Core\System\SalesChannel\SalesChannelContext;
 use Symfony\Component\HttpFoundation\File\Exception\FileNotFoundException;
 use Symfony\Component\HttpFoundation\HeaderUtils;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -38,7 +37,6 @@ class DownloadResponseGenerator
 
     public function getResponse(
         MediaEntity $media,
-        SalesChannelContext $context,
         string $expiration = '+120 minutes'
     ): Response {
         $fileSystem = $this->getFileSystem($media);
@@ -51,10 +49,10 @@ class DownloadResponseGenerator
         } catch (UnableToGenerateTemporaryUrl) {
         }
 
-        return $this->getDefaultResponse($media, $context, $fileSystem);
+        return $this->getDefaultResponse($media, $fileSystem);
     }
 
-    private function getDefaultResponse(MediaEntity $media, SalesChannelContext $context, FilesystemOperator $fileSystem): Response
+    private function getDefaultResponse(MediaEntity $media, FilesystemOperator $fileSystem): Response
     {
         if (!$media->isPrivate()) {
             return new RedirectResponse($this->urlGenerator->getAbsoluteMediaUrl($media));
@@ -80,12 +78,11 @@ class DownloadResponseGenerator
             default:
                 return $this->createStreamedResponse(
                     $media,
-                    $context
                 );
         }
     }
 
-    private function createStreamedResponse(MediaEntity $media, SalesChannelContext $context): StreamedResponse
+    private function createStreamedResponse(MediaEntity $media): StreamedResponse
     {
         $stream = $context->getContext()->scope(
             Context::SYSTEM_SCOPE,

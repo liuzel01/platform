@@ -5,8 +5,6 @@ namespace Shuwei\Core\Framework\Api\ApiDefinition;
 use Shuwei\Core\Framework\DataAbstractionLayer\DefinitionInstanceRegistry;
 use Shuwei\Core\Framework\DataAbstractionLayer\EntityDefinition;
 use Shuwei\Core\Framework\Log\Package;
-use Shuwei\Core\System\SalesChannel\Entity\SalesChannelDefinitionInstanceRegistry;
-use Shuwei\Core\System\SalesChannel\Entity\SalesChannelDefinitionInterface;
 
 /**
  * @phpstan-type Api DefinitionService::API|DefinitionService::STORE_API
@@ -54,10 +52,10 @@ class DefinitionService
     }
 
     /**
-     * @phpstan-param Api $type
-     * @phpstan-param ApiType $apiType
-     *
-     * @return OpenApiSpec
+     * @param string $format
+     * @param string $type
+     * @param string $apiType
+     * @return array
      */
     public function generate(string $format = 'openapi-3', string $type = self::API, string $apiType = self::TYPE_JSON_API): array
     {
@@ -65,9 +63,9 @@ class DefinitionService
     }
 
     /**
-     * @phpstan-param Api $type
-     *
-     * @return ApiSchema
+     * @param string $format
+     * @param string $type
+     * @return array
      */
     public function getSchema(string $format = 'openapi-3', string $type = self::API): array
     {

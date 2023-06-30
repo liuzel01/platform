@@ -13,7 +13,6 @@ use Shuwei\Core\Framework\Api\ApiDefinition\Generator\OpenApi\OpenApiSchemaBuild
 use Shuwei\Core\Framework\DataAbstractionLayer\EntityDefinition;
 use Shuwei\Core\Framework\DataAbstractionLayer\MappingEntityDefinition;
 use Shuwei\Core\Framework\Log\Package;
-use Shuwei\Core\System\SalesChannel\Entity\SalesChannelDefinitionInterface;
 
 /**
  * @phpstan-import-type Api from DefinitionService
@@ -97,7 +96,7 @@ class StoreApiGenerator implements ApiDefinitionGeneratorInterface
     /**
      * {@inheritdoc}
      *
-     * @param list<EntityDefinition>|list<EntityDefinition&SalesChannelDefinitionInterface> $definitions
+     * @param list<EntityDefinition>|list<EntityDefinition> $definitions
      *
      * @return never
      */
@@ -125,11 +124,6 @@ class StoreApiGenerator implements ApiDefinitionGeneratorInterface
         if ($class->isSubclassOf(MappingEntityDefinition::class)) {
             return true;
         }
-
-        if ($forSalesChannel && !is_subclass_of($definition, SalesChannelDefinitionInterface::class)) {
-            return true;
-        }
-
         return false;
     }
 

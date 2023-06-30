@@ -6,7 +6,6 @@ use OpenApi\Annotations\Property;
 use OpenApi\Annotations\Schema;
 use Shuwei\Core\Framework\Api\ApiDefinition\DefinitionService;
 use Shuwei\Core\Framework\Api\Context\AdminApiSource;
-use Shuwei\Core\Framework\Api\Context\SalesChannelApiSource;
 use Shuwei\Core\Framework\Context;
 use Shuwei\Core\Framework\DataAbstractionLayer\EntityDefinition;
 use Shuwei\Core\Framework\DataAbstractionLayer\Field\AssociationField;
@@ -63,7 +62,7 @@ class OpenApiDefinitionSchemaBuilder
         $extensionRelationships = [];
 
         foreach ($definition->getFields() as $field) {
-            if (!$this->shouldFieldBeIncluded($field, $forSalesChannel)) {
+            if (!$this->shouldFieldBeIncluded($field)) {
                 continue;
             }
 
@@ -213,7 +212,7 @@ class OpenApiDefinitionSchemaBuilder
         return str_replace('_', '', ucwords($input, '_'));
     }
 
-    private function shouldFieldBeIncluded(Field $field, bool $forSalesChannel): bool
+    private function shouldFieldBeIncluded(Field $field): bool
     {
         if ($field->getPropertyName() === 'translations'
             || $field->getPropertyName() === 'id'
@@ -227,7 +226,7 @@ class OpenApiDefinitionSchemaBuilder
             return false;
         }
 
-        if (!$flag->isSourceAllowed($forSalesChannel ? SalesChannelApiSource::class : AdminApiSource::class)) {
+        if (!$flag->isSourceAllowed(AdminApiSource::class)) {
             return false;
         }
 
