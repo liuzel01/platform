@@ -48,6 +48,11 @@
             "@framework:schema:dump",
             "@npm:admin run convert-entity-schema"
         ],
+        "build:js": [
+            "@php bin/console bundle:dump",
+            "@php bin/console feature:dump",
+            "@build:js:admin"
+        ],
         "build:js:admin": [
             "@php bin/console bundle:dump",
             "@admin:generate-entity-schema-types",
@@ -67,14 +72,14 @@
         "init:js": [
             "@npm:admin clean-install --no-audit --prefer-offline"
         ],
-        "init:db": "@php bin/console system:install --drop-database --basic-setup --force --no-assign-theme",
+        "init:db": "@php bin/console system:install --drop-database --basic-setup --force --create-database",
         "setup": [
             "@composer install -o",
             "mkdir -p config/jwt || true",
             "mkdir -p plugins || true",
             "@init:db",
             "@init:js",
-            "@build:admin:js"
+            "@build:js"
         ],
         "hook:pre-commit": [
             "bin/pre-commit"
