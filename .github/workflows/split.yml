@@ -10,7 +10,7 @@ on:
 permissions:
   contents: write
 jobs:
-  build:
+  split-repo:
     if: ${{ github.event_name == 'workflow_dispatch' }}
     runs-on: ubuntu-latest
     steps:
@@ -29,4 +29,25 @@ jobs:
         run: |
           for package in Administration Core; do
             ./.github/bin/split.sh push "${package}" https://$TOKEN@github.com/58shuwei trunk
+          done
+  commit:
+    if: ${{ github.event_name == 'push' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone platform
+        uses: actions/checkout@v3
+
+      - name: Split packages
+        run: |
+          for package in Administration Core; do
+            ./.github/bin/split.sh split_repo "${package}"
+          done
+      - name: Commit
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TOKEN: ${{ secrets.TOKEN }}
+          HASH: ${{ github.sha }}
+        run: |
+          for package in Administration Core; do
+            ./.github/bin/split.sh push commit "${package}" "tmp-$HASH (+ assets)"
           done
