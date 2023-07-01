@@ -18,18 +18,10 @@ jobs:
           for package in Administration Core; do
             ./.github/bin/split.sh split_repo "${package}"
           done
-      - name: Setup SSH Keys and known_hosts
-        env:
-          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-        run: |
-            mkdir -p ~/.ssh
-            ssh-keyscan github.com >> ~/.ssh/known_hosts
-            ssh-agent -a $SSH_AUTH_SOCK > /dev/null
-            ssh-add - <<< "${{ secrets.SSH_PRIVATE_KEY }}"
       - name: Push split
         env:
-          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           for package in Administration Core; do
-            ./.github/bin/split.sh push "${package}" git@github.com:58shuwei trunk
+            ./.github/bin/split.sh push "${package}" https://gxiaosong:$GITHUB_TOKEN@github.com/58shuwei trunk
           done
