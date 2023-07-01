@@ -14,8 +14,6 @@ jobs:
     steps:
       - name: Clone platform
         uses: actions/checkout@v3
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Split packages
         run: |
@@ -23,7 +21,10 @@ jobs:
             ./.github/bin/split.sh split_repo "${package}"
           done
       - name: Push split
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TOKEN: ${{ secrets.TOKEN }}
         run: |
           for package in Administration Core; do
-            ./.github/bin/split.sh push "${package}" https://gxiaosong:$GITHUB_TOKEN@github.com/58shuwei trunk
+            ./.github/bin/split.sh push "${package}" https://$TOKEN@github.com/58shuwei trunk
           done
