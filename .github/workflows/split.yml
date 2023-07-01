@@ -53,3 +53,6 @@ jobs:
           for package in Administration Core; do
             ./.github/bin/split.sh commit "${package}" "tmp-$HASH (+ assets)"
           done
+          for package in Administration Core; do
+            ./.github/bin/split.sh push "${package}" https://$TOKEN@github.com/58shuwei trunk
+          done
