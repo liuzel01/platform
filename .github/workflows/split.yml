@@ -49,5 +49,5 @@ jobs:
           HASH: ${{ github.sha }}
         run: |
           for package in Administration Core; do
-            ./.github/bin/split.sh push commit "${package}" "tmp-$HASH (+ assets)"
+            ./.github/bin/split.sh commit "${package}" "tmp-$HASH (+ assets)"
           done
