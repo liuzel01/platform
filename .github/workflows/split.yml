@@ -48,6 +48,8 @@ jobs:
           TOKEN: ${{ secrets.TOKEN }}
           HASH: ${{ github.sha }}
         run: |
+          git config --global user.email "lyricsong47@gmali.com"
+          git config --global user.name "gxiaosong"
           for package in Administration Core; do
             ./.github/bin/split.sh commit "${package}" "tmp-$HASH (+ assets)"
           done
