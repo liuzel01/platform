@@ -1,5 +1,6 @@
 name: Split Repo
 on:
+  workflow_dispatch:
   push:
     branches:
       - trunk
@@ -10,6 +11,7 @@ permissions:
   contents: write
 jobs:
   build:
+    if: ${{ github.event_name == 'workflow_dispatch' }}
     runs-on: ubuntu-latest
     steps:
       - name: Clone platform
