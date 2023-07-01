@@ -80,13 +80,13 @@ export default class ShuweiExtensionService {
     public async activateExtension(extensionId: string, type: ExtensionType): Promise<void> {
         await this.extensionStoreActionService.activateExtension(extensionId, type);
 
-        // await this.updateModules();
+        await this.updateModules();
     }
 
     public async deactivateExtension(extensionId: string, type: ExtensionType): Promise<void> {
         await this.extensionStoreActionService.deactivateExtension(extensionId, type);
 
-        // await this.updateModules();
+        await this.updateModules();
     }
 
     public async updateExtensionData(): Promise<void> {
@@ -181,23 +181,7 @@ export default class ShuweiExtensionService {
     }
 
     private async updateModules() {
-        const modules = await this.appModulesService.fetchAppModules();
-
-        Shuwei.State.commit('shuweiApps/setApps', modules);
-    }
-
-    private getLinkToApp(extension: Extension) {
-        const app = this.getAppFromStore(extension.name);
-
-        if (!app) {
-            return null;
-        }
-
-        if (this.appHasMainModule(app)) {
-            return this.createLinkToModule(app.name);
-        }
-
-        return null;
+        Shuwei.State.commit('shuweiApps/setApps', []);
     }
 
     private getAppFromStore(extensionName: string) {

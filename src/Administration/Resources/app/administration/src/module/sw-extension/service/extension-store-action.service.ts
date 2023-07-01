@@ -6,7 +6,7 @@ import type { BasicHeaders } from 'src/core/service/api.service';
 import ApiService from 'src/core/service/api.service';
 
 type ExtensionVariantType = 'rent' | 'buy' | 'free';
-type ExtensionType = 'plugin';
+type ExtensionType = 'app' | 'plugin';
 type ExtensionSource = 'local' | 'store';
 
 type ExtensionStoreActionHeaders = BasicHeaders & {

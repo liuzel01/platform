@@ -28,7 +28,6 @@ export default function initializeRepositoryFactory(container: InitContainer) {
     }).then(({ data }) => {
         const entityDefinitionFactory = factoryContainer.entityDefinition;
         const customEntityDefinitionService = serviceContainer.customEntityDefinitionService;
-        const cmsPageTypeService = serviceContainer.cmsPageTypeService;
         let hasCmsAwareDefinitions = false;
 
         // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
@@ -44,11 +43,6 @@ export default function initializeRepositoryFactory(container: InitContainer) {
             }
         });
 
-        if (hasCmsAwareDefinitions) {
-            customEntityTypes.forEach((customEntityType) => {
-                cmsPageTypeService.register(customEntityType);
-            });
-        }
 
         const hydrator = new EntityHydrator();
         const changesetGenerator = new ChangesetGenerator();
