@@ -1,17 +1,17 @@
 {
   "sw-media": {
     "general": {
-      "mainMenuItemGeneral": "媒体",
+      "mainMenuItemGeneral": "资源库",
       "descriptionTextModule": "在此处管理媒体资源.",
       "placeholderSearchBar": "在当前目录搜索...",
       "notification": {
         "urlCopied": {
-          "message": "URL has been copied to clipboard."
+          "message": "网址已复制到剪贴板."
         }
       }
     },
     "sidebar": {
-      "labelHeadlineMultiple": "{count} files selected",
+      "labelHeadlineMultiple": "{count} 个文件被选择",
       "labelNoMediaSelected": "未选择媒体",
       "actions": {
         "copyLink": "复制链接",
