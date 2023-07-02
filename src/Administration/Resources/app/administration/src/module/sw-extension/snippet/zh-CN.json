@@ -6,8 +6,8 @@
         "themes": "主题"
       },
       "listing": {
-        "anyOption": "Any",
-        "sort": "Sort"
+        "anyOption": "全部",
+        "sort": "排序"
       }
     },
     "my-extensions": {
@@ -90,7 +90,7 @@
     },
     "mainMenu": {
       "mainMenuItemExtensionStore": "扩展",
-      "store": "插件市场",
+      "store": "插件商城",
       "purchased": "我的插件",
       "support": "Support"
     },
@@ -105,7 +105,7 @@
   },
   "sw-extension-store": {
     "landing-page": {
-      "enablingShuweiStore": "激活数维平台插件市场...",
+      "enablingShuweiStore": "激活数维平台插件商城...",
       "takeMinutes": "这可能需要几分钟.",
       "activationErrorTitle": "激活时出错",
       "activationErrorDescription": "请再试一次。如果这不起作用，请向管理员寻求帮助.",
@@ -113,7 +113,7 @@
       "activationSuccessTitle": "激活成功",
       "activationSuccessDescription": "Have fun exploring the Shuwei Store.",
       "label": "当前可用",
-      "activationDescriptionTitleFirst": "使用插件市场 -",
+      "activationDescriptionTitleFirst": "使用插件商城 -",
       "activationDescriptionTitleSecond": "非常轻松的浏览和购买扩展.",
       "activationDescriptionTitleDescription": "激活官方商店，访问大量有用的扩展程序和现代主题，这些扩展程序和现代主题可以无缝集成到您的商店中 - 无需任何编程技能.",
       "activate": "激活"
@@ -321,7 +321,7 @@
           "titleEmptyState": "尚未安装任何主题",
           "textEmptyState": "如果您安装了主题，它们将在这里列出."
         },
-        "btnOpenStore": "前往插件市场"
+        "btnOpenStore": "前往插件商城"
       },
       "sw-extension-removal-modal": {
         "titleCancel": "\"{extensionName}\" cancel and remove",
