@@ -1,3 +1,4 @@
+name: Sync Commit
 on:
   push:
     # Only trigger for specific branches or changes in specific paths.
