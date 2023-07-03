@@ -65,7 +65,7 @@ jobs:
           TAG_NAME: tem-tag
         run: |
           for package in Administration Core; do
-            ./.github/bin/split.sh commit "${package}" "${CI_COMMIT_TAG} (+ assets)"
+            ./.github/bin/split.sh commit "${package}" "(+ assets)"
           done
           for package in Administration Core; do
             ./.github/bin/split.sh tag "${package}" "$TAG_NAME"
@@ -75,7 +75,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TOKEN: ${{ secrets.TOKEN }}
         run: |
-          for package in Administration Storefront Core Elasticsearch; do
+          for package in Administration Core; do
           ./.github/bin/split.sh push "${package}" https://$TOKEN@github.com/58shuwei "$BRANCH_NAME"
           done
 
