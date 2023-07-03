@@ -16,6 +16,8 @@ jobs:
       DB_USERNAME: root
       DB_PASSWORD: root
       DATABASE_URL: mysql://root:root@localhost:3306/58shuwei
+      env:
+        TAG_NAME: tem-tag
     steps:
       - name: Set up MySQL
         run: |
@@ -61,8 +63,6 @@ jobs:
           ./.github/bin/split.sh check_assets
           ./.github/bin/split.sh include_admin_assets
       - name: tag split repositories
-        env:
-          TAG_NAME: tem-tag
         run: |
           git config --global user.email "lyricsong47@gmail.com"
           git config --global user.name "gxiaosong"
@@ -79,7 +79,7 @@ jobs:
           BRANCH_NAME: tmp-${{ github.sha }}
         run: |
           for package in Administration Core; do
-            ./.github/bin/split.sh push_tag "${package}" https://$TOKEN@github.com/58shuwei "tem-tag"
+            ./.github/bin/split.sh push_tag "${package}" https://$TOKEN@github.com/58shuwei "$TAG_NAME"
           done
 
 
