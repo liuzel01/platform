@@ -40,16 +40,15 @@ jobs:
 
         run: |
           composer run setup
-          zip -r $TAG src/Administration/ -x 'src/Administration/Resources/app/administration/node_modules/*'
+          zip -r administration src/Administration/ -x 'src/Administration/Resources/app/administration/node_modules/*'
 
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2
         with:
           repo_name: 58shuwei/administration
           repo_token: ${{ secrets.TOKEN }}
-          file: ${{ github.ref }}.zip
+          file: administration.zip
           asset_name: Release ${{ github.ref }}
-          tag: ${{ github.ref }}
           overwrite: true
 
 
