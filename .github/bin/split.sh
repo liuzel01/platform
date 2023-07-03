@@ -75,8 +75,6 @@ admin_assets_list() {
   cat <<EOF | tr -d '[:blank:]'
     ${PLATFORM_DIR}/repos/administration/Resources/public/static/js/app.js
     ${PLATFORM_DIR}/repos/administration/Resources/public/static/css/app.css
-    ${PLATFORM_DIR}/repos/storefront/Resources/public/administration/js/storefront.js
-    ${PLATFORM_DIR}/repos/storefront/Resources/public/administration/css/storefront.css
 EOF
 }
 
@@ -98,7 +96,7 @@ require_core_version() {
   local version="${2}"
 
   if [ "${package_lower}" != "core" ]; then
-    composer -d "${PLATFORM_DIR}/repos/${package_lower}" require "shopware/core:${version}" --no-update --no-install
+    composer -d "${PLATFORM_DIR}/repos/${package_lower}" require "58shuwei/core:${version}" --no-update --no-install
   fi
 }
 
