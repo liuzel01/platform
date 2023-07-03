@@ -165,4 +165,20 @@ push() {
   fi
 }
 
+push_tag() {
+  local package="${1}"
+  local package_lower=$(lowercase "${package}")
+  local remote_base_url="${2}"
+  local target_ref="${3}"
+
+  local remote_url=$(printf "%s/%s.git" "${remote_base_url}" "${package_lower}")
+
+  git -C "${PLATFORM_DIR}/repos/${package_lower}" remote remove upstream > /dev/null 2>&1 || true
+  git -C "${PLATFORM_DIR}/repos/${package_lower}" remote add upstream "${remote_url}"
+
+  git -C "${PLATFORM_DIR}/repos/${package_lower}" fetch -q upstream
+
+  git -C "${PLATFORM_DIR}/repos/${package_lower}" push --tags
+}
+
 "$@"
