@@ -8,7 +8,7 @@
     {
       "name": "Administration",
       "directory": "src/Administration",
-      "target": "git@github.com:58shuwei/Administration.git"
+      "target": "git@github.com:58shuwei/administration.git"
     }
   ]
 }
