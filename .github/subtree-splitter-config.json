@@ -1,0 +1,14 @@
+{
+  "subtree-splits": [
+    {
+      "name": "core",
+      "directory": "src/Core",
+      "target": "git@github.com:58shuwei/core.git"
+    },
+    {
+      "name": "Administration",
+      "directory": "src/Administration",
+      "target": "git@github.com:58shuwei/Administration.git"
+    }
+  ]
+}
