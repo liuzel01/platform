@@ -24,6 +24,10 @@ jobs:
           mysql -e 'SHOW DATABASES;' -uroot -proot
       - name: Clone platform
         uses: actions/checkout@v3
+      - name: Extract branch name
+        shell: bash
+        run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+        id: extract_branch
       - name: Set output
         id: vars
         run: echo "tag=${GITHUB_REF#refs/*/}" >> $GITHUB_OUTPUT
@@ -55,13 +59,7 @@ jobs:
           for package in Administration Core; do
             ./.github/bin/split.sh split_repo "${package}"
           done
-      - name: Branch Split Repositories
-        env:
-          BRANCH_NAME: tmp-${{ github.sha }}
-        run: |
-          for package in Administration Core; do
-            ./.github/bin/split.sh branch "${package}" "$BRANCH_NAME"
-          done
+
       - name: Add assets to split repositories
         run: |
           for package in Administration Core; do
