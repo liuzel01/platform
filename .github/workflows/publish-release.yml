@@ -5,15 +5,18 @@ jobs:
   publish-release:
     name: "publish-release"
     runs-on: ubuntu-latest
-    services:
-      database:
-        image: mysql:8.0
-        env:
-          MYSQL_ALLOW_EMPTY_PASSWORD: true
-        options: '--mount="type=tmpfs,destination=/var/lib/mysql" --health-cmd="mysqladmin ping -h 127.0.0.1" --health-interval=5s --health-timeout=2s --health-retries=3'
-        ports:
-          - "3306:3306"
+    env:
+      DB_CONNECTION: mysql
+      DB_HOST: localhost
+      DB_PORT: 3306
+      DB_USERNAME: root
+      DB_PASSWORD: ''
     steps:
+      - name: Set up MySQL
+        run: |
+          sudo systemctl start mysql
+          mysql -e 'CREATE DATABASE testdb;' -uroot -proot
+          mysql -e 'SHOW DATABASES;' -uroot -p
       - name: Clone platform
         uses: actions/checkout@v2
 
@@ -28,5 +31,6 @@ jobs:
 
       - name: Setup
         run: composer run setup
+
 
 
