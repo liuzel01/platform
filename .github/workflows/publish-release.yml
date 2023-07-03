@@ -10,13 +10,14 @@ jobs:
       DB_HOST: localhost
       DB_PORT: 3306
       DB_USERNAME: root
-      DB_PASSWORD: ''
+      DB_PASSWORD: root
+      DATABASE_URL: mysql://root:root@localhost:3306/58shuwei
     steps:
       - name: Set up MySQL
         run: |
           sudo systemctl start mysql
           mysql -e 'CREATE DATABASE testdb;' -uroot -proot
-          mysql -e 'SHOW DATABASES;' -uroot -p
+          mysql -e 'SHOW DATABASES;' -uroot -proot
       - name: Clone platform
         uses: actions/checkout@v2
 
