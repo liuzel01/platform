@@ -9,7 +9,7 @@ jobs:
       database:
         image: mysql:8.0
         env:
-          MYSQL_ROOT_PASSWORD: ''
+          MYSQL_ALLOW_EMPTY_PASSWORD: true
         options: '--mount="type=tmpfs,destination=/var/lib/mysql" --health-cmd="mysqladmin ping -h 127.0.0.1" --health-interval=5s --health-timeout=2s --health-retries=3'
         ports:
           - "3306:3306"
