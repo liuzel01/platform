@@ -1,5 +1,9 @@
 name: Publish Release
 on:
+  push:
+    # Sequence of patterns matched against refs/tags
+    tags:
+      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
   workflow_dispatch:
 jobs:
   publish-release:
@@ -31,7 +35,24 @@ jobs:
           php-version: '8.1'
 
       - name: Setup
-        run: composer run setup
+        env:
+          TAG: ${{ github.ref }}
+
+        run: |
+          composer run setup
+          zip -r $TAG src/Administration/ -x 'src/Administration/Resources/app/administration/node_modules/*'
+
+      - name: Upload binaries to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_name: 58shuwei/administration
+          repo_token: ${{ secrets.TOKEN }}
+          file: ${{ github.ref }}.zip
+          asset_name: Release ${{ github.ref }}
+          tag: ${{ github.ref }}
+          overwrite: true
+
+
 
 
 
