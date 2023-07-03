@@ -16,8 +16,7 @@ jobs:
       DB_USERNAME: root
       DB_PASSWORD: root
       DATABASE_URL: mysql://root:root@localhost:3306/58shuwei
-      env:
-        TAG_NAME: tem-tag
+      TAG_NAME: tem-tag
     steps:
       - name: Set up MySQL
         run: |
