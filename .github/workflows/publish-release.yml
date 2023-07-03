@@ -79,7 +79,7 @@ jobs:
           BRANCH_NAME: tmp-${{ github.sha }}
         run: |
           for package in Administration Core; do
-          ./.github/bin/split.sh push "${package}" https://$TOKEN@github.com/58shuwei "$BRANCH_NAME"
+            ./.github/bin/split.sh push "${package}" https://$TOKEN@github.com/58shuwei "$BRANCH_NAME"
           done
 
 

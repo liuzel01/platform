@@ -87,7 +87,7 @@ check_assets() {
 
 # Removes certain asset-related entries from the admin .gitignore.
 include_admin_assets() {
-  sed -i -E '/[/]?public([/]?|.*)/d' "${PLATFORM_DIR}/repos/administration/Resources/.gitignore"
+  sed -E '/[/]?public([/]?|.*)/d' "${PLATFORM_DIR}/repos/administration/Resources/.gitignore" > "${PLATFORM_DIR}/repos/administration/Resources/.gitignore"
 }
 
 require_core_version() {
@@ -112,6 +112,7 @@ branch() {
   local commit_id=$(git -C "${PLATFORM_DIR}/repos/${package_lower}" log -n1 --format="%H")
 
   git -C "${PLATFORM_DIR}/repos/${package_lower}" branch "${name}" "${commit_id}"
+  git -C "${PLATFORM_DIR}/repos/${package_lower}" checkout "${name}"
 }
 
 # Commits additional files in a split repository of a subpackage of platform.
