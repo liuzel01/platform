@@ -178,7 +178,8 @@ push_tag() {
 
   git -C "${PLATFORM_DIR}/repos/${package_lower}" fetch -q upstream
 
-  git -C "${PLATFORM_DIR}/repos/${package_lower}" push --tags
+  git -C "${PLATFORM_DIR}/repos/${package_lower}" push upstream "refs/tags/${target_ref}:refs/tags/${target_ref}" -f
+
 }
 
 "$@"
