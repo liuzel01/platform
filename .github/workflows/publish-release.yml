@@ -49,6 +49,7 @@ jobs:
           repo_token: ${{ secrets.TOKEN }}
           file: administration.zip
           asset_name: Release ${{ github.ref }}
+          file_glob: true
           overwrite: true
 
 
