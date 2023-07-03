@@ -88,4 +88,6 @@ jobs:
 
       - name: Generate Schema
         run: bin/console framework:schema -s 'entity-schema' src/Administration/Resources/app/administration/test/_mocks_/entity-schema.json
+      - name: Setup
+        run: composer run setup
 
