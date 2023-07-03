@@ -2,23 +2,9 @@ name: Publish Release
 on:
   workflow_dispatch:
 jobs:
-  php:
-    name: "PHPUnit with PHP ${{ matrix.php-version }}"
+  publish-release:
+    name: "publish-release"
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        php-version: ["8.1", "8.2"]
-    env:
-      TEST_SUITES: 'administration framework profiling migration system unit integration migration-tests'
-      APP_ENV: test
-      DATABASE_URL: mysql://root:root@127.0.0.1:3306/root
-      APP_URL: http://localhost:8000
-      APP_SECRET: devsecret
-      OPENSEARCH_URL: 127.0.0.1:9200
-      BLUE_GREEN_DEPLOYMENT: 1
-      PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: 'true'
-
     services:
       database:
         image: mysql:8.0
@@ -28,30 +14,6 @@ jobs:
         options: '--mount="type=tmpfs,destination=/var/lib/mysql" --health-cmd="mysqladmin ping -h 127.0.0.1" --health-interval=5s --health-timeout=2s --health-retries=3'
         ports:
           - "3306:3306"
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: ${{ matrix.php-version }}
-          coverage: none
-
-      - name: Configure for PHP 8.2
-        run: composer config platform.php 8.1.99
-        if: matrix.php-version == '8.2'
-
-      - name: Setup Composer
-        run: |
-          composer install
-
-  admin:
-    runs-on: ubuntu-latest
-    name: "Jest Admin"
     env:
       APP_ENV: prod
       DATABASE_URL: mysql://root:root@database:3306/root
@@ -90,4 +52,5 @@ jobs:
         run: bin/console framework:schema -s 'entity-schema' src/Administration/Resources/app/administration/test/_mocks_/entity-schema.json
       - name: Setup
         run: composer run setup
+
 
