@@ -16,7 +16,6 @@ jobs:
       DB_USERNAME: root
       DB_PASSWORD: root
       DATABASE_URL: mysql://root:root@localhost:3306/58shuwei
-      TAG_NAME: tem-tag
     steps:
       - name: Set up MySQL
         run: |
@@ -24,7 +23,16 @@ jobs:
           mysql -e 'CREATE DATABASE testdb;' -uroot -proot
           mysql -e 'SHOW DATABASES;' -uroot -proot
       - name: Clone platform
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+      - name: Set output
+        id: vars
+        run: echo "tag=${GITHUB_REF#refs/*/}" >> $GITHUB_OUTPUT
+      - name: Check output
+        env:
+          RELEASE_VERSION: ${{ steps.vars.outputs.tag }}
+        run: |
+          echo $RELEASE_VERSION
+          echo ${{ steps.vars.outputs.tag }}
 
       - uses: actions/setup-node@v3
         with:
@@ -69,7 +77,7 @@ jobs:
             ./.github/bin/split.sh commit "${package}" "(+ assets)"
           done
           for package in Administration Core; do
-            ./.github/bin/split.sh tag "${package}" "$TAG_NAME"
+            ./.github/bin/split.sh tag "${package}" "$RELEASE_VERSION"
           done
       - name: Push
         env:
@@ -78,7 +86,7 @@ jobs:
           BRANCH_NAME: tmp-${{ github.sha }}
         run: |
           for package in Administration Core; do
-            ./.github/bin/split.sh push_tag "${package}" https://$TOKEN@github.com/58shuwei "$TAG_NAME"
+            ./.github/bin/split.sh push_tag "${package}" https://$TOKEN@github.com/58shuwei "$RELEASE_VERSION"
           done
 
 
