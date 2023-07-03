@@ -10,12 +10,12 @@ on:
     # Tag push events should be ignored, they will be handled with the create event below.
     tags-ignore:
       - '*'
-  create:
-    tags:
-      - '*'
-  delete:
-    tags:
-      - '*'
+#  create:
+#    tags:
+#      - '*'
+#  delete:
+#    tags:
+#      - '*'
 
 jobs:
   sync_commits:
