@@ -80,36 +80,16 @@ admin_assets_list() {
 EOF
 }
 
-# Returns a list of mandatory assets for the Storefront package.
-storefront_assets_list() {
-  cat <<EOF | tr -d '[:blank:]'
-    ${PLATFORM_DIR}/repos/storefront/Resources/app/storefront/dist/js/runtime.js
-    ${PLATFORM_DIR}/repos/storefront/Resources/app/storefront/dist/js/vendor-node.js
-    ${PLATFORM_DIR}/repos/storefront/Resources/app/storefront/dist/js/vendor-shared.js
-    ${PLATFORM_DIR}/repos/storefront/Resources/app/storefront/dist/storefront/js/storefront.js
-    ${PLATFORM_DIR}/repos/storefront/Resources/public/administration/js/storefront.js
-    ${PLATFORM_DIR}/repos/storefront/Resources/public/administration/css/storefront.css
-    ${PLATFORM_DIR}/repos/storefront/Resources/app/storefront/vendor/bootstrap/package.json
-EOF
-}
 
 # Checks whether all mandatory assets have been generated and copied to the
 # correct repository.
 check_assets() {
   stat -t $(admin_assets_list) > /dev/null
-  stat -t $(storefront_assets_list) > /dev/null
 }
 
 # Removes certain asset-related entries from the admin .gitignore.
 include_admin_assets() {
   sed -i -E '/[/]?public([/]?|.*)/d' "${PLATFORM_DIR}/repos/administration/Resources/.gitignore"
-}
-
-# Removes certain asset-related entries from the storefront .gitignore.
-include_storefront_assets() {
-  sed -i -E '/[/]?Resources[/]app[/]storefront[/]vendor([/]?|.*)/d' "${PLATFORM_DIR}/repos/storefront/.gitignore"
-  sed -i -E '/[/]?app[/]storefront[/]dist([/]?|.*)/d' "${PLATFORM_DIR}/repos/storefront/Resources/.gitignore"
-  sed -i -E '/[/]?public([/]?|.*)/d' "${PLATFORM_DIR}/repos/storefront/Resources/.gitignore"
 }
 
 require_core_version() {
