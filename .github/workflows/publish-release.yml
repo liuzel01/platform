@@ -40,17 +40,24 @@ jobs:
 
         run: |
           composer run setup
-          zip -r administration src/Administration/ -x 'src/Administration/Resources/app/administration/node_modules/*'
 
-      - name: Upload binaries to release
-        uses: svenstaro/upload-release-action@v2
-        with:
-          repo_name: 58shuwei/administration
-          repo_token: ${{ secrets.TOKEN }}
-          file: administration.zip
-          asset_name: Release ${{ github.ref }}
-          file_glob: true
-          overwrite: true
+      - name: Split Repository
+        run: |
+          for package in Administration Core; do
+            ./.github/bin/split.sh split_repo "${package}"
+          done
+      - name: Branch Split Repositories
+        run: |
+          for package in Administration Core; do
+            ./.github/bin/split.sh branch "${package}" "tmp-${{ github.sha }}"
+          done
+      - name: Add assets to split repositories
+        run: |
+          for package in Administration Core; do
+            ./.github/bin/split.sh copy_assets "${package}"
+          done
+          ./.github/bin/split.sh check_assets
+          ./.github/bin/split.sh include_admin_assets
 
 
 
