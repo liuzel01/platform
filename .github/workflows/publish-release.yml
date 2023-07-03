@@ -5,23 +5,15 @@ jobs:
   publish-release:
     name: "publish-release"
     runs-on: ubuntu-latest
-    services:
-      database:
-        image: mysql:8.0
-        env:
-          MYSQL_ROOT_PASSWORD: root
-          MYSQL_DATABASE: root
-        options: '--mount="type=tmpfs,destination=/var/lib/mysql" --health-cmd="mysqladmin ping -h 127.0.0.1" --health-interval=5s --health-timeout=2s --health-retries=3'
-        ports:
-          - "3306:3306"
-    env:
-      APP_ENV: prod
-      DATABASE_URL: mysql://root:root@database:3306/root
-      APP_URL: http://localhost:8000
-      APP_SECRET: devsecret
-      BLUE_GREEN_DEPLOYMENT: 1
-
     steps:
+      - name: mysql
+        uses: mirromutth/mysql-action@v1.1
+        with:
+          character set server: 'utf8' # Optional, default value is 'utf8mb4'. The '--character-set-server' option for mysqld
+          collation server: 'utf8_general_ci' # Optional, default value is 'utf8mb4_general_ci'. The '--collation-server' option for mysqld
+          mysql version: '8.0' # Optional, default value is "latest". The version of the MySQL
+          mysql root password: ${{ secrets.RootPassword }} # Required if "mysql user" is empty, default is empty. The root superuser password
+
       - name: Clone platform
         uses: actions/checkout@v2
 
