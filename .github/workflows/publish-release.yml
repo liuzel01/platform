@@ -76,6 +76,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TOKEN: ${{ secrets.TOKEN }}
+          BRANCH_NAME: tmp-${{ github.sha }}
         run: |
           for package in Administration Core; do
           ./.github/bin/split.sh push "${package}" https://$TOKEN@github.com/58shuwei "$BRANCH_NAME"
