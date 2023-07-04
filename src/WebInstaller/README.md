@@ -1,6 +1,6 @@
 # Web Installer
 
-The web installer is a simple Shuwei Platform application packaged as a Phar file, that allows running automated Composer commands to install or update Shopware.
+The web installer is a simple Shuwei Platform application packaged as a Phar file, that allows running automated Composer commands to install or update Shuwei.
 The term installer means
 
 ## Create a Phar file
@@ -21,9 +21,9 @@ To run the unit tests, use the following command:
 
 ## Running the Web Installer
 
-Copy the created `shuwe-installer.phar.php` file to the root directory of your Shopware installation or into an empty directory.
+Copy the created `shuwe-installer.phar.php` file to the root directory of your Shuwei installation or into an empty directory.
 
-Request that page in your browser with /shuwe-installer.phar.php and the Installer will decide if you need to install or update Shopware.
+Request that page in your browser with /shuwe-installer.phar.php and the Installer will decide if you need to install or update Shuwei.
 
 ## Running the Web Installer in Development Mode
 
@@ -33,14 +33,14 @@ Then start a second Webserver for only this Shop with `composer run e2e:web-upda
 The Web installer will be available at http://localhost:8050/shuwe-installer.phar.php.
 It is recommended to start the watcher when you're changing the Web Installer code with `watch-updater`.
 
-## Running update against an unreleased Shopware version
+## Running update against an unreleased Shuwei version
 
-To run an update against an unreleased Shopware version,
-copy the `shuwe-installer.phar.php` file to the root directory of your Shopware installation.
+To run an update against an unreleased Shuwei version,
+copy the `shuwe-installer.phar.php` file to the root directory of your Shuwei installation.
 
-Clone Shopware into `platform` directory and checkout the branch you want to test.
+Clone Shuwei into `platform` directory and checkout the branch you want to test.
 
-Then edit the `composer.json` of the Shopware installation and add the following line:
+Then edit the `composer.json` of the Shuwei installation and add the following line:
 
 ```diff
 "repositories": [
