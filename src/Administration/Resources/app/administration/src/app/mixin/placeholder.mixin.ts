@@ -5,12 +5,12 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 
 /* @private */
-export {};
+import { defineComponent } from 'vue';
 
 /**
  * @deprecated tag:v6.6.0 - Will be private
  */
-Shuwei.Mixin.register('placeholder', {
+export default Shuwei.Mixin.register('placeholder', defineComponent({
     methods: {
         placeholder<EntityName extends keyof EntitySchema.Entities>(
             entity: EntitySchema.Entity<EntityName>,
@@ -62,4 +62,4 @@ Shuwei.Mixin.register('placeholder', {
             return fallbackSnippet;
         },
     },
-});
+}));

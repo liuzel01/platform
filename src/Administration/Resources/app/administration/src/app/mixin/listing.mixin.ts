@@ -6,6 +6,7 @@
 import type { Dictionary } from 'vue-router/types/router';
 import type { RawLocation } from 'vue-router';
 import type Criteria from '@58shuwei-ag/admin-extension-sdk/es/data/Criteria';
+import { defineComponent } from 'vue';
 
 /* @private */
 export {};
@@ -16,7 +17,7 @@ export {};
 /**
  * @deprecated tag:v6.6.0 - Will be private
  */
-Shuwei.Mixin.register('listing', {
+export default Shuwei.Mixin.register('listing', defineComponent({
     inject: ['searchRankingService', 'feature'],
 
     data(): {
@@ -371,4 +372,4 @@ Shuwei.Mixin.register('listing', {
             );
         },
     },
-});
+}));

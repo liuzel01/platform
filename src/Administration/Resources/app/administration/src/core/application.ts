@@ -518,7 +518,8 @@ class ApplicationBootstrapper {
             'login',
             'baseComponents',
             'locale',
-            'apiServices'
+            'apiServices',
+            'coreDirectives',
         ];
 
         const initContainer = this.getContainer('init');

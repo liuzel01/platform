@@ -20,7 +20,7 @@ if [[ ${CI-""} ]]; then
 fi
 
 # build admin
-[[ ${SHOPWARE_SKIP_BUNDLE_DUMP-""} ]] || "${BIN_TOOL}" bundle:dump
+[[ ${SHUWEI_SKIP_BUNDLE_DUMP-""} ]] || "${BIN_TOOL}" bundle:dump
 
 if [[ $(command -v jq) ]]; then
     OLDPWD=$(pwd)
@@ -45,4 +45,4 @@ else
 fi
 
 (cd "${ADMIN_ROOT}"/Resources/app/administration && npm install && npm run build)
-[[ ${SHOPWARE_SKIP_ASSET_COPY-""} ]] ||"${BIN_TOOL}" assets:install
+[[ ${SHUWEI_SKIP_ASSET_COPY-""} ]] ||"${BIN_TOOL}" assets:install

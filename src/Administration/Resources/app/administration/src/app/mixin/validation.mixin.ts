@@ -1,5 +1,5 @@
 /* @private */
-export {};
+import { defineComponent } from 'vue';
 
 /**
  * @package admin
@@ -7,7 +7,7 @@ export {};
  * @deprecated tag:v6.6.0 - Will be private
  * @module app/mixin/validation
  */
-Shuwei.Mixin.register('validation', {
+export default Shuwei.Mixin.register('validation', defineComponent({
     inject: ['validationService'],
 
     props: {
@@ -46,7 +46,7 @@ Shuwei.Mixin.register('validation', {
                     validation = validationList;
                 } else {
                     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-argument
-                    valid = this.validateRule(value, this.validation);
+                    valid = this.validateRule(value, this.validation as string);
                 }
             }
 
@@ -77,4 +77,4 @@ Shuwei.Mixin.register('validation', {
             return this.validationService[rule](value);
         },
     },
-});
+}));

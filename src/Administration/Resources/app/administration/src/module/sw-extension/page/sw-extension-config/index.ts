@@ -12,12 +12,6 @@ type ComponentData = {
     fromLink: Route|null,
 }
 
-interface VmWithFromLink extends Vue {
-    fromLink: Route|null;
-}
-
-type BeforeRouteEnterGuard = (to?: RawLocation | false | ((vm: VmWithFromLink) => void) | void) => void;
-
 /**
  * @package merchant-services
  * @private
@@ -25,8 +19,9 @@ type BeforeRouteEnterGuard = (to?: RawLocation | false | ((vm: VmWithFromLink) =
 export default Shuwei.Component.wrapComponentConfig({
     template,
 
-    beforeRouteEnter(to: Route, from: Route, next: BeforeRouteEnterGuard) {
+    beforeRouteEnter(to, from, next) {
         next((vm) => {
+            // @ts-expect-error
             vm.fromLink = from;
         });
     },
@@ -105,16 +100,12 @@ export default Shuwei.Component.wrapComponentConfig({
                 // eslint-disable-next-line @typescript-eslint/no-unsafe-call
                 await this.$refs.systemConfig.saveAll();
 
-                // @ts-expect-error
-                // eslint-disable-next-line @typescript-eslint/no-unsafe-call
                 this.createNotificationSuccess({
                     message: this.$tc('sw-extension-store.component.sw-extension-config.messageSaveSuccess'),
                 });
             } catch (err) {
-                // @ts-expect-error
-                // eslint-disable-next-line @typescript-eslint/no-unsafe-call
                 this.createNotificationError({
-                    message: err,
+                    message: err as string,
                 });
             }
         },

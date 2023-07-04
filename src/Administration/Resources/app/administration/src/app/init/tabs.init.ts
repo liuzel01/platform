@@ -16,11 +16,15 @@ export default function initializeTabs(): void {
         // if current route does not exist check if they exists after adding the route
         const router = Shuwei.Application.view?.router;
 
+        // @ts-expect-error
+        // eslint-disable-next-line max-len
+        const currentRoute = (Shuwei.Service('feature').isActive('VUE3') ? router.currentRoute.value : router.currentRoute) as Route;
+
         /* istanbul ignore next */
         if (
             router &&
-            router.currentRoute.fullPath.includes(componentConfig.componentSectionId) &&
-            router.currentRoute.matched.length <= 0
+            currentRoute.fullPath.includes(componentConfig.componentSectionId) &&
+            currentRoute.matched.length <= 0
         ) {
             createRouteForTabItem(router.currentRoute, router, () => undefined);
         }
@@ -29,30 +33,36 @@ export default function initializeTabs(): void {
     /* istanbul ignore next */
     void Shuwei.Application.viewInitialized.then(() => {
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        const router = Shuwei.Application.view!.router!;
+        const router = Shuwei.Application.view!.router;
 
-        if (router && router.currentRoute.matched.length <= 0) {
+        // @ts-expect-error
+        // eslint-disable-next-line max-len
+        const currentRoute = (Shuwei.Service('feature').isActive('VUE3') ? router.currentRoute.value : router.currentRoute) as Route;
+
+        if (router && currentRoute.matched.length <= 0) {
             createRouteForTabItem(router.currentRoute, router, () => undefined);
         }
 
         /* istanbul ignore next */
+        // @ts-expect-error
         router.beforeEach((to, from, next) => {
             if (to.matched.length > 0) {
                 next();
                 return;
             }
 
-            const routeSuccess = createRouteForTabItem(to, router, next);
+            const routeSuccess = createRouteForTabItem(to, router as Router, next);
 
             // only resolve route if it was created
             if (routeSuccess) {
-                next(router.resolve(to.fullPath).route as RawLocation);
+                next((router as Router).resolve(to.fullPath).route as RawLocation);
             } else {
                 next();
             }
         });
     });
 }
+
 
 /* istanbul ignore next */
 function createRouteForTabItem(to: Route, router: Router, next: () => void): boolean {

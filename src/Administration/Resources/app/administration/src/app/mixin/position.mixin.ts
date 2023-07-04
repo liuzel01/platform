@@ -7,8 +7,9 @@
 import type Repository from 'src/core/data/repository.data';
 import Criteria from 'src/core/data/criteria.data';
 import type EntityCollection from '@58shuwei-ag/admin-extension-sdk/es/data/_internals/EntityCollection';
+import { defineComponent } from 'vue';
 
-Shuwei.Mixin.register('position', {
+export default Shuwei.Mixin.register('position', defineComponent({
     methods: {
         /**
          * Returns a new position value using the the current max position + 1
@@ -202,4 +203,4 @@ Shuwei.Mixin.register('position', {
             return collection;
         },
     },
-});
+}));

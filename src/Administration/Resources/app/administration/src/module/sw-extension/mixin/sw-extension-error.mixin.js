@@ -1,8 +1,10 @@
+import { defineComponent } from 'vue';
+
 /**
  * @package merchant-services
  * @private
  */
-Shuwei.Mixin.register('sw-extension-error', {
+export default Shuwei.Mixin.register('sw-extension-error', defineComponent({
     mixins: [Shuwei.Mixin.getByName('notification')],
 
     methods: {
@@ -14,4 +16,4 @@ Shuwei.Mixin.register('sw-extension-error', {
                 });
         },
     },
-});
+}));

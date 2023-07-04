@@ -11,7 +11,7 @@ const { createId, types } = Shuwei.Utils;
 Component.register('sw-admin-menu-item', {
     template,
 
-    inject: ['acl'],
+    inject: ['acl', 'feature'],
 
     props: {
         entry: {
@@ -106,8 +106,18 @@ Component.register('sw-admin-menu-item', {
 
     methods: {
         hasAccessToRoute(path) {
-            const route = path.replace(/\./g, '/');
-            const match = this.$router.match(route);
+            let route = '';
+            let match = false;
+
+            if (Shuwei.Service('feature').isActive('VUE3')) {
+                route = `/${path.replace(/\./g, '/')}`;
+                match = this.$router.resolve({
+                    path: route,
+                });
+            } else {
+                route = path.replace(/\./g, '/');
+                match = this.$router.match(route);
+            }
 
             if (!match.meta) {
                 return true;

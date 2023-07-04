@@ -3,11 +3,12 @@
  */
 
 import type { PropType } from 'vue';
+import { defineComponent } from 'vue';
 
 /**
  * @deprecated tag:v6.6.0 - Will be private
  */
-Shuwei.Mixin.register('sw-form-field', {
+export default Shuwei.Mixin.register('sw-form-field', defineComponent({
     props: {
         mapInheritance: {
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -29,7 +30,7 @@ Shuwei.Mixin.register('sw-form-field', {
             return null;
         },
 
-        formFieldName() {
+        formFieldName(): string|null {
             if (this.$attrs.name) {
                 return this.$attrs.name;
             }
@@ -132,7 +133,5 @@ Shuwei.Mixin.register('sw-form-field', {
             }
         },
     },
-});
+}));
 
-// eslint-disable-next-line sw-deprecation-rules/private-feature-declarations
-export default {};

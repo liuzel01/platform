@@ -3,12 +3,12 @@
  */
 
 /* @private */
-export {};
+import { defineComponent } from 'vue';
 
 /**
  * @deprecated tag:v6.6.0 - Will be private
  */
-Shuwei.Mixin.register('ruleContainer', {
+export default Shuwei.Mixin.register('ruleContainer', defineComponent({
     inject: [
         'conditionDataProviderService',
         'createCondition',
@@ -79,4 +79,4 @@ Shuwei.Mixin.register('ruleContainer', {
             }
         },
     },
-});
+}));

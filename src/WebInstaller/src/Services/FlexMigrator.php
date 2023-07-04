@@ -67,18 +67,7 @@ DATABASE_URL=mysql://root:root@localhost/shuwei
 # With Shuwei 6.4.17.0 the MAILER_DSN variable will be used in this template instead of MAILER_URL
 MAILER_URL=null://null
 ###< shuwei/core ###
-###> shuwei/elasticsearch ###
-OPENSEARCH_URL=http://localhost:9200
-SHOPWARE_ES_ENABLED=0
-SHOPWARE_ES_INDEXING_ENABLED=0
-SHOPWARE_ES_INDEX_PREFIX=sw
-SHOPWARE_ES_THROW_EXCEPTION=1
-###< shuwei/elasticsearch ###
-###> shuwei/storefront ###
-STOREFRONT_PROXY_URL=http://localhost
-SHOPWARE_HTTP_CACHE_ENABLED=1
-SHOPWARE_HTTP_DEFAULT_TTL=7200
-###< shuwei/storefront ###
+
 EOT;
 
     /**

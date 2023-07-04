@@ -3,12 +3,12 @@
  */
 
 /* @private */
-export {};
+import { defineComponent } from 'vue';
 
 /**
  * @deprecated tag:v6.6.0 - Will be private
  */
-Shuwei.Mixin.register('user-settings', {
+export default Shuwei.Mixin.register('user-settings', defineComponent({
     inject: [
         'acl',
     ],
@@ -127,4 +127,4 @@ Shuwei.Mixin.register('user-settings', {
             return criteria;
         },
     },
-});
+}));

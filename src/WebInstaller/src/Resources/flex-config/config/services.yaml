@@ -6,7 +6,7 @@
 parameters:
     shuwei.store.frw: '1'
     default_cdn_strategy: 'physical_filename'
-    shuwei.cdn.strategy: '%env(default:default_cdn_strategy:SHOPWARE_CDN_STRATEGY_DEFAULT)%'
+    shuwei.cdn.strategy: '%env(default:default_cdn_strategy:SHUWEI_CDN_STRATEGY_DEFAULT)%'
     env(MAILER_DSN): 'null://null'
     env(OPENSEARCH_URL): 'http://localhost:9200'
 

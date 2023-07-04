@@ -3,12 +3,12 @@
  */
 
 /* @private */
-export {};
+import { defineComponent } from 'vue';
 
 /**
  * @deprecated tag:v6.6.0 - Will be private
  */
-Shuwei.Mixin.register('sw-inline-snippet', {
+export default Shuwei.Mixin.register('sw-inline-snippet', defineComponent({
     computed: {
         swInlineSnippetLocale(): string {
             return Shuwei.State.get('session').currentLocale as unknown as string;
@@ -44,4 +44,4 @@ Shuwei.Mixin.register('sw-inline-snippet', {
             return value;
         },
     },
-});
+}));

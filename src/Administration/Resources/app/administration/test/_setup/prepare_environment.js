@@ -54,6 +54,11 @@ Shuwei.Application.view = {
     root: {
         $tc: v => v,
     },
+    i18n: {
+        tc: v => v,
+        te: v => v,
+        t: v => v,
+    },
 };
 
 // Prepare Context

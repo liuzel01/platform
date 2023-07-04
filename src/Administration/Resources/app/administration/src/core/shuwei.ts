@@ -219,6 +219,17 @@ class ShuweiClass {
 
     public Data = data;
 
+    public get Snippet() {
+        if (Shuwei.Service('feature').isActive('VUE3')) {
+            // @ts-expect-error - type is currently not available
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-return
+            return Shuwei.Application.view.i18n.global;
+        }
+
+        // @ts-expect-error - type is currently not available
+        return Shuwei.Application.view.i18n;
+    }
+
     public Classes = {
         ShuweiError,
         ApiService,

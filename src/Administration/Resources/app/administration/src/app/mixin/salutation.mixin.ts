@@ -3,7 +3,7 @@
  */
 
 /* @private */
-export {};
+import { defineComponent } from 'vue';
 
 type SalutationFilterEntityType = {
     salutation: {
@@ -19,7 +19,7 @@ type SalutationFilterEntityType = {
 /**
  * @deprecated tag:v6.6.0 - Will be private
  */
-Shuwei.Mixin.register('salutation', {
+export default Shuwei.Mixin.register('salutation', defineComponent({
     computed: {
         salutationFilter(): (entity: SalutationFilterEntityType, fallbackSnippet: string) => string {
             return Shuwei.Filter.getByName('salutation');
@@ -31,4 +31,4 @@ Shuwei.Mixin.register('salutation', {
             return this.salutationFilter(entity, fallbackSnippet);
         },
     },
-});
+}));

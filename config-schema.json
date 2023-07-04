@@ -9,9 +9,9 @@
                 "parameters": {
                     "$ref": "#/definitions/parameters"
                 },
-                "shopware": {
+                "shuwei": {
                     "$ref": "#/definitions/shuwei"
-                },
+                }
             },
             "title": "Root"
         },
@@ -20,7 +20,7 @@
             "additionalProperties": true,
             "title": "Parameters"
         },
-        "shopware": {
+        "shuwei": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
@@ -43,7 +43,7 @@
                     "$ref": "#/definitions/auto_update"
                 },
                 "store": {
-                    "$ref": "#/definitions/shopware_store"
+                    "$ref": "#/definitions/shuwei_store"
                 },
                 "sitemap": {
                     "$ref": "#/definitions/sitemap"
@@ -744,7 +744,7 @@
             },
             "title": "sitemap"
         },
-        "shopware_store": {
+        "shuwei_store": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
