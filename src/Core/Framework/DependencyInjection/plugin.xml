@@ -178,7 +178,7 @@
 
         <service id="Shuwei\Core\Framework\Plugin\Util\AssetService">
             <argument type="service" id="shuwei.filesystem.asset"/>
-            <argument type="service" id="shopware.filesystem.private"/>
+            <argument type="service" id="shuwei.filesystem.private"/>
             <argument type="service" id="kernel"/>
             <argument type="service" id="Shuwei\Core\Framework\Plugin\KernelPluginLoader\KernelPluginLoader"/>
             <argument type="service" id="Shuwei\Core\Framework\Adapter\Cache\CacheInvalidator"/>
