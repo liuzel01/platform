@@ -64,10 +64,7 @@ import type RemoveApiErrorMixin from './app/mixin/remove-api-error.mixin';
 import type PositionMixin from './app/mixin/position.mixin';
 import type PlaceholderMixin from './app/mixin/placeholder.mixin';
 import type ListingMixin from './app/mixin/listing.mixin';
-import type CartNotificationMixin from './module/sw-order/mixin/cart-notification.mixin';
 import type SwExtensionErrorMixin from './module/sw-extension/mixin/sw-extension-error.mixin';
-import type CmsElementMixin from './module/sw-cms/mixin/sw-cms-element.mixin';
-import type GenericConditionMixin from './app/mixin/generic-condition.mixin';
 import type SwFormFieldMixin from './app/mixin/form-field.mixin';
 import type DiscardDetailPageChangesMixin from './app/mixin/discard-detail-page-changes.mixin';
 
@@ -179,11 +176,8 @@ declare global {
         position: typeof PositionMixin,
         placeholder: typeof PlaceholderMixin,
         listing: typeof ListingMixin,
-        'cart-notification': typeof CartNotificationMixin,
         // @ts-expect-error
         'sw-extension-error': typeof SwExtensionErrorMixin,
-        'cms-element': typeof CmsElementMixin,
-        'generic-condition': typeof GenericConditionMixin,
         'sw-form-field': typeof SwFormFieldMixin,
         'discard-detail-page-changes': typeof DiscardDetailPageChangesMixin,
     }
