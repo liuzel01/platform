@@ -1127,16 +1127,16 @@
       "columnModuleName": "模块名称"
     },
     "sw-help-center": {
-      "title": "Support",
+      "title": "支持",
       "documentation": {
-        "headline": "Do you need help?",
-        "linkText": "See documentation",
-        "linkUrl": "https://docs.shuwei.com/en/shuwei-6-en"
+        "headline": "您需要帮助吗?",
+        "linkText": "请参阅文档",
+        "linkUrl": "https://docs.58shuwei.com/zh/shuwei-6-en"
       },
       "support": {
-        "headline": "We’re here for you!",
-        "paragraph": "Found nothing helpful in our documentation? Contact the Shuwei support and we’ll take a look at your problem.",
-        "linkText": "Create support request",
+        "headline": "我们在这里为您服务!",
+        "paragraph": "在我们的文档中发现没有任何帮助？联系 数维官方 支持，我们会看您的问题.",
+        "linkText": "创建需要支持请求",
         "linkUrl": "https://account.shuwei.com/shops/support"
       }
     }
