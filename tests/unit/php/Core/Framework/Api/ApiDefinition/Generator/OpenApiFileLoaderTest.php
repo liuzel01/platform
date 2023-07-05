@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 use Shuwei\Core\Framework\Api\ApiDefinition\Generator\OpenApiFileLoader;
 
 /**
- * @covers \Shopware\Core\Framework\Api\ApiDefinition\Generator\OpenApiFileLoader
+ * @covers \Shuwei\Core\Framework\Api\ApiDefinition\Generator\OpenApiFileLoader
  *
  * @internal
  */
