@@ -164,6 +164,7 @@ class OpenApiDefinitionSchemaBuilder
             if (\count($relationships)) {
                 $schema[$schemaName . 'JsonApi']->allOf[1]->properties[] = new Property([
                     'property' => 'relationships',
+                    'type' => 'object',
                     'properties' => $relationships,
                 ]);
             }
@@ -446,6 +447,7 @@ class OpenApiDefinitionSchemaBuilder
     {
         $property = new \stdClass();
         if ($fieldClass === null) {
+            $property->type = 'object';
             $property->additionalProperties = false;
 
             return $property;
