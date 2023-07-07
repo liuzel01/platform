@@ -13,9 +13,6 @@ on:
 #  create:
 #    tags:
 #      - '*'
-  delete:
-    tags:
-      - '*'
 
 jobs:
   sync_commits:
