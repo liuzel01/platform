@@ -34,12 +34,12 @@ class InstallerKernel extends HttpKernel
         parent::__construct($environment, $debug);
 
         // @codeCoverageIgnoreStart - not testable, as static calls cannot be mocked
-        if (InstalledVersions::isInstalled('shuwei/platform')) {
-            $version = InstalledVersions::getVersion('shuwei/platform')
-                . '@' . InstalledVersions::getReference('shuwei/platform');
+        if (InstalledVersions::isInstalled('58shuwei/platform')) {
+            $version = InstalledVersions::getVersion('58shuwei/platform')
+                . '@' . InstalledVersions::getReference('58shuwei/platform');
         } else {
-            $version = InstalledVersions::getVersion('shuwei/core')
-                . '@' . InstalledVersions::getReference('shuwei/core');
+            $version = InstalledVersions::getVersion('58shuwei/core')
+                . '@' . InstalledVersions::getReference('58shuwei/core');
         }
         // @codeCoverageIgnoreEnd
 

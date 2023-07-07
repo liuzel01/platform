@@ -155,12 +155,12 @@ class HttpKernel
             return $this->kernel;
         }
 
-        if (InstalledVersions::isInstalled('shuwei/platform')) {
-            $shuweiVersion = InstalledVersions::getVersion('shuwei/platform')
-                . '@' . InstalledVersions::getReference('shuwei/platform');
+        if (InstalledVersions::isInstalled('58shuwei/platform')) {
+            $shuweiVersion = InstalledVersions::getVersion('58shuwei/platform')
+                . '@' . InstalledVersions::getReference('58shuwei/platform');
         } else {
-            $shuweiVersion = InstalledVersions::getVersion('shuwei/core')
-                . '@' . InstalledVersions::getReference('shuwei/core');
+            $shuweiVersion = InstalledVersions::getVersion('58shuwei/core')
+                . '@' . InstalledVersions::getReference('58shuwei/core');
         }
 
         $middlewares = [];
