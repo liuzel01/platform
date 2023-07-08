@@ -56,6 +56,10 @@ base-uri 'self';
     </monolog:config>
 
     <services>
+        <service id="Shuwei\Core\Framework\Adapter\Twig\Extension\SwSanitizeTwigFilter" public="false">
+            <argument type="service" id="Shuwei\Core\Framework\Util\HtmlSanitizer"/>
+            <tag name="twig.extension"/>
+        </service>
         <!-- Asset -->
         <service id="Shuwei\Core\Framework\Adapter\Asset\AssetPackageService" public="true">
             <argument type="service" id="assets.packages"/>
