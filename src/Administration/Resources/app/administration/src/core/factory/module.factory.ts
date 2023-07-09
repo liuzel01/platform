@@ -72,7 +72,7 @@ interface Navigation {
 }
 
 interface SettingsItem {
-    group: 'web' | 'system' | 'plugins',
+    group: 'shop' | 'system' | 'plugins',
     to: string,
     icon?: string,
     iconComponent?: unknown,
