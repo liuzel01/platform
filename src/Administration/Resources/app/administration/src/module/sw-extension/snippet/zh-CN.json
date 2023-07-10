@@ -92,7 +92,7 @@
       "mainMenuItemExtensionStore": "扩展",
       "store": "插件商城",
       "purchased": "我的插件",
-      "support": "Support"
+      "support": "支持"
     },
     "sw-extension-app-module-error-page": {
       "error": {
@@ -631,13 +631,13 @@
       }
     },
     "additional_privileges": {
-      "title": "Additional permissions"
+      "title": "附加权限"
     }
   },
   "sw-privileges": {
     "additional_permissions": {
       "system": {
-        "extension_store": "官方商城"
+        "extension_store": "插件商城"
       }
     }
   }

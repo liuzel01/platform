@@ -92,7 +92,7 @@ export default {
             currentFolder: null,
             parentFolder: null,
             presentation: 'medium-preview',
-            sorting: { sortBy: 'fileName', sortDirection: 'asc' },
+            sorting: { sortBy: 'createdAt', sortDirection: 'desc' },
             folderSorting: { sortBy: 'name', sortDirection: 'asc' },
         };
     },

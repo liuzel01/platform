@@ -6,7 +6,7 @@
       "placeholderSearchBar": "在当前目录搜索...",
       "notification": {
         "urlCopied": {
-          "message": "网址已复制到剪贴板."
+          "message": "地址已复制到剪贴板."
         }
       }
     },
@@ -72,17 +72,17 @@
       "labelSort": "排序:",
       "labelSortByNameAsc": "Name, A-Z",
       "labelSortByNameDsc": "Name, Z-A",
-      "labelSortBySizeAsc": "Size, asc.",
-      "labelSortBySizeDsc": "Size, desc.",
-      "labelSortByCreatedAsc": "Creation date, asc.",
-      "labelSortByCreatedDsc": "Creation date, desc."
+      "labelSortBySizeAsc": "大小, 升序.",
+      "labelSortBySizeDsc": "大小, 降序.",
+      "labelSortByCreatedAsc": "创建时间, 升序.",
+      "labelSortByCreatedDsc": "创建时间, 降序."
     },
     "presentation": {
       "labelPresentation": "外观:",
-      "labelPresentationSmall": "Small preview",
-      "labelPresentationMedium": "Regular preview",
-      "labelPresentationLarge": "Large preview",
-      "labelPresentationList": "List"
+      "labelPresentationSmall": "小图预览",
+      "labelPresentationMedium": "常规预览",
+      "labelPresentationLarge": "大图预览",
+      "labelPresentationList": "列表"
     },
     "sw-media-modal": {
       "titleModal": "选择资源",
