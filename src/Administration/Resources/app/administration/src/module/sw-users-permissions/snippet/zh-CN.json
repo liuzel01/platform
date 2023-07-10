@@ -121,8 +121,8 @@
         "noAccessKeysTitle": "No access keys available",
         "noAccessKeysSubline": "Create access keys here",
         "labelAccessKey": "Access key",
-        "labelPermissions": "Permissions",
-        "disabledRoleSelectWarning": "Roles are only available for users that don't have administrator rights.",
+        "labelPermissions": "权限",
+        "disabledRoleSelectWarning": "角色仅对没有管理员权限的用户可用.",
         "passwordConfirmation": {
           "titleConfirmPasswordModal": "确认密码",
           "labelConfirmPassword": "密码",
