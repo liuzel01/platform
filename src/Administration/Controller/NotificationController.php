@@ -55,11 +55,10 @@ class NotificationController extends AbstractController
             throw new \InvalidArgumentException('requiredPrivileges must be an array');
         }
 
-        $integrationId = $source->getIntegrationId();
         $createdByUserId = $source->getUserId();
 
         try {
-            $cacheKey = $createdByUserId ?? $integrationId . '-' . $request->getClientIp();
+            $cacheKey = $createdByUserId;
             $this->rateLimiter->ensureAccepted(self::NOTIFICATION, $cacheKey);
         } catch (RateLimitExceededException $exception) {
             throw new NotificationThrottledException($exception->getWaitTime(), $exception);
@@ -72,7 +71,6 @@ class NotificationController extends AbstractController
             'message' => $message,
             'adminOnly' => $adminOnly,
             'requiredPrivileges' => $requiredPrivileges,
-            'createdByIntegrationId' => $integrationId,
             'createdByUserId' => $createdByUserId,
         ], $context);
 
