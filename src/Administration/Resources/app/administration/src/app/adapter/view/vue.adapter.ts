@@ -304,11 +304,11 @@ export default class VueAdapter extends ViewAdapter {
         return this.applicationFactory.locale;
     }
 
-     /**
+    /**
      * Returns the component as a Vue component.
      * Includes the full rendered template with all overrides.
      */
-     createComponent(componentName: string): Promise<Vue> {
+    createComponent(componentName: string): Promise<Vue> {
         return new Promise((resolve) => {
             // load sync components directly
             if (Component.isSyncComponent && Component.isSyncComponent(componentName)) {
