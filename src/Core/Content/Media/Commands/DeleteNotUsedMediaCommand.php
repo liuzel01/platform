@@ -59,6 +59,16 @@ class DeleteNotUsedMediaCommand extends Command
             return self::FAILURE;
         }
 
+        if ($input->getOption('report') && $input->getOption('dry-run')) {
+            $io->error('The options --report and --dry-run cannot be used together, pick one or the other.');
+
+            return self::FAILURE;
+        }
+
+        if ($input->getOption('report')) {
+            return $this->report($input, $output);
+        }
+
         if ($input->getOption('dry-run')) {
             return $this->dryRun($input, $output);
         }
@@ -85,6 +95,32 @@ class DeleteNotUsedMediaCommand extends Command
         }
 
         $io->success(sprintf('Successfully deleted %d media files.', $count));
+
+        return self::SUCCESS;
+    }
+
+    private function report(InputInterface $input, OutputInterface $output): int
+    {
+        $mediaBatches = $this->unusedMediaPurger->getNotUsedMedia(
+            $input->getOption('limit') ? (int) $input->getOption('limit') : 50,
+            $input->getOption('offset') ? (int) $input->getOption('offset') : null,
+            (int) $input->getOption('grace-period-days'),
+            $input->getOption('folder-entity'),
+        );
+
+        $output->write(implode(',', array_map(fn ($col) => sprintf('"%s"', $col), ['Filename', 'Title', 'Uploaded At', 'File Size'])));
+        foreach ($mediaBatches as $mediaBatch) {
+            foreach ($mediaBatch as $media) {
+                $row = [
+                    $media->getFileNameIncludingExtension(),
+                    $media->getTitle(),
+                    $media->getUploadedAt()?->format('F jS, Y'),
+                    MemorySizeCalculator::formatToBytes($media->getFileSize() ?? 0),
+                ];
+
+                $output->write(sprintf("\n%s", implode(',', array_map(fn ($col) => sprintf('"%s"', $col), $row))));
+            }
+        }
 
         return self::SUCCESS;
     }
