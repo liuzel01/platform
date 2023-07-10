@@ -48,7 +48,7 @@
       },
       "view": {
         "detailed": {
-          "alertText": "Configure privileges in detail. All deactivated checkboxes are permissions that have already been assigned in the \"General\" tab and are not not configurable. This configuration is only necessary if e.g. extensions are used that add new datasets but do not have privileges, these can be configured here."
+          "alertText": "详细配置权限。所有停用的复选框都是已在\"常规\"选项卡中分配的权限，并且并非不可配置。仅当以下情况时才需要此配置：使用扩展来添加新数据集但没有权限，可以在此处进行配置。"
         }
       },
       "tabs": {

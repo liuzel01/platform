@@ -102,7 +102,7 @@
   "sw-privileges": {
     "permissions": {
       "media": {
-        "label": "媒体"
+        "label": "资源库"
       }
     }
   }

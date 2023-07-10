@@ -403,7 +403,7 @@
       }
     },
     "custom_fields": {
-      "title": "Custom fields",
+      "title": "自定义字段",
       "entities": {
         "custom_field": "Custom field",
         "custom_field_set": "Custom field set",

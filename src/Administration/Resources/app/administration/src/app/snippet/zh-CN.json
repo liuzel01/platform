@@ -228,13 +228,13 @@
       "labelName": "Name"
     },
     "sw-data-grid": {
-      "tooltipListSettings": "List settings",
-      "labelSettingsCompactMode": "Use compact view",
-      "labelSettingsPreviewImages": "Show preview images",
-      "labelColumnHide": "Hide column",
-      "labelSelectionCount": "Selected:",
-      "labelDeSelectAll": "Deselect all",
-      "maximumSelectionExceed": "Maximum amount of items selected"
+      "tooltipListSettings": "列表设置",
+      "labelSettingsCompactMode": "紧凑模式",
+      "labelSettingsPreviewImages": "显示预览图像",
+      "labelColumnHide": "隐藏列",
+      "labelSelectionCount": "已选择:",
+      "labelDeSelectAll": "取消全选",
+      "maximumSelectionExceed": "所选项目的最大数量"
     },
     "sw-pagination": {
       "labelItemsPerPage": "每页条数:"
@@ -257,8 +257,8 @@
       "labelUnlink": "Unlink media"
     },
     "sw-media-folder-item": {
-      "labelContextMenuRename": "Rename",
-      "labelContextMenuMove": "Move",
+      "labelContextMenuRename": "重命名",
+      "labelContextMenuMove": "移动",
       "labelContextMenuShowMedia": "Show media",
       "labelContextMenuShowSettings": "Settings",
       "labelContextMenuDissolve": "Dissolve",
@@ -1433,10 +1433,10 @@
   },
   "sw-privileges": {
     "tooltip": {
-      "warning": "You have insufficient permissions."
+      "warning": "您的权限不足."
     },
     "error": {
-      "description": "You do not have the necessary permissions for this action, please ask your administrator for authorization. The required permissions are: "
+      "description": "您没有此操作所需的权限,请向管理员申请授权.所需的权限包括: "
     }
   },
   "sw-custom-field-set-renderer": {

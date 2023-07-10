@@ -51,7 +51,7 @@
   "sw-privileges": {
     "additional_permissions": {
       "system": {
-        "clear_cache": "Clear cache"
+        "clear_cache": "清除缓存"
       }
     }
   }

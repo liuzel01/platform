@@ -125,7 +125,7 @@
   "sw-privileges": {
     "permissions": {
       "custom_field": {
-        "label": "Custom fields"
+        "label": "自定义字段"
       }
     }
   }
