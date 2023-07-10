@@ -31,7 +31,6 @@ class OpenApiFileLoader
             'components' => [],
         ];
 
-
         if (empty($this->paths)) {
             return $spec;
         }
@@ -40,7 +39,11 @@ class OpenApiFileLoader
         $finder->in($this->paths)->name('*.json');
 
         foreach ($finder as $entry) {
-            $data = json_decode((string) file_get_contents($entry->getPathname()), true, \JSON_THROW_ON_ERROR, \JSON_THROW_ON_ERROR);
+            try {
+                $data = json_decode((string) file_get_contents($entry->getPathname()), true, \JSON_THROW_ON_ERROR, \JSON_THROW_ON_ERROR);
+            } catch (\JsonException $exception) {
+                var_dump($entry->getPathname());
+            }
 
             $spec['paths'] = \array_replace_recursive($spec['paths'], $data['paths'] ?? []);
             $spec['components'] = array_merge_recursive(

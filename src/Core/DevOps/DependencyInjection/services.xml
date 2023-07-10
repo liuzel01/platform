@@ -4,6 +4,17 @@
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xsi:schemaLocation="http://symfony.com/schema/dic/services https://symfony.com/schema/dic/services/services-1.0.xsd">
     <services>
+        <defaults autowire="true"/>
 
+        <service id="Shuwei\Core\DevOps\System\Command\SyncComposerVersionCommand">
+            <argument>%kernel.project_dir%</argument>
+            <tag name="console.command"/>
+        </service>
+
+        <service id="Shuwei\Core\DevOps\System\Command\OpenApiValidationCommand">
+            <argument type="service" id="Symfony\Contracts\HttpClient\HttpClientInterface"/>
+            <argument type="service" id="Shuwei\Core\Framework\Api\ApiDefinition\DefinitionService"/>
+            <tag name="console.command"/>
+        </service>
     </services>
 </container>
