@@ -10,6 +10,7 @@ use Shuwei\Core\Framework\DataAbstractionLayer\EntityDefinition;
 use Shuwei\Core\Framework\Log\Package;
 use Shuwei\Core\Framework\Struct\Collection;
 
+
 /**
  * @internal
  */
@@ -21,7 +22,7 @@ class EntityLoadedEventFactory
     }
 
     /**
-     * @param list<mixed> $entities
+     * @param array<mixed> $entities
      */
     public function create(array $entities, Context $context): EntityLoadedContainerEvent
     {
@@ -33,7 +34,7 @@ class EntityLoadedEventFactory
     }
 
     /**
-     * @param list<mixed> $entities
+     * @param array<mixed> $entities
      */
     public function createPartial(array $entities, Context $context): EntityLoadedContainerEvent
     {
@@ -44,14 +45,10 @@ class EntityLoadedEventFactory
         return $this->buildEvents($mapping, $generator, $context);
     }
 
-
-
-
-
     /**
      * @param array<string, list<Entity>> $mapping
      */
-    protected function buildEvents(array $mapping, \Closure $generator, Context $context): EntityLoadedContainerEvent
+    private function buildEvents(array $mapping, \Closure $generator, Context $context): EntityLoadedContainerEvent
     {
         $events = [];
         foreach ($mapping as $name => $entities) {
@@ -64,12 +61,12 @@ class EntityLoadedEventFactory
     }
 
     /**
-     * @param list<mixed> $entities
+     * @param array<mixed> $entities
      * @param array<string, list<Entity>> $mapping
      *
      * @return array<string, list<Entity>>
      */
-    protected function recursion(array $entities, array $mapping): array
+    private function recursion(array $entities, array $mapping): array
     {
         foreach ($entities as $entity) {
             if (!$entity instanceof Entity && !$entity instanceof EntityCollection) {

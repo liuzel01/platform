@@ -42,7 +42,7 @@ class EntitySearchResult extends EntityCollection
     protected $limit;
 
     /**
-     * @phpstan-ignore-next-line -> we can't generalize the type of EntityCollection here
+     * @param TEntityCollection $entities
      */
     final public function __construct(
         protected string $entity,
@@ -77,7 +77,7 @@ class EntitySearchResult extends EntityCollection
     }
 
     /**
-     * @return EntityCollection<Entity>
+     * @return TEntityCollection
      */
     public function getEntities(): EntityCollection
     {

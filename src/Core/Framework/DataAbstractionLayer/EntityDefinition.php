@@ -2,7 +2,6 @@
 
 namespace Shuwei\Core\Framework\DataAbstractionLayer;
 
-use Shuwei\Core\Content\Seo\SeoUrl\SeoUrlDefinition;
 use Shuwei\Core\Framework\DataAbstractionLayer\Dbal\EntityHydrator;
 use Shuwei\Core\Framework\DataAbstractionLayer\EntityProtection\EntityProtectionCollection;
 use Shuwei\Core\Framework\DataAbstractionLayer\Field\AssociationField;
@@ -222,8 +221,8 @@ abstract class EntityDefinition
     }
 
     /**
-     * Phpstan will complain that we should specify the generic type if we hint that class strings
-     * of EntityColllection should be returned.
+     * PHPStan will complain that we should specify the generic type if we hint that class strings
+     * of EntityCollection should be returned.
      *
      * @return class-string
      */
@@ -300,13 +299,16 @@ abstract class EntityDefinition
     }
 
     /**
-     * @return array<mixed>
+     * @return array<string, mixed>
      */
     public function getDefaults(): array
     {
         return [];
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public function getChildDefaults(): array
     {
         return [];
@@ -340,13 +342,6 @@ abstract class EntityDefinition
         return $field && $field instanceof LockedField;
     }
 
-    public function isSeoAware(): bool
-    {
-        $field = $this->getFields()->get('seoUrls');
-
-        return $field instanceof OneToManyAssociationField && $field->getReferenceDefinition() instanceof SeoUrlDefinition;
-    }
-
     public function since(): ?string
     {
         return null;
@@ -373,11 +368,17 @@ abstract class EntityDefinition
         return $field->getSerializer()->decode($field, $value);
     }
 
+    /**
+     * @return array<string, TranslatedField>
+     */
     public function getTranslatedFields(): array
     {
         return $this->getFields()->getTranslatedFields();
     }
 
+    /**
+     * @return array<string, Field>
+     */
     public function getExtensionFields(): array
     {
         return $this->getFields()->getExtensionFields();
@@ -389,7 +390,7 @@ abstract class EntityDefinition
     }
 
     /**
-     * @return Field[]
+     * @return list<Field>
      */
     protected function defaultFields(): array
     {
@@ -406,6 +407,9 @@ abstract class EntityDefinition
         return new EntityProtectionCollection();
     }
 
+    /**
+     * @return list<Field>
+     */
     protected function getBaseFields(): array
     {
         return [];
