@@ -48,7 +48,7 @@ export default class VueAdapter extends ViewAdapter {
         this.resolvedComponentConfigs = new Map();
 
         this.vueComponents = {};
-         // @ts-expect-error
+        // @ts-expect-error
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         this.vue3 = !!window._features_?.vue3;
 
@@ -58,7 +58,7 @@ export default class VueAdapter extends ViewAdapter {
         }
     }
 
-     /**
+    /**
      * Creates the main instance for the view layer.
      * Is used on startup process of the main application.
      */
