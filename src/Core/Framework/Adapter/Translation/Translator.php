@@ -189,12 +189,21 @@ class Translator extends AbstractTranslator
 
     public function reset(): void
     {
+        $this->resetInjection();
+
         $this->isCustomized = [];
+        $this->snippets = [];
+        $this->traces = [];
+        $this->keys = ['all' => true];
         $this->snippetSetId = null;
+        $this->salesChannelId = null;
+        $this->localeBeforeInject = null;
+        $this->locale = null;
         if ($this->translator instanceof SymfonyTranslator) {
             // Reset FallbackLocale in memory cache of symfony implementation
             // set fallback values from Framework/Resources/config/translation.yaml
             $this->translator->setFallbackLocales(['zh_CN', 'zh']);
+            $this->translator->setLocale('zh-CN');
         }
     }
 
