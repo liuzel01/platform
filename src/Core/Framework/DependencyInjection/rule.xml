@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services https://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="Shuwei\Core\Framework\Rule\Collector\RuleConditionRegistry">
+            <argument type="tagged" tag="shuwei.rule.definition"/>
+        </service>
+
+        <service id="Shuwei\Core\Framework\Rule\Container\AndRule">
+            <tag name="shuwei.rule.definition"/>
+        </service>
+
+        <service id="Shuwei\Core\Framework\Rule\Container\NotRule">
+            <tag name="shuwei.rule.definition"/>
+        </service>
+
+        <service id="Shuwei\Core\Framework\Rule\Container\OrRule">
+            <tag name="shuwei.rule.definition"/>
+        </service>
+
+        <service id="Shuwei\Core\Framework\Rule\Container\XorRule">
+            <tag name="shuwei.rule.definition"/>
+        </service>
+
+        <service id="Shuwei\Core\Framework\Rule\Container\MatchAllLineItemsRule">
+            <tag name="shuwei.rule.definition"/>
+        </service>
+
+        <service id="Shuwei\Core\Framework\Rule\ScriptRule">
+            <tag name="shuwei.rule.definition"/>
+        </service>
+
+        <service id="Shuwei\Core\Framework\Rule\DateRangeRule">
+            <tag name="shuwei.rule.definition"/>
+        </service>
+
+        <service id="Shuwei\Core\Framework\Rule\SimpleRule">
+            <tag name="shuwei.rule.definition"/>
+        </service>
+
+        <service id="Shuwei\Core\Framework\Rule\SalesChannelRule">
+            <tag name="shuwei.rule.definition"/>
+        </service>
+
+        <service id="Shuwei\Core\Framework\Rule\TimeRangeRule">
+            <tag name="shuwei.rule.definition"/>
+        </service>
+
+        <service id="Shuwei\Core\Framework\Rule\WeekdayRule">
+            <tag name="shuwei.rule.definition"/>
+        </service>
+
+        <service id="Shuwei\Core\Framework\Rule\Api\RuleConfigController"
+                 public="true">
+            <argument type="tagged" tag="shuwei.rule.definition"/>
+
+            <call method="setContainer">
+                <argument type="service" id="service_container"/>
+            </call>
+        </service>
+    </services>
+</container>
