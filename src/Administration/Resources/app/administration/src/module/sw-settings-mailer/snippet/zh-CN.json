@@ -1,0 +1,54 @@
+{
+  "sw-settings-mailer": {
+    "general": {
+      "mainMenuItemGeneral": "邮件",
+      "textHeadline": "邮件设置",
+      "buttonSave": "保存",
+      "helpText": "有关更多信息，请参阅 <a href='https://docs.58shuwei.com/en/shuwei-6-en'>documentation</a>"
+    },
+    "mailer-configuration": {
+      "card-title": "邮件配置",
+      "agent": "首选电子邮件代理",
+      "local-agent": "本地电子邮件代理",
+      "local-helptext": "此选项使用系统的默认邮件程序 （Sendmail）。确保 Sendmail 正常工作并在您自己的托管环境中可用.",
+      "smtp-server": "SMTP 服务器",
+      "env-file": "使用环境的配置"
+    },
+    "first-configuration": {
+      "headline": "建立电子邮件通信",
+      "description": "与客户沟通是日常沟通的关键因素。因此，应尽快从您的列表中设置邮件方案."
+    },
+    "sendmail": {
+      "sync": "同步发送邮件",
+      "async": "异步发送邮件"
+    },
+    "card-smtp": {
+      "host": "主机地址",
+      "host-placeholder": "输入主机地址...",
+      "port": "端口",
+      "port-placeholder": "输入端口号...",
+      "username": "用户名",
+      "username-placeholder": "输入用户名...",
+      "password": "密码",
+      "password-placeholder": "输入密码...",
+      "encryption": "加密",
+      "encryption-placeholder": "选择加密方法...",
+      "sender-address": "发件人地址",
+      "sender-address-placeholder": "填写您有权访问的电子邮件地址...",
+      "delivery-address": "收信人地址",
+      "delivery-address-placeholder": "填写电子邮件地址以进行测试...",
+      "delivery-address-helptext": "所有传出电子邮件都将发送到目标收件人地址以及该地址。仅用于测试目的.",
+      "disable-delivery": "禁用电子邮件传递",
+      "error": {
+        "notificationMessage": "您输入的 SMTP 配置似乎无效."
+      }
+    },
+    "encryption": {
+      "no-encryption": "无加密",
+      "ssl": "SSL",
+      "tls": "TLS"
+    },
+    "helpText": "了解更多信息，请查看 <a target=\"_blank\", href=\"https://docs.58shuwei.com/en/shuwei-6-en\">documentation.</a>"
+  }
+}
+
