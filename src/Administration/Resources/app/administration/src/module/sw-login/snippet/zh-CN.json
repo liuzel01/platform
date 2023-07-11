@@ -56,6 +56,9 @@
   "global": {
     "sw-admin-menu": {
       "textShuweiAdmin": "数维平台管理系统"
+    },
+    "default": {
+      "error": "错误"
     }
   }
 }
