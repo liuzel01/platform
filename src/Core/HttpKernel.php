@@ -19,7 +19,6 @@ use Shuwei\Core\Framework\Plugin\KernelPluginLoader\KernelPluginLoader;
 use Shuwei\Core\Framework\Routing\CanonicalRedirectService;
 use Shuwei\Core\Framework\Routing\RequestTransformerInterface;
 use Shuwei\Core\Profiling\Doctrine\ProfilingMiddleware;
-use Shuwei\Storefront\Framework\Cache\CacheStore;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -131,13 +130,6 @@ class HttpKernel
             $container->get('event_dispatcher')->dispatch($event);
 
             return new HttpKernelResult($transformed, $event->getResponse());
-        }
-
-        // check for http caching
-        $enabled = $container->hasParameter('shuwei.http.cache.enabled')
-            && $container->getParameter('shuwei.http.cache.enabled');
-        if ($enabled && $container->has(CacheStore::class)) {
-            $kernel = new static::$httpCacheClass($kernel, $container->get(CacheStore::class), null, ['debug' => $this->debug]);
         }
 
         $response = $kernel->handle($transformed, $type, $catch);
