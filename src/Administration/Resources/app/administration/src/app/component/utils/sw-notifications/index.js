@@ -28,11 +28,11 @@ Component.register('sw-notifications', {
         },
         notificationsGap: {
             type: String,
-            default: '20px',
+            default: '2px',
         },
         notificationsTopGap: {
             type: String,
-            default: '165px',
+            default: '6px',
         },
     },
 
