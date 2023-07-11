@@ -137,9 +137,9 @@ Component.register('sw-admin-menu-item', {
         subIsActive(path, entryId) {
             // this is an extra case for the sw-sales-channel menu, without this all sales-channels
             // would have the selection highlight as soon as one is selected.
-            if (this.$route.name?.startsWith('sw.sales.channel.') && entryId) {
-                return this.$route.params?.id === entryId;
-            }
+            // if (this.$route.name?.startsWith('sw.website.') && entryId) {
+            //     return this.$route.params?.id === entryId;
+            // }
 
             const meta = this.$route.meta;
             const adminMenuEntries = Shuwei.State.get('adminMenu').adminModuleNavigation;
