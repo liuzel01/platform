@@ -30,15 +30,15 @@
         "isLoggedIn": "Shuwei Account succesfully connected. Go to the \"App\" or \"Themes\" tab and check if your purchased extensions are listed. If not, check head over to your Showare Account and make sure the correct domain for extensions has been set.",
         "login": "Login",
         "logout": "Logout",
-        "loginMessage": "Login with you Shuwei Account to access extensions you bought on store.shuwei.com",
+        "loginMessage": "Login with you Shuwei Account to access extensions you bought on store.58shuwei.com",
         "register": "Sign up now and become part of the Shuwei community!",
         "registerNow": "Sign up now",
-        "registerUrl": "https://account.shuwei.com/register?lang=en",
+        "registerUrl": "https://account.58shuwei.com/register?lang=en",
         "mailLabel": "Email address",
         "mailPlaceholder": "Enter your email address...",
         "passwordLabel": "Password",
         "passwordPlaceholder": "Enter your password...",
-        "recoveryUrl": "https://account.shuwei.com/recovery?lang=en",
+        "recoveryUrl": "https://account.58shuwei.com/recovery?lang=en",
         "passwordForgot": "Did you forget your password?",
         "loginNotificationMessage": "You are logged in to the Shuwei Account."
       },
@@ -208,7 +208,7 @@
           "textProblem": "A problem occurred while installing your extension. We will inform the manufacturer.",
           "notificationLicense": "Please note that the subscription to this extension remains active.",
           "textSupport": "If you have any questions about the licence, please contact Shuwei Financial Services. Available via email at {0} or via phone at {1}.",
-          "supportEmail": "financial.services@shuwei.com",
+          "supportEmail": "financial.services@58shuwei.com",
           "supportPhone": "+49 (0)2555 / 9288510"
         }
       },

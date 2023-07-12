@@ -134,7 +134,7 @@ describe('src/module/sw-extension/service/shuwei-extension.service', () => {
         });
 
         it.each([
-            [{ userInfo: { email: 'user@shuwei.com' } }],
+            [{ userInfo: { email: 'user@58shuwei.com' } }],
             [{ userInfo: null }],
         ])('sets login status depending on checkLogin response', async (loginResponse) => {
             checkLoginSpy.mockImplementationOnce(() => loginResponse);

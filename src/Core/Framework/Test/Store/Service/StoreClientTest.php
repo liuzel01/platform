@@ -175,8 +175,8 @@ class StoreClientTest extends TestCase
     {
         $userInfo = [
             'name' => 'John Doe',
-            'email' => 'john.doe@shuwei.com',
-            'avatarUrl' => 'https://avatar.shuwei.com/john-doe.png',
+            'email' => 'john.doe@58shuwei.com',
+            'avatarUrl' => 'https://avatar.58shuwei.com/john-doe.png',
         ];
 
         $this->getRequestHandler()->append(new Response(200, [], \json_encode($userInfo, \JSON_THROW_ON_ERROR)));
@@ -194,7 +194,7 @@ class StoreClientTest extends TestCase
     public function testMissingConnectionBecauseYouAreInGermanCellularInternet(): void
     {
         $this->getRequestHandler()->append(new ConnectException(
-            'cURL error 7: Failed to connect to api.shuwei.com port 443 after 4102 ms: Network is unreachable (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://api.shuwei.com/swplatform/pluginupdates?shuweiVersion=6.4.12.0&language=en-US&domain=',
+            'cURL error 7: Failed to connect to api.58shuwei.com port 443 after 4102 ms: Network is unreachable (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://api.58shuwei.com/swplatform/pluginupdates?shuweiVersion=6.4.12.0&language=en-US&domain=',
             $this->createMock(RequestInterface::class)
         ));
 

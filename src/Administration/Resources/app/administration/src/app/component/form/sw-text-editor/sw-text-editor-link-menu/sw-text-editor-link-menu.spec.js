@@ -31,10 +31,10 @@ const linkDataProvider = [{
     placeholder: 'sw-text-editor-toolbar.link.placeholderPhoneNumber',
 }, {
     buttonConfig: {
-        value: 'mailto:test@shuwei.com',
+        value: 'mailto:test@58shuwei.com',
         type: 'email',
     },
-    value: 'test@shuwei.com',
+    value: 'test@58shuwei.com',
     type: 'email',
     prefix: 'mailto:',
     selector: '.sw-email-field',

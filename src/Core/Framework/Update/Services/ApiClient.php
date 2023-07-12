@@ -48,7 +48,7 @@ class ApiClient
 
         try {
             /** @var array{title: string, body: string, date: string, version: string, fixedVulnerabilities: VersionFixedVulnerabilities[]} $github */
-            $github = $this->client->request('GET', 'https://releases.shuwei.com/changelog/' . $this->determineLatestShuweiVersion() . '.json')->toArray();
+            $github = $this->client->request('GET', 'https://releases.58shuwei.com/changelog/' . $this->determineLatestShuweiVersion() . '.json')->toArray();
         } catch (ClientException $e) {
             if ($e->getCode() === Response::HTTP_NOT_FOUND || $e->getCode() === Response::HTTP_FORBIDDEN) {
                 return new Version();
@@ -81,7 +81,7 @@ class ApiClient
     private function determineLatestShuweiVersion(): string
     {
         /** @var non-empty-array<string> $versions */
-        $versions = $this->client->request('GET', 'https://releases.shuwei.com/changelog/index.json')->toArray();
+        $versions = $this->client->request('GET', 'https://releases.58shuwei.com/changelog/index.json')->toArray();
 
         usort($versions, function ($a, $b) {
             return version_compare($b, $a);

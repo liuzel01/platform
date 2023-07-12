@@ -48,7 +48,7 @@ async function createWrapper() {
             systemConfigApiService: {
                 getValues: () => {
                     return Promise.resolve({
-                        'core.store.apiUri': 'https://api.shuwei.com',
+                        'core.store.apiUri': 'https://api.58shuwei.com',
                         'core.store.licenseHost': 'sw6.test.shuwei.in',
                         'core.store.shopSecret': 'very.s3cret',
                     });

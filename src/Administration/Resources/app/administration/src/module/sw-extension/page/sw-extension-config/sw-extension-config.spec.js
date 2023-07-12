@@ -51,7 +51,7 @@ describe('src/module/sw-extension/page/sw-extension-config-spec', () => {
                 systemConfigApiService: {
                     getValues: () => {
                         return Promise.resolve({
-                            'core.store.apiUri': 'https://api.shuwei.com',
+                            'core.store.apiUri': 'https://api.58shuwei.com',
                             'core.store.licenseHost': 'sw6.test.shuwei.in',
                             'core.store.shopSecret': 'very.s3cret',
                             'core.store.shuweiId': 'max@muster.com',
@@ -148,7 +148,7 @@ describe('src/module/sw-extension/page/sw-extension-config-spec', () => {
     it('shows header for extension details with producer website', async () => {
         wrapper.vm.extension = {
             producerName: 'shuwei AG',
-            producerWebsite: 'https://www.shuwei.com/',
+            producerWebsite: 'https://www.58shuwei.com/',
         };
 
         await wrapper.vm.$nextTick();
@@ -156,7 +156,7 @@ describe('src/module/sw-extension/page/sw-extension-config-spec', () => {
         expect(meta.text()).toContain('sw-extension-store.component.sw-extension-config.labelBy');
 
         const metaLink = wrapper.get('.sw-extension-config__producer-link');
-        expect(metaLink.attributes().href).toBe('https://www.shuwei.com/');
+        expect(metaLink.attributes().href).toBe('https://www.58shuwei.com/');
         expect(metaLink.text()).toBe('shuwei AG');
     });
 

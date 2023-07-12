@@ -54,7 +54,7 @@ describe('src/module/sw-settings-mailer/page/sw-settings-mailer', () => {
 
         const expectedMailerSettings = {
             'core.mailerSettings.emailAgent': 'local',
-            'core.mailerSettings.host': 'shuwei.com',
+            'core.mailerSettings.host': '58shuwei.com',
             'core.mailerSettings.port': 321,
             'core.mailerSettings.username': 'Mad max',
             'core.mailerSettings.password': 'verySafe123',
@@ -77,7 +77,7 @@ describe('src/module/sw-settings-mailer/page/sw-settings-mailer', () => {
 
         const expectedMailerSettings = {
             'core.mailerSettings.emailAgent': 'local',
-            'core.mailerSettings.host': 'shuwei.com',
+            'core.mailerSettings.host': '58shuwei.com',
             'core.mailerSettings.port': 321,
             'core.mailerSettings.username': 'Mad max',
             'core.mailerSettings.password': 'verySafe123',

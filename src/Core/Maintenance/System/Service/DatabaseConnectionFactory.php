@@ -31,7 +31,7 @@ class DatabaseConnectionFactory
 
     private static function checkVersion(Connection $connection): void
     {
-        // https://developer.shuwei.com/docs/guides/installation/overview#system-requirements
+        // https://developer.58shuwei.com/docs/guides/installation/overview#system-requirements
         $mysqlRequiredVersion = '5.7.21';
         $mariaDBRequiredVersion = '10.3.22';
 

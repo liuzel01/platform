@@ -76,7 +76,7 @@ describe('module/sw-first-run-wizard/view/sw-first-run-wizard-mailer-smtp', () =
 
         const expectedMailerSettings = {
             'core.mailerSettings.emailAgent': 'local',
-            'core.mailerSettings.host': 'shuwei.com',
+            'core.mailerSettings.host': '58shuwei.com',
             'core.mailerSettings.port': 321,
             'core.mailerSettings.username': 'Mad max',
             'core.mailerSettings.password': 'verySafe123',
@@ -99,7 +99,7 @@ describe('module/sw-first-run-wizard/view/sw-first-run-wizard-mailer-smtp', () =
 
         const expectedMailerSettings = {
             'core.mailerSettings.emailAgent': 'local',
-            'core.mailerSettings.host': 'shuwei.com',
+            'core.mailerSettings.host': '58shuwei.com',
             'core.mailerSettings.port': 321,
             'core.mailerSettings.username': 'Mad max',
             'core.mailerSettings.password': 'verySafe123',

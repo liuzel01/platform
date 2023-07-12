@@ -21,8 +21,8 @@
         </parameter>
 
         <parameter key="shuwei.installer.tosUrls" type="collection">
-            <parameter key="de">https://api.shuwei.com/gtc/de_DE.html</parameter>
-            <parameter key="en">https://api.shuwei.com/gtc/zh_CN.html</parameter>
+            <parameter key="de">https://api.58shuwei.com/gtc/de_DE.html</parameter>
+            <parameter key="en">https://api.58shuwei.com/gtc/zh_CN.html</parameter>
         </parameter>
     </parameters>
     <services>
@@ -184,7 +184,7 @@
         </service>
 
         <service id="Shuwei\Core\Installer\Finish\Notifier">
-            <argument type="string">https://api.shuwei.com</argument>
+            <argument type="string">https://api.58shuwei.com</argument>
             <argument type="service" id="Shuwei\Core\Installer\Finish\UniqueIdGenerator"/>
             <argument type="service" id="GuzzleHttp\Client"/>
             <argument type="string">%kernel.shuwei_version%</argument>

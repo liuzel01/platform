@@ -11,18 +11,18 @@ Shuwei.Component.register('sw-media-list-selection-item-v2', swMediaListSelectio
 const entityMediaItems = [
     {
         id: '1',
-        url: 'http://shuwei.com/image1.jpg',
+        url: 'http://58shuwei.com/image1.jpg',
         position: 3,
 
     },
     {
         id: '2',
-        url: 'http://shuwei.com/image2.jpg',
+        url: 'http://58shuwei.com/image2.jpg',
         position: 1,
     },
     {
         id: '3',
-        url: 'http://shuwei.com/image3.jpg',
+        url: 'http://58shuwei.com/image3.jpg',
         position: 2,
     },
 ];

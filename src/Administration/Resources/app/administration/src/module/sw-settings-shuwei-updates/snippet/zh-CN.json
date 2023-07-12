@@ -43,7 +43,7 @@
         "writeableCheckValid": "以下目录和文件是可写的:<br/>{checkedDirectories}",
         "writeableCheckFailed": "以下目录和文件是不可写的:<br>{failedDirectories}",
         "validShuweiLicense": "您当前的数维平台版本已经过期。您可能需要考虑升级到最新版本.",
-        "invalidShuweiLicense": "No active Shuwei subscription found.<br>Automatic updates cannot be performed.<br>You may want to purchase a Shuwei subscription via the <a target=\"_blank\" href=\"https://account.shuwei.com\">Shuwei account page.</a>"
+        "invalidShuweiLicense": "No active Shuwei subscription found.<br>Automatic updates cannot be performed.<br>You may want to purchase a Shuwei subscription via the <a target=\"_blank\" href=\"https://account.58shuwei.com\">Shuwei account page.</a>"
       },
       "ready": "准备就绪",
       "notReady": "未准备就绪"

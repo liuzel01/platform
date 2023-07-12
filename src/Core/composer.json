@@ -21,11 +21,11 @@
         }
     },
     "support": {
-        "issues": "https://issues.shuwei.com",
-        "forum": "https://forum.shuwei.com",
-        "wiki": "https://developer.shuwei.com",
-        "docs": "https://developer.shuwei.com",
-        "chat": "https://slack.shuwei.com"
+        "issues": "https://issues.58shuwei.com",
+        "forum": "https://forum.58shuwei.com",
+        "wiki": "https://developer.58shuwei.com",
+        "docs": "https://developer.58shuwei.com",
+        "chat": "https://slack.58shuwei.com"
     },
     "extra": {
         "branch-alias": {

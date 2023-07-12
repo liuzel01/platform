@@ -30,15 +30,15 @@
         "isLoggedIn": "Du hast Dich erfolgreich mit dem Shuwei Account verbunden. Gehe zur Registerkarte \"Apps\" oder \"Themes\" und prüfe, ob Deine gekauften Erweiterungen aufgeführt sind. Wenn nicht, gehe in den Shuwei Account und stelle sicher, dass die richtige Domain für Erweiterungen eingestellt wurde.",
         "login": "Anmelden",
         "logout": "Abmelden",
-        "loginMessage": "Melde Dich im Shuwei Account an, um auf die Erweiterungen zuzugreifen, die Du auf store.shuwei.com gekauft hast.",
+        "loginMessage": "Melde Dich im Shuwei Account an, um auf die Erweiterungen zuzugreifen, die Du auf store.58shuwei.com gekauft hast.",
         "register": "Registriere Dich jetzt und werde Teil der Shuwei-Community!",
         "registerNow": "Jetzt registrieren",
-        "registerUrl": "https://account.shuwei.com/register?lang=de",
+        "registerUrl": "https://account.58shuwei.com/register?lang=de",
         "mailLabel": "E-Mail-Adresse",
         "mailPlaceholder": "Gib Deine E-Mail-Adresse ein ...",
         "passwordLabel": "Passwort",
         "passwordPlaceholder": "Gib Dein Passwort ein ...",
-        "recoveryUrl": "https://account.shuwei.com/recovery?lang=de",
+        "recoveryUrl": "https://account.58shuwei.com/recovery?lang=de",
         "passwordForgot": "Hast Du Dein Passwort vergessen?",
         "loginNotificationMessage": "Du bist im Shuwei Account angemeldet."
       },
@@ -208,7 +208,7 @@
           "textProblem": "Beim Installieren Deiner Erweiterung ist ein Problem aufgetreten. Der Hersteller wird von uns informiert.",
           "notificationLicense": "Beachte, dass die Miete dieser App bzw. des Themes weiterhin aktiv bleibt.",
           "textSupport": "Bei Fragen zur Lizenz wende Dich bitte an die Shuwei Financial Services. Erreichbar per E-Mail unter {0} oder per Telefon unter {1}",
-          "supportEmail": "financial.services@shuwei.com",
+          "supportEmail": "financial.services@58shuwei.com",
           "supportPhone": "+49 (0)2555 / 9288510"
         }
       },

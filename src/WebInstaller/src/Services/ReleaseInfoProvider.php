@@ -27,7 +27,7 @@ class ReleaseInfoProvider
     public function fetchVersions(): array
     {
         /** @var array<string> $versions */
-        $versions = $this->client->request('GET', 'https://releases.shuwei.com/changelog/index.json')->toArray();
+        $versions = $this->client->request('GET', 'https://releases.58shuwei.com/changelog/index.json')->toArray();
 
         usort($versions, function ($a, $b) {
             return version_compare($b, $a);

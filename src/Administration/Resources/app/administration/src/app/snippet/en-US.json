@@ -194,7 +194,7 @@
     "sw-gtc-checkbox": {
       "label": "I accept the",
       "link": "terms and conditions.",
-      "url": "https://www.shuwei.com/en/gtc"
+      "url": "https://www.58shuwei.com/en/gtc"
     },
     "sw-price-field": {
       "labelPriceGross": "Price (gross)",
@@ -1131,13 +1131,13 @@
       "documentation": {
         "headline": "Do you need help?",
         "linkText": "See documentation",
-        "linkUrl": "https://docs.shuwei.com/en/shuwei-6-en"
+        "linkUrl": "https://docs.58shuwei.com/en/shuwei-6-en"
       },
       "support": {
         "headline": "We’re here for you!",
         "paragraph": "Found nothing helpful in our documentation? Contact the Shuwei support and we’ll take a look at your problem.",
         "linkText": "Create support request",
-        "linkUrl": "https://account.shuwei.com/shops/support"
+        "linkUrl": "https://account.58shuwei.com/shops/support"
       }
     }
   },
@@ -1487,7 +1487,7 @@
         "textGetSupport": "Try contacting your hoster to get support.",
         "textDetails": "Technical details: Wrong APP_URL configuration.",
         "labelLearnMoreButton": "Learn more",
-        "linkToDocsArticle": "https://docs.shuwei.com/en/shuwei-6-en/tutorials-and-faq/notes-to-the-APP-URL"
+        "linkToDocsArticle": "https://docs.58shuwei.com/en/shuwei-6-en/tutorials-and-faq/notes-to-the-APP-URL"
       }
     }
   },
@@ -1569,7 +1569,7 @@
       "headline": "Improving Shuwei collectively",
       "description": "Help us build better products and services by allowing us to collect usage data from your Shuwei Administration. Using the latest privacy preserving techniques, we make sure that the collected data cannot be associated with you or your shop. We do not collect any customer information.",
       "learnMore": "Learn more",
-      "learnMoreUrl": "https://shuwei.com"
+      "learnMoreUrl": "https://58shuwei.com"
     },
     "sw-settings-usage-data-modal": {
       "alertText": "This setting will affect all Shuwei Administration users. You can change it at any time in {settings-path}",

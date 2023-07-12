@@ -179,7 +179,7 @@ describe('core/factory/module.factory.js', () => {
                 color: '#f00',
                 label: 'FooIndex',
             }, {
-                link: 'http://de.shuwei.com',
+                link: 'http://de.58shuwei.com',
                 label: 'ExternalLink',
                 parent: 'sw.foo.index',
             }, {
@@ -195,7 +195,7 @@ describe('core/factory/module.factory.js', () => {
         expect(routerNavigationEntry.label).toBe('FooIndex');
 
         expect(typeof externalLinkNavigation).toBe('object');
-        expect(externalLinkNavigation.link).toBe('http://de.shuwei.com');
+        expect(externalLinkNavigation.link).toBe('http://de.58shuwei.com');
     });
 
     it('should be possible to get all registered modules', () => {

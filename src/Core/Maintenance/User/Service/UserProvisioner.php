@@ -40,7 +40,7 @@ class UserProvisioner
         $userPayload = [
             'id' => Uuid::randomBytes(),
             'name' => $additionalData['name'] ?? $username,
-            'email' => $additionalData['email'] ?? 'info@shuwei.com',
+            'email' => $additionalData['email'] ?? 'info@58shuwei.com',
             'username' => $username,
             'password' => password_hash($password, \PASSWORD_BCRYPT),
             'locale_id' => $additionalData['localeId'] ?? $this->getLocaleOfSystemLanguage(),

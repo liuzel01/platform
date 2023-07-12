@@ -70,7 +70,7 @@
                     "Cart"
                 ],
                 "summary": "Add items to the cart",
-                "description": "This route adds items to the cart. An item can be a product or promotion for example. They are referenced by the `referencedId`-parameter.\n\nExample: [Working with the cart - Guide](https://developer.shuwei.com/docs/guides/integrations-api/store-api-guide/work-with-the-cart#adding-new-items-to-the-cart)",
+                "description": "This route adds items to the cart. An item can be a product or promotion for example. They are referenced by the `referencedId`-parameter.\n\nExample: [Working with the cart - Guide](https://developer.58shuwei.com/docs/guides/integrations-api/store-api-guide/work-with-the-cart#adding-new-items-to-the-cart)",
                 "operationId": "addLineItem",
                 "requestBody": {
                     "content": {
@@ -104,7 +104,7 @@
                     "Cart"
                 ],
                 "summary": "Remove items from the cart",
-                "description": "This route removes items from the cart and recalculates it.\n\nExample: [Working with the cart - Guide](https://developer.shuwei.com/docs/guides/integrations-api/store-api-guide/work-with-the-cart#deleting-items-in-the-cart)",
+                "description": "This route removes items from the cart and recalculates it.\n\nExample: [Working with the cart - Guide](https://developer.58shuwei.com/docs/guides/integrations-api/store-api-guide/work-with-the-cart#deleting-items-in-the-cart)",
                 "operationId": "removeLineItem",
                 "parameters": [
                     {
@@ -144,7 +144,7 @@
                     "Cart"
                 ],
                 "summary": "Update items in the cart",
-                "description": "This route updates items in the cart. A typical example is updating the quantity of an item.\n\nExample: [Working with the cart - Guide](https://developer.shuwei.com/docs/guides/integrations-api/store-api-guide/work-with-the-cart#updating-items-in-the-cart)",
+                "description": "This route updates items in the cart. A typical example is updating the quantity of an item.\n\nExample: [Working with the cart - Guide](https://developer.58shuwei.com/docs/guides/integrations-api/store-api-guide/work-with-the-cart#updating-items-in-the-cart)",
                 "operationId": "updateLineItem",
                 "requestBody": {
                     "content": {
@@ -180,7 +180,7 @@
                     "Order"
                 ],
                 "summary": "Create an order from a cart",
-                "description": "Creates a new order from the current cart and deletes the cart.\n\nIf you are using the [prepared payment flow](https://developer.shuwei.com/docs/concepts/commerce/checkout-concept/payments#2.1-prepare-payment-optional), this endpoint also receives additional transaction details. The exact name of the parameters depends on the implementation of the corresponding *payment handler*.",
+                "description": "Creates a new order from the current cart and deletes the cart.\n\nIf you are using the [prepared payment flow](https://developer.58shuwei.com/docs/concepts/commerce/checkout-concept/payments#2.1-prepare-payment-optional), this endpoint also receives additional transaction details. The exact name of the parameters depends on the implementation of the corresponding *payment handler*.",
                 "operationId": "createOrder",
                 "requestBody": {
                     "description": "Contains additional metadata which is stored together with the order. It can also contain payment transaction details.",

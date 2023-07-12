@@ -522,7 +522,7 @@ describe('src/app/component/form/sw-text-editor', () => {
             <p id="paragraphWithoutLink">No Link</p>
 
             <p id="paragraphWithLink">
-                <a id="linkText" href="http://shuwei.com" target="_self">Shuwei</a>
+                <a id="linkText" href="http://58shuwei.com" target="_self">Shuwei</a>
             </p>
         `);
 
@@ -543,7 +543,7 @@ describe('src/app/component/form/sw-text-editor', () => {
         // input field should contain the correct url value
         const linkInput = linkMenu.find('#sw-field--linkTarget');
         expect(linkInput.exists()).toBe(true);
-        expect(linkInput.element.value).toBe('http://shuwei.com');
+        expect(linkInput.element.value).toBe('http://58shuwei.com');
 
         // switch field should contain correct newTab value
         const newTabSwitch = wrapper.find('.sw-text-editor-toolbar-button__link-menu-new-tab input');
@@ -557,7 +557,7 @@ describe('src/app/component/form/sw-text-editor', () => {
             <p id="paragraphWithoutLink">No Link</p>
 
             <p id="paragraphWithLink">
-                <a id="linkText" href="http://shuwei.com" target="_blank">Shuwei</a>
+                <a id="linkText" href="http://58shuwei.com" target="_blank">Shuwei</a>
             </p>
         `);
 
@@ -578,7 +578,7 @@ describe('src/app/component/form/sw-text-editor', () => {
         // input field should contain the correct url value
         const linkInput = linkMenu.find('#sw-field--linkTarget');
         expect(linkInput.exists()).toBe(true);
-        expect(linkInput.element.value).toBe('http://shuwei.com');
+        expect(linkInput.element.value).toBe('http://58shuwei.com');
 
         // switch field should contain correct newTab value
         const newTabSwitch = wrapper.find('.sw-text-editor-toolbar-button__link-menu-new-tab input');
@@ -592,7 +592,7 @@ describe('src/app/component/form/sw-text-editor', () => {
             <p id="paragraphWithoutLink">No link</p>
 
             <p id="paragraphWithLink">
-                <a id="linkText" href="http://shuwei.com" target="_blank">Shuwei</a>
+                <a id="linkText" href="http://58shuwei.com" target="_blank">Shuwei</a>
             </p>
         `);
 
@@ -626,7 +626,7 @@ describe('src/app/component/form/sw-text-editor', () => {
             <p id="paragraphWithoutLink">No link</p>
 
             <p id="paragraphWithLink">
-                <a id="linkText" href="http://shuwei.com" target="_blank">Shuwei</a>
+                <a id="linkText" href="http://58shuwei.com" target="_blank">Shuwei</a>
             </p>
         `);
 
@@ -647,7 +647,7 @@ describe('src/app/component/form/sw-text-editor', () => {
         // input field should contain the correct url value
         let linkInput = linkMenu.find('#sw-field--linkTarget');
         expect(linkInput.exists()).toBe(true);
-        expect(linkInput.element.value).toBe('http://shuwei.com');
+        expect(linkInput.element.value).toBe('http://58shuwei.com');
 
         // switch field should contain correct newTab value
         let newTabSwitch = wrapper.find('.sw-text-editor-toolbar-button__link-menu-new-tab input');
@@ -681,7 +681,7 @@ describe('src/app/component/form/sw-text-editor', () => {
         wrapper = await createWrapper();
 
         await addTextToEditor(wrapper, `
-            <a id="linkOne" href="http://shuwei.com" target="_self">Shuwei</a>
+            <a id="linkOne" href="http://58shuwei.com" target="_self">Shuwei</a>
             <a id="linkTwo" href="http://google.com" target="_blank">Google</a>
         `);
 
@@ -702,7 +702,7 @@ describe('src/app/component/form/sw-text-editor', () => {
         // input field should contain the correct url value
         let linkInput = linkMenu.find('#sw-field--linkTarget');
         expect(linkInput.exists()).toBe(true);
-        expect(linkInput.element.value).toBe('http://shuwei.com');
+        expect(linkInput.element.value).toBe('http://58shuwei.com');
 
         // switch field should contain correct newTab value
         let newTabSwitch = wrapper.find('.sw-text-editor-toolbar-button__link-menu-new-tab input');
@@ -736,7 +736,7 @@ describe('src/app/component/form/sw-text-editor', () => {
     it('should remove link from text', async () => {
         wrapper = await createWrapper();
 
-        await addTextToEditor(wrapper, '<a href="http://shuwei.com" target="_blank"><bold><u>Shop<strike id="anchor">ware</strike></u></bold></a>');
+        await addTextToEditor(wrapper, '<a href="http://58shuwei.com" target="_blank"><bold><u>Shop<strike id="anchor">ware</strike></u></bold></a>');
 
         // select "ware"
         const linkOne = document.getElementById('anchor');
@@ -762,7 +762,7 @@ describe('src/app/component/form/sw-text-editor', () => {
     it('should let the toolbar disappear, when containing component unmounts', async () => {
         wrapper = await createWrapper();
 
-        await addTextToEditor(wrapper, '<a href="http://shuwei.com" target="_blank"><bold><u id="content">Shuwei</u></bold></a>');
+        await addTextToEditor(wrapper, '<a href="http://58shuwei.com" target="_blank"><bold><u id="content">Shuwei</u></bold></a>');
 
         // select anything to trigger the toolbar
         const content = document.getElementById('content');

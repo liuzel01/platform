@@ -282,20 +282,20 @@ function createConfig() {
                     name: 'ConfigRenderer.config.urlField',
                     type: 'url',
                     config: {
-                        defaultValue: 'https://www.shuwei.com',
+                        defaultValue: 'https://www.58shuwei.com',
                         label: {
                             'zh-CN': 'url field',
                         },
                     },
                     _test: {
-                        defaultValueDom: 'www.shuwei.com',
+                        defaultValueDom: 'www.58shuwei.com',
                         domValueCheck: (field, domValue) => {
                             expect(field.find('input').element.value).toBe(domValue);
                         },
                         afterValue: 'https://www.shuwei.de',
                         afterValueDom: 'www.shuwei.de',
-                        childValue: 'https://www.child.shuwei.com',
-                        childValueDom: 'www.child.shuwei.com',
+                        childValue: 'https://www.child.58shuwei.com',
+                        childValueDom: 'www.child.58shuwei.com',
                         changeValueFunction: async (field, afterValue) => {
                             // change input value
                             await field.find('input').setValue(afterValue);

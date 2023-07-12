@@ -14,7 +14,7 @@ module.exports = {
         docs: {
             description: 'No new TwigJs blocks',
             recommended: true,
-            url: 'https://handbook.shuwei.com/Product/Product/Components/Admin/NewFeatures',
+            url: 'https://handbook.58shuwei.com/Product/Product/Components/Admin/NewFeatures',
         },
     },
     create(context) {

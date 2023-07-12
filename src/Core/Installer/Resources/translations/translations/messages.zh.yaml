@@ -340,9 +340,9 @@ shuwei.installer:
     migration_counter_text_snippets: 'Updating text snippets'
     migration_update_success: '数据库导入完成!'
     edition_header: 'Have you already purchased a Shuwei licence?'
-    edition_info: 'Shuwei is available in different versions. There is the free <a href="https://en.shuwei.com/pricing/" target="_blank">Community Edition</a>, and there are the <a href="https://en.shuwei.com/pricing/" target="_blank">Professional or Enterprise Edition</a>, that are available for a one time fee.'
-    edition_ce: 'No, I would like to use the free <a href="https://en.shuwei.com/pricing/" target="_blank">Community Edition</a>.'
-    edition_cm: 'Yes, I have already purchased a Shuwei licence (<a href="https://en.shuwei.com/pricing/" target="_blank">Professional or Enterprise</a>).'
+    edition_info: 'Shuwei is available in different versions. There is the free <a href="https://en.58shuwei.com/pricing/" target="_blank">Community Edition</a>, and there are the <a href="https://en.58shuwei.com/pricing/" target="_blank">Professional or Enterprise Edition</a>, that are available for a one time fee.'
+    edition_ce: 'No, I would like to use the free <a href="https://en.58shuwei.com/pricing/" target="_blank">Community Edition</a>.'
+    edition_cm: 'Yes, I have already purchased a Shuwei licence (<a href="https://en.58shuwei.com/pricing/" target="_blank">Professional or Enterprise</a>).'
     edition_license: 'Please enter your licence key here. You can find it in your Shuwei Account under "Licences" → "Product licences" → "Details / Download":'
     edition_license_error: 'A valid licence is required in order to install any of the Shuwei versions that come with a fee.'
     configuration_header: 系统设置
@@ -387,7 +387,7 @@ shuwei.installer:
         </p>
         <p>
             You have installed Shuwei successfully and we are delighted to welcome you to our community!
-        <p>Your shop is now ready to use. If you are new to Shuwei, we recommend taking a look at this guide <a href=\"https://docs.shuwei.com/en/shuwei-6-en/first-steps/welcome-to-shuwei\" target=\"_blank\">\"First steps in Shuwei\"</a>. When you log in to the administration for the first time, our \"First Run Wizard\" will take you through the basic setup.
+        <p>Your shop is now ready to use. If you are new to Shuwei, we recommend taking a look at this guide <a href=\"https://docs.58shuwei.com/en/shuwei-6-en/first-steps/welcome-to-shuwei\" target=\"_blank\">\"First steps in Shuwei\"</a>. When you log in to the administration for the first time, our \"First Run Wizard\" will take you through the basic setup.
         </p>
         <p>
             Enjoy your new online shop!

@@ -172,9 +172,9 @@ describe('components/form/sw-url-field', () => {
     });
 
     it('properly detects SSL', async () => {
-        const SSL_URL = 'https://shuwei.com';
-        const NON_SSL_URL = 'http://shuwei.com';
-        const URL_WITHOUT_PROTOCOL = 'shuwei.com';
+        const SSL_URL = 'https://58shuwei.com';
+        const NON_SSL_URL = 'http://58shuwei.com';
+        const URL_WITHOUT_PROTOCOL = '58shuwei.com';
 
         wrapper = await createWrapper();
 
@@ -184,10 +184,10 @@ describe('components/form/sw-url-field', () => {
     });
 
     it('removes any protocol', async () => {
-        const HTTP_URL = 'http://shuwei.com';
-        const HTTPS_URL = 'https://shuwei.com';
-        const FILE_URL = 'file://shuwei.com';
-        const EXPECTED_URL = 'shuwei.com';
+        const HTTP_URL = 'http://58shuwei.com';
+        const HTTPS_URL = 'https://58shuwei.com';
+        const FILE_URL = 'file://58shuwei.com';
+        const EXPECTED_URL = '58shuwei.com';
 
         wrapper = await createWrapper();
 
@@ -202,8 +202,8 @@ describe('components/form/sw-url-field', () => {
     });
 
     it('allows empty values', async () => {
-        const INITIAL_URL = 'https://shuwei.com';
-        const URL_WITHOUT_PROTOCOL = 'shuwei.com';
+        const INITIAL_URL = 'https://58shuwei.com';
+        const URL_WITHOUT_PROTOCOL = '58shuwei.com';
         const EXPECTED_URL = '';
 
         wrapper = await createWrapper();

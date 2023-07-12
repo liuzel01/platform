@@ -24,8 +24,8 @@ const linkDataProvider = [{
     label: 'sw-text-editor-toolbar.link.linkTo',
     placeholder: 'sw-text-editor-toolbar.link.placeholderPhoneNumber',
 }, {
-    URL: 'mailto:test@shuwei.com',
-    value: 'test@shuwei.com',
+    URL: 'mailto:test@58shuwei.com',
+    value: 'test@58shuwei.com',
     type: 'email',
     prefix: 'mailto:',
     selector: '.sw-email-field',

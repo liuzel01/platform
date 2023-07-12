@@ -38,7 +38,7 @@ async function createWrapper(privileges = []) {
                                         username: 'admin',
                                         firstName: '',
                                         lastName: 'admin',
-                                        email: 'info@shuwei.com',
+                                        email: 'info@58shuwei.com',
                                     },
                                 );
                             },

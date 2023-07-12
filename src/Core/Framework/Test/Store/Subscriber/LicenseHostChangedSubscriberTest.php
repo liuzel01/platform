@@ -60,7 +60,7 @@ class LicenseHostChangedSubscriberTest extends TestCase
                 'password' => 'v3rys3cr3t',
                 'firstName' => 'admin2',
                 'lastName' => 'admin2',
-                'email' => 'admin2@shuwei.com',
+                'email' => 'admin2@58shuwei.com',
                 'storeToken' => null,
             ],
             [
@@ -69,7 +69,7 @@ class LicenseHostChangedSubscriberTest extends TestCase
                 'password' => 'v3rys3cr3t',
                 'firstName' => 'admin3',
                 'lastName' => 'admin3',
-                'email' => 'admin3@shuwei.com',
+                'email' => 'admin3@58shuwei.com',
                 'storeToken' => null,
             ],
         ], $context);

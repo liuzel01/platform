@@ -33,7 +33,7 @@ shuwei.installer:
     language-selection_select_language: 'Installationsguidens språk'
     language-selection_header: 'Din Shuwei-installation'
     language-selection_info_message: 'Detta val gäller endast för språket i installationsguiden. Du kan definiera systemets standardspråk i din butik senare.'
-    language-selection_welcome_message: 'Vi är glada över att du vill vara en del av vår världsomspännande Shuwei Community! Nu följer vi dig steg för steg genom installationsprocessen. Om du har frågor, vänligen se först efter svar i vårt <a class="is--nowrap" href="https://forum.shuwei.com" target="_blank">Forum</a>, kontakta oss på telefon på telefonnummer <a class="is--nowrap" href="tel:+492555928850">(+49) 2555 928850</a> eller skriv till oss via <a class="is--nowrap" href="mailto:info@shuwei.com">e-mail</a>.'
+    language-selection_welcome_message: 'Vi är glada över att du vill vara en del av vår världsomspännande Shuwei Community! Nu följer vi dig steg för steg genom installationsprocessen. Om du har frågor, vänligen se först efter svar i vårt <a class="is--nowrap" href="https://forum.58shuwei.com" target="_blank">Forum</a>, kontakta oss på telefon på telefonnummer <a class="is--nowrap" href="tel:+492555928850">(+49) 2555 928850</a> eller skriv till oss via <a class="is--nowrap" href="mailto:info@58shuwei.com">e-mail</a>.'
     requirements_header: Systemkrav
     requirements_header_files: 'Filer och kataloger'
     requirements_header_system: System
@@ -84,9 +84,9 @@ shuwei.installer:
     migration_counter_text_snippets: 'Textmoduler uppdateras'
     migration_update_success: 'Databasen importerades framgångsrikt!'
     edition_header: 'Har du redan en Shuwei-licens?'
-    edition_info: 'Shuwei finns i en gratis <a href="https://de.shuwei.com/versionen/" target="_blank">Community Edition </a> samt i en avgiftsbelagd <a href="https://de.shuwei.com/versionen/" target="_blank">Professional &amp; Enterprise Edition</a>.'
-    edition_ce: 'Nej jag vill använda den kostnadsfria versionen <a href="https://de.shuwei.com/versionen/" target="_blank">Community Edition</a>.'
-    edition_cm: 'Ja, jag har en avgiftsbelagd Shuwei-licens (<a href="https://de.shuwei.com/versionen/" target="_blank">Professional eller Enterprise</a>).'
+    edition_info: 'Shuwei finns i en gratis <a href="https://de.58shuwei.com/versionen/" target="_blank">Community Edition </a> samt i en avgiftsbelagd <a href="https://de.58shuwei.com/versionen/" target="_blank">Professional &amp; Enterprise Edition</a>.'
+    edition_ce: 'Nej jag vill använda den kostnadsfria versionen <a href="https://de.58shuwei.com/versionen/" target="_blank">Community Edition</a>.'
+    edition_cm: 'Ja, jag har en avgiftsbelagd Shuwei-licens (<a href="https://de.58shuwei.com/versionen/" target="_blank">Professional eller Enterprise</a>).'
     edition_license: 'Ange din licensnyckel här. Du hittar denna på ditt Shuwei-konto under ”Licenser” → ”Produktlicenser” → ”Detaljer/Download”:'
     edition_license_error: 'För att installera en betalversion av Shuwei krävs en giltig licens.'
     configuration_header: Konfiguration
@@ -130,7 +130,7 @@ shuwei.installer:
         <p>
             vi är glada att få välkomna dig i vår Community. Du har framgångsrikt installerat Shuwei.
         <p>
-            Din butik är nu klar för användning. Om Shuwei är nytt för dig rekommenderar vi guiden <a href=\"https://docs.shuwei.com/en/shuwei-6-en/first-steps/welcome-to-shuwei\" target=\"_blank\">”Kom igång med Shuwei”</a>. När du registrerar dig för första gången i administrationen kommer vår ”First Run Wizard” att guida dig genom den grundläggande installationen av din butik.
+            Din butik är nu klar för användning. Om Shuwei är nytt för dig rekommenderar vi guiden <a href=\"https://docs.58shuwei.com/en/shuwei-6-en/first-steps/welcome-to-shuwei\" target=\"_blank\">”Kom igång med Shuwei”</a>. När du registrerar dig för första gången i administrationen kommer vår ”First Run Wizard” att guida dig genom den grundläggande installationen av din butik.
         </p>
         <p>
             Vi hoppas att du får både roligt och har framgång med din nya onlinebutik!

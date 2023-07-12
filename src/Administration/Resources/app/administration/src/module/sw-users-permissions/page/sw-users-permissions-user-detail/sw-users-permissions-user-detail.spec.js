@@ -67,7 +67,7 @@ async function createWrapper(privileges = []) {
                                         username: 'admin',
                                         firstName: '',
                                         lastName: 'admin',
-                                        email: 'info@shuwei.com',
+                                        email: 'info@58shuwei.com',
                                         accessKeys: {
                                             entity: 'product',
                                         },
@@ -203,7 +203,7 @@ describe('modules/sw-users-permissions/page/sw-users-permissions-user-detail', (
 
         expect(fieldFirstName.props('value')).toBe('');
         expect(fieldLastName.props('value')).toBe('admin');
-        expect(fieldEmail.props('value')).toBe('info@shuwei.com');
+        expect(fieldEmail.props('value')).toBe('info@58shuwei.com');
         expect(fieldUsername.props('value')).toBe('admin');
         expect(fieldProfilePicture.props('value')).toBeUndefined();
         expect(fieldPassword.props('value')).toBeUndefined();

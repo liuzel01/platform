@@ -101,7 +101,7 @@ describe('module/sw-users-permissions/components/sw-users-permissions-user-listi
                 username: 'admin',
                 firstName: '',
                 lastName: 'admin',
-                email: 'info@shuwei.com',
+                email: 'info@58shuwei.com',
             }],
         });
 
@@ -117,7 +117,7 @@ describe('module/sw-users-permissions/components/sw-users-permissions-user-listi
             username: 'admin',
             firstName: '',
             lastName: 'admin',
-            email: 'info@shuwei.com',
+            email: 'info@58shuwei.com',
         }]);
     });
 

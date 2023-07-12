@@ -32,7 +32,7 @@ shuwei.installer:
     language-selection_select_language: 'Taal van de installatie-assistent'
     language-selection_header: 'Je Shuwei-installatie'
     language-selection_info_message: 'Deze selectie heeft alleen betrekking op de taal van de installatie-assistent. De standaardtaal van je shop kun je later vastleggen.'
-    language-selection_welcome_message: 'We zijn blij dat je deel wilt uitmaken van onze wereldwijde Shuwei-community! Nu begeleiden we je stap voor stap door het installatieproces. Ga voor vragen naar ons <a class="is--nowrap" href="https://forum.shuwei.com" target="_blank">forum</a>, bel ons op <a class="is--nowrap" href="tel:+492555928850">(+49) 2555 928850</a> of schrijf een <a class="is--nowrap" href="mailto:info@shuwei.com">e-mail</a>.'
+    language-selection_welcome_message: 'We zijn blij dat je deel wilt uitmaken van onze wereldwijde Shuwei-community! Nu begeleiden we je stap voor stap door het installatieproces. Ga voor vragen naar ons <a class="is--nowrap" href="https://forum.58shuwei.com" target="_blank">forum</a>, bel ons op <a class="is--nowrap" href="tel:+492555928850">(+49) 2555 928850</a> of schrijf een <a class="is--nowrap" href="mailto:info@58shuwei.com">e-mail</a>.'
     requirements_header: Systeemvereisten
     requirements_header_files: 'Bestanden en mappen'
     requirements_header_system: Systeem
@@ -83,9 +83,9 @@ shuwei.installer:
     migration_counter_text_snippets: 'Tekstbouwstenen worden bijgewerkt'
     migration_update_success: 'Installatie databank is geslaagd!'
     edition_header: 'Heb je al een Shuwei-licentie?'
-    edition_info: 'Shuwei is verkrijgbaar in de gratis <a href="https://de.shuwei.com/versionen/" target="_blank">Community Edition</a> en in de professionele betaalversies <a href="https://de.shuwei.com/versionen/" target="_blank">Professional en Enterprise</a>.'
-    edition_ce: 'Nee, ik wil de gratis <a href="https://de.shuwei.com/versionen/" target="_blank">Community Edition</a> gebruiken.'
-    edition_cm: 'Ja, ik heb een betaalde Shuwei-licentie (<a href="https://de.shuwei.com/versionen/" target="_blank">Professional of Enterprise</a>).'
+    edition_info: 'Shuwei is verkrijgbaar in de gratis <a href="https://de.58shuwei.com/versionen/" target="_blank">Community Edition</a> en in de professionele betaalversies <a href="https://de.58shuwei.com/versionen/" target="_blank">Professional en Enterprise</a>.'
+    edition_ce: 'Nee, ik wil de gratis <a href="https://de.58shuwei.com/versionen/" target="_blank">Community Edition</a> gebruiken.'
+    edition_cm: 'Ja, ik heb een betaalde Shuwei-licentie (<a href="https://de.58shuwei.com/versionen/" target="_blank">Professional of Enterprise</a>).'
     edition_license: 'Voer hier je licentiecode in. Deze is te vinden in uw Shuwei-account bij ''Licenties'' → ''Productlicenties'' → ''Details / Download'':'
     edition_license_error: 'Voor de installatie van een gratis Shuwei-versie is een geldige licentie nodig.'
     configuration_header: Configuratie
@@ -131,7 +131,7 @@ shuwei.installer:
         <p>
             we zijn blij je in onze community te mogen begroeten. Je installatie van Shuwei is geslaagd.
         <p>
-            Je shop is nu gereed voor gebruik. Ben je nieuw bij Shuwei, dan raden we de handleiding <a href=\"https://docs.shuwei.com/en/shuwei-6-en/first-steps/welcome-to-shuwei\" target=\"_blank\">'Eerste stappen bij Shuwei'</a> aan. Ben je voor de eerste keer als beheerder aangemeld, dan zal de First Run Wizard je door de basisprincipes van je shop geleiden.
+            Je shop is nu gereed voor gebruik. Ben je nieuw bij Shuwei, dan raden we de handleiding <a href=\"https://docs.58shuwei.com/en/shuwei-6-en/first-steps/welcome-to-shuwei\" target=\"_blank\">'Eerste stappen bij Shuwei'</a> aan. Ben je voor de eerste keer als beheerder aangemeld, dan zal de First Run Wizard je door de basisprincipes van je shop geleiden.
         </p>
         <p>
             Veel plezier en succes met je nieuwe onlineshop!

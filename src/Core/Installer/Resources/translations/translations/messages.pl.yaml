@@ -32,7 +32,7 @@ shuwei.installer:
     language-selection_select_language: 'Język asystenta instalacji'
     language-selection_header: 'Twoja instalacja Shuwei'
     language-selection_info_message: 'Wybór ten odnosi się tylko do języka asystenta instalacji. Możesz później zdefiniować domyślny język systemu dla Twojego sklepu.'
-    language-selection_welcome_message: 'Cieszymy się, że chcesz być częścią naszej wielkiej światowej społeczności Shuwei! Teraz pomożemy Ci przejść krok po kroku przez proces instalacji. Jeśli masz jakieś pytania, najpierw odwiedź nasze <a class="is--nowrap" href="https://forum.shuwei.com" target="_blank">forum</a>, skontaktuj się z nami telefonicznie pod numerem <a class="is--nowrap" href="tel:+492555928850">(+49) 2555 928850</a> lub wyślij nam <a class="is--nowrap" href="mailto:info@shuwei.com">e-mail</a>.'
+    language-selection_welcome_message: 'Cieszymy się, że chcesz być częścią naszej wielkiej światowej społeczności Shuwei! Teraz pomożemy Ci przejść krok po kroku przez proces instalacji. Jeśli masz jakieś pytania, najpierw odwiedź nasze <a class="is--nowrap" href="https://forum.58shuwei.com" target="_blank">forum</a>, skontaktuj się z nami telefonicznie pod numerem <a class="is--nowrap" href="tel:+492555928850">(+49) 2555 928850</a> lub wyślij nam <a class="is--nowrap" href="mailto:info@58shuwei.com">e-mail</a>.'
     requirements_header: 'Wymagania systemowe'
     requirements_header_files: 'Pliki i katalogi'
     requirements_header_system: System
@@ -83,9 +83,9 @@ shuwei.installer:
     migration_counter_text_snippets: 'Trwa aktualizacja modułów tekstowych'
     migration_update_success: 'Baza danych została pomyślnie zaimportowana!'
     edition_header: 'Czy posiadasz już licencję Shuwei?'
-    edition_info: 'Shuwei jest dostępny w bezpłatnej wersji <a href="https://de.shuwei.com/versionen/" target="_blank">Community Edition</a>, jak również w wersji <a href="https://de.shuwei.com/versionen/" target="_blank">Professional i Enterprise Edition</a>.'
-    edition_ce: 'Nie, chcę skorzystać z darmowej <a href="https://de.shuwei.com/versionen/" target="_blank">wersji Community Edition</a>.'
-    edition_cm: 'Tak, mam płatną licencję Shuwei (<a href="https://de.shuwei.com/versionen/" target="_blank">Professional lub Enterprise</a>).'
+    edition_info: 'Shuwei jest dostępny w bezpłatnej wersji <a href="https://de.58shuwei.com/versionen/" target="_blank">Community Edition</a>, jak również w wersji <a href="https://de.58shuwei.com/versionen/" target="_blank">Professional i Enterprise Edition</a>.'
+    edition_ce: 'Nie, chcę skorzystać z darmowej <a href="https://de.58shuwei.com/versionen/" target="_blank">wersji Community Edition</a>.'
+    edition_cm: 'Tak, mam płatną licencję Shuwei (<a href="https://de.58shuwei.com/versionen/" target="_blank">Professional lub Enterprise</a>).'
     edition_license: 'Wprowadź tutaj swój klucz licencyjny. Znajdziesz go na swoim koncie Shuwei w zakładce „Licencje” → „Licencje na produkty” → „Szczegóły / Pobierz”:'
     edition_license_error: 'Do instalacji płatnej wersji Shuwei wymagana jest ważna licencja.'
     configuration_header: Konfiguracja
@@ -131,7 +131,7 @@ shuwei.installer:
         <p>
             cieszymy się, że możemy powitać Cię w naszej społeczności. Udało Ci się zainstalować Shuwei.
         <p>
-            Twój sklep jest gotowy. Jeśli jesteś nowym członkiem Shuwei, polecamy przewodnik <a href=\"https://docs.shuwei.com/en/shuwei-6-en/first-steps/welcome-to-shuwei\" target=\"_blank\">„pierwsze kroki w Shuwei”</a>. Po pierwszym zalogowaniu się do panelu administracyjnego, nasz Asystent Pierwszego Uruchomienia przeprowadzi Cię przez podstawową konfigurację Twojego sklepu.
+            Twój sklep jest gotowy. Jeśli jesteś nowym członkiem Shuwei, polecamy przewodnik <a href=\"https://docs.58shuwei.com/en/shuwei-6-en/first-steps/welcome-to-shuwei\" target=\"_blank\">„pierwsze kroki w Shuwei”</a>. Po pierwszym zalogowaniu się do panelu administracyjnego, nasz Asystent Pierwszego Uruchomienia przeprowadzi Cię przez podstawową konfigurację Twojego sklepu.
         </p>
         <p>
             Życzymy przyjemnego korzystania i sukcesów w prowadzeniu Twojego sklepu internetowego!

@@ -91,9 +91,9 @@
             "message": "Der Shuwei Account ist Deine zentrale Plattform zur Interaktion mit Shuwei.",
             "registerAccountText": "Du hast noch keinen Shuwei Account? Dann registriere Dich direkt",
             "registerAccountHere": "hier",
-            "registerAccountUrl": "https://account.shuwei.com/register?lang=de",
+            "registerAccountUrl": "https://account.58shuwei.com/register?lang=de",
             "forgotPasswordText": "Du hast Dein Passwort vergessen?",
-            "forgotPasswordUrl": "https://account.shuwei.com/recovery?lang=de"
+            "forgotPasswordUrl": "https://account.58shuwei.com/recovery?lang=de"
         },
         "error": {
             "messageLoginDataInvalid": "Falsche Login-Daten, bitte versuche es nochmal."
@@ -126,11 +126,11 @@
             "headlineUsefulLinks": "Nützliche Links",
             "loadingMessage": "Anwendung wird neu gestartet<br>Das könnte einen Moment dauern ...",
             "documentationLabel": "Dokumentation",
-            "documentationUrl": "https://docs.shuwei.com/de",
+            "documentationUrl": "https://docs.58shuwei.com/de",
             "forumLabel": "Forum",
-            "forumUrl": "https://forum.shuwei.com/",
+            "forumUrl": "https://forum.58shuwei.com/",
             "roadmapLabel": "Roadmap",
-            "roadmapUrl": "https://www.shuwei.com/de/roadmap/",
+            "roadmapUrl": "https://www.58shuwei.com/de/roadmap/",
             "modalTitle": "Fertig"
         },
         "stepItemTitle": {

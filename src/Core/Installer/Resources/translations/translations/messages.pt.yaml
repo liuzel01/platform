@@ -32,7 +32,7 @@ shuwei.installer:
     language-selection_select_language: 'Idioma do assistente de instalação'
     language-selection_header: 'A tua instalação de Shuwei'
     language-selection_info_message: 'Esta seleção refere-se apenas ao idioma do assistente de instalação. Podes definir posteriormente o idioma padrão do sistema da tua loja.'
-    language-selection_welcome_message: 'Ficamos contentes por quereres fazer parte da nossa fantástica Shuwei Community, presente em todo o mundo! Vamos acompanhar-te passo a passo no processo de instalação. Se tiveres dúvidas, visita primeiro o nosso <a class="is--nowrap" href="https://forum.shuwei.com" target="_blank">Fórum</a>, contacta-nos telefonicamente pelo <a class="is--nowrap" href="tel:+492555928850">(+49) 2555 928850</a> ou escreve-nos um <a class="is--nowrap" href="mailto:info@shuwei.com">e-mail</a>.'
+    language-selection_welcome_message: 'Ficamos contentes por quereres fazer parte da nossa fantástica Shuwei Community, presente em todo o mundo! Vamos acompanhar-te passo a passo no processo de instalação. Se tiveres dúvidas, visita primeiro o nosso <a class="is--nowrap" href="https://forum.58shuwei.com" target="_blank">Fórum</a>, contacta-nos telefonicamente pelo <a class="is--nowrap" href="tel:+492555928850">(+49) 2555 928850</a> ou escreve-nos um <a class="is--nowrap" href="mailto:info@58shuwei.com">e-mail</a>.'
     requirements_header: 'Requisitos do sistema'
     requirements_header_files: 'Ficheiros e diretórios'
     requirements_header_system: Sistema
@@ -83,9 +83,9 @@ shuwei.installer:
     migration_counter_text_snippets: 'Os módulos de texto estão a ser atualizados'
     migration_update_success: 'A base de dados foi importada com sucesso!'
     edition_header: 'Já tens uma licença de Shuwei?'
-    edition_info: 'O Shuwei está disponível na <a href="https://de.shuwei.com/versionen/" target="_blank">Edição Community</a> gratuita e também nas <a href="https://de.shuwei.com/versionen/" target="_blank">Edições Professional e Enterprise</a>, que são pagas.'
-    edition_ce: 'Não, desejo utilizar a <a href="https://de.shuwei.com/versionen/" target="_blank">Edição Community</a> gratuita.'
-    edition_cm: 'Sim, tenho uma licença Shuwei paga (<a href="https://de.shuwei.com/versionen/" target="_blank">Professional ou Enterprise</a>).'
+    edition_info: 'O Shuwei está disponível na <a href="https://de.58shuwei.com/versionen/" target="_blank">Edição Community</a> gratuita e também nas <a href="https://de.58shuwei.com/versionen/" target="_blank">Edições Professional e Enterprise</a>, que são pagas.'
+    edition_ce: 'Não, desejo utilizar a <a href="https://de.58shuwei.com/versionen/" target="_blank">Edição Community</a> gratuita.'
+    edition_cm: 'Sim, tenho uma licença Shuwei paga (<a href="https://de.58shuwei.com/versionen/" target="_blank">Professional ou Enterprise</a>).'
     edition_license: 'Indica aqui o teu código de licença. Encontra-lo na tua conta do Shuwei, em "Licenças" → "Licenças de produto" → "Pormenores / Download":'
     edition_license_error: 'Para a instalação de uma versão de Shuwei paga, é necessária uma licença válida.'
     configuration_header: Configuração
@@ -131,7 +131,7 @@ shuwei.installer:
         <p>
             temos muito gosto em te receber na nossa Community. Instalaste o Shuwei com sucesso.
         <p>
-            A tua loja já está pronta para funcionar. Caso ainda não tenhas muita experiência no Shuwei, recomendamos o guia <a href=\"https://docs.shuwei.com/en/shuwei-6-en/first-steps/welcome-to-shuwei\" target=\"_blank\">\"Primeiros passos no Shuwei\"</a>. Quando iniciares sessão pela primeira vez como Administrador, o nosso First Run Wizard irá guiar-te para a configuração básica da tua loja.
+            A tua loja já está pronta para funcionar. Caso ainda não tenhas muita experiência no Shuwei, recomendamos o guia <a href=\"https://docs.58shuwei.com/en/shuwei-6-en/first-steps/welcome-to-shuwei\" target=\"_blank\">\"Primeiros passos no Shuwei\"</a>. Quando iniciares sessão pela primeira vez como Administrador, o nosso First Run Wizard irá guiar-te para a configuração básica da tua loja.
         </p>
         <p>
             Desejamos-te o maior sucesso com a tua nova loja online!

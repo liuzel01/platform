@@ -33,7 +33,7 @@ shuwei.installer:
     language-selection_select_language: 'Installationsguidens sprog'
     language-selection_header: 'Din Shuwei installation'
     language-selection_info_message: 'Sproget valgt her gælder kun for installationsguiden. Du kan definere systemets standardsprog senere.'
-    language-selection_welcome_message: 'Vi er glade for at du vil være en del af vores fantastiske Shuwei Community! Vi vil nu guide dig igennem vores installationsproces. Hvis du har spørgsmål, så se på vores <a class="is--nowrap" href="https://forum.shuwei.com" target="_blank">forum</a>, kontakt os på telefonnummer <a class="is--nowrap" href="tel:0080074676260">00 800 746 7626 0 (gratis)</a> eller send os en <a class="is--nowrap" href="mailto:info@shuwei.com">e-mail</a>.'
+    language-selection_welcome_message: 'Vi er glade for at du vil være en del af vores fantastiske Shuwei Community! Vi vil nu guide dig igennem vores installationsproces. Hvis du har spørgsmål, så se på vores <a class="is--nowrap" href="https://forum.58shuwei.com" target="_blank">forum</a>, kontakt os på telefonnummer <a class="is--nowrap" href="tel:0080074676260">00 800 746 7626 0 (gratis)</a> eller send os en <a class="is--nowrap" href="mailto:info@58shuwei.com">e-mail</a>.'
     requirements_header: Systemkrav
     requirements_header_files: 'Filer og mapper'
     requirements_header_system: System
@@ -88,9 +88,9 @@ shuwei.installer:
     migration_counter_text_snippets: 'Opdaterer tekst snippets'
     migration_update_success: 'Databasen blev importeret!'
     edition_header: 'Har du allerede en Shuwei licens?'
-    edition_info: 'Shuwei finns i en gratis <a href="https://de.shuwei.com/versionen/" target="_blank">Community Edition </a> samt i en avgiftsbelagd <a href="https://de.shuwei.com/versionen/" target="_blank">Professional &amp; Enterprise Edition</a>.'
-    edition_ce: 'Nej jag vill använda den kostnadsfria versionen <a href="https://de.shuwei.com/versionen/" target="_blank">Community Edition</a>.'
-    edition_cm: 'Ja, jag har en avgiftsbelagd Shuwei-licens (<a href="https://de.shuwei.com/versionen/" target="_blank">Professional eller Enterprise</a>).'
+    edition_info: 'Shuwei finns i en gratis <a href="https://de.58shuwei.com/versionen/" target="_blank">Community Edition </a> samt i en avgiftsbelagd <a href="https://de.58shuwei.com/versionen/" target="_blank">Professional &amp; Enterprise Edition</a>.'
+    edition_ce: 'Nej jag vill använda den kostnadsfria versionen <a href="https://de.58shuwei.com/versionen/" target="_blank">Community Edition</a>.'
+    edition_cm: 'Ja, jag har en avgiftsbelagd Shuwei-licens (<a href="https://de.58shuwei.com/versionen/" target="_blank">Professional eller Enterprise</a>).'
     edition_license: 'Ange din licensnyckel här. Du hittar denna på ditt Shuwei-konto under ”Licenser” → ”Produktlicenser” → ”Detaljer/Download”:'
     edition_license_error: 'För att installera en betalversion av Shuwei krävs en giltig licens.'
     configuration_header: Konfiguration
@@ -134,7 +134,7 @@ shuwei.installer:
         <p>
             Du har installeret Shuwei og vi glade for at byde dig velkommen til vores Community!
         <p>
-            Din shop er klar til brug. Er du ny til Shuwei, så anbefaler vi at du ser op denne guide <a href=\"https://docs.shuwei.com/en/shuwei-6-en/first-steps/welcome-to-shuwei\" target=\"_blank\">”Kom godt i gang med Shuwei”</a>. Når du logger ind i administrationen for første gang vil vores ”First Run Wizard” guide dig igennem vores grundlæggende setup.
+            Din shop er klar til brug. Er du ny til Shuwei, så anbefaler vi at du ser op denne guide <a href=\"https://docs.58shuwei.com/en/shuwei-6-en/first-steps/welcome-to-shuwei\" target=\"_blank\">”Kom godt i gang med Shuwei”</a>. Når du logger ind i administrationen for første gang vil vores ”First Run Wizard” guide dig igennem vores grundlæggende setup.
         </p>
         <p>
             God fornøjelse med din nye online shop!

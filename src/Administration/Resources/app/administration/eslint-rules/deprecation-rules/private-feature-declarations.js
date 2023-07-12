@@ -74,7 +74,7 @@ module.exports = {
         docs: {
             description: 'New features have to be private',
             recommended: true,
-            url: 'https://handbook.shuwei.com/Product/Product/Components/Admin/NewFeatures',
+            url: 'https://handbook.58shuwei.com/Product/Product/Components/Admin/NewFeatures',
         },
     },
     create(context) {
