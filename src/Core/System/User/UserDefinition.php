@@ -83,6 +83,8 @@ class UserDefinition extends EntityDefinition
             (new StringField('name', 'name'))->addFlags(new Required(), new SearchRanking(SearchRanking::HIGH_SEARCH_RANKING)),
             (new StringField('title', 'title'))->addFlags(new SearchRanking(SearchRanking::MIDDLE_SEARCH_RANKING)),
             (new StringField('email', 'email'))->addFlags(new Required(), new SearchRanking(SearchRanking::HIGH_SEARCH_RANKING)),
+            (new StringField('mobile', 'mobile'))->addFlags(new Required(), new SearchRanking(SearchRanking::HIGH_SEARCH_RANKING)),
+
             new BoolField('active', 'active'),
             new FkField('avatar_id', 'avatarId', MediaDefinition::class),
             new BoolField('admin', 'admin'),

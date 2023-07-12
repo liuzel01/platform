@@ -18,7 +18,7 @@ $sw-field-help-color: $color-darkgray-200;
             "Password IsAdmin"
             "ChangePassword none"
             "Language Timezone"
-            "JobTitle AclRoles";
+            "Mobile AclRoles";
         grid-column-gap: 32px;
     }
 
@@ -62,8 +62,8 @@ $sw-field-help-color: $color-darkgray-200;
         cursor: pointer;
     }
 
-    .sw-settings-user-detail__grid-jobTitle {
-        grid-area: JobTitle;
+    .sw-settings-user-detail__grid-mobile {
+        grid-area: Mobile;
     }
 
     .sw-settings-user-detail__grid-aclRoles {

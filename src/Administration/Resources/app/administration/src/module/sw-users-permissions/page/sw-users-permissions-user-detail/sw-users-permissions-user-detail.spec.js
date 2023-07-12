@@ -54,7 +54,6 @@ async function createWrapper(privileges = []) {
                 getUser: () => Promise.resolve({ data: {} }),
             },
             userValidationService: {},
-            integrationService: {},
             repositoryFactory: {
                 create: (entityName) => {
                     if (entityName === 'user') {

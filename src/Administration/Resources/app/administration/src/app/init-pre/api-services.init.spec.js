@@ -22,8 +22,6 @@ describe('src/app/init-pre/api-services.init.ts', () => {
      *         'extensionSdkService',
      *         'firstRunWizardService',
      *         'flowActionService',
-     *         'importExportService',
-     *         'integrationService',
      *         'knownIpsService',
      *         'languagePluginService',
      *         'mailService',
@@ -83,8 +81,6 @@ describe('src/app/init-pre/api-services.init.ts', () => {
         expect(Shuwei.Service('extensionSdkService')).toBeUndefined();
         expect(Shuwei.Service('firstRunWizardService')).toBeUndefined();
         expect(Shuwei.Service('flowActionService')).toBeUndefined();
-        expect(Shuwei.Service('importExportService')).toBeUndefined();
-        expect(Shuwei.Service('integrationService')).toBeUndefined();
         expect(Shuwei.Service('knownIpsService')).toBeUndefined();
         expect(Shuwei.Service('languagePluginService')).toBeUndefined();
         expect(Shuwei.Service('mailService')).toBeUndefined();
@@ -144,7 +140,6 @@ describe('src/app/init-pre/api-services.init.ts', () => {
         expect(Shuwei.Service('firstRunWizardService')).toBeDefined();
         expect(Shuwei.Service('flowActionService')).toBeDefined();
         expect(Shuwei.Service('importExportService')).toBeDefined();
-        expect(Shuwei.Service('integrationService')).toBeDefined();
         expect(Shuwei.Service('knownIpsService')).toBeDefined();
         expect(Shuwei.Service('languagePluginService')).toBeDefined();
         expect(Shuwei.Service('mailService')).toBeDefined();

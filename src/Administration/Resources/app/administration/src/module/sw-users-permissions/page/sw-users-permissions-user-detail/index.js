@@ -18,7 +18,6 @@ export default {
         'userService',
         'loginService',
         'userValidationService',
-        'integrationService',
         'repositoryFactory',
         'acl',
     ],

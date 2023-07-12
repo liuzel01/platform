@@ -26,6 +26,7 @@ class Migration1686705288User extends MigrationStep
               `avatar_id`       BINARY(16)                              NULL,
               `locale_id`       BINARY(16)                              NOT NULL,
               `store_token`     VARCHAR(255)                            NULL,
+              `mobile`          VARCHAR(16)                            NULL,
               `time_zone` varchar(255) NOT NULL DEFAULT "UTC",
               `last_updated_password_at` DATETIME(3) NULL,
               `custom_fields`   JSON                                    NULL,

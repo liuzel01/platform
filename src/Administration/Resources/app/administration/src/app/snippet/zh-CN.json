@@ -511,24 +511,24 @@
       "buttonRemove": "移除"
     },
     "sw-select": {
-      "messageNoResults": "No results found for \"{term}\"."
+      "messageNoResults": "未找到结果 \"{term}\"."
     },
     "sw-select-result-list": {
-      "messageNoResults": "No results found."
+      "messageNoResults": "未找到结果."
     },
     "sw-single-select": {
-      "messageNoResults": "No results found for \"{term}\".",
-      "valuePlaceholder": "Select...",
+      "messageNoResults": "未找到结果 \"{term}\".",
+      "valuePlaceholder": "选择...",
       "labelEntity": "element",
       "labelEntityAdd": "Create new {entity} \"{term}\"",
       "labelEntityAddedSuccess": "The {entity} with the name \"{term}\" was created successfully."
     },
     "sw-meteor-single-select": {
-      "messageNoResults": "No results found for \"{term}\".",
-      "valuePlaceholder": "Select..."
+      "messageNoResults": "未找到结果 \"{term}\".",
+      "valuePlaceholder": "选择..."
     },
     "sw-multi-select": {
-      "messageNoResults": "No results found for \"{term}\"."
+      "messageNoResults": "未找到结果 \"{term}\"."
     },
     "sw-multi-tag-select": {
       "enterValidData": "Enter a valid value...",
