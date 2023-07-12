@@ -51,8 +51,7 @@ class InstallController extends AbstractController
         $fs->dumpFile($folder . '/.gitignore', '/.idea
 /vendor/
 ');
-        $fs->mkdir($folder . '/custom/plugins');
-        $fs->mkdir($folder . '/custom/static-plugins');
+        $fs->mkdir($folder . '/plugins');
 
         ProjectComposerJsonUpdater::update(
             $folder . '/composer.json',
