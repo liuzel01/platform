@@ -106,7 +106,7 @@ EOT;
         $composerJson['require']['symfony/runtime'] = '^5.0|^6.0';
 
         // Remove old recovery
-        unset($composerJson['require']['shuwei/recovery']);
+        unset($composerJson['require']['58shuwei/recovery']);
 
         if (!isset($composerJson['config'])) {
             $composerJson['config'] = [];
@@ -184,20 +184,20 @@ EOT;
     {
         $existingRepos = array_column($repositories, 'url');
 
-        if (!\in_array('custom/plugins/*', $existingRepos, true)) {
+        if (!\in_array('plugins/*', $existingRepos, true)) {
             $repositories[] = [
                 'type' => 'path',
-                'url' => 'custom/plugins/*',
+                'url' => 'plugins/*',
                 'options' => [
                     'symlink' => true,
                 ],
             ];
         }
 
-        if (!\in_array('custom/plugins/*/packages/*', $existingRepos, true)) {
+        if (!\in_array('plugins/*/packages/*', $existingRepos, true)) {
             $repositories[] = [
                 'type' => 'path',
-                'url' => 'custom/plugins/*/packages/*',
+                'url' => 'plugins/*/packages/*',
                 'options' => [
                     'symlink' => true,
                 ],

@@ -53,7 +53,7 @@ class RecoveryManager
             $composerJson = json_decode((string) file_get_contents($composerLookup), true, \JSON_THROW_ON_ERROR);
 
             foreach ($composerJson['packages'] as $package) {
-                if ($package['name'] === 'shuwei/core' || $package['name'] === 'shuwei/platform') {
+                if ($package['name'] === '58shuwei/core' || $package['name'] === '58shuwei/platform') {
                     return \dirname($composerLookup);
                 }
             }
@@ -74,7 +74,7 @@ class RecoveryManager
         $composerLock = json_decode((string) file_get_contents($lockFile), true, \JSON_THROW_ON_ERROR);
 
         foreach ($composerLock['packages'] as $package) {
-            if ($package['name'] === 'shuwei/core' || $package['name'] === 'shuwei/platform') {
+            if ($package['name'] === '58shuwei/core' || $package['name'] === '58shuwei/platform') {
                 return ltrim($package['version'], 'v');
             }
         }
