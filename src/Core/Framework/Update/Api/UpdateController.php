@@ -2,6 +2,7 @@
 
 namespace Shuwei\Core\Framework\Update\Api;
 
+use Shuwei\Core\Framework\Api\Response\NoContentResponse;
 use Shuwei\Core\Framework\Context;
 use Shuwei\Core\Framework\Log\Package;
 use Shuwei\Core\Framework\Plugin\KernelPluginLoader\StaticKernelPluginLoader;
@@ -14,7 +15,6 @@ use Shuwei\Core\Framework\Update\Services\ApiClient;
 use Shuwei\Core\Framework\Update\Services\ExtensionCompatibility;
 use Shuwei\Core\Framework\Update\Steps\DeactivateExtensionsStep;
 use Shuwei\Core\Kernel;
-use Shuwei\Core\System\SalesChannel\NoContentResponse;
 use Shuwei\Core\System\SystemConfig\SystemConfigService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\DependencyInjection\ContainerInterface;
