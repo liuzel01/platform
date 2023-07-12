@@ -23,19 +23,18 @@ const chalk = require('chalk');
 const crypto = require('crypto');
 
 if (process.env.IPV4FIRST) {
-    // eslint-disable-next-line global-require
     require('dns').setDefaultResultOrder('ipv4first');
 }
 
 /** HACK: OpenSSL 3 does not support md4 anymore,
-* but webpack hardcodes it all over the place: https://github.com/webpack/webpack/issues/13572
-*/
+ * but webpack hardcodes it all over the place: https://github.com/webpack/webpack/issues/13572
+ */
 const cryptoOrigCreateHash = crypto.createHash;
 crypto.createHash = algorithm => cryptoOrigCreateHash(algorithm === 'md4' ? 'sha256' : algorithm);
 
 /* eslint-disable */
 
-const buildOnlyExtensions = process.env.SHUWEI_ADMIN_BUILD_ONLY_EXTENSIONS === '1';
+const buildOnlyExtensions = process.env.SHOPWARE_ADMIN_BUILD_ONLY_EXTENSIONS === '1';
 const openBrowserForWatch = process.env.DISABLE_DEVSERVER_OPEN  !== '1';
 
 const flagsPath = path.join(process.env.PROJECT_ROOT, 'var', 'config_js_features.json');
@@ -215,8 +214,6 @@ const baseConfig = ({ pluginPath, pluginFilepath }) => ({
     },
 
     devtool: isDev ? 'eval-source-map' : '#source-map',
-    // devtool: 'eval-source-map',
-
 
     optimization: {
         moduleIds: 'hashed',
@@ -262,19 +259,19 @@ const baseConfig = ({ pluginPath, pluginFilepath }) => ({
                 test: /\.(html|twig)$/,
                 use: [
                     {
-                      loader: 'string-replace-loader',
-                      options: {
-                          multiple: [
-                              {
-                                  search: /<!--[\s\S]*?-->/gm,
-                                  replace: '',
-                              },
-                              {
-                                  search: /^(?!\{#-)\{#[\s\S]*?#\}/gm,
-                                  replace: '',
-                              }
-                          ],
-                      }
+                        loader: 'string-replace-loader',
+                        options: {
+                            multiple: [
+                                {
+                                    search: /<!--[\s\S]*?-->/gm,
+                                    replace: '',
+                                },
+                                {
+                                    search: /^(?!\{#-)\{#[\s\S]*?#\}/gm,
+                                    replace: '',
+                                }
+                            ],
+                        }
                     },
                     'raw-loader',
                 ],
@@ -297,11 +294,11 @@ const baseConfig = ({ pluginPath, pluginFilepath }) => ({
                     presets: [
                         [
                             '@babel/preset-env', {
-                                modules: false,
-                                targets: {
-                                    browsers: ['last 2 versions', 'edge >= 17'],
-                                },
+                            modules: false,
+                            targets: {
+                                browsers: ['last 2 versions', 'edge >= 17'],
                             },
+                        },
                         ],
                         '@babel/preset-typescript'
                     ],
@@ -506,7 +503,7 @@ const baseConfig = ({ pluginPath, pluginFilepath }) => ({
         new CleanWebpackPlugin({
             cleanOnceBeforeBuildPatterns: [
                 '!**/*',
-                'administration',
+                'static/**/*',
             ]
         }),
     ],
@@ -616,6 +613,7 @@ const coreConfig = {
         }),
 
         ...(() => {
+            // TODO: NEXT-18182 remove featureFlag condition
             if (featureFlags.VUE3 || isProd || process.env.DISABLE_ADMIN_COMPILATION_TYPECHECK) {
                 return [];
             }

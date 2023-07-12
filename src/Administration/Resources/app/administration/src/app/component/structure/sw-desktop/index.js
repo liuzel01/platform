@@ -12,7 +12,7 @@ const { hasOwnProperty } = Shuwei.Utils.object;
 Component.register('sw-desktop', {
     template,
 
-    inject: ['feature', 'appUrlChangeService', 'userActivityApiService'],
+    inject: ['feature', 'userActivityApiService'],
 
     data() {
         return {
@@ -71,12 +71,7 @@ Component.register('sw-desktop', {
         updateShowUrlChangedModal() {
             if (!Shuwei.State.get('context').app.config.settings.appsRequireAppUrl) {
                 this.urlDiff = null;
-                return;
             }
-
-            this.appUrlChangeService.getUrlDiff().then((diff) => {
-                this.urlDiff = diff;
-            });
         },
 
         closeModal() {
