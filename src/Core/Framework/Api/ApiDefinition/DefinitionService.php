@@ -101,7 +101,7 @@ class DefinitionService
     /**
      * @throws ApiDefinitionGeneratorNotFoundException
      *
-     * @return array<string, EntityDefinition>|list<EntityDefinition>
+     * @return array<string, EntityDefinition>|array<string, EntityDefinition>
      */
     private function getDefinitions(string $type): array
     {

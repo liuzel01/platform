@@ -9,6 +9,7 @@ use Shuwei\Core\Content\Media\Aggregate\MediaFolder\MediaFolderDefinition;
 use Shuwei\Core\Content\Media\Aggregate\MediaThumbnail\MediaThumbnailCollection;
 use Shuwei\Core\Content\Media\Aggregate\MediaThumbnail\MediaThumbnailDefinition;
 use Shuwei\Core\Content\Media\Event\MediaThumbnailDeletedEvent;
+use Shuwei\Core\Content\Media\MediaCollection;
 use Shuwei\Core\Content\Media\MediaDefinition;
 use Shuwei\Core\Content\Media\MediaEntity;
 use Shuwei\Core\Content\Media\Message\DeleteFileHandler;
@@ -38,6 +39,9 @@ class MediaDeletionSubscriber implements EventSubscriberInterface
 
     /**
      * @internal
+     *
+     * @param EntityRepository<MediaThumbnailCollection> $thumbnailRepository
+     * @param EntityRepository<MediaCollection> $mediaRepository
      */
     public function __construct(
         private readonly UrlGeneratorInterface $urlGenerator,
@@ -88,18 +92,20 @@ class MediaDeletionSubscriber implements EventSubscriberInterface
         }
     }
 
+
     public function beforeDelete(BeforeDeleteEvent $event): void
     {
+        /** @var list<string> $affected */
         $affected = array_values($event->getIds(MediaThumbnailDefinition::ENTITY_NAME));
         if (!empty($affected)) {
             $this->handleThumbnailDeletion($event, $affected, $event->getContext());
         }
-
+        /** @var list<string> $affected */
         $affected = array_values($event->getIds(MediaFolderDefinition::ENTITY_NAME));
         if (!empty($affected)) {
             $this->handleFolderDeletion($affected, $event->getContext());
         }
-
+        /** @var list<string> $affected */
         $affected = array_values($event->getIds(MediaDefinition::ENTITY_NAME));
         if (!empty($affected)) {
             $this->handleMediaDeletion($affected, $event->getContext());
@@ -111,7 +117,7 @@ class MediaDeletionSubscriber implements EventSubscriberInterface
      */
     private function handleMediaDeletion(array $affected, Context $context): void
     {
-        $media = $context->scope(Context::SYSTEM_SCOPE, fn (Context $context) => $this->mediaRepository->search(new Criteria($affected), $context));
+        $media = $context->scope(Context::SYSTEM_SCOPE, fn (Context $context): MediaCollection => $this->mediaRepository->search(new Criteria($affected), $context)->getEntities());
 
         $privatePaths = [];
         $publicPaths = [];
@@ -202,17 +208,20 @@ class MediaDeletionSubscriber implements EventSubscriberInterface
 
         $thumbnails = $this->getThumbnails($affected, $context);
 
+
         foreach ($thumbnails as $thumbnail) {
-            if ($thumbnail->getMedia() === null) {
+            $media = $thumbnail->getMedia();
+            if ($media === null) {
                 continue;
             }
 
-            if ($thumbnail->getMedia()->isPrivate()) {
-                $privatePaths[] = $this->urlGenerator->getRelativeThumbnailUrl($thumbnail->getMedia(), $thumbnail);
+            if ($media->isPrivate()) {
+                $privatePaths[] = $this->urlGenerator->getRelativeThumbnailUrl($media, $thumbnail);
             } else {
-                $publicPaths[] = $this->urlGenerator->getRelativeThumbnailUrl($thumbnail->getMedia(), $thumbnail);
+                $publicPaths[] = $this->urlGenerator->getRelativeThumbnailUrl($media, $thumbnail);
             }
         }
+
 
         $this->performFileDelete($context, $privatePaths, Visibility::PRIVATE);
         $this->performFileDelete($context, $publicPaths, Visibility::PUBLIC);
@@ -231,12 +240,7 @@ class MediaDeletionSubscriber implements EventSubscriberInterface
         $criteria->addAssociation('media');
         $criteria->addFilter(new EqualsAnyFilter('media_thumbnail.id', $ids));
 
-        $thumbnailsSearch = $this->thumbnailRepository->search($criteria, $context);
-
-        /** @var MediaThumbnailCollection $thumbnails */
-        $thumbnails = $thumbnailsSearch->getEntities();
-
-        return $thumbnails;
+        return $this->thumbnailRepository->search($criteria, $context)->getEntities();
     }
 
     /**

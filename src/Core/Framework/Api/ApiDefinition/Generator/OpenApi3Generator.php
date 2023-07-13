@@ -46,7 +46,7 @@ class OpenApi3Generator implements ApiDefinitionGeneratorInterface
     }
 
     /**
-     * @param array<string, EntityDefinition>|list<EntityDefinition&SalesChannelDefinitionInterface>  $definitions
+     * @param array<string, EntityDefinition>|array<string, EntityDefinition> $definitions
      *
      * @return OpenApiSpec
      */
@@ -132,7 +132,7 @@ class OpenApi3Generator implements ApiDefinitionGeneratorInterface
                 continue;
             }
 
-            $schema = $this->definitionSchemaBuilder->getSchemaByDefinition($definition, $this->getResourceUri($definition), $forSalesChannel);
+            $schema = $this->definitionSchemaBuilder->getSchemaByDefinition($definition, $this->getResourceUri($definition));
             $schema = array_shift($schema);
             if ($schema === null) {
                 throw new \RuntimeException('Invalid schema detected. Aborting');
@@ -217,44 +217,26 @@ class OpenApi3Generator implements ApiDefinitionGeneratorInterface
         return ltrim('/', $rootPath) . '/' . str_replace('_', '-', $definition->getEntityName());
     }
 
-    /**
-     * @param array<string, EntityDefinition>|list<EntityDefinition&SalesChannelDefinitionInterface> $definitions
-     */
-    private function containsSalesChannelDefinition(array $definitions): bool
-    {
-        foreach ($definitions as $definition) {
-            if (is_subclass_of($definition, SalesChannelDefinitionInterface::class)) {
-                return true;
-            }
-        }
-
-        return false;
-    }
 
     private function shouldDefinitionBeIncluded(EntityDefinition $definition): bool
     {
-        if (preg_match('/_translation$/', $definition->getEntityName())) {
+        if (str_ends_with($definition->getEntityName(), '_translation')) {
             return false;
         }
 
-        if (mb_strpos($definition->getEntityName(), 'version') === 0) {
+        if (str_starts_with($definition->getEntityName(), 'version')) {
             return false;
         }
 
         return true;
     }
 
-    private function shouldIncludeReferenceOnly(EntityDefinition $definition, bool $forSalesChannel): bool
+    private function shouldIncludeReferenceOnly(EntityDefinition $definition): bool
     {
         $class = new \ReflectionClass($definition);
         if ($class->isSubclassOf(MappingEntityDefinition::class)) {
             return true;
         }
-
-        if ($forSalesChannel && !is_subclass_of($definition, SalesChannelDefinitionInterface::class)) {
-            return true;
-        }
-
         return false;
     }
 }

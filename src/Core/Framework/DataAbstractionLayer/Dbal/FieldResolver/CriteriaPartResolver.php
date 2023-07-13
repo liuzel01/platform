@@ -20,6 +20,7 @@ use Shuwei\Core\Framework\DataAbstractionLayer\Search\CriteriaPartInterface;
 use Shuwei\Core\Framework\DataAbstractionLayer\Search\Filter\AndFilter;
 use Shuwei\Core\Framework\DataAbstractionLayer\Search\Filter\MultiFilter;
 use Shuwei\Core\Framework\DataAbstractionLayer\Search\Filter\OrFilter;
+use Shuwei\Core\Framework\DataAbstractionLayer\Search\Filter\SingleFieldFilter;
 use Shuwei\Core\Framework\DataAbstractionLayer\Search\Parser\SqlQueryParser;
 use Shuwei\Core\Framework\Log\Package;
 
@@ -34,10 +35,11 @@ class CriteriaPartResolver
         private readonly SqlQueryParser $parser
     ) {
     }
-
+    /**
+     * @param array<CriteriaPartInterface> $parts
+     */
     public function resolve(array $parts, EntityDefinition $definition, QueryBuilder $query, Context $context): void
     {
-        /** @var CriteriaPartInterface $part */
         foreach ($parts as $part) {
             if ($part instanceof JoinGroup) {
                 $this->resolveSubJoin($part, $definition, $query, $context);
@@ -120,6 +122,9 @@ class CriteriaPartResolver
         }
 
         foreach ($filter->getQueries() as $filter) {
+            if (!$filter instanceof SingleFieldFilter) {
+                continue;
+            }
             $filter->setResolved(self::escape($alias) . '.id IS NOT NULL');
         }
 

@@ -21,7 +21,6 @@ abstract class Field extends Struct
      */
     protected array $flags = [];
 
-    protected string $propertyName;
 
     private ?FieldSerializerInterface $serializer = null;
 
@@ -31,9 +30,8 @@ abstract class Field extends Struct
 
     private ?DefinitionInstanceRegistry $registry = null;
 
-    public function __construct(string $propertyName)
+    public function __construct(protected string $propertyName)
     {
-        $this->propertyName = $propertyName;
         $this->addFlags(new ApiAware(AdminApiSource::class));
     }
 
@@ -124,19 +122,27 @@ abstract class Field extends Struct
 
         return $this->accessorBuilder;
     }
-
+    /**
+     * @phpstan-assert-if-true !null $this->registry
+     */
     public function isCompiled(): bool
     {
         return $this->registry !== null;
     }
-
+    /**
+     * @return class-string<FieldSerializerInterface>
+     */
     abstract protected function getSerializerClass(): string;
-
+    /**
+     * @return class-string<AbstractFieldResolver>|null
+     */
     protected function getResolverClass(): ?string
     {
         return null;
     }
-
+    /**
+     * @return class-string<FieldAccessorBuilderInterface>|null
+     */
     protected function getAccessorBuilderClass(): ?string
     {
         if ($this instanceof StorageAware) {
