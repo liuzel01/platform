@@ -154,10 +154,12 @@ export default class ErrorResolver {
             );
             return;
         }
-
+        if (!(error instanceof this.ShuweiError)) {
+            error = new this.ShuweiError(error);
+        }
         Shuwei.State.dispatch('error/addApiError', {
             expression: this.getErrorPath(entity, fieldName),
-            error: new this.ShuweiError(error),
+            error: error,
         });
     }
 
