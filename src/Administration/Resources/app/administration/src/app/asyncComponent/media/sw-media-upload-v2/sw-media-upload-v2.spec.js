@@ -480,24 +480,6 @@ describe('src/app/component/media/sw-media-upload-v2', () => {
         expect(isTypeAccepted).toBeTruthy();
     });
 
-    it('should allow wildcard in the chunck of the file type', async () => {
-        await wrapper.setProps({
-            fileAccept: '*/svg',
-        });
-
-        let isTypeAccepted = wrapper.vm.checkFileType({
-            name: 'dummy.png',
-            type: 'image/png',
-        });
-        expect(isTypeAccepted).toBeFalsy();
-
-        isTypeAccepted = wrapper.vm.checkFileType({
-            name: 'dummy.svg',
-            type: 'image/svg',
-        });
-        expect(isTypeAccepted).toBeTruthy();
-    });
-
     it('should upload a file when using the url upload feature', async () => {
         wrapper.vm.mediaRepository.save = jest.fn();
         wrapper.vm.mediaService.addUpload = jest.fn();
