@@ -13,9 +13,9 @@
       "cacheAdapter": "Cache adapters"
     },
     "section": {
-      "clearCachesHeadline": "Clear caches",
-      "clearCachesText": "The cache is immediately cleared synchronously for all used adapters.",
-      "clearCachesButton": "Clear caches",
+      "clearCachesHeadline": "清除缓存",
+      "clearCachesText": "立即为所有使用的适配器同步清除缓存.",
+      "clearCachesButton": "清除缓存",
       "clearAndWarmUpHeadline": "Clear and warm up caches",
       "clearAndWarmUpText": "After the cache has been cleared, new cache entries are generated asynchronously.",
       "clearAndWarmUpButton": "Clear and warm up caches",

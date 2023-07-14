@@ -23,22 +23,22 @@
         "settings": "设置"
       },
       "sections": {
-        "actions": "Actions",
+        "actions": "操作",
         "preview": "预览",
-        "metadata": "Meta data",
+        "metadata": "元信息",
         "usage": "Used in",
-        "selectedFiles": "Selected files"
+        "selectedFiles": "选定的文件"
       },
       "infoMissingFile": {
-        "titleMissingFile": "File not found",
-        "descriptionMissingFile": "Unable to find requested file. Upload new file(s) or delete placeholder."
+        "titleMissingFile": "找不到文件",
+        "descriptionMissingFile": "找不到请求的文件。上传新文件或删除占位符."
       },
       "metadata": {
         "name": "名称",
         "fileType": "文件类型",
         "altText": "Alt text",
         "title": "标题",
-        "mimeType": "MIME-Type",
+        "mimeType": "MIME 类型",
         "fileSize": "大小",
         "createdAt": "创建时间",
         "width": "宽度",

@@ -4,7 +4,7 @@
       "mainMenuItemGeneral": "邮件",
       "textHeadline": "邮件设置",
       "buttonSave": "保存",
-      "helpText": "有关更多信息，请参阅 <a href='https://docs.58shuwei.com/en/shuwei-6-en'>documentation</a>"
+      "helpText": "有关更多信息，请参阅 <a href='https://docs.58shuwei.com/zh/shuwei-6-en'>documentation</a>"
     },
     "mailer-configuration": {
       "card-title": "邮件配置",

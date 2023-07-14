@@ -301,7 +301,7 @@
       },
       "deleteMessage": {
         "media": "Are you sure you want to delete \"{name}\"? | Are you sure you want to delete these {count} media files?",
-        "folder": "Are you sure you want to delete the folder \"{name}\"?<br>All subfolders and contained media items will be deleted too. | Are you sure you want to delete {count} folders?<br>All subfolders and contained media items will be deleted too.",
+        "folder": "是否确实要删除该文件夹 \"{name}\"?<br>及子目录，并且包含的媒体项也将被删除. | 是否确实要删除 {count} 个目录?<br>及子目录，并且包含的媒体项也将被删除.",
         "mediaAndFolder": "Are you sure you want to delete {mediaCount} media items and {folderCount} folders?<br>All subfolders and all media items within will be deleted too."
       },
       "mediaQuickInfoMessage": "This media file is currently in use by",
@@ -376,28 +376,28 @@
       "labelNewFile": "Uploaded file"
     },
     "sw-media-modal-move": {
-      "titleModal": "Move \"{mediaName}\" | Move {count} items",
-      "buttonMove": "Move",
+      "titleModal": "移动 \"{mediaName}\" | 移动 {count} 项",
+      "buttonMove": "移动",
       "notification": {
         "successSingle": {
-          "message": "Folder \"{mediaName}\" has been moved."
+          "message": "目录 \"{mediaName}\" 已被移动."
         },
         "errorSingle": {
-          "message": "Error moving \"{mediaName}\"."
+          "message": "移动时出错 \"{mediaName}\"."
         },
         "successOverall": {
-          "message": "Media items have been moved."
+          "message": "所有项已被移动."
         },
         "errorOverall": {
-          "message": "Error moving items."
+          "message": "移动项目时出错."
         }
       }
     },
     "sw-media-modal-replace": {
-      "titleModal": "Replace media file",
-      "buttonUpload": "Upload",
-      "buttonReplace": "Replace",
-      "warningFileExtension": "The new file has a different file extension ({extension}). The file may need to be re-indexed by search engines."
+      "titleModal": "替换资源文件",
+      "buttonUpload": "上传",
+      "buttonReplace": "替换",
+      "warningFileExtension": "新文件具有不同的文件扩展名 ({extension}). 该文件可能需要由搜索引擎重新索引."
     },
     "sw-media-preview": {
       "fallbackVideoTagSupport": "Your browser does not support the video tag",
@@ -474,10 +474,10 @@
       "missingFileExtension": "The URL does not contain a file extension. Please specify the file extension below."
     },
     "sw-media-modal-folder-settings": {
-      "labelSettings": "Settings",
-      "labelSystem": "System folder",
+      "labelSettings": "设置",
+      "labelSystem": "系统目录",
       "labelThumbnails": "Thumbnails",
-      "labelFolderName": "Name",
+      "labelFolderName": "名称",
       "labelInheritSettings": "Inherit settings from parent folder",
       "labelGenerateThumbnails": "Generate thumbnails for this folder",
       "labelThumbnailQuality": "Thumbnail quality",
@@ -493,7 +493,7 @@
           "message": "Error while saving settings."
         }
       },
-      "labelDefaultFolder": "Default media location for",
+      "labelDefaultFolder": "默认位置",
       "placeholderDefaultFolder": "Select entity..."
     },
     "sw-media-add-thumbnail-form": {
