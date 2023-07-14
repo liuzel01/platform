@@ -58,8 +58,7 @@ class SystemConfigurationController extends InstallerController
             $adminUser = [
                 'email' => (string) $request->request->get('config_admin_email'),
                 'username' => (string) $request->request->get('config_admin_username'),
-                'firstName' => (string) $request->request->get('config_admin_firstName'),
-                'lastName' => (string) $request->request->get('config_admin_lastName'),
+                'name' => (string) $request->request->get('config_admin_name'),
                 'password' => (string) $request->request->get('config_admin_password'),
                 'locale' => $this->supportedLanguages[$request->attributes->get('_locale')],
             ];
@@ -76,9 +75,9 @@ class SystemConfigurationController extends InstallerController
                 $schema = $_SERVER['REQUEST_SCHEME'];
             }
 
-            $shop = [
+            $system = [
                 'name' => (string) $request->request->get('config_shopName'),
-                'locale' => (string) $request->request->get('config_shop_language'),
+                'locale' => (string) $request->request->get('config_system_language'),
                 'currency' => (string) $request->request->get('config_shop_currency'),
                 'additionalCurrencies' => $availableCurrencies ?: null,
                 'country' => (string) $request->request->get('config_shop_country'),
@@ -90,9 +89,9 @@ class SystemConfigurationController extends InstallerController
             ];
 
             try {
-                $this->envConfigWriter->writeConfig($connectionInfo, $shop);
+                $this->envConfigWriter->writeConfig($connectionInfo, $system);
 
-                $this->shopConfigurationService->updateShop($shop, $connection);
+                $this->shopConfigurationService->updateSystem($system, $connection);
                 $this->adminConfigurationService->createAdmin($adminUser, $connection);
 
                 $session->remove(DatabaseConnectionInformation::class);

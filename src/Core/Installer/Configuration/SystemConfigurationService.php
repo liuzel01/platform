@@ -23,7 +23,7 @@ use Shuwei\Core\Maintenance\System\Service\SystemConfigurator;
 class SystemConfigurationService
 {
 
-    public function updateShop(array $system, Connection $connection): void
+    public function updateSystem(array $system, Connection $connection): void
     {
         if (empty($system['locale']) || empty($system['host'])) {
             throw new \RuntimeException('Please fill in all required fields. (system configuration)');

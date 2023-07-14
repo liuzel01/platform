@@ -38,14 +38,8 @@ class RequirementsController extends InstallerController
             $checks = $validator->validateRequirements($checks);
         }
 
-        if ($request->isMethod('POST') && !$checks->hasError()) {
-            // The JWT dir exist and is writable, so we generate a new key pair
-            $this->jwtCertificateGenerator->generate(
-                $this->jwtDir . '/private.pem',
-                $this->jwtDir . '/public.pem'
-            );
-
-            return $this->redirectToRoute('installer.license');
+        if ($request->isMethod('POST')) {
+            return $this->redirectToRoute('installer.database-configuration');
         }
 
         return $this->renderInstaller('@Installer/installer/requirements.html.twig', ['requirementChecks' => $checks]);
