@@ -12,7 +12,7 @@ use Shuwei\Core\Framework\Log\Package;
 use Shuwei\Core\System\Country\Aggregate\CountryState\CountryStateCollection;
 use Shuwei\Core\System\Country\Aggregate\CountryTranslation\CountryTranslationCollection;
 use Shuwei\Core\System\Currency\Aggregate\CurrencyCountryRounding\CurrencyCountryRoundingCollection;
-use Shuwei\Core\System\SalesChannel\SalesChannelCollection;
+use Shuwei\Core\System\Website\WebsiteCollection;
 use Shuwei\Core\System\Tax\Aggregate\TaxRule\TaxRuleCollection;
 
 #[Package('system-settings')]
@@ -101,14 +101,14 @@ class CountryEntity extends Entity
     protected $customerAddresses;
 
     /**
-     * @var SalesChannelCollection|null
+     * @var WebsiteCollection|null
      */
-    protected $salesChannelDefaultAssignments;
+    protected $websiteDefaultAssignments;
 
     /**
-     * @var SalesChannelCollection|null
+     * @var WebsiteCollection|null
      */
-    protected $salesChannels;
+    protected $websites;
 
     /**
      * @var TaxRuleCollection|null
@@ -275,24 +275,24 @@ class CountryEntity extends Entity
         $this->customerAddresses = $customerAddresses;
     }
 
-    public function getSalesChannelDefaultAssignments(): ?SalesChannelCollection
+    public function getWebsiteDefaultAssignments(): ?WebsiteCollection
     {
-        return $this->salesChannelDefaultAssignments;
+        return $this->websiteDefaultAssignments;
     }
 
-    public function setSalesChannelDefaultAssignments(SalesChannelCollection $salesChannelDefaultAssignments): void
+    public function setWebsiteDefaultAssignments(WebsiteCollection $websiteDefaultAssignments): void
     {
-        $this->salesChannelDefaultAssignments = $salesChannelDefaultAssignments;
+        $this->websiteDefaultAssignments = $websiteDefaultAssignments;
     }
 
-    public function getSalesChannels(): ?SalesChannelCollection
+    public function getWebsites(): ?WebsiteCollection
     {
-        return $this->salesChannels;
+        return $this->websites;
     }
 
-    public function setSalesChannels(SalesChannelCollection $salesChannels): void
+    public function setWebsites(WebsiteCollection $websites): void
     {
-        $this->salesChannels = $salesChannels;
+        $this->websites = $websites;
     }
 
     public function getTaxRules(): ?TaxRuleCollection

@@ -8,7 +8,7 @@ use Shuwei\Core\Framework\DataAbstractionLayer\Entity;
 use Shuwei\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Shuwei\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Shuwei\Core\Framework\Log\Package;
-use Shuwei\Core\Framework\Routing\Event\SalesChannelContextResolvedEvent;
+use Shuwei\Core\Framework\Routing\Event\WebsiteContextResolvedEvent;
 use Symfony\Bundle\FrameworkBundle\DataCollector\AbstractDataCollector;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -34,7 +34,7 @@ class ActiveRulesDataCollectorSubscriber extends AbstractDataCollector implement
     public static function getSubscribedEvents(): array
     {
         return [
-            SalesChannelContextResolvedEvent::class => 'onContextResolved',
+            WebsiteContextResolvedEvent::class => 'onContextResolved',
         ];
     }
 
@@ -71,7 +71,7 @@ class ActiveRulesDataCollectorSubscriber extends AbstractDataCollector implement
         return '@Profiling/Collector/rules.html.twig';
     }
 
-    public function onContextResolved(SalesChannelContextResolvedEvent $event): void
+    public function onContextResolved(WebsiteContextResolvedEvent $event): void
     {
         $this->ruleIds = $event->getContext()->getRuleIds();
     }

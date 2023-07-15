@@ -7,7 +7,7 @@ use Shuwei\Core\Framework\ShuweiHttpException;
 use Symfony\Component\HttpFoundation\Response;
 
 #[Package('core')]
-class SalesChannelNotFoundException extends ShuweiHttpException
+class WebsiteNotFoundException extends ShuweiHttpException
 {
     public function __construct()
     {

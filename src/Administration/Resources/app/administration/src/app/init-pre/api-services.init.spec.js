@@ -38,7 +38,7 @@ describe('src/app/init-pre/api-services.init.ts', () => {
      *         'promotionSyncService',
      *         'recommendationsService',
      *         'ruleConditionsConfigApiService',
-     *         'salesChannelService',
+     *         'websiteService',
      *         'scheduledTaskService',
      *         'searchService',
      *         'seoUrlTemplateService',
@@ -97,7 +97,7 @@ describe('src/app/init-pre/api-services.init.ts', () => {
         expect(Shuwei.Service('promotionSyncService')).toBeUndefined();
         expect(Shuwei.Service('recommendationsService')).toBeUndefined();
         expect(Shuwei.Service('ruleConditionsConfigApiService')).toBeUndefined();
-        expect(Shuwei.Service('salesChannelService')).toBeUndefined();
+        expect(Shuwei.Service('websiteService')).toBeUndefined();
         expect(Shuwei.Service('scheduledTaskService')).toBeUndefined();
         expect(Shuwei.Service('searchService')).toBeUndefined();
         expect(Shuwei.Service('seoUrlTemplateService')).toBeUndefined();
@@ -156,7 +156,7 @@ describe('src/app/init-pre/api-services.init.ts', () => {
         expect(Shuwei.Service('promotionSyncService')).toBeDefined();
         expect(Shuwei.Service('recommendationsService')).toBeDefined();
         expect(Shuwei.Service('ruleConditionsConfigApiService')).toBeDefined();
-        expect(Shuwei.Service('salesChannelService')).toBeDefined();
+        expect(Shuwei.Service('websiteService')).toBeDefined();
         expect(Shuwei.Service('scheduledTaskService')).toBeDefined();
         expect(Shuwei.Service('searchService')).toBeDefined();
         expect(Shuwei.Service('seoUrlTemplateService')).toBeDefined();

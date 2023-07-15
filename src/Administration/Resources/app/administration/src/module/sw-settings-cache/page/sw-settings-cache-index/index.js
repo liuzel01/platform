@@ -77,8 +77,8 @@ export default {
                 'rule.indexer': [
                     'rule.payload',
                 ],
-                'sales_channel.indexer': [
-                    'sales_channel.many-to-many',
+                'website.indexer': [
+                    'website.many-to-many',
                 ],
                 'flow.indexer': [],
                 'newsletter_recipient.indexer': [],

@@ -397,7 +397,7 @@
         "customer_address": "Adresse",
         "customer_group": "Kundengruppe",
         "customer_group_translation": "Kundengruppen-Übersetzung",
-        "customer_group_registration_sales_channels": "Verkaufskanal für die Registrierung von Kundengruppen",
+        "customer_group_registration_websites": "Verkaufskanal für die Registrierung von Kundengruppen",
         "customer_recovery": "Wiederherstellung",
         "customer_tag": "Tag"
       }
@@ -415,7 +415,7 @@
       "entities": {
         "document": "Dokument",
         "document_base_config": "Grundeinstellung",
-        "document_base_config_sales_channel": "Grundeinstellung für Verkaufskanäle",
+        "document_base_config_website": "Grundeinstellung für Verkaufskanäle",
         "document_type": "Typ",
         "document_type_translation": "Typ-Übersetzung"
       }
@@ -447,7 +447,7 @@
         "mail_template": "E-Mail-Vorlage",
         "mail_template_translation": "E-Mail-Vorlage-Übersetzung",
         "mail_template_media": "Medien",
-        "mail_template_sales_channel": "Verkaufskanal",
+        "mail_template_website": "Verkaufskanal",
         "mail_template_type": "Typ",
         "mail_template_type_translation": "Typ-Übersetzung"
       }
@@ -548,7 +548,7 @@
         "promotion_order_rule": "Bestellregel",
         "promotion_persona_customer": "Persona-Kunde",
         "promotion_persona_rule": "Persona-Regel",
-        "promotion_sales_channel": "Verkaufskanal",
+        "promotion_website": "Verkaufskanal",
         "promotion_setgroup": "Promotion-Set-Gruppe",
         "promotion_setgroup_rule": "Promotion-Set-Gruppenregel"
       }
@@ -560,20 +560,20 @@
         "rule_condition": "Bedingung"
       }
     },
-    "sales_channel": {
+    "website": {
       "title": "Verkaufskanäle",
       "entities": {
-        "sales_channel": "Verkaufkanal",
-        "sales_channel_analytics": "Analysen",
-        "sales_channel_country": "Land",
-        "sales_channel_currency": "Währung",
-        "sales_channel_domain": "Domain",
-        "sales_channel_language": "Sprache",
-        "sales_channel_payment_method": "Zahlungsart",
-        "sales_channel_shipping_method": "Versandart",
-        "sales_channel_translation": "Verkaufskanal-Übersetzung",
-        "sales_channel_type": "Verkaufskanaltyp",
-        "sales_channel_type_translation": "Verkaufskanaltyp-Übersetzung"
+        "website": "Verkaufkanal",
+        "website_analytics": "Analysen",
+        "website_country": "Land",
+        "website_currency": "Währung",
+        "website_domain": "Domain",
+        "website_language": "Sprache",
+        "website_payment_method": "Zahlungsart",
+        "website_shipping_method": "Versandart",
+        "website_translation": "Verkaufskanal-Übersetzung",
+        "website_type": "Verkaufskanaltyp",
+        "website_type_translation": "Verkaufskanaltyp-Übersetzung"
       }
     },
     "settings": {
@@ -587,7 +587,7 @@
         "locale": "Locale",
         "locale_translation": "Locale-Übersetzung",
         "number_range": "Nummernkreis",
-        "number_range_sales_channel": "Nummernkreis für Verkaufskanäle",
+        "number_range_website": "Nummernkreis für Verkaufskanäle",
         "number_range_state": "Nummernkreis-Status",
         "number_range_type": "Nummernkreis-Typ",
         "salutation": "Anrede",
@@ -611,7 +611,7 @@
     "social_shopping": {
       "title": "Social Shopping",
       "entities": {
-        "swag_social_shopping_sales_channel": "Verkaufskanal",
+        "swag_social_shopping_website": "Verkaufskanal",
         "swag_social_shopping_product_error": "Produktfehler"
       }
     },

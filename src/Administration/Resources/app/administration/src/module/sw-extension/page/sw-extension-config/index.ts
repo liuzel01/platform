@@ -7,7 +7,7 @@ import './sw-extension-config.scss';
 const { Mixin } = Shuwei;
 
 type ComponentData = {
-    salesChannelId: string|null,
+    websiteId: string|null,
     extension: Extension|null,
     fromLink: Route|null,
 }
@@ -43,7 +43,7 @@ export default Shuwei.Component.wrapComponentConfig({
 
     data(): ComponentData {
         return {
-            salesChannelId: null,
+            websiteId: null,
             extension: null,
             fromLink: null,
         };

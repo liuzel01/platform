@@ -136,7 +136,7 @@ describe('src/app/component/structure/sw-search-bar', () => {
                 repositoryFactory: {
                     create: (entity) => ({
                         search: (criteria) => {
-                            if (entity === 'sales_channel') {
+                            if (entity === 'website') {
                                 return Promise.resolve([{
                                     id: '8a243080f92e4c719546314b577cf82b',
                                     translated: { name: 'Frontend' },
@@ -144,7 +144,7 @@ describe('src/app/component/structure/sw-search-bar', () => {
                                 }]);
                             }
 
-                            if (entity === 'sales_channel_type') {
+                            if (entity === 'website_type') {
                                 return Promise.resolve([{
                                     id: 'xxxxxxx',
                                     translated: { name: 'Frontend' },
@@ -813,7 +813,7 @@ describe('src/app/component/structure/sw-search-bar', () => {
                 initialSearch: '',
             },
             searchTypeServiceTypes,
-            ['sales_channel.viewer', 'sales_channel.creator'],
+            ['website.viewer', 'website.creator'],
         );
 
         // open search

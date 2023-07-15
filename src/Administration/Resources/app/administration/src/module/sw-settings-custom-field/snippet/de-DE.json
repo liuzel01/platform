@@ -102,7 +102,7 @@
         "paymentMethod": "Zahlungsmethode",
         "country": "Land",
         "customer": "Kunde",
-        "salesChannel": "Verkaufskanal",
+        "website": "Verkaufskanal",
         "manufacturer": "Hersteller",
         "dynamicProductGroup": "Dynamische Produktgruppe",
         "shoppingExperienceLayout": "Erlebniswelt-Layout"

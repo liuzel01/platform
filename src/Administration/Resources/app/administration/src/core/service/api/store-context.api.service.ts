@@ -17,7 +17,7 @@ class StoreContextService extends ApiService {
 
     updateCustomerContext(
         customerId: string,
-        salesChannelId: string,
+        websiteId: string,
         contextToken: string,
         additionalParams = {},
         additionalHeaders = {},
@@ -28,17 +28,17 @@ class StoreContextService extends ApiService {
 
         return this.httpClient.patch(
             route,
-            { customerId: customerId, salesChannelId: salesChannelId, permissions: permissions },
+            { customerId: customerId, websiteId: websiteId, permissions: permissions },
             { ...additionalParams, headers },
         );
     }
-    getSalesChannelContext(
-        salesChannelId: string,
+    getWebsiteContext(
+        websiteId: string,
         contextToken: string|null,
         additionalParams = {},
         additionalHeaders = {},
     ) {
-        const route = `_proxy/store-api/${salesChannelId}/context`;
+        const route = `_proxy/store-api/${websiteId}/context`;
         const headers = this.getBasicHeaders({ ...additionalHeaders, 'sw-context-token': contextToken });
 
         return this.httpClient.get(route, { ...additionalParams, headers });

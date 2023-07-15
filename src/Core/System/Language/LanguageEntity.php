@@ -27,7 +27,7 @@ use Shuwei\Core\Content\Product\Aggregate\ProductReview\ProductReviewCollection;
 use Shuwei\Core\Content\Product\Aggregate\ProductSearchConfig\ProductSearchConfigEntity;
 use Shuwei\Core\Content\Product\Aggregate\ProductSearchKeyword\ProductSearchKeywordCollection;
 use Shuwei\Core\Content\Product\Aggregate\ProductTranslation\ProductTranslationCollection;
-use Shuwei\Core\Content\Product\SalesChannel\Sorting\ProductSortingTranslationCollection;
+use Shuwei\Core\Content\Product\Website\Sorting\ProductSortingTranslationCollection;
 use Shuwei\Core\Content\ProductStream\Aggregate\ProductStreamTranslation\ProductStreamTranslationCollection;
 use Shuwei\Core\Content\Property\Aggregate\PropertyGroupOptionTranslation\PropertyGroupOptionTranslationCollection;
 use Shuwei\Core\Content\Property\Aggregate\PropertyGroupTranslation\PropertyGroupTranslationCollection;
@@ -52,10 +52,10 @@ use Shuwei\Core\System\Locale\Aggregate\LocaleTranslation\LocaleTranslationColle
 use Shuwei\Core\System\Locale\LocaleEntity;
 use Shuwei\Core\System\NumberRange\Aggregate\NumberRangeTranslation\NumberRangeTranslationCollection;
 use Shuwei\Core\System\NumberRange\Aggregate\NumberRangeTypeTranslation\NumberRangeTypeTranslationCollection;
-use Shuwei\Core\System\SalesChannel\Aggregate\SalesChannelDomain\SalesChannelDomainCollection;
-use Shuwei\Core\System\SalesChannel\Aggregate\SalesChannelTranslation\SalesChannelTranslationCollection;
-use Shuwei\Core\System\SalesChannel\Aggregate\SalesChannelTypeTranslation\SalesChannelTypeTranslationCollection;
-use Shuwei\Core\System\SalesChannel\SalesChannelCollection;
+use Shuwei\Core\System\Website\Aggregate\WebsiteDomain\WebsiteDomainCollection;
+use Shuwei\Core\System\Website\Aggregate\WebsiteTranslation\WebsiteTranslationCollection;
+use Shuwei\Core\System\Website\Aggregate\WebsiteTypeTranslation\WebsiteTypeTranslationCollection;
+use Shuwei\Core\System\Website\WebsiteCollection;
 use Shuwei\Core\System\Salutation\Aggregate\SalutationTranslation\SalutationTranslationCollection;
 use Shuwei\Core\System\StateMachine\Aggregation\StateMachineState\StateMachineStateTranslationCollection;
 use Shuwei\Core\System\StateMachine\StateMachineTranslationCollection;
@@ -110,9 +110,9 @@ class LanguageEntity extends Entity
     protected $children;
 
     /**
-     * @var SalesChannelCollection|null
+     * @var WebsiteCollection|null
      */
-    protected $salesChannels;
+    protected $websites;
 
     /**
      * @var CustomerCollection|null
@@ -120,9 +120,9 @@ class LanguageEntity extends Entity
     protected $customers;
 
     /**
-     * @var SalesChannelCollection|null
+     * @var WebsiteCollection|null
      */
-    protected $salesChannelDefaultAssignments;
+    protected $websiteDefaultAssignments;
 
     /**
      * @var CategoryTranslationCollection|null
@@ -195,14 +195,14 @@ class LanguageEntity extends Entity
     protected $propertyGroupOptionTranslations;
 
     /**
-     * @var SalesChannelTranslationCollection|null
+     * @var WebsiteTranslationCollection|null
      */
-    protected $salesChannelTranslations;
+    protected $websiteTranslations;
 
     /**
-     * @var SalesChannelTypeTranslationCollection|null
+     * @var WebsiteTypeTranslationCollection|null
      */
-    protected $salesChannelTypeTranslations;
+    protected $websiteTypeTranslations;
 
     /**
      * @var SalutationTranslationCollection|null
@@ -210,9 +210,9 @@ class LanguageEntity extends Entity
     protected $salutationTranslations;
 
     /**
-     * @var SalesChannelDomainCollection|null
+     * @var WebsiteDomainCollection|null
      */
-    protected $salesChannelDomains;
+    protected $websiteDomains;
 
     /**
      * @var PluginTranslationCollection|null
@@ -586,19 +586,19 @@ class LanguageEntity extends Entity
         $this->unitTranslations = $unitTranslations;
     }
 
-    public function getSalesChannels(): ?SalesChannelCollection
+    public function getWebsites(): ?WebsiteCollection
     {
-        return $this->salesChannels;
+        return $this->websites;
     }
 
-    public function setSalesChannels(SalesChannelCollection $salesChannels): void
+    public function setWebsites(WebsiteCollection $websites): void
     {
-        $this->salesChannels = $salesChannels;
+        $this->websites = $websites;
     }
 
-    public function getSalesChannelDefaultAssignments(): ?SalesChannelCollection
+    public function getWebsiteDefaultAssignments(): ?WebsiteCollection
     {
-        return $this->salesChannelDefaultAssignments;
+        return $this->websiteDefaultAssignments;
     }
 
     public function getCustomers(): ?CustomerCollection
@@ -611,9 +611,9 @@ class LanguageEntity extends Entity
         $this->customers = $customers;
     }
 
-    public function setSalesChannelDefaultAssignments(SalesChannelCollection $salesChannelDefaultAssignments): void
+    public function setWebsiteDefaultAssignments(WebsiteCollection $websiteDefaultAssignments): void
     {
-        $this->salesChannelDefaultAssignments = $salesChannelDefaultAssignments;
+        $this->websiteDefaultAssignments = $websiteDefaultAssignments;
     }
 
     public function getSalutationTranslations(): ?SalutationTranslationCollection
@@ -646,34 +646,34 @@ class LanguageEntity extends Entity
         $this->propertyGroupOptionTranslations = $propertyGroupOptionTranslationCollection;
     }
 
-    public function getSalesChannelTranslations(): ?SalesChannelTranslationCollection
+    public function getWebsiteTranslations(): ?WebsiteTranslationCollection
     {
-        return $this->salesChannelTranslations;
+        return $this->websiteTranslations;
     }
 
-    public function setSalesChannelTranslations(SalesChannelTranslationCollection $salesChannelTranslations): void
+    public function setWebsiteTranslations(WebsiteTranslationCollection $websiteTranslations): void
     {
-        $this->salesChannelTranslations = $salesChannelTranslations;
+        $this->websiteTranslations = $websiteTranslations;
     }
 
-    public function getSalesChannelTypeTranslations(): ?SalesChannelTypeTranslationCollection
+    public function getWebsiteTypeTranslations(): ?WebsiteTypeTranslationCollection
     {
-        return $this->salesChannelTypeTranslations;
+        return $this->websiteTypeTranslations;
     }
 
-    public function setSalesChannelTypeTranslations(SalesChannelTypeTranslationCollection $salesChannelTypeTranslations): void
+    public function setWebsiteTypeTranslations(WebsiteTypeTranslationCollection $websiteTypeTranslations): void
     {
-        $this->salesChannelTypeTranslations = $salesChannelTypeTranslations;
+        $this->websiteTypeTranslations = $websiteTypeTranslations;
     }
 
-    public function getSalesChannelDomains(): ?SalesChannelDomainCollection
+    public function getWebsiteDomains(): ?WebsiteDomainCollection
     {
-        return $this->salesChannelDomains;
+        return $this->websiteDomains;
     }
 
-    public function setSalesChannelDomains(SalesChannelDomainCollection $salesChannelDomains): void
+    public function setWebsiteDomains(WebsiteDomainCollection $websiteDomains): void
     {
-        $this->salesChannelDomains = $salesChannelDomains;
+        $this->websiteDomains = $websiteDomains;
     }
 
     public function getPluginTranslations(): ?PluginTranslationCollection

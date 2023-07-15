@@ -3,7 +3,7 @@
 namespace Shuwei\Core\Framework\Routing;
 
 use Shuwei\Core\Framework\Api\ApiDefinition\DefinitionService;
-use Shuwei\Core\Framework\Api\Context\SalesChannelApiSource;
+use Shuwei\Core\Framework\Api\Context\WebsiteApiSource;
 use Shuwei\Core\Framework\Api\Context\SystemSource;
 use Shuwei\Core\Framework\Context;
 use Shuwei\Core\Framework\Log\Package;
@@ -33,7 +33,7 @@ class StoreApiRouteScope extends AbstractRouteScope
             return $requestContext->getSource() instanceof SystemSource;
         }
 
-        return $requestContext->getSource() instanceof SalesChannelApiSource;
+        return $requestContext->getSource() instanceof WebsiteApiSource;
     }
 
     public function getId(): string

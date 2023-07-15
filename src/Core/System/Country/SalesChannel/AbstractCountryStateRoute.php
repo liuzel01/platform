@@ -1,10 +1,10 @@
 <?php declare(strict_types=1);
 
-namespace Shuwei\Core\System\Country\SalesChannel;
+namespace Shuwei\Core\System\Country\Website;
 
 use Shuwei\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Shuwei\Core\Framework\Log\Package;
-use Shuwei\Core\System\SalesChannel\SalesChannelContext;
+use Shuwei\Core\System\Website\WebsiteContext;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -14,7 +14,7 @@ use Symfony\Component\HttpFoundation\Request;
 #[Package('system-settings')]
 abstract class AbstractCountryStateRoute
 {
-    abstract public function load(string $countryId, Request $request, Criteria $criteria, SalesChannelContext $context): CountryStateRouteResponse;
+    abstract public function load(string $countryId, Request $request, Criteria $criteria, WebsiteContext $context): CountryStateRouteResponse;
 
     abstract protected function getDecorated(): AbstractCountryStateRoute;
 }

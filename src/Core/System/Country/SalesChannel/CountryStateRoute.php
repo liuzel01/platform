@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Shuwei\Core\System\Country\SalesChannel;
+namespace Shuwei\Core\System\Country\Website;
 
 use Shuwei\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Shuwei\Core\Framework\DataAbstractionLayer\Search\Criteria;
@@ -8,7 +8,7 @@ use Shuwei\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Shuwei\Core\Framework\DataAbstractionLayer\Search\Sorting\FieldSorting;
 use Shuwei\Core\Framework\Log\Package;
 use Shuwei\Core\Framework\Plugin\Exception\DecorationPatternException;
-use Shuwei\Core\System\SalesChannel\SalesChannelContext;
+use Shuwei\Core\System\Website\WebsiteContext;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -24,7 +24,7 @@ class CountryStateRoute extends AbstractCountryStateRoute
     }
 
     #[Route(path: '/store-api/country-state/{countryId}', name: 'store-api.country.state', methods: ['GET', 'POST'], defaults: ['_entity' => 'country'])]
-    public function load(string $countryId, Request $request, Criteria $criteria, SalesChannelContext $context): CountryStateRouteResponse
+    public function load(string $countryId, Request $request, Criteria $criteria, WebsiteContext $context): CountryStateRouteResponse
     {
         $criteria->addFilter(
             new EqualsFilter('countryId', $countryId),

@@ -62,7 +62,7 @@ class SystemConfigurator
     {
         $value = json_encode(['_value' => $value], \JSON_UNESCAPED_UNICODE | \JSON_PRESERVE_ZERO_FRACTION);
 
-        // Fetch id for config key, as the unique key on config_key and salesChannelId will not work when salesChannelId is null
+        // Fetch id for config key, as the unique key on config_key and websiteId will not work when websiteId is null
         $id = $this->connection->fetchOne('
             SELECT `id`
             FROM `system_config`

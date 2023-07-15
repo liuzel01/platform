@@ -18,8 +18,8 @@ export default function createSearchTypeService() {
             listingRoute: 'sw.property.index',
             hideOnGlobalSearchBar: true,
         },
-        sales_channel: {
-            entityName: 'sales_channel',
+        website: {
+            entityName: 'website',
             placeholderSnippet: 'sw-sales-channel.general.placeholderSearchBar',
             listingRoute: 'sw.sales.channel.index',
             hideOnGlobalSearchBar: true,

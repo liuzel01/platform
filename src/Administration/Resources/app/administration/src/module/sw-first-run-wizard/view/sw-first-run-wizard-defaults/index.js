@@ -14,21 +14,21 @@ export default {
     data() {
         return {
             isLoading: false,
-            defaultSalesChannelCardLoaded: false,
-            salesChannel: null,
+            defaultWebsiteCardLoaded: false,
+            website: null,
             configData: {
                 null: {
-                    'core.defaultSalesChannel.salesChannel': [],
-                    'core.defaultSalesChannel.active': true,
-                    'core.defaultSalesChannel.visibility': {},
+                    'core.defaultWebsite.website': [],
+                    'core.defaultWebsite.active': true,
+                    'core.defaultWebsite.visibility': {},
                 },
             },
         };
     },
 
     computed: {
-        salesChannelRepository() {
-            return this.repositoryFactory.create('sales_channel');
+        websiteRepository() {
+            return this.repositoryFactory.create('website');
         },
 
         buttonConfig() {
@@ -46,7 +46,7 @@ export default {
                     position: 'right',
                     variant: 'primary',
                     action: this.nextAction.bind(this),
-                    disabled: !this.defaultSalesChannelCardLoaded,
+                    disabled: !this.defaultWebsiteCardLoaded,
                 },
             ];
         },
@@ -78,7 +78,7 @@ export default {
         async nextAction() {
             this.isLoading = true;
 
-            await this.$refs.defaultSalesChannelCard.saveSalesChannelVisibilityConfig();
+            await this.$refs.defaultWebsiteCard.saveWebsiteVisibilityConfig();
 
             this.isLoading = false;
             this.$emit('frw-redirect', 'sw.first.run.wizard.index.mailer.selection');
@@ -88,8 +88,8 @@ export default {
             this.$emit('buttons-update', this.buttonConfig);
         },
 
-        updateSalesChannel(salesChannel) {
-            this.salesChannel = salesChannel;
+        updateWebsite(website) {
+            this.website = website;
         },
     },
 };

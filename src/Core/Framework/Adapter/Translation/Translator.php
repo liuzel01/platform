@@ -36,7 +36,7 @@ class Translator extends AbstractTranslator
 
     private ?string $snippetSetId = null;
 
-    private ?string $salesChannelId = null;
+    private ?string $websiteId = null;
 
     private ?string $localeBeforeInject = null;
 
@@ -196,7 +196,7 @@ class Translator extends AbstractTranslator
         $this->traces = [];
         $this->keys = ['all' => true];
         $this->snippetSetId = null;
-        $this->salesChannelId = null;
+        $this->websiteId = null;
         $this->localeBeforeInject = null;
         $this->locale = null;
         if ($this->translator instanceof SymfonyTranslator) {
@@ -211,10 +211,10 @@ class Translator extends AbstractTranslator
      * Injects temporary settings for translation which differ from Context.
      * Call resetInjection() when specific translation is done
      */
-    public function injectSettings(string $salesChannelId, string $languageId, string $locale, Context $context): void
+    public function injectSettings(string $websiteId, string $languageId, string $locale, Context $context): void
     {
         $this->localeBeforeInject = $this->getLocale();
-        $this->salesChannelId = $salesChannelId;
+        $this->websiteId = $websiteId;
         $this->setLocale($locale);
         $this->resolveSnippetSetId($languageId, $locale);
         $this->getCatalogue($locale);
@@ -229,7 +229,7 @@ class Translator extends AbstractTranslator
 
         $this->setLocale($this->localeBeforeInject);
         $this->snippetSetId = null;
-        $this->salesChannelId = null;
+        $this->websiteId = null;
     }
 
     public function getSnippetSetId(?string $locale = null): ?string
@@ -310,15 +310,15 @@ class Translator extends AbstractTranslator
      */
     private function loadSnippets(MessageCatalogueInterface $catalog, string $snippetSetId, ?string $fallbackLocale): array
     {
-        $this->resolveSalesChannelId();
+        $this->resolveWebsiteId();
 
-        $key = sprintf('translation.catalog.%s.%s', $this->salesChannelId ?: 'DEFAULT', $snippetSetId);
+        $key = sprintf('translation.catalog.%s.%s', $this->websiteId ?: 'DEFAULT', $snippetSetId);
 
         return $this->cache->get($key, function (ItemInterface $item) use ($catalog, $snippetSetId, $fallbackLocale) {
             $item->tag('translation.catalog.' . $snippetSetId);
-            $item->tag(sprintf('translation.catalog.%s', $this->salesChannelId ?: 'DEFAULT'));
+            $item->tag(sprintf('translation.catalog.%s', $this->websiteId ?: 'DEFAULT'));
 
-            return $this->snippetService->getFrontendSnippets($catalog, $snippetSetId, $fallbackLocale, $this->salesChannelId);
+            return $this->snippetService->getFrontendSnippets($catalog, $snippetSetId, $fallbackLocale, $this->websiteId);
         });
     }
 
@@ -332,9 +332,9 @@ class Translator extends AbstractTranslator
         }
     }
 
-    private function resolveSalesChannelId(): void
+    private function resolveWebsiteId(): void
     {
-        if ($this->salesChannelId !== null) {
+        if ($this->websiteId !== null) {
             return;
         }
 
@@ -344,6 +344,6 @@ class Translator extends AbstractTranslator
             return;
         }
 
-        $this->salesChannelId = $request->attributes->get(PlatformRequest::ATTRIBUTE_SALES_CHANNEL_ID);
+        $this->websiteId = $request->attributes->get(PlatformRequest::ATTRIBUTE_SALES_CHANNEL_ID);
     }
 }

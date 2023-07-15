@@ -45,7 +45,7 @@ class MatchAllLineItemsRule extends Container
             return false;
         }
 
-        $context = $scope->getSalesChannelContext();
+        $context = $scope->getWebsiteContext();
 
         foreach ($this->rules as $rule) {
             $matched = 0;

@@ -3,34 +3,34 @@
 namespace Shuwei\Core\Framework\Rule;
 
 use Shuwei\Core\Framework\Log\Package;
-use Shuwei\Core\System\SalesChannel\SalesChannelDefinition;
+use Shuwei\Core\System\Website\WebsiteDefinition;
 
 #[Package('business-ops')]
-class SalesChannelRule extends Rule
+class WebsiteRule extends Rule
 {
-    final public const RULE_NAME = 'salesChannel';
+    final public const RULE_NAME = 'website';
 
     /**
      * @internal
      *
-     * @param list<string>|null $salesChannelIds
+     * @param list<string>|null $websiteIds
      */
     public function __construct(
         protected string $operator = self::OPERATOR_EQ,
-        protected ?array $salesChannelIds = null
+        protected ?array $websiteIds = null
     ) {
         parent::__construct();
     }
 
     public function match(RuleScope $scope): bool
     {
-        return RuleComparison::uuids([$scope->getSalesChannelContext()->getSalesChannel()->getId()], $this->salesChannelIds, $this->operator);
+        return RuleComparison::uuids([$scope->getWebsiteContext()->getWebsite()->getId()], $this->websiteIds, $this->operator);
     }
 
     public function getConstraints(): array
     {
         return [
-            'salesChannelIds' => RuleConstraints::uuids(),
+            'websiteIds' => RuleConstraints::uuids(),
             'operator' => RuleConstraints::uuidOperators(false),
         ];
     }
@@ -39,6 +39,6 @@ class SalesChannelRule extends Rule
     {
         return (new RuleConfig())
             ->operatorSet(RuleConfig::OPERATOR_SET_STRING, false, true)
-            ->entitySelectField('salesChannelIds', SalesChannelDefinition::ENTITY_NAME, true);
+            ->entitySelectField('websiteIds', WebsiteDefinition::ENTITY_NAME, true);
     }
 }

@@ -13,7 +13,7 @@ Shuwei.Service('privileges')
                     'system_config:update',
                     'system_config:create',
                     'system_config:delete',
-                    'sales_channel:read',
+                    'website:read',
                     'cms_page:read',
                     'product_sorting:read',
                     'custom_field:read',

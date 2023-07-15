@@ -13,7 +13,7 @@ use Shuwei\Core\Framework\DataAbstractionLayer\Field\AssociationField;
 use Shuwei\Core\Framework\DataAbstractionLayer\Field\TranslatedField;
 use Shuwei\Core\Framework\DataAbstractionLayer\MappingEntityDefinition;
 use Shuwei\Core\Framework\Log\Package;
-use Shuwei\Core\System\SalesChannel\Entity\SalesChannelDefinitionInterface;
+use Shuwei\Core\System\Website\Entity\WebsiteDefinitionInterface;
 
 /**
  * @internal
@@ -52,7 +52,7 @@ class OpenApi3Generator implements ApiDefinitionGeneratorInterface
      */
     public function generate(array $definitions, string $api, string $apiType = DefinitionService::TYPE_JSON_API): array
     {
-        $forSalesChannel = $this->containsSalesChannelDefinition($definitions);
+        $forWebsite = $this->containsWebsiteDefinition($definitions);
 
         $openApi = new OpenApi([]);
         $this->openApiBuilder->enrich($openApi, $api);
@@ -66,13 +66,13 @@ class OpenApi3Generator implements ApiDefinitionGeneratorInterface
 
             $onlyFlat = match ($apiType) {
                 DefinitionService::TYPE_JSON => true,
-                default => $this->shouldIncludeReferenceOnly($definition, $forSalesChannel),
+                default => $this->shouldIncludeReferenceOnly($definition, $forWebsite),
             };
 
             $schema = $this->definitionSchemaBuilder->getSchemaByDefinition(
                 $definition,
                 $this->getResourceUri($definition),
-                $forSalesChannel,
+                $forWebsite,
                 $onlyFlat,
                 $apiType
             );
@@ -104,7 +104,7 @@ class OpenApi3Generator implements ApiDefinitionGeneratorInterface
     }
 
     /**
-     * @param array<string, EntityDefinition>|list<EntityDefinition&SalesChannelDefinitionInterface> $definitions
+     * @param array<string, EntityDefinition>|list<EntityDefinition&WebsiteDefinitionInterface> $definitions
      *
      * @return array<string, array{name: string, translatable: array<int|string, mixed>, properties: array<string, mixed>}>
      */
@@ -112,7 +112,7 @@ class OpenApi3Generator implements ApiDefinitionGeneratorInterface
     {
         $schemaDefinitions = [];
 
-        $forSalesChannel = $this->containsSalesChannelDefinition($definitions);
+        $forWebsite = $this->containsWebsiteDefinition($definitions);
 
         ksort($definitions);
 

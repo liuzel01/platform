@@ -8,7 +8,7 @@
                     "Mail Operations"
                 ],
                 "summary": "Send a mail",
-                "description": "Generates a mail from a mail template and sends it to the customer.\n\nTake a look at the `salesChannel` entity for possible values. For example `{{ salesChannel.name }}` can be used.",
+                "description": "Generates a mail from a mail template and sends it to the customer.\n\nTake a look at the `website` entity for possible values. For example `{{ website.name }}` can be used.",
                 "operationId": "send",
                 "requestBody": {
                     "required": true,
@@ -17,7 +17,7 @@
                             "schema": {
                                 "required": [
                                     "recipients",
-                                    "salesChannelId",
+                                    "websiteId",
                                     "contentHtml",
                                     "contentPlain",
                                     "subject",
@@ -36,7 +36,7 @@
                                             "type": "string"
                                         }
                                     },
-                                    "salesChannelId": {
+                                    "websiteId": {
                                         "description": "Identifier of the sales channel from which the mail should be send.",
                                         "type": "string",
                                         "pattern": "^[0-9a-f]{32}$"

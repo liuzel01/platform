@@ -252,13 +252,13 @@ function registerThumbnailMiddleware(factory: typeof WorkerNotificationFactory) 
         },
     });
 
-    factory.register('SalesChannelIndexingMessage', {
-        name: 'Shuwei\\Core\\System\\SalesChannel\\DataAbstractionLayer\\SalesChannelIndexingMessage',
+    factory.register('WebsiteIndexingMessage', {
+        name: 'Shuwei\\Core\\System\\Website\\DataAbstractionLayer\\WebsiteIndexingMessage',
         fn: function middleware(next, { entry, $root, notification }) {
-            messageQueueNotification('salesChannel', ids, next, entry, $root, notification, {
-                title: 'global.notification-center.worker-listener.salesChannel.title',
-                message: 'global.notification-center.worker-listener.salesChannel.message',
-                success: 'global.notification-center.worker-listener.salesChannel.messageSuccess',
+            messageQueueNotification('website', ids, next, entry, $root, notification, {
+                title: 'global.notification-center.worker-listener.website.title',
+                message: 'global.notification-center.worker-listener.website.message',
+                success: 'global.notification-center.worker-listener.website.messageSuccess',
             }, 50);
         },
     });

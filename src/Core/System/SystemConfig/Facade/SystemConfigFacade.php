@@ -28,7 +28,7 @@ class SystemConfigFacade
         private readonly SystemConfigService $systemConfigService,
         private readonly Connection $connection,
         private readonly ?ScriptAppInformation $scriptAppInformation,
-        private readonly ?string $salesChannelId
+        private readonly ?string $websiteId
     ) {
     }
 
@@ -37,7 +37,7 @@ class SystemConfigFacade
      * Notice that your app needs the `system_config:read` privilege to use this method.
      *
      * @param string $key The key of the configuration value e.g. `core.listing.defaultSorting`.
-     * @param string|null $salesChannelId The SalesChannelId if you need the config value for a specific Website, if you don't provide a SalesChannelId, the one of the current Context is used as default.
+     * @param string|null $websiteId The WebsiteId if you need the config value for a specific Website, if you don't provide a WebsiteId, the one of the current Context is used as default.
      *
      * @return array|bool|float|int|string|null
      *
@@ -53,24 +53,24 @@ class SystemConfigFacade
      * Notice that your app does not need any additional privileges to use this method, as you can only access your own app's configuration.
      *
      * @param string $key The name of the configuration value specified in the config.xml e.g. `exampleTextField`.
-     * @param string|null $salesChannelId The SalesChannelId if you need the config value for a specific Website, if you don't provide a SalesChannelId, the one of the current Context is used as default.
+     * @param string|null $websiteId The WebsiteId if you need the config value for a specific Website, if you don't provide a WebsiteId, the one of the current Context is used as default.
      *
      * @return array|bool|float|int|string|null
      *
      * @example test-config/script.twig 5 1 Read your app's config value.
      */
-    public function app(string $key, ?string $salesChannelId = null)
+    public function app(string $key, ?string $websiteId = null)
     {
         if (!$this->scriptAppInformation) {
             throw new \BadMethodCallException('`config.app()` can only be called from app scripts.');
         }
 
-        if (!$salesChannelId) {
-            $salesChannelId = $this->salesChannelId;
+        if (!$websiteId) {
+            $websiteId = $this->websiteId;
         }
 
         $key = $this->scriptAppInformation->getAppName() . '.config.' . $key;
 
-        return $this->systemConfigService->get($key, $salesChannelId);
+        return $this->systemConfigService->get($key, $websiteId);
     }
 }

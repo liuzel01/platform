@@ -1280,7 +1280,7 @@ describe('src/module/sw-users-permissions/components/sw-users-permissions-permis
                 },
                 {
                     category: 'permissions',
-                    key: 'sales_channel',
+                    key: 'website',
                     parent: null,
                     roles: {
                         viewer: {
@@ -1288,15 +1288,15 @@ describe('src/module/sw-users-permissions/components/sw-users-permissions-permis
                             privileges: [],
                         },
                         editor: {
-                            dependencies: ['sales_channel.viewer'],
+                            dependencies: ['website.viewer'],
                             privileges: [],
                         },
                         creator: {
-                            dependencies: ['sales_channel.viewer', 'sales_channel.editor'],
+                            dependencies: ['website.viewer', 'website.editor'],
                             privileges: [],
                         },
                         deleter: {
-                            dependencies: ['sales_channel.viewer'],
+                            dependencies: ['website.viewer'],
                             privileges: [],
                         },
                     },
@@ -1390,7 +1390,7 @@ describe('src/module/sw-users-permissions/components/sw-users-permissions-permis
                 },
                 {
                     category: 'permissions',
-                    key: 'sales_channel',
+                    key: 'website',
                     parent: null,
                     roles: {
                         viewer: {
@@ -1398,15 +1398,15 @@ describe('src/module/sw-users-permissions/components/sw-users-permissions-permis
                             privileges: [],
                         },
                         editor: {
-                            dependencies: ['sales_channel.viewer'],
+                            dependencies: ['website.viewer'],
                             privileges: [],
                         },
                         creator: {
-                            dependencies: ['sales_channel.viewer', 'sales_channel.editor'],
+                            dependencies: ['website.viewer', 'website.editor'],
                             privileges: [],
                         },
                         deleter: {
-                            dependencies: ['sales_channel.viewer'],
+                            dependencies: ['website.viewer'],
                             privileges: [],
                         },
                     },
@@ -1427,7 +1427,7 @@ describe('src/module/sw-users-permissions/components/sw-users-permissions-permis
 
         // other (null) with children
         expect(gridEntries.at(4).classes()).toContain('sw-users-permissions-permissions-grid__parent_null');
-        expect(gridEntries.at(5).classes()).toContain('sw-users-permissions-permissions-grid__entry_sales_channel');
+        expect(gridEntries.at(5).classes()).toContain('sw-users-permissions-permissions-grid__entry_website');
 
         // settings with children
         expect(gridEntries.at(6).classes()).toContain('sw-users-permissions-permissions-grid__parent_settings');
@@ -1451,7 +1451,7 @@ describe('src/module/sw-users-permissions/components/sw-users-permissions-permis
                 },
                 {
                     category: 'permissions',
-                    key: 'sales_channel',
+                    key: 'website',
                     parent: 'content',
                     roles: {},
                 },
@@ -1595,7 +1595,7 @@ describe('src/module/sw-users-permissions/components/sw-users-permissions-permis
                 },
                 {
                     category: 'permissions',
-                    key: 'sales_channel',
+                    key: 'website',
                     parent: null,
                     roles: {
                         viewer: {
@@ -1603,15 +1603,15 @@ describe('src/module/sw-users-permissions/components/sw-users-permissions-permis
                             privileges: [],
                         },
                         editor: {
-                            dependencies: ['sales_channel.viewer'],
+                            dependencies: ['website.viewer'],
                             privileges: [],
                         },
                         creator: {
-                            dependencies: ['sales_channel.viewer', 'sales_channel.editor'],
+                            dependencies: ['website.viewer', 'website.editor'],
                             privileges: [],
                         },
                         deleter: {
-                            dependencies: ['sales_channel.viewer'],
+                            dependencies: ['website.viewer'],
                             privileges: [],
                         },
                     },
@@ -1719,7 +1719,7 @@ describe('src/module/sw-users-permissions/components/sw-users-permissions-permis
                 },
                 {
                     category: 'permissions',
-                    key: 'sales_channel',
+                    key: 'website',
                     parent: null,
                     roles: {
                         viewer: {
@@ -1727,15 +1727,15 @@ describe('src/module/sw-users-permissions/components/sw-users-permissions-permis
                             privileges: [],
                         },
                         editor: {
-                            dependencies: ['sales_channel.viewer'],
+                            dependencies: ['website.viewer'],
                             privileges: [],
                         },
                         creator: {
-                            dependencies: ['sales_channel.viewer', 'sales_channel.editor'],
+                            dependencies: ['website.viewer', 'website.editor'],
                             privileges: [],
                         },
                         deleter: {
-                            dependencies: ['sales_channel.viewer'],
+                            dependencies: ['website.viewer'],
                             privileges: [],
                         },
                     },
@@ -1839,7 +1839,7 @@ describe('src/module/sw-users-permissions/components/sw-users-permissions-permis
                 },
                 {
                     category: 'permissions',
-                    key: 'sales_channel',
+                    key: 'website',
                     parent: null,
                     roles: {
                         viewer: {
@@ -1847,15 +1847,15 @@ describe('src/module/sw-users-permissions/components/sw-users-permissions-permis
                             privileges: [],
                         },
                         editor: {
-                            dependencies: ['sales_channel.viewer'],
+                            dependencies: ['website.viewer'],
                             privileges: [],
                         },
                         creator: {
-                            dependencies: ['sales_channel.viewer', 'sales_channel.editor'],
+                            dependencies: ['website.viewer', 'website.editor'],
                             privileges: [],
                         },
                         deleter: {
-                            dependencies: ['sales_channel.viewer'],
+                            dependencies: ['website.viewer'],
                             privileges: [],
                         },
                     },
@@ -1970,7 +1970,7 @@ describe('src/module/sw-users-permissions/components/sw-users-permissions-permis
                 },
                 {
                     category: 'permissions',
-                    key: 'sales_channel',
+                    key: 'website',
                     parent: null,
                     roles: {
                         viewer: {
@@ -1978,15 +1978,15 @@ describe('src/module/sw-users-permissions/components/sw-users-permissions-permis
                             privileges: [],
                         },
                         editor: {
-                            dependencies: ['sales_channel.viewer'],
+                            dependencies: ['website.viewer'],
                             privileges: [],
                         },
                         creator: {
-                            dependencies: ['sales_channel.viewer', 'sales_channel.editor'],
+                            dependencies: ['website.viewer', 'website.editor'],
                             privileges: [],
                         },
                         deleter: {
-                            dependencies: ['sales_channel.viewer'],
+                            dependencies: ['website.viewer'],
                             privileges: [],
                         },
                     },
@@ -2098,7 +2098,7 @@ describe('src/module/sw-users-permissions/components/sw-users-permissions-permis
                 },
                 {
                     category: 'permissions',
-                    key: 'sales_channel',
+                    key: 'website',
                     parent: null,
                     roles: {
                         viewer: {
@@ -2106,15 +2106,15 @@ describe('src/module/sw-users-permissions/components/sw-users-permissions-permis
                             privileges: [],
                         },
                         editor: {
-                            dependencies: ['sales_channel.viewer'],
+                            dependencies: ['website.viewer'],
                             privileges: [],
                         },
                         creator: {
-                            dependencies: ['sales_channel.viewer', 'sales_channel.editor'],
+                            dependencies: ['website.viewer', 'website.editor'],
                             privileges: [],
                         },
                         deleter: {
-                            dependencies: ['sales_channel.viewer'],
+                            dependencies: ['website.viewer'],
                             privileges: [],
                         },
                     },
@@ -2222,7 +2222,7 @@ describe('src/module/sw-users-permissions/components/sw-users-permissions-permis
                 },
                 {
                     category: 'permissions',
-                    key: 'sales_channel',
+                    key: 'website',
                     parent: null,
                     roles: {
                         viewer: {
@@ -2230,15 +2230,15 @@ describe('src/module/sw-users-permissions/components/sw-users-permissions-permis
                             privileges: [],
                         },
                         editor: {
-                            dependencies: ['sales_channel.viewer'],
+                            dependencies: ['website.viewer'],
                             privileges: [],
                         },
                         creator: {
-                            dependencies: ['sales_channel.viewer', 'sales_channel.editor'],
+                            dependencies: ['website.viewer', 'website.editor'],
                             privileges: [],
                         },
                         deleter: {
-                            dependencies: ['sales_channel.viewer'],
+                            dependencies: ['website.viewer'],
                             privileges: [],
                         },
                     },
@@ -2352,7 +2352,7 @@ describe('src/module/sw-users-permissions/components/sw-users-permissions-permis
                 },
                 {
                     category: 'permissions',
-                    key: 'sales_channel',
+                    key: 'website',
                     parent: null,
                     roles: {
                         viewer: {
@@ -2360,15 +2360,15 @@ describe('src/module/sw-users-permissions/components/sw-users-permissions-permis
                             privileges: [],
                         },
                         editor: {
-                            dependencies: ['sales_channel.viewer'],
+                            dependencies: ['website.viewer'],
                             privileges: [],
                         },
                         creator: {
-                            dependencies: ['sales_channel.viewer', 'sales_channel.editor'],
+                            dependencies: ['website.viewer', 'website.editor'],
                             privileges: [],
                         },
                         deleter: {
-                            dependencies: ['sales_channel.viewer'],
+                            dependencies: ['website.viewer'],
                             privileges: [],
                         },
                     },
@@ -2481,7 +2481,7 @@ describe('src/module/sw-users-permissions/components/sw-users-permissions-permis
                 },
                 {
                     category: 'permissions',
-                    key: 'sales_channel',
+                    key: 'website',
                     parent: null,
                     roles: {
                         viewer: {
@@ -2489,15 +2489,15 @@ describe('src/module/sw-users-permissions/components/sw-users-permissions-permis
                             privileges: [],
                         },
                         editor: {
-                            dependencies: ['sales_channel.viewer'],
+                            dependencies: ['website.viewer'],
                             privileges: [],
                         },
                         creator: {
-                            dependencies: ['sales_channel.viewer', 'sales_channel.editor'],
+                            dependencies: ['website.viewer', 'website.editor'],
                             privileges: [],
                         },
                         deleter: {
-                            dependencies: ['sales_channel.viewer'],
+                            dependencies: ['website.viewer'],
                             privileges: [],
                         },
                     },
@@ -2611,7 +2611,7 @@ describe('src/module/sw-users-permissions/components/sw-users-permissions-permis
                 },
                 {
                     category: 'permissions',
-                    key: 'sales_channel',
+                    key: 'website',
                     parent: null,
                     roles: {
                         viewer: {
@@ -2619,15 +2619,15 @@ describe('src/module/sw-users-permissions/components/sw-users-permissions-permis
                             privileges: [],
                         },
                         editor: {
-                            dependencies: ['sales_channel.viewer'],
+                            dependencies: ['website.viewer'],
                             privileges: [],
                         },
                         creator: {
-                            dependencies: ['sales_channel.viewer', 'sales_channel.editor'],
+                            dependencies: ['website.viewer', 'website.editor'],
                             privileges: [],
                         },
                         deleter: {
-                            dependencies: ['sales_channel.viewer'],
+                            dependencies: ['website.viewer'],
                             privileges: [],
                         },
                     },
@@ -2754,7 +2754,7 @@ describe('src/module/sw-users-permissions/components/sw-users-permissions-permis
                 },
                 {
                     category: 'permissions',
-                    key: 'sales_channel',
+                    key: 'website',
                     parent: null,
                     roles: {
                         viewer: {
@@ -2762,15 +2762,15 @@ describe('src/module/sw-users-permissions/components/sw-users-permissions-permis
                             privileges: [],
                         },
                         editor: {
-                            dependencies: ['sales_channel.viewer'],
+                            dependencies: ['website.viewer'],
                             privileges: [],
                         },
                         creator: {
-                            dependencies: ['sales_channel.viewer', 'sales_channel.editor'],
+                            dependencies: ['website.viewer', 'website.editor'],
                             privileges: [],
                         },
                         deleter: {
-                            dependencies: ['sales_channel.viewer'],
+                            dependencies: ['website.viewer'],
                             privileges: [],
                         },
                     },

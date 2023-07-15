@@ -77,15 +77,15 @@
         "localField": "id",
         "referenceField": "currencyId"
       },
-      "salesChannelDefaultAssignments": {
+      "websiteDefaultAssignments": {
         "type": "association",
         "relation": "one_to_many",
-        "entity": "sales_channel",
+        "entity": "website",
         "flags": {
           "restrict_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -100,34 +100,34 @@
           "restrict_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
         "localField": "id",
         "referenceField": "currencyId"
       },
-      "salesChannels": {
+      "websites": {
         "type": "association",
         "relation": "many_to_many",
-        "entity": "sales_channel",
+        "entity": "website",
         "flags": {
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         }
       },
-      "salesChannelDomains": {
+      "websiteDomains": {
         "type": "association",
         "relation": "one_to_many",
-        "entity": "sales_channel_domain",
+        "entity": "website_domain",
         "flags": {
           "restrict_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -152,7 +152,7 @@
           "restrict_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -370,41 +370,41 @@
         "localField": "id",
         "referenceField": "parentId"
       },
-      "salesChannels": {
+      "websites": {
         "type": "association",
         "relation": "many_to_many",
-        "entity": "sales_channel",
+        "entity": "website",
         "flags": {
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         }
       },
-      "salesChannelDefaultAssignments": {
+      "websiteDefaultAssignments": {
         "type": "association",
         "relation": "one_to_many",
-        "entity": "sales_channel",
+        "entity": "website",
         "flags": {
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
         "localField": "id",
         "referenceField": "languageId"
       },
-      "salesChannelDomains": {
+      "websiteDomains": {
         "type": "association",
         "relation": "one_to_many",
-        "entity": "sales_channel_domain",
+        "entity": "website_domain",
         "flags": {
           "restrict_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -419,7 +419,7 @@
           "restrict_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -434,7 +434,7 @@
           "restrict_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -449,7 +449,7 @@
           "restrict_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -464,7 +464,7 @@
           "cascade_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -479,7 +479,7 @@
           "cascade_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -494,7 +494,7 @@
           "cascade_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -509,7 +509,7 @@
           "cascade_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -524,7 +524,7 @@
           "cascade_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -539,7 +539,7 @@
           "cascade_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -554,7 +554,7 @@
           "cascade_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -569,7 +569,7 @@
           "cascade_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -584,7 +584,7 @@
           "cascade_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -599,7 +599,7 @@
           "cascade_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -614,7 +614,7 @@
           "cascade_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -629,7 +629,7 @@
           "cascade_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -644,7 +644,7 @@
           "cascade_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -659,37 +659,37 @@
           "cascade_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
         "localField": "id",
         "referenceField": "languageId"
       },
-      "salesChannelTranslations": {
+      "websiteTranslations": {
         "type": "association",
         "relation": "one_to_many",
-        "entity": "sales_channel_translation",
+        "entity": "website_translation",
         "flags": {
           "cascade_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
         "localField": "id",
         "referenceField": "languageId"
       },
-      "salesChannelTypeTranslations": {
+      "websiteTypeTranslations": {
         "type": "association",
         "relation": "one_to_many",
-        "entity": "sales_channel_type_translation",
+        "entity": "website_type_translation",
         "flags": {
           "cascade_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -704,7 +704,7 @@
           "cascade_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -719,7 +719,7 @@
           "cascade_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -734,7 +734,7 @@
           "cascade_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -749,7 +749,7 @@
           "cascade_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -764,7 +764,7 @@
           "cascade_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -779,7 +779,7 @@
           "cascade_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -794,7 +794,7 @@
           "cascade_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -809,7 +809,7 @@
           "cascade_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -824,7 +824,7 @@
           "cascade_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -839,7 +839,7 @@
           "cascade_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -854,7 +854,7 @@
           "cascade_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -869,7 +869,7 @@
           "cascade_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -884,7 +884,7 @@
           "cascade_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -899,7 +899,7 @@
           "cascade_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -914,7 +914,7 @@
           "cascade_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -929,7 +929,7 @@
           "cascade_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -944,7 +944,7 @@
           "cascade_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -959,7 +959,7 @@
           "cascade_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -974,7 +974,7 @@
           "cascade_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -989,7 +989,7 @@
           "cascade_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -1004,7 +1004,7 @@
           "cascade_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -1019,7 +1019,7 @@
           "cascade_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -1034,7 +1034,7 @@
           "cascade_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -1049,7 +1049,7 @@
           "cascade_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -1147,7 +1147,7 @@
           "restrict_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -1291,7 +1291,7 @@
           "required": true
         }
       },
-      "salesChannelId": {
+      "websiteId": {
         "type": "uuid",
         "flags": {
           "required": true
@@ -1525,18 +1525,18 @@
         "localField": "languageId",
         "referenceField": "id"
       },
-      "salesChannel": {
+      "website": {
         "type": "association",
         "relation": "many_to_one",
-        "entity": "sales_channel",
+        "entity": "website",
         "flags": {
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
-        "localField": "salesChannelId",
+        "localField": "websiteId",
         "referenceField": "id"
       },
       "addresses": {
@@ -1881,7 +1881,7 @@
           "search_ranking": 0.5,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -2780,7 +2780,7 @@
           "required": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         }
@@ -2854,7 +2854,7 @@
         "flags": {
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ],
           "inherited": true
@@ -2872,7 +2872,7 @@
         "flags": {
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         }
@@ -3029,7 +3029,7 @@
           "inherited": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         }
@@ -3049,7 +3049,7 @@
           "inherited": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         }
@@ -3061,7 +3061,7 @@
           "inherited": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         }
@@ -3209,7 +3209,7 @@
           "inherited": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -3256,7 +3256,7 @@
           "cascade_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -3272,7 +3272,7 @@
           "inherited": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -3287,7 +3287,7 @@
           "cascade_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -3330,7 +3330,7 @@
           "set_null_on_delete": true,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -3720,7 +3720,7 @@
         "flags": {
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -3937,19 +3937,19 @@
           "required": true
         }
       },
-      "frontendSalesChannelId": {
+      "frontendWebsiteId": {
         "type": "uuid",
         "flags": {
           "required": true
         }
       },
-      "salesChannelId": {
+      "websiteId": {
         "type": "uuid",
         "flags": {
           "required": true
         }
       },
-      "salesChannelDomainId": {
+      "websiteDomainId": {
         "type": "uuid",
         "flags": {
           "required": true
@@ -4035,28 +4035,28 @@
         "localField": "productStreamId",
         "referenceField": "id"
       },
-      "frontendSalesChannel": {
+      "frontendWebsite": {
         "type": "association",
         "relation": "many_to_one",
-        "entity": "sales_channel",
+        "entity": "website",
         "flags": [],
-        "localField": "frontendSalesChannelId",
+        "localField": "frontendWebsiteId",
         "referenceField": "id"
       },
-      "salesChannel": {
+      "website": {
         "type": "association",
         "relation": "many_to_one",
-        "entity": "sales_channel",
+        "entity": "website",
         "flags": [],
-        "localField": "salesChannelId",
+        "localField": "websiteId",
         "referenceField": "id"
       },
-      "salesChannelDomain": {
+      "websiteDomain": {
         "type": "association",
         "relation": "many_to_one",
-        "entity": "sales_channel_domain",
+        "entity": "website_domain",
         "flags": [],
-        "localField": "salesChannelDomainId",
+        "localField": "websiteDomainId",
         "referenceField": "id"
       },
       "currency": {
@@ -4588,7 +4588,7 @@
         "flags": {
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -4679,7 +4679,7 @@
         "type": "uuid",
         "flags": []
       },
-      "salesChannelId": {
+      "websiteId": {
         "type": "uuid",
         "flags": {
           "required": true
@@ -4697,7 +4697,7 @@
           "search_ranking": 250,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         }
@@ -4708,7 +4708,7 @@
           "search_ranking": 250,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         }
@@ -4768,25 +4768,25 @@
           "search_ranking": 250,
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
         "localField": "customerId",
         "referenceField": "id"
       },
-      "salesChannel": {
+      "website": {
         "type": "association",
         "relation": "many_to_one",
-        "entity": "sales_channel",
+        "entity": "website",
         "flags": {
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
-        "localField": "salesChannelId",
+        "localField": "websiteId",
         "referenceField": "id"
       },
       "language": {
@@ -4796,7 +4796,7 @@
         "flags": {
           "read_protected": [
             [
-              "Shuwei\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
+              "Shuwei\\Core\\Framework\\Api\\Context\\WebsiteApiSource"
             ]
           ]
         },
@@ -5429,7 +5429,7 @@
           "required": true
         }
       },
-      "salesChannelId": {
+      "websiteId": {
         "type": "uuid",
         "flags": {
           "required": true
@@ -5441,12 +5441,12 @@
           "required": true
         }
       },
-      "salesChannel": {
+      "website": {
         "type": "association",
         "relation": "many_to_one",
-        "entity": "sales_channel",
+        "entity": "website",
         "flags": [],
-        "localField": "salesChannelId",
+        "localField": "websiteId",
         "referenceField": "id"
       },
       "product": {

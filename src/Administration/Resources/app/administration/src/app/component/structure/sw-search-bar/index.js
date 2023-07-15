@@ -232,8 +232,8 @@ Component.register('sw-search-bar', {
 
             this.userSearchPreference = await this.searchRankingService.getUserSearchPreference();
 
-            if (this.canCreateSalesChannels) {
-                await this.loadSalesChannelType();
+            if (this.canCreateWebsites) {
+                await this.loadWebsiteType();
             }
         },
 
@@ -817,7 +817,7 @@ Component.register('sw-search-bar', {
                 );
             });
 
-            moduleEntities.push(...this.getSalesChannelTypesBySearchTerm(regex));
+            moduleEntities.push(...this.getWebsiteTypesBySearchTerm(regex));
 
             return moduleEntities.slice(0, limit);
         },

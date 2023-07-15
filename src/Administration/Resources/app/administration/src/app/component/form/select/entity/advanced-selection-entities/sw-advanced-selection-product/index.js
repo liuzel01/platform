@@ -100,7 +100,7 @@ Component.register('sw-advanced-selection-product', {
                 },
                 {
                     property: 'visibilities',
-                    dataIndex: 'visibilities.salesChannel',
+                    dataIndex: 'visibilities.website',
                     label: this.$tc('sw-product.list.columnVisibilities'),
                     allowResize: true,
                     sortable: false,
@@ -152,9 +152,9 @@ Component.register('sw-advanced-selection-product', {
                     placeholder: this.$tc('sw-product.filters.manufacturerFilter.placeholder'),
                 },
                 'visibilities-filter': {
-                    property: 'visibilities.salesChannel',
-                    label: this.$tc('sw-product.filters.salesChannelsFilter.label'),
-                    placeholder: this.$tc('sw-product.filters.salesChannelsFilter.placeholder'),
+                    property: 'visibilities.website',
+                    label: this.$tc('sw-product.filters.websitesFilter.label'),
+                    placeholder: this.$tc('sw-product.filters.websitesFilter.placeholder'),
                 },
                 'categories-filter': {
                     property: 'categories',
@@ -200,7 +200,7 @@ Component.register('sw-advanced-selection-product', {
                 'media',
                 'manufacturer',
                 'options.group',
-                'visibilities.salesChannel',
+                'visibilities.website',
                 'categories',
                 'tags',
             ];

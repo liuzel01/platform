@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Shuwei\Core\System\Country\SalesChannel;
+namespace Shuwei\Core\System\Country\Website;
 
 use Shuwei\Core\Framework\Adapter\Cache\AbstractCacheTracer;
 use Shuwei\Core\Framework\Adapter\Cache\CacheValueCompressor;
@@ -10,8 +10,8 @@ use Shuwei\Core\Framework\Log\Package;
 use Shuwei\Core\Framework\Util\Json;
 use Shuwei\Core\System\Country\Event\CountryRouteCacheKeyEvent;
 use Shuwei\Core\System\Country\Event\CountryRouteCacheTagsEvent;
-use Shuwei\Core\System\SalesChannel\SalesChannelContext;
-use Shuwei\Core\System\SalesChannel\StoreApiResponse;
+use Shuwei\Core\System\Website\WebsiteContext;
+use Shuwei\Core\System\Website\StoreApiResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Cache\CacheInterface;
@@ -46,7 +46,7 @@ class CachedCountryRoute extends AbstractCountryRoute
     }
 
     #[Route(path: '/store-api/country', name: 'store-api.country', methods: ['GET', 'POST'], defaults: ['_entity' => 'country'])]
-    public function load(Request $request, Criteria $criteria, SalesChannelContext $context): CountryRouteResponse
+    public function load(Request $request, Criteria $criteria, WebsiteContext $context): CountryRouteResponse
     {
         if ($context->hasState(...$this->states)) {
             return $this->getDecorated()->load($request, $criteria, $context);
@@ -59,7 +59,7 @@ class CachedCountryRoute extends AbstractCountryRoute
         }
 
         $value = $this->cache->get($key, function (ItemInterface $item) use ($request, $context, $criteria) {
-            $name = self::buildName($context->getSalesChannelId());
+            $name = self::buildName($context->getWebsiteId());
 
             $response = $this->tracer->trace($name, fn () => $this->getDecorated()->load($request, $criteria, $context));
 
@@ -76,11 +76,11 @@ class CachedCountryRoute extends AbstractCountryRoute
         return $this->decorated;
     }
 
-    private function generateKey(Request $request, SalesChannelContext $context, Criteria $criteria): ?string
+    private function generateKey(Request $request, WebsiteContext $context, Criteria $criteria): ?string
     {
         $parts = [
             $this->generator->getCriteriaHash($criteria),
-            $this->generator->getSalesChannelContextHash($context),
+            $this->generator->getWebsiteContextHash($context),
         ];
 
         $event = new CountryRouteCacheKeyEvent($parts, $request, $context, $criteria);
@@ -90,17 +90,17 @@ class CachedCountryRoute extends AbstractCountryRoute
             return null;
         }
 
-        return self::buildName($context->getSalesChannelId()) . '-' . md5(Json::encode($event->getParts()));
+        return self::buildName($context->getWebsiteId()) . '-' . md5(Json::encode($event->getParts()));
     }
 
     /**
      * @return array<string>
      */
-    private function generateTags(Request $request, StoreApiResponse $response, SalesChannelContext $context, Criteria $criteria): array
+    private function generateTags(Request $request, StoreApiResponse $response, WebsiteContext $context, Criteria $criteria): array
     {
         $tags = array_merge(
-            $this->tracer->get(self::buildName($context->getSalesChannelId())),
-            [self::buildName($context->getSalesChannelId()), self::ALL_TAG]
+            $this->tracer->get(self::buildName($context->getWebsiteId())),
+            [self::buildName($context->getWebsiteId()), self::ALL_TAG]
         );
 
         $event = new CountryRouteCacheTagsEvent($tags, $request, $response, $context, $criteria);

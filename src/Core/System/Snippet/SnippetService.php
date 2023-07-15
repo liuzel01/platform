@@ -166,24 +166,24 @@ class SnippetService
     /**
      * @decrecated tag:v6.6.0 - will be removed, use findSnippetSetId instead
      */
-    public function getSnippetSet(string $salesChannelId, string $languageId, string $locale, Context $context): ?SnippetSetEntity
+    public function getSnippetSet(string $websiteId, string $languageId, string $locale, Context $context): ?SnippetSetEntity
     {
         $criteria = new Criteria();
         $criteria->addFilter(
-            new EqualsFilter('salesChannelId', $salesChannelId),
+            new EqualsFilter('websiteId', $websiteId),
             new EqualsFilter('languageId', $languageId)
         );
         $criteria->addAssociation('snippetSet');
 
-        /** @var SalesChannelDomainEntity|null $salesChannelDomain */
-        $salesChannelDomain = $this->salesChannelDomain->search($criteria, $context)->first();
+        /** @var WebsiteDomainEntity|null $websiteDomain */
+        $websiteDomain = $this->websiteDomain->search($criteria, $context)->first();
 
-        if ($salesChannelDomain === null) {
+        if ($websiteDomain === null) {
             $criteria = new Criteria();
             $criteria->addFilter(new EqualsFilter('iso', $locale));
             $snippetSet = $this->snippetSetRepository->search($criteria, $context)->first();
         } else {
-            $snippetSet = $salesChannelDomain->getSnippetSet();
+            $snippetSet = $websiteDomain->getSnippetSet();
         }
 
         return $snippetSet;
@@ -251,13 +251,13 @@ class SnippetService
     /**
      * @return list<string>
      */
-    private function getUsedThemes(?string $salesChannelId = null): array
+    private function getUsedThemes(?string $websiteId = null): array
     {
-        if (!$salesChannelId || $this->salesChannelThemeLoader === null) {
+        if (!$websiteId || $this->websiteThemeLoader === null) {
             return [FrontendPluginRegistry::BASE_THEME_NAME];
         }
 
-        $saleChannelThemes = $this->salesChannelThemeLoader->load($salesChannelId);
+        $saleChannelThemes = $this->websiteThemeLoader->load($websiteId);
 
         $usedThemes = array_filter([
             $saleChannelThemes['themeName'] ?? null,

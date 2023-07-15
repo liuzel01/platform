@@ -39,7 +39,7 @@ class ExtensionLifecycleServiceTest extends TestCase
 
     private ?EntityRepository $themeRepository;
 
-    private EntityRepository $salesChannelRepository;
+    private EntityRepository $websiteRepository;
 
     private Context $context;
 
@@ -50,7 +50,7 @@ class ExtensionLifecycleServiceTest extends TestCase
         $this->appRepository = $this->getContainer()->get('app.repository');
         $this->pluginRepository = $this->getContainer()->get('plugin.repository');
         $this->themeRepository = $this->getContainer()->get('theme.repository', ContainerInterface::NULL_ON_INVALID_REFERENCE);
-        $this->salesChannelRepository = $this->getContainer()->get('sales_channel.repository');
+        $this->websiteRepository = $this->getContainer()->get('website.repository');
         $this->context = new Context(new SystemSource(), [], Defaults::CURRENCY, [Defaults::LANGUAGE_SYSTEM]);
     }
 
@@ -184,11 +184,11 @@ class ExtensionLifecycleServiceTest extends TestCase
             $this->context
         )->first();
 
-        $defaultSalesChannelId = $this->salesChannelRepository->searchIds(new Criteria(), $this->context)
+        $defaultWebsiteId = $this->websiteRepository->searchIds(new Criteria(), $this->context)
             ->firstId();
 
-        $this->salesChannelRepository->update([[
-            'id' => $defaultSalesChannelId,
+        $this->websiteRepository->update([[
+            'id' => $defaultWebsiteId,
             'themes' => [
                 ['id' => $theme->getId()],
             ],
@@ -227,11 +227,11 @@ class ExtensionLifecycleServiceTest extends TestCase
             'parentThemeId' => $theme->getId(),
         ]], $this->context);
 
-        $defaultSalesChannelId = $this->salesChannelRepository->searchIds(new Criteria(), $this->context)
+        $defaultWebsiteId = $this->websiteRepository->searchIds(new Criteria(), $this->context)
             ->firstId();
 
-        $this->salesChannelRepository->update([[
-            'id' => $defaultSalesChannelId,
+        $this->websiteRepository->update([[
+            'id' => $defaultWebsiteId,
             'themes' => [
                 ['id' => $childThemeId],
             ],
@@ -258,11 +258,11 @@ class ExtensionLifecycleServiceTest extends TestCase
 
         $themeCriteria = new Criteria();
         $themeCriteria->addFilter(new EqualsFilter('technicalName', 'TestAppTheme'))
-            ->addAssociation('salesChannels');
+            ->addAssociation('websites');
 
         $theme = $themeRepo->search($themeCriteria, $this->context)->first();
 
-        static::assertEquals(0, $theme->getSalesChannels()->count());
+        static::assertEquals(0, $theme->getWebsites()->count());
 
         $this->lifecycleService->uninstall(
             'type',

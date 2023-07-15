@@ -6,7 +6,7 @@ use Shuwei\Core\Framework\DataAbstractionLayer\Entity;
 use Shuwei\Core\Framework\DataAbstractionLayer\EntityCustomFieldsTrait;
 use Shuwei\Core\Framework\DataAbstractionLayer\EntityIdTrait;
 use Shuwei\Core\Framework\Log\Package;
-use Shuwei\Core\System\SalesChannel\Aggregate\SalesChannelDomain\SalesChannelDomainCollection;
+use Shuwei\Core\System\Website\Aggregate\WebsiteDomain\WebsiteDomainCollection;
 use Shuwei\Core\System\Snippet\SnippetCollection;
 
 #[Package('system-settings')]
@@ -36,9 +36,9 @@ class SnippetSetEntity extends Entity
     protected $snippets;
 
     /**
-     * @var SalesChannelDomainCollection|null
+     * @var WebsiteDomainCollection|null
      */
-    protected $salesChannelDomains;
+    protected $websiteDomains;
 
     public function getName(): string
     {
@@ -80,13 +80,13 @@ class SnippetSetEntity extends Entity
         $this->snippets = $snippets;
     }
 
-    public function getSalesChannelDomains(): ?SalesChannelDomainCollection
+    public function getWebsiteDomains(): ?WebsiteDomainCollection
     {
-        return $this->salesChannelDomains;
+        return $this->websiteDomains;
     }
 
-    public function setSalesChannelDomains(SalesChannelDomainCollection $salesChannelDomains): void
+    public function setWebsiteDomains(WebsiteDomainCollection $websiteDomains): void
     {
-        $this->salesChannelDomains = $salesChannelDomains;
+        $this->websiteDomains = $websiteDomains;
     }
 }

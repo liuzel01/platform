@@ -54,8 +54,8 @@ export default {
                     },
                 },
                 {
-                    label: this.$tc('sw-settings-custom-field.customField.entity.salesChannel'),
-                    value: 'sales_channel',
+                    label: this.$tc('sw-settings-custom-field.customField.entity.website'),
+                    value: 'website',
                 },
                 {
                     label: this.$tc('sw-settings-custom-field.customField.entity.manufacturer'),

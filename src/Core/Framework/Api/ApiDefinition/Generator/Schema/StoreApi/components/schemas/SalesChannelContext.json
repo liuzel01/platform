@@ -4,7 +4,7 @@
     "paths": [],
     "components": {
         "schemas": {
-            "SalesChannelContext": {
+            "WebsiteContext": {
                 "allOf": [
                     {
                         "$ref": "#\/components\/schemas\/ArrayStruct"
@@ -72,7 +72,7 @@
                                     }
                                 }
                             },
-                            "salesChannel": {
+                            "website": {
                                 "description": "Information about the current sales channel",
                                 "type": "object",
                                 "properties": {
@@ -168,7 +168,7 @@
                                     "defaultPaymentMethodId": {
                                         "type": "string"
                                     },
-                                    "salesChannelId": {
+                                    "websiteId": {
                                         "type": "string"
                                     },
                                     "languageId": {

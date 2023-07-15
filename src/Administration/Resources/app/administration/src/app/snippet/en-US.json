@@ -94,7 +94,7 @@
           "message": "Media indexed. | One medium remaining ... | {n} media remaining...",
           "messageSuccess": "Media have been indexed."
         },
-        "salesChannel": {
+        "website": {
           "title": "Indexing Sales Channels",
           "message": "Sales Channel indexed. | One Sales Channel remaining... | {n} Sales Channels remaining...",
           "messageSuccess": "Sales Channels have been indexed."
@@ -637,7 +637,7 @@
         },
         "placeholder": "Search conditions...",
         "orderCountRule": "Quantity of completed orders",
-        "salesChannelRule": "Sales Channel",
+        "websiteRule": "Sales Channel",
         "currencyRule": "Currency",
         "languageRule": "Language",
         "customerIsActiveRule": "Customer is active",
@@ -1004,8 +1004,8 @@
       "promotion_persona_rule": "Promotion target group | Promotion target groups",
       "rule": "Rule | Rules",
       "rule_condition": "Condition | Conditions",
-      "sales_channel": "Sales Channel | Sales Channels",
-      "sales_channel_type": "Sales Channel type | Sales Channel types",
+      "website": "Sales Channel | Sales Channels",
+      "website_type": "Sales Channel type | Sales Channel types",
       "salutation": "Salutation | Salutations",
       "seo_url": "SEO URL | SEO URLs",
       "shipping_method": "Shipping method | Shipping methods",

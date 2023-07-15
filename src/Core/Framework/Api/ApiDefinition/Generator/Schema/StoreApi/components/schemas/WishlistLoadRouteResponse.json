@@ -13,7 +13,7 @@
                             "customerId": {
                                 "type": "string"
                             },
-                            "salesChannelId": {
+                            "websiteId": {
                                 "type": "string"
                             }
                         }

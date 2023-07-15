@@ -265,7 +265,7 @@ class SystemConfigControllerTest extends TestCase
         yield 'inherit flag not set' => [
             new Request([
                 'domain' => 'dummy domain',
-                'salesChannelId' => 'dummy sales channel',
+                'websiteId' => 'dummy sales channel',
             ]),
             false,
         ];
@@ -273,7 +273,7 @@ class SystemConfigControllerTest extends TestCase
         yield 'inherit flag set to false' => [
             new Request([
                 'domain' => 'dummy domain',
-                'salesChannelId' => 'dummy sales channel',
+                'websiteId' => 'dummy sales channel',
                 'inherit' => false,
             ]),
             false,
@@ -282,7 +282,7 @@ class SystemConfigControllerTest extends TestCase
         yield 'inherit flag set to true' => [
             new Request([
                 'domain' => 'dummy domain',
-                'salesChannelId' => 'dummy sales channel',
+                'websiteId' => 'dummy sales channel',
                 'inherit' => true,
             ]),
             true,

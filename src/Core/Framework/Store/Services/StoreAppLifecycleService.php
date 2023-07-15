@@ -32,7 +32,7 @@ class StoreAppLifecycleService extends AbstractStoreAppLifecycleService
         private readonly AbstractAppLoader $appLoader,
         private readonly AbstractAppLifecycle $appLifecycle,
         private readonly EntityRepository $appRepository,
-        private readonly EntityRepository $salesChannelRepository,
+        private readonly EntityRepository $websiteRepository,
         private readonly ?EntityRepository $themeRepository,
         private readonly AppStateService $appStateService,
         private readonly AppConfirmationDeltaProvider $appDeltaService
@@ -179,7 +179,7 @@ class StoreAppLifecycleService extends AbstractStoreAppLifecycleService
             )
         );
 
-        $aggregates = $this->salesChannelRepository->aggregate($criteria, $context);
+        $aggregates = $this->websiteRepository->aggregate($criteria, $context);
 
         /** @var TermsResult $directlyAssigned */
         $directlyAssigned = $aggregates->get('assigned_theme');

@@ -54,6 +54,6 @@ final class MemoizedSystemConfigStore implements EventSubscriberInterface, Reset
 
     private function getKey(): string
     {
-        return $salesChannelId ?? '_global_';
+        return $websiteId ?? '_global_';
     }
 }

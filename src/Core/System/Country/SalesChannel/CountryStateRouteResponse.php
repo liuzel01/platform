@@ -1,11 +1,11 @@
 <?php declare(strict_types=1);
 
-namespace Shuwei\Core\System\Country\SalesChannel;
+namespace Shuwei\Core\System\Country\Website;
 
 use Shuwei\Core\Framework\DataAbstractionLayer\Search\EntitySearchResult;
 use Shuwei\Core\Framework\Log\Package;
 use Shuwei\Core\System\Country\Aggregate\CountryState\CountryStateCollection;
-use Shuwei\Core\System\SalesChannel\StoreApiResponse;
+use Shuwei\Core\System\Website\StoreApiResponse;
 
 #[Package('system-settings')]
 class CountryStateRouteResponse extends StoreApiResponse

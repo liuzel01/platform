@@ -85,7 +85,7 @@
                                 }
                             }
                         },
-                        "salesChannelDefaultAssignments": {
+                        "websiteDefaultAssignments": {
                             "type": "array",
                             "items": {
                                 "type": "object",
@@ -154,7 +154,7 @@
                                 }
                             }
                         },
-                        "salesChannels": {
+                        "websites": {
                             "type": "array",
                             "items": {
                                 "type": "object",

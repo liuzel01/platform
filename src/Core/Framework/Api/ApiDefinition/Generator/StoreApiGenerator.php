@@ -56,7 +56,7 @@ class StoreApiGenerator implements ApiDefinitionGeneratorInterface
         $openApi = new OpenApi([]);
         $this->openApiBuilder->enrich($openApi, $api);
 
-        $forSalesChannel = $api === DefinitionService::STORE_API;
+        $forWebsite = $api === DefinitionService::STORE_API;
 
         ksort($definitions);
 
@@ -69,9 +69,9 @@ class StoreApiGenerator implements ApiDefinitionGeneratorInterface
                 continue;
             }
 
-            $onlyReference = $this->shouldIncludeReferenceOnly($definition, $forSalesChannel);
+            $onlyReference = $this->shouldIncludeReferenceOnly($definition, $forWebsite);
 
-            $schema = $this->definitionSchemaBuilder->getSchemaByDefinition($definition, $this->getResourceUri($definition), $forSalesChannel, $onlyReference);
+            $schema = $this->definitionSchemaBuilder->getSchemaByDefinition($definition, $this->getResourceUri($definition), $forWebsite, $onlyReference);
 
             $openApi->components->merge($schema);
         }
@@ -118,7 +118,7 @@ class StoreApiGenerator implements ApiDefinitionGeneratorInterface
         return true;
     }
 
-    private function shouldIncludeReferenceOnly(EntityDefinition $definition, bool $forSalesChannel): bool
+    private function shouldIncludeReferenceOnly(EntityDefinition $definition, bool $forWebsite): bool
     {
         $class = new \ReflectionClass($definition);
         if ($class->isSubclassOf(MappingEntityDefinition::class)) {

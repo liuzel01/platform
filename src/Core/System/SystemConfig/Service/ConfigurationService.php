@@ -86,7 +86,7 @@ class ConfigurationService
     /**
      * @return array<mixed>
      */
-    public function getResolvedConfiguration(string $domain, Context $context, ?string $salesChannelId = null): array
+    public function getResolvedConfiguration(string $domain, Context $context, ?string $websiteId = null): array
     {
         $config = [];
         if ($this->checkConfiguration($domain, $context)) {
@@ -94,7 +94,7 @@ class ConfigurationService
                 $config,
                 $this->enrichValues(
                     $this->getConfiguration($domain, $context),
-                    $salesChannelId
+                    $websiteId
                 )
             );
         }
@@ -134,7 +134,7 @@ class ConfigurationService
      *
      * @return array<mixed>
      */
-    private function enrichValues(array $config, ?string $salesChannelId): array
+    private function enrichValues(array $config, ?string $websiteId): array
     {
         foreach ($config as &$card) {
             if (!\is_array($card['elements'] ?? false)) {
@@ -144,7 +144,7 @@ class ConfigurationService
             foreach ($card['elements'] as &$element) {
                 $element['value'] = $this->systemConfigService->get(
                     $element['name'],
-                    $salesChannelId
+                    $websiteId
                 ) ?? $element['config']['defaultValue'] ?? '';
             }
         }

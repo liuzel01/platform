@@ -39,7 +39,7 @@
             <tag name="shuwei.rule.definition"/>
         </service>
 
-        <service id="Shuwei\Core\Framework\Rule\SalesChannelRule">
+        <service id="Shuwei\Core\Framework\Rule\WebsiteRule">
             <tag name="shuwei.rule.definition"/>
         </service>
 

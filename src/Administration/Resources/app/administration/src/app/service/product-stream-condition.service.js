@@ -36,9 +36,9 @@ export default function conditionService() {
         ],
         product_visibility: [
             'id',
-            'salesChannel',
+            'website',
         ],
-        sales_channel: [
+        website: [
             'id',
         ],
         product: [

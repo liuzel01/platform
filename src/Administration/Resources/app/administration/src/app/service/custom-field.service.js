@@ -102,7 +102,7 @@ export default function createCustomFieldService() {
         'customer',
         'customer_address',
         'order',
-        'sales_channel',
+        'website',
         'media',
         'landing_page',
         'promotion',
