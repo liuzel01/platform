@@ -62,7 +62,7 @@
                                 "required": [
                                     "email",
                                     "option",
-                                    "storefrontUrl"
+                                    "frontendUrl"
                                 ],
                                 "properties": {
                                     "email": {
@@ -72,8 +72,8 @@
                                     "option": {
                                         "description": "Defines what should be done."
                                     },
-                                    "storefrontUrl": {
-                                        "description": "Url of the storefront of the shop. This will be used for generating the link to the /newsletter/confirm inside the confirm email.",
+                                    "frontendUrl": {
+                                        "description": "Url of the frontend of the shop. This will be used for generating the link to the /newsletter/confirm inside the confirm email.",
                                         "type": "string"
                                     },
                                     "salutationId": {

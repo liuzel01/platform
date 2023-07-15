@@ -43,7 +43,7 @@ class AdministrationController extends AbstractController
 {
     private readonly bool $esAdministrationEnabled;
 
-    private readonly bool $esStorefrontEnabled;
+    private readonly bool $esFrontendEnabled;
 
     /**
      * @internal
@@ -68,7 +68,7 @@ class AdministrationController extends AbstractController
         $this->esAdministrationEnabled = $params->has('elasticsearch.administration.enabled')
             ? $params->get('elasticsearch.administration.enabled')
             : false;
-        $this->esStorefrontEnabled = $params->has('elasticsearch.enabled')
+        $this->esFrontendEnabled = $params->has('elasticsearch.enabled')
             ? $params->get('elasticsearch.enabled')
             : false;
     }
@@ -88,7 +88,7 @@ class AdministrationController extends AbstractController
             'apiVersion' => $this->getLatestApiVersion(),
             'cspNonce' => $request->attributes->get(PlatformRequest::ATTRIBUTE_CSP_NONCE),
             'adminEsEnable' => $this->esAdministrationEnabled,
-            'storefrontEsEnable' => $this->esStorefrontEnabled,
+            'frontendEsEnable' => $this->esFrontendEnabled,
         ]);
     }
 

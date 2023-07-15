@@ -52,9 +52,9 @@ class SnippetValidator implements SnippetValidatorInterface
     {
         $deprecatedFiles = $this->findDeprecatedSnippetFiles();
         $administrationFiles = $this->snippetFileHandler->findAdministrationSnippetFiles();
-        $storefrontSnippetFiles = $this->snippetFileHandler->findStorefrontSnippetFiles();
+        $frontendSnippetFiles = $this->snippetFileHandler->findFrontendSnippetFiles();
 
-        return $this->hydrateFiles(array_merge($deprecatedFiles, $administrationFiles, $storefrontSnippetFiles));
+        return $this->hydrateFiles(array_merge($deprecatedFiles, $administrationFiles, $frontendSnippetFiles));
     }
 
     /**

@@ -3,7 +3,7 @@
 namespace Shuwei\Core\Framework\DependencyInjection\CompilerPass;
 
 use Shuwei\Core\Framework\Log\Package;
-use Shuwei\Storefront\Theme\ThemeCompiler;
+use Shuwei\Frontend\Theme\ThemeCompiler;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;

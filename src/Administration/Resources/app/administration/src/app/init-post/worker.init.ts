@@ -175,7 +175,7 @@ function registerThumbnailMiddleware(factory: typeof WorkerNotificationFactory) 
     });
 
     factory.register('WarmupIndexingMessage', {
-        name: 'Shuwei\\Storefront\\Framework\\Cache\\CacheWarmer\\WarmUpMessage',
+        name: 'Shuwei\\Frontend\\Framework\\Cache\\CacheWarmer\\WarmUpMessage',
         fn: function middleware(next, { entry, $root, notification }) {
             messageQueueNotification('warmupMessage', ids, next, entry, $root, notification, {
                 title: 'global.default.success',

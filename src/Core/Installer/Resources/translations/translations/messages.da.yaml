@@ -125,7 +125,7 @@ shuwei.installer:
     finish_info: 'Du har installeret Shuwei!'
     finish_info_heading: Hurra!
     finish_first_steps: '”Kom godt i gang” guide'
-    finish_frontend: 'Til Storefront'
+    finish_frontend: 'Til Frontend'
     finish_backend: 'Til Administration'
     finish_message: "
         <p>

@@ -764,7 +764,7 @@
             },
             "title": "Sales channel context"
         },
-        "storefront": {
+        "frontend": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
@@ -909,7 +909,7 @@
                     "title": "Theme loader configuration"
                 }
             },
-            "title": "Storefront bundle configuration"
+            "title": "Frontend bundle configuration"
         },
         "elasticsearch": {
             "title": "Elasticsearch",

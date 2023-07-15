@@ -46,27 +46,27 @@ class MigrationCollectionFactory
     {
         if (file_exists($this->projectDir . '/platform/src/Core/schema.sql')) {
             $coreBasePath = $this->projectDir . '/platform/src/Core';
-            $storefrontBasePath = $this->projectDir . '/platform/src/Storefront';
+            $frontendBasePath = $this->projectDir . '/platform/src/Frontend';
             $adminBasePath = $this->projectDir . '/platform/src/Administration';
         } elseif (file_exists($this->projectDir . '/src/Core/schema.sql')) {
             $coreBasePath = $this->projectDir . '/src/Core';
-            $storefrontBasePath = $this->projectDir . '/src/Storefront';
+            $frontendBasePath = $this->projectDir . '/src/Frontend';
             $adminBasePath = $this->projectDir . '/src/Administration';
         } else {
             $coreBasePath = $this->projectDir . '/vendor/shuwei/core';
-            $storefrontBasePath = $this->projectDir . '/vendor/shuwei/storefront';
+            $frontendBasePath = $this->projectDir . '/vendor/shuwei/frontend';
             $adminBasePath = $this->projectDir . '/vendor/shuwei/administration';
         }
 
-        $hasStorefrontMigrations = is_dir($storefrontBasePath);
+        $hasFrontendMigrations = is_dir($frontendBasePath);
         $hasAdminMigrations = is_dir($adminBasePath);
 
         $source = new MigrationSource('core.' . $version, [
             sprintf('%s/Migration/%s', $coreBasePath, $version) => sprintf('Shuwei\\Core\\Migration\\%s', $version),
         ]);
 
-        if ($hasStorefrontMigrations) {
-            $source->addDirectory(sprintf('%s/Migration/%s', $storefrontBasePath, $version), sprintf('Shuwei\\Storefront\\Migration\\%s', $version));
+        if ($hasFrontendMigrations) {
+            $source->addDirectory(sprintf('%s/Migration/%s', $frontendBasePath, $version), sprintf('Shuwei\\Frontend\\Migration\\%s', $version));
         }
 
         if ($hasAdminMigrations) {

@@ -34,7 +34,7 @@ class SnippetService
         private readonly SnippetFilterFactory $snippetFilterFactory,
         /**
          * The "kernel" service is synthetic, it needs to be set at boot time before it can be used.
-         * We need to get StorefrontPluginRegistry service from service_container lazily because it depends on kernel service.
+         * We need to get FrontendPluginRegistry service from service_container lazily because it depends on kernel service.
          */
         private readonly ContainerInterface $container,
     ) {
@@ -254,7 +254,7 @@ class SnippetService
     private function getUsedThemes(?string $salesChannelId = null): array
     {
         if (!$salesChannelId || $this->salesChannelThemeLoader === null) {
-            return [StorefrontPluginRegistry::BASE_THEME_NAME];
+            return [FrontendPluginRegistry::BASE_THEME_NAME];
         }
 
         $saleChannelThemes = $this->salesChannelThemeLoader->load($salesChannelId);
@@ -267,7 +267,7 @@ class SnippetService
         /** @var list<string> */
         return array_values(array_unique([
             ...$usedThemes,
-            StorefrontPluginRegistry::BASE_THEME_NAME, // Storefront snippets should always be loaded
+            FrontendPluginRegistry::BASE_THEME_NAME, // Frontend snippets should always be loaded
         ]));
     }
 

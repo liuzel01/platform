@@ -9,6 +9,6 @@ if [[ -e "${BIN_DIR}/build-administration.sh" ]]; then
   "${BIN_DIR}/build-administration.sh"
 fi
 
-if [[ -e "${BIN_DIR}/build-storefront.sh" ]]; then
-  "${BIN_DIR}/build-storefront.sh"
+if [[ -e "${BIN_DIR}/build-frontend.sh" ]]; then
+  "${BIN_DIR}/build-frontend.sh"
 fi

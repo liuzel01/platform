@@ -3,7 +3,7 @@
 namespace SwagTestTheme;
 
 use Shuwei\Core\Framework\Plugin;
-use Shuwei\Storefront\Framework\ThemeInterface;
+use Shuwei\Frontend\Framework\ThemeInterface;
 
 class SwagTestTheme extends Plugin implements ThemeInterface
 {

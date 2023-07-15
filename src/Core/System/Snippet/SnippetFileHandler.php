@@ -4,7 +4,7 @@ namespace Shuwei\Core\System\Snippet;
 
 use Shuwei\Administration\Administration;
 use Shuwei\Core\Framework\Log\Package;
-use Shuwei\Storefront\Storefront;
+use Shuwei\Frontend\Frontend;
 use Symfony\Component\Finder\Finder;
 
 #[Package('system-settings')]
@@ -38,9 +38,9 @@ class SnippetFileHandler
         return $this->findSnippetFilesByPath($bundleDir . '/Resources/app/*/src/');
     }
 
-    public function findStorefrontSnippetFiles(): array
+    public function findFrontendSnippetFiles(): array
     {
-        if (!($bundleDir = $this->getBundleDir(Storefront::class))) {
+        if (!($bundleDir = $this->getBundleDir(Frontend::class))) {
             return [];
         }
 

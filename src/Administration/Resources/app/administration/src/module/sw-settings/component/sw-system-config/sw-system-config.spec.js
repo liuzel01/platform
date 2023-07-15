@@ -133,9 +133,9 @@ async function createWrapper(defaultValues = {}) {
                         if (entity === 'sales_channel') {
                             return Promise.resolve(createEntityCollection([
                                 {
-                                    name: 'Storefront',
-                                    translated: { name: 'Storefront' },
-                                    id: uuid.get('storefront'),
+                                    name: 'Frontend',
+                                    translated: { name: 'Frontend' },
+                                    id: uuid.get('frontend'),
                                 },
                                 {
                                     name: 'Headless',

@@ -19,15 +19,15 @@ cd "$PROJECT_ROOT" || exit
 jq -c '.[]' "var/plugins.json" | while read -r config; do
   srcPath=$(echo "$config" | jq -r '.basePath')
   adminPath=$(echo "$config" | jq -r '(.basePath + .administration.path)')
-  storefrontPath=$(echo "$config" | jq -r '(.basePath + .storefront.path)')
+  frontendPath=$(echo "$config" | jq -r '(.basePath + .frontend.path)')
   bundlePaths=()
 
   if [[ -d "$adminPath" ]]; then
     bundlePaths+=("$adminPath")
   fi
 
-  if [[ -d "$storefrontPath" ]]; then
-    bundlePaths+=("$storefrontPath")
+  if [[ -d "$frontendPath" ]]; then
+    bundlePaths+=("$frontendPath")
   fi
 
   if [[ ${#bundlePaths[@]} -eq 0 ]]; then
@@ -42,8 +42,8 @@ jq -c '.[]' "var/plugins.json" | while read -r config; do
     if [[ $path == "plugins/"* && -f "$bundlePath/../package.json" && ! -d "$bundlePath/../node_modules" ]]; then
       bundleName="administration"
 
-      if [[ "$bundlePath" == *"storefront"* ]]; then
-        bundleName="storefront"
+      if [[ "$bundlePath" == *"frontend"* ]]; then
+        bundleName="frontend"
       fi
 
       echo "=> Installing ${bundleName} npm dependencies for ${name}"

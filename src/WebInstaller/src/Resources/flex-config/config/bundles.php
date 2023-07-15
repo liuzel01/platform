@@ -15,7 +15,7 @@ $bundles = [
     Shuwei\Core\Profiling\Profiling::class => ['all' => true],
     Shuwei\Administration\Administration::class => ['all' => true],
     Shuwei\Elasticsearch\Elasticsearch::class => ['all' => true],
-    Shuwei\Storefront\Storefront::class => ['all' => true],
+    Shuwei\Frontend\Frontend::class => ['all' => true],
 ];
 
 if (class_exists(Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle::class)) {

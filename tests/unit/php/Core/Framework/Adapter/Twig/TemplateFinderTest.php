@@ -124,7 +124,7 @@ class TemplateFinderTest extends TestCase
     {
         $coreBundles = [
             'Elasticsearch' => true,
-            'Storefront' => true,
+            'Frontend' => true,
             'Administration' => true,
             'Profiling' => true,
             'SwagTheme' => true,

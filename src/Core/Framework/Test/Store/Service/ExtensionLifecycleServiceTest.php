@@ -170,7 +170,7 @@ class ExtensionLifecycleServiceTest extends TestCase
     {
         $themeRepo = $this->themeRepository;
         if (!$themeRepo) {
-            static::markTestSkipped('ExtensionLifecycleServiceTest needs storefront to be installed.');
+            static::markTestSkipped('ExtensionLifecycleServiceTest needs frontend to be installed.');
         }
 
         $this->installApp(__DIR__ . '/../_fixtures/TestAppTheme');
@@ -207,7 +207,7 @@ class ExtensionLifecycleServiceTest extends TestCase
     {
         $themeRepo = $this->themeRepository;
         if (!$themeRepo) {
-            static::markTestSkipped('ExtensionLifecycleServiceTest needs storefront to be installed.');
+            static::markTestSkipped('ExtensionLifecycleServiceTest needs frontend to be installed.');
         }
 
         $this->installApp(__DIR__ . '/../_fixtures/TestAppTheme');
@@ -250,7 +250,7 @@ class ExtensionLifecycleServiceTest extends TestCase
     {
         $themeRepo = $this->themeRepository;
         if (!$themeRepo) {
-            static::markTestSkipped('ExtensionLifecycleServiceTest needs storefront to be installed.');
+            static::markTestSkipped('ExtensionLifecycleServiceTest needs frontend to be installed.');
         }
 
         $this->installApp(__DIR__ . '/../_fixtures/TestAppTheme');

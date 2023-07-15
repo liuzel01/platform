@@ -27,7 +27,7 @@ class ExpectationSubscriber implements EventSubscriberInterface
         'shuwei/core',
         'shuwei/administration',
         'shuwei/elasticsearch',
-        'shuwei/storefront',
+        'shuwei/frontend',
     ];
 
     /**

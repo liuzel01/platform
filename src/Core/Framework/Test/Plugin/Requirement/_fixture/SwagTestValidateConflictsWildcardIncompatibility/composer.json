@@ -12,7 +12,7 @@
     ],
     "conflict": {
         "shuwei/core": "*",
-        "shuwei/storefront": "*"
+        "shuwei/frontend": "*"
     },
     "extra": {
         "shuwei-plugin-class": "SwagTestValidateConflictsWildcardIncompatibility\\SwagTestValidateConflictsWildcardIncompatibility",

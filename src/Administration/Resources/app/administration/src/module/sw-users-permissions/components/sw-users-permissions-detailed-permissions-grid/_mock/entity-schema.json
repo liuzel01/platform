@@ -3937,7 +3937,7 @@
           "required": true
         }
       },
-      "storefrontSalesChannelId": {
+      "frontendSalesChannelId": {
         "type": "uuid",
         "flags": {
           "required": true
@@ -4035,12 +4035,12 @@
         "localField": "productStreamId",
         "referenceField": "id"
       },
-      "storefrontSalesChannel": {
+      "frontendSalesChannel": {
         "type": "association",
         "relation": "many_to_one",
         "entity": "sales_channel",
         "flags": [],
-        "localField": "storefrontSalesChannelId",
+        "localField": "frontendSalesChannelId",
         "referenceField": "id"
       },
       "salesChannel": {

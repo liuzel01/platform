@@ -9,7 +9,7 @@ author_github:      @Phil23                                 # Optional
 # Core
 *  Added new method `getCategories` in `src/Core/Content/ProductStream/ProductStreamEntity.php`
 *  Added new method `setCategories` in `src/Core/Content/ProductStream/ProductStreamEntity.php`
-*  Deprecated the constructor of `Shuwei\Storefront\Page\Checkout\Confirm\CheckoutConfirmPage`. Use `CheckoutConfirmPage::createFrom` instead.
+*  Deprecated the constructor of `Shuwei\Frontend\Page\Checkout\Confirm\CheckoutConfirmPage`. Use `CheckoutConfirmPage::createFrom` instead.
 *  Removed required flag of `customer_id`
 ___
 # API
@@ -23,7 +23,7 @@ ___
 *  Deprecated `LanguageStore`
 *  Removed deprecated component `sw-property-option-select/index.js`
 ___
-# Storefront
+# Frontend
 *  Added new plugin class `clear-input.plugin.js`
 *  Deprecated `window.accessKey` and `window.contextToken`, the variables contain now an empty string
 *  Removed `/widgets/search/{search}` route
@@ -63,7 +63,7 @@ Example in Twig:
 Example in SCSS
 ```
 body {
-  background: url("#{$sw-asset-theme-url}/bundles/storefront/assets/img/some-image.webp");
+  background: url("#{$sw-asset-theme-url}/bundles/frontend/assets/img/some-image.webp");
 }
 ```
 

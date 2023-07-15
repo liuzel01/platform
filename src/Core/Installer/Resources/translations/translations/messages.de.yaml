@@ -379,7 +379,7 @@ shuwei.installer:
     finish_info: 'Du hast Shuwei erfolgreich installiert!'
     finish_info_heading: Juhu!
     finish_first_steps: '"Erste Schritte"-Anleitung'
-    finish_frontend: 'Zur Storefront'
+    finish_frontend: 'Zur Frontend'
     finish_backend: 'Zur Administration'
     finish_message: "
         <p>

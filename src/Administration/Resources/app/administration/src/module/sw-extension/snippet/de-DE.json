@@ -627,7 +627,7 @@
         "theme": "Theme",
         "theme_translation": "Theme-Übersetzung",
         "theme_media": "Medien",
-        "theme_sales_channel": "Verkaufskanal"
+        "theme_website": "Verkaufskanal"
       }
     },
     "additional_privileges": {

@@ -139,15 +139,15 @@ describe('src/app/component/structure/sw-search-bar', () => {
                             if (entity === 'sales_channel') {
                                 return Promise.resolve([{
                                     id: '8a243080f92e4c719546314b577cf82b',
-                                    translated: { name: 'Storefront' },
-                                    type: { translated: { name: 'Storefront' } },
+                                    translated: { name: 'Frontend' },
+                                    type: { translated: { name: 'Frontend' } },
                                 }]);
                             }
 
                             if (entity === 'sales_channel_type') {
                                 return Promise.resolve([{
                                     id: 'xxxxxxx',
-                                    translated: { name: 'Storefront' },
+                                    translated: { name: 'Frontend' },
                                 }]);
                             }
 
@@ -837,7 +837,7 @@ describe('src/app/component/structure/sw-search-bar', () => {
 
         expect(module.entity).toBe('module');
         expect(module.total).toBe(1);
-        expect(module.entities[0].label).toBe('Storefront');
+        expect(module.entities[0].label).toBe('Frontend');
         expect(module.entities[0].route.name).toBe('sw.sales.channel.create');
     });
 

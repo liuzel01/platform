@@ -113,7 +113,7 @@
             "config/packages/elasticsearch.yaml"
         ]
     },
-    "shuwei/storefront": {
+    "shuwei/frontend": {
         "version": "6.4",
         "recipe": {
             "repo": "github.com/shuwei/recipes",
@@ -122,8 +122,8 @@
             "ref": "b8a632942b29c17149abe792dee2637aeda4c634"
         },
         "files": [
-            "bin/build-storefront.sh",
-            "bin/watch-storefront.sh"
+            "bin/build-frontend.sh",
+            "bin/watch-frontend.sh"
         ]
     },
     "sroze/messenger-enqueue-transport": {

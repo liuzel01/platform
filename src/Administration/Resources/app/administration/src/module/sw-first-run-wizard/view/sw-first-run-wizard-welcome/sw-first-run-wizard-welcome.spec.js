@@ -33,7 +33,7 @@ const languagePlugins = {
         name: 'SwagLanguagePack',
         label: 'Shuwei Language Pack',
         // eslint-disable-next-line max-len
-        shortDescription: 'With all languages in one extension, switching languages in your online shop has never been easier! Simply choose the languages for your admin and storefront for you and your customers.',
+        shortDescription: 'With all languages in one extension, switching languages in your online shop has never been easier! Simply choose the languages for your admin and frontend for you and your customers.',
         iconPath: 'https://sbp-plugin-images.s3.eu-west-1.amazonaws.com/php6TDNDF',
         version: null,
         description: null,

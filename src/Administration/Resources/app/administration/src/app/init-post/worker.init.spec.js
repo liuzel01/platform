@@ -68,7 +68,7 @@ describe('src/app/init-post/worker.init.ts', () => {
 
     it.each([
         'Shuwei\\Core\\Framework\\DataAbstractionLayer\\Indexing\\MessageQueue\\IndexerMessage',
-        'Shuwei\\Storefront\\Framework\\Cache\\CacheWarmer\\WarmUpMessage',
+        'Shuwei\\Frontend\\Framework\\Cache\\CacheWarmer\\WarmUpMessage',
         'Shuwei\\Elasticsearch\\Framework\\Indexing\\IndexingMessage',
         'Shuwei\\Core\\Content\\Media\\Message\\GenerateThumbnailsMessage',
         'Shuwei\\Core\\Checkout\\Promotion\\DataAbstractionLayer\\PromotionIndexingMessage',
