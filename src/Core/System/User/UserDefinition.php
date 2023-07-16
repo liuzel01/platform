@@ -2,9 +2,6 @@
 
 namespace Shuwei\Core\System\User;
 
-use Shuwei\Core\Checkout\Customer\CustomerDefinition;
-use Shuwei\Core\Checkout\Order\OrderDefinition;
-use Shuwei\Core\Content\ImportExport\Aggregate\ImportExportLog\ImportExportLogDefinition;
 use Shuwei\Core\Content\Media\MediaDefinition;
 use Shuwei\Core\Framework\Api\Acl\Role\AclRoleDefinition;
 use Shuwei\Core\Framework\Api\Acl\Role\AclUserRoleDefinition;
