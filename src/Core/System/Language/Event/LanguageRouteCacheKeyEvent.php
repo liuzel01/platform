@@ -2,10 +2,10 @@
 
 namespace Shuwei\Core\System\Language\Event;
 
-use Shuwei\Core\Framework\Adapter\Cache\StoreApiRouteCacheKeyEvent;
+use Frontend\Framework\Adapter\Cache\FrontendApiRouteCacheKeyEvent;
 use Shuwei\Core\Framework\Log\Package;
 
 #[Package('system-settings')]
-class LanguageRouteCacheKeyEvent extends StoreApiRouteCacheKeyEvent
+class LanguageRouteCacheKeyEvent extends FrontendApiRouteCacheKeyEvent
 {
 }

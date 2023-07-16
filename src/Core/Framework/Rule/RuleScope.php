@@ -4,14 +4,14 @@ namespace Shuwei\Core\Framework\Rule;
 
 use Shuwei\Core\Framework\Context;
 use Shuwei\Core\Framework\Log\Package;
-use Shuwei\Core\System\Website\WebsiteContext;
+use Frontend\FrontendContext;
 
 #[Package('business-ops')]
 abstract class RuleScope
 {
     abstract public function getContext(): Context;
 
-    abstract public function getWebsiteContext(): WebsiteContext;
+    abstract public function getFrontendContext(): FrontendContext;
 
     public function getCurrentTime(): \DateTimeImmutable
     {

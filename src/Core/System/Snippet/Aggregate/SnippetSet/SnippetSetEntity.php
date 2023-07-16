@@ -6,7 +6,7 @@ use Shuwei\Core\Framework\DataAbstractionLayer\Entity;
 use Shuwei\Core\Framework\DataAbstractionLayer\EntityCustomFieldsTrait;
 use Shuwei\Core\Framework\DataAbstractionLayer\EntityIdTrait;
 use Shuwei\Core\Framework\Log\Package;
-use Shuwei\Core\System\Website\Aggregate\WebsiteDomain\WebsiteDomainCollection;
+use Frontend\Website\Aggregate\WebsiteDomain\WebsiteDomainCollection;
 use Shuwei\Core\System\Snippet\SnippetCollection;
 
 #[Package('system-settings')]

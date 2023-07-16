@@ -13,7 +13,7 @@ use Shuwei\Core\Framework\DataAbstractionLayer\Field\AssociationField;
 use Shuwei\Core\Framework\DataAbstractionLayer\Field\TranslatedField;
 use Shuwei\Core\Framework\DataAbstractionLayer\MappingEntityDefinition;
 use Shuwei\Core\Framework\Log\Package;
-use Shuwei\Core\System\Website\Entity\WebsiteDefinitionInterface;
+use Frontend\Website\Entity\WebsiteDefinitionInterface;
 
 /**
  * @internal

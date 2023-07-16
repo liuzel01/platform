@@ -5,7 +5,7 @@ namespace Shuwei\Core\System\SystemConfig\Facade;
 use Doctrine\DBAL\Connection;
 use Shuwei\Core\Framework\Log\Package;
 use Shuwei\Core\Framework\Script\Execution\Awareness\HookServiceFactory;
-use Shuwei\Core\Framework\Script\Execution\Awareness\WebsiteContextAware;
+use Shuwei\Core\Framework\Script\Execution\Awareness\FrontendContextAware;
 use Shuwei\Core\Framework\Script\Execution\Hook;
 use Shuwei\Core\Framework\Script\Execution\Script;
 use Shuwei\Core\System\SystemConfig\SystemConfigService;
@@ -34,8 +34,8 @@ class SystemConfigFacadeHookFactory extends HookServiceFactory
     {
         $websiteId = null;
 
-        if ($hook instanceof WebsiteContextAware) {
-            $websiteId = $hook->getWebsiteContext()->getWebsiteId();
+        if ($hook instanceof FrontendContextAware) {
+            $websiteId = $hook->getFrontendContext()->getWebsiteId();
         }
 
         return new SystemConfigFacade($this->systemConfigService, $this->connection, $script->getScriptAppInformation(), $websiteId);

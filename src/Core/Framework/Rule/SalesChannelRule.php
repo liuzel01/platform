@@ -3,7 +3,7 @@
 namespace Shuwei\Core\Framework\Rule;
 
 use Shuwei\Core\Framework\Log\Package;
-use Shuwei\Core\System\Website\WebsiteDefinition;
+use Frontend\Website\WebsiteDefinition;
 
 #[Package('business-ops')]
 class WebsiteRule extends Rule
@@ -24,7 +24,7 @@ class WebsiteRule extends Rule
 
     public function match(RuleScope $scope): bool
     {
-        return RuleComparison::uuids([$scope->getWebsiteContext()->getWebsite()->getId()], $this->websiteIds, $this->operator);
+        return RuleComparison::uuids([$scope->getFrontendContext()->getWebsite()->getId()], $this->websiteIds, $this->operator);
     }
 
     public function getConstraints(): array

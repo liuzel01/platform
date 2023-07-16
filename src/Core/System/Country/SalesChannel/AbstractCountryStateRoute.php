@@ -4,7 +4,7 @@ namespace Shuwei\Core\System\Country\Website;
 
 use Shuwei\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Shuwei\Core\Framework\Log\Package;
-use Shuwei\Core\System\Website\WebsiteContext;
+use Frontend\FrontendContext;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -14,7 +14,7 @@ use Symfony\Component\HttpFoundation\Request;
 #[Package('system-settings')]
 abstract class AbstractCountryStateRoute
 {
-    abstract public function load(string $countryId, Request $request, Criteria $criteria, WebsiteContext $context): CountryStateRouteResponse;
+    abstract public function load(string $countryId, Request $request, Criteria $criteria, FrontendContext $context): CountryStateRouteResponse;
 
     abstract protected function getDecorated(): AbstractCountryStateRoute;
 }

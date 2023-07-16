@@ -10,8 +10,8 @@ use Shuwei\Core\Framework\Log\Package;
 use Shuwei\Core\Framework\Util\Json;
 use Shuwei\Core\System\Country\Event\CountryRouteCacheKeyEvent;
 use Shuwei\Core\System\Country\Event\CountryRouteCacheTagsEvent;
-use Shuwei\Core\System\Website\WebsiteContext;
-use Shuwei\Core\System\Website\StoreApiResponse;
+use Frontend\FrontendContext;
+use Frontend\Website\StoreApiResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Cache\CacheInterface;
@@ -46,7 +46,7 @@ class CachedCountryRoute extends AbstractCountryRoute
     }
 
     #[Route(path: '/store-api/country', name: 'store-api.country', methods: ['GET', 'POST'], defaults: ['_entity' => 'country'])]
-    public function load(Request $request, Criteria $criteria, WebsiteContext $context): CountryRouteResponse
+    public function load(Request $request, Criteria $criteria, FrontendContext $context): CountryRouteResponse
     {
         if ($context->hasState(...$this->states)) {
             return $this->getDecorated()->load($request, $criteria, $context);
@@ -76,11 +76,11 @@ class CachedCountryRoute extends AbstractCountryRoute
         return $this->decorated;
     }
 
-    private function generateKey(Request $request, WebsiteContext $context, Criteria $criteria): ?string
+    private function generateKey(Request $request, FrontendContext $context, Criteria $criteria): ?string
     {
         $parts = [
             $this->generator->getCriteriaHash($criteria),
-            $this->generator->getWebsiteContextHash($context),
+            $this->generator->getFrontendContextHash($context),
         ];
 
         $event = new CountryRouteCacheKeyEvent($parts, $request, $context, $criteria);
@@ -96,7 +96,7 @@ class CachedCountryRoute extends AbstractCountryRoute
     /**
      * @return array<string>
      */
-    private function generateTags(Request $request, StoreApiResponse $response, WebsiteContext $context, Criteria $criteria): array
+    private function generateTags(Request $request, StoreApiResponse $response, FrontendContext $context, Criteria $criteria): array
     {
         $tags = array_merge(
             $this->tracer->get(self::buildName($context->getWebsiteId())),

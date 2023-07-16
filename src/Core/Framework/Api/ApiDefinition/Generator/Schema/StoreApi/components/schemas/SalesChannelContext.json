@@ -4,7 +4,7 @@
     "paths": [],
     "components": {
         "schemas": {
-            "WebsiteContext": {
+            "FrontendContext": {
                 "allOf": [
                     {
                         "$ref": "#\/components\/schemas\/ArrayStruct"

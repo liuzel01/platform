@@ -52,10 +52,10 @@ use Shuwei\Core\System\Locale\Aggregate\LocaleTranslation\LocaleTranslationColle
 use Shuwei\Core\System\Locale\LocaleEntity;
 use Shuwei\Core\System\NumberRange\Aggregate\NumberRangeTranslation\NumberRangeTranslationCollection;
 use Shuwei\Core\System\NumberRange\Aggregate\NumberRangeTypeTranslation\NumberRangeTypeTranslationCollection;
-use Shuwei\Core\System\Website\Aggregate\WebsiteDomain\WebsiteDomainCollection;
-use Shuwei\Core\System\Website\Aggregate\WebsiteTranslation\WebsiteTranslationCollection;
-use Shuwei\Core\System\Website\Aggregate\WebsiteTypeTranslation\WebsiteTypeTranslationCollection;
-use Shuwei\Core\System\Website\WebsiteCollection;
+use Frontend\Website\Aggregate\WebsiteDomain\WebsiteDomainCollection;
+use Frontend\Website\Aggregate\WebsiteTranslation\WebsiteTranslationCollection;
+use Frontend\Website\Aggregate\WebsiteTypeTranslation\WebsiteTypeTranslationCollection;
+use Frontend\Website\WebsiteCollection;
 use Shuwei\Core\System\Salutation\Aggregate\SalutationTranslation\SalutationTranslationCollection;
 use Shuwei\Core\System\StateMachine\Aggregation\StateMachineState\StateMachineStateTranslationCollection;
 use Shuwei\Core\System\StateMachine\StateMachineTranslationCollection;

@@ -12,7 +12,7 @@ use Shuwei\Core\Framework\Log\Package;
 use Shuwei\Core\System\Country\Aggregate\CountryState\CountryStateCollection;
 use Shuwei\Core\System\Country\Aggregate\CountryTranslation\CountryTranslationCollection;
 use Shuwei\Core\System\Currency\Aggregate\CurrencyCountryRounding\CurrencyCountryRoundingCollection;
-use Shuwei\Core\System\Website\WebsiteCollection;
+use Frontend\Website\WebsiteCollection;
 use Shuwei\Core\System\Tax\Aggregate\TaxRule\TaxRuleCollection;
 
 #[Package('system-settings')]

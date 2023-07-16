@@ -31,7 +31,7 @@ use Shuwei\Core\Framework\DataAbstractionLayer\Field\TranslatedField;
 use Shuwei\Core\Framework\DataAbstractionLayer\Field\TranslationsAssociationField;
 use Shuwei\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Shuwei\Core\Framework\Log\Package;
-use Shuwei\Core\System\Tag\TagDefinition;
+use Frontend\Tag\TagDefinition;
 use Shuwei\Core\System\User\UserDefinition;
 
 #[Package('content')]

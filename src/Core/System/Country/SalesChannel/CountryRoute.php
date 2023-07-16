@@ -6,8 +6,8 @@ use Shuwei\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Shuwei\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Shuwei\Core\Framework\Log\Package;
 use Shuwei\Core\Framework\Plugin\Exception\DecorationPatternException;
-use Shuwei\Core\System\Website\Entity\WebsiteRepository;
-use Shuwei\Core\System\Website\WebsiteContext;
+use Frontend\Website\Entity\WebsiteRepository;
+use Frontend\FrontendContext;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -23,7 +23,7 @@ class CountryRoute extends AbstractCountryRoute
     }
 
     #[Route(path: '/store-api/country', name: 'store-api.country', methods: ['GET', 'POST'], defaults: ['_entity' => 'country'])]
-    public function load(Request $request, Criteria $criteria, WebsiteContext $context): CountryRouteResponse
+    public function load(Request $request, Criteria $criteria, FrontendContext $context): CountryRouteResponse
     {
         $criteria->addFilter(new EqualsFilter('active', true));
 

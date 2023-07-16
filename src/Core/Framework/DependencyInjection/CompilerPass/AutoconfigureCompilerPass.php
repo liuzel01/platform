@@ -31,7 +31,7 @@ use Shuwei\Core\Framework\MessageQueue\ScheduledTask\ScheduledTask;
 use Shuwei\Core\Framework\Routing\AbstractRouteScope;
 use Shuwei\Core\Framework\Rule\Rule;
 use Shuwei\Core\System\NumberRange\ValueGenerator\Pattern\AbstractValueGenerator;
-use Shuwei\Core\System\Website\WebsiteDefinition;
+use Frontend\Website\WebsiteDefinition;
 use Shuwei\Core\System\Tax\TaxRuleType\TaxRuleTypeFilterInterface;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

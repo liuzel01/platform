@@ -32,7 +32,7 @@ class StoreContextService extends ApiService {
             { ...additionalParams, headers },
         );
     }
-    getWebsiteContext(
+    getFrontendContext(
         websiteId: string,
         contextToken: string|null,
         additionalParams = {},

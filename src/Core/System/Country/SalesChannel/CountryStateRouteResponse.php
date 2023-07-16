@@ -5,7 +5,7 @@ namespace Shuwei\Core\System\Country\Website;
 use Shuwei\Core\Framework\DataAbstractionLayer\Search\EntitySearchResult;
 use Shuwei\Core\Framework\Log\Package;
 use Shuwei\Core\System\Country\Aggregate\CountryState\CountryStateCollection;
-use Shuwei\Core\System\Website\StoreApiResponse;
+use Frontend\Website\StoreApiResponse;
 
 #[Package('system-settings')]
 class CountryStateRouteResponse extends StoreApiResponse

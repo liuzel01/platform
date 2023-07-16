@@ -10,8 +10,8 @@ use Shuwei\Core\Framework\Log\Package;
 use Shuwei\Core\Framework\Util\Json;
 use Shuwei\Core\System\Country\Event\CountryStateRouteCacheKeyEvent;
 use Shuwei\Core\System\Country\Event\CountryStateRouteCacheTagsEvent;
-use Shuwei\Core\System\Website\WebsiteContext;
-use Shuwei\Core\System\Website\StoreApiResponse;
+use Frontend\FrontendContext;
+use Frontend\Website\StoreApiResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Cache\CacheInterface;
@@ -46,7 +46,7 @@ class CachedCountryStateRoute extends AbstractCountryStateRoute
     }
 
     #[Route(path: '/store-api/country-state/{countryId}', name: 'store-api.country.state', methods: ['GET', 'POST'], defaults: ['_entity' => 'country'])]
-    public function load(string $countryId, Request $request, Criteria $criteria, WebsiteContext $context): CountryStateRouteResponse
+    public function load(string $countryId, Request $request, Criteria $criteria, FrontendContext $context): CountryStateRouteResponse
     {
         if ($context->hasState(...$this->states)) {
             return $this->getDecorated()->load($countryId, $request, $criteria, $context);
@@ -75,7 +75,7 @@ class CachedCountryStateRoute extends AbstractCountryStateRoute
         return $this->decorated;
     }
 
-    private function generateKey(string $countryId, Request $request, WebsiteContext $context, Criteria $criteria): ?string
+    private function generateKey(string $countryId, Request $request, FrontendContext $context, Criteria $criteria): ?string
     {
         $parts = [
             $countryId,
@@ -96,7 +96,7 @@ class CachedCountryStateRoute extends AbstractCountryStateRoute
     /**
      * @return array<string>
      */
-    private function generateTags(string $countryId, Request $request, StoreApiResponse $response, WebsiteContext $context, Criteria $criteria): array
+    private function generateTags(string $countryId, Request $request, StoreApiResponse $response, FrontendContext $context, Criteria $criteria): array
     {
         $tags = array_merge(
             $this->tracer->get(self::buildName($countryId)),
