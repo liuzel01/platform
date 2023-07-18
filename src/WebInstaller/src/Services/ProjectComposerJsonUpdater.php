@@ -14,8 +14,8 @@ class ProjectComposerJsonUpdater
     public static function update(string $file, string $latestVersion): void
     {
         $shuweiPackages = [
-            'shuwei/core',
-            'shuwei/administration',
+            '58shuwei/core',
+            '58shuwei/administration',
         ];
 
         /** @var array{minimum-stability?: string, require: array<string, string>} $composerJson */
