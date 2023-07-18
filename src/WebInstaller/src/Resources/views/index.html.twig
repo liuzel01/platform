@@ -26,11 +26,8 @@
             <form class="select-wrapper language" method="get">
                 <img class="language-flag" src="{{ app.request.baseUrl }}/assets/images/flags/{{ app.request.locale }}.png" alt="{{ app.request.locale }}">
                 <select id="language" name="language" class="language-selection" onchange="this.form.submit();">
-                    <option value="de"{% if app.request.locale == "de" %} selected{% endif %}>
-                        {{ 'shuwei.update.language.de'|trans }}
-                    </option>
-                    <option value="en"{% if app.request.locale == "en" %} selected{% endif %}>
-                        {{ 'shuwei.update.language.en'|trans }}
+                    <option value="zh"{% if app.request.locale == "zh" %} selected{% endif %}>
+                        {{ 'shuwei.update.language.zh'|trans }}
                     </option>
                 </select>
             </form>

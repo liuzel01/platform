@@ -1,50 +1,49 @@
 shuwei.update:
-    header_title: Installation
-    back: Back
-    rc_hint: (Not recommended for production)
+    header_title: 安装
+    back: 返回
+    rc_hint: (不建议用于生产环境)
     language:
-        en: English
-        de: German
+        zh: 简体中文
     navigation:
-        start: Language
-        configure_php: Configuration
-        download: Download
-        finish: Finish
+        start: 语言
+        configure_php: 配置
+        download: 下载
+        finish: 完成
     steps:
         start:
-            title: Shuwei Installer
-            welcomeTitle: Welcome to the Shuwei Installer
-            welcomeMessage: This process will guide you through the steps necessary to install or update Shuwei 6.
-            languageSelection: Installer language
-            languageSelectionInfo: The language selected here only applies to this installer. You may choose another language for your shop later on.
-            submit: Continue
+            title: 58数维平台安装程序
+            welcomeTitle: 欢迎来到 58数维平台 安装程序
+            welcomeMessage: 此过程将指导您完成安装或更新 Shuwei 6 所需的步骤。.
+            languageSelection: 安装程序语言
+            languageSelectionInfo: 此处选择的语言仅适用于此安装程序。您可以稍后为您的系统选择另一种语言.
+            submit: 继续
 
         configure_php:
-            title: Configuration
-            info: PHP binary found. If you want to select the file yourself, you can specify it here.
-            pathInput: PHP binary
-            submit: Save configuration
+            title: 配置
+            info: 找到 PHP 二进制文件。如果要自己选择文件，可以在此处指定.
+            pathInput: PHP 二进制文件
+            submit: 保存配置
         update:
-            title: Updating Shuwei
-            log: Log
-            backupHint: Make sure you have created a backup before updating.
-            submit: Update Shuwei
-            currentVersion: 'Current version: %version%'
-            updateVersion: 'Update version:'
-            error: 'Update process unsuccessful. You can access the log file <a href="#" id="download-log">here</a>.'
+            title: 更新58数维
+            log: 日志
+            backupHint: 确保在更新之前已创建备份.
+            submit: 更新58数维
+            currentVersion: '当前版本: %version%'
+            updateVersion: '更新版本:'
+            error: '更新过程不成功。您可以在 <a href="#" id="download-log">这里</a> 访问日志文件 .'
         finish:
-            title: Finish
+            title: 完成
             message: |
-                The install process has been completed successfully.
+                安装过程已成功完成。.
 
-                In the next step the recovery files will be removed from the server. You will be redirected to the Shuwei Administration afterwards.
-            submit: Open Administration
+                在下一步中，将从服务器中删除恢复文件。之后，您将被重定向到数维平台管理端.
+            submit: 打开管理端
         install:
-            title: Download Shuwei
-            info: Choose a Shuwei version to download. The software will be downloaded into the current directory.
-            shuweiVersion: 'Shuwei version:'
-            after_install: After downloading you should switch your document root to the newly created folder <strong>public</strong>.
-            log: Log
-            installation_failed: Download failed
-            submit: Download
-            error: 'Shuwei could not be downloaded. You can access the log file <a href="#" id="download-log">here</a>.'
+            title: 下载58数维
+            info: 选择要下载的数维版本。软件将下载到当前目录中.
+            shuweiVersion: '58数维版本:'
+            after_install: 下载后，您应该将文档根目录切换到新创建的文件夹 <strong>public</strong>.
+            log: 日志
+            installation_failed: 下载失败
+            submit: 下载
+            error: '无法下载。您可以在 <a href="#" id="download-log">这里</a> 访问日志文件.'

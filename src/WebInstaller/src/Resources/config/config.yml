@@ -3,7 +3,7 @@ imports:
 
 framework:
   secret: ''
-  default_locale: en
+  default_locale: zh
   http_method_override: false
   translator:
     fallbacks: [ 'zh' ]

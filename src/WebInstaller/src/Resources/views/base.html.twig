@@ -16,9 +16,9 @@
 <body class="auto">
     <header class="header-main">
         <div class="header-main__branding">
-            <img class="header-main__logo" src="{{ app.request.baseUrl }}/assets/images/sw-logo-blue.svg" width="148" alt="Shuwei">
+            <img class="header-main__logo" src="{{ app.request.baseUrl }}/assets/images/sw-logo-light-text.svg" width="148" alt="Shuwei">
             <div class="header-main__title">
-                INSTALLER
+                安装程序
             </div>
         </div>
     </header>
@@ -52,11 +52,8 @@
         </div>
     </div>
     <div class="footer-main">
-        <a href="?language=de" class="language-item{% if app.request.locale == "de" %} is--active{% endif %}">
-            DE
-        </a>
-        <a href="?language=en" class="language-item{% if app.request.locale == "en" %} is--active{% endif %}">
-            EN
+        <a href="?language=zh" class="language-item{% if app.request.locale == "zh" %} is--active{% endif %}">
+            ZH
         </a>
     </div>
     <script>
