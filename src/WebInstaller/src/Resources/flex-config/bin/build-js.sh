@@ -8,7 +8,3 @@ set -euo pipefail
 if [[ -e "${BIN_DIR}/build-administration.sh" ]]; then
   "${BIN_DIR}/build-administration.sh"
 fi
-
-if [[ -e "${BIN_DIR}/build-frontend.sh" ]]; then
-  "${BIN_DIR}/build-frontend.sh"
-fi

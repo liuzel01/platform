@@ -47,8 +47,8 @@ else
     echo "Cannot check extensions for required npm installations as jq is not installed"
 fi
 
-if [ ! -d vendor/shuwei/administration/Resources/app/administration/node_modules ]; then
-    npm install --prefix vendor/shuwei/administration/Resources/app/administration/
+if [ ! -d vendor/58shuwei/administration/Resources/app/administration/node_modules ]; then
+    npm install --prefix vendor/58shuwei/administration/Resources/app/administration/
 fi
 
-npm run --prefix vendor/shuwei/administration/Resources/app/administration/ dev
+npm run --prefix vendor/58shuwei/administration/Resources/app/administration/ dev
