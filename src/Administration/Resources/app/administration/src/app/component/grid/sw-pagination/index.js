@@ -137,7 +137,9 @@ Component.register('sw-pagination', {
         page() {
             this.currentPage = this.page;
         },
-
+        limit() {
+            this.perPage = this.limit;
+        },
         maxPage() {
             if (this.maxPage === 0) {
                 this.currentPage = 1;
