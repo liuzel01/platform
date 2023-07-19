@@ -41,12 +41,20 @@
         }
     },
     "scripts-descriptions": {
-        "build:js:admin": "Builds the Administration"
+        "build:js:admin": "Builds the Administration",
+        "phpunit": "Launches the PHP unit test-suite",
+        "phpunit:quarantined": "Launches the PHP unit test-suite for quarantined tests"
     },
     "scripts": {
         "admin:generate-entity-schema-types": [
             "@framework:schema:dump",
             "@npm:admin run convert-entity-schema"
+        ],
+        "phpunit": [
+            "phpunit --exclude-group=quarantined"
+        ],
+        "phpunit:quarantined": [
+            "phpunit --group=quarantined"
         ],
         "build:js": [
             "@php bin/console bundle:dump",
