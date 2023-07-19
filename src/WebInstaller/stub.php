@@ -33,7 +33,6 @@ if (function_exists('date_default_timezone_set') && function_exists('date_defaul
 
 if ('cli' === \PHP_SAPI || !isset($_SERVER['REQUEST_URI'])) {
     Phar::mapPhar('shuwei-recovery.phar');
-
     if (($_SERVER['argv'][1] ?? '') === 'composer') {
         unset($_SERVER['argv'][0]);
         $_SERVER['argv'] = array_values($_SERVER['argv']);
