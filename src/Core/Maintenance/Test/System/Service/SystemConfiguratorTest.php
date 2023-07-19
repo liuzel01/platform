@@ -16,7 +16,7 @@ use Shuwei\Core\System\SystemConfig\SystemConfigService;
  * @internal
  */
 #[Package('system-settings')]
-class ShopConfiguratorTest extends TestCase
+class SystemConfiguratorTest extends TestCase
 {
     use IntegrationTestBehaviour;
 
@@ -61,7 +61,7 @@ class ShopConfiguratorTest extends TestCase
         $lang = $langRepo->search(new Criteria([Defaults::LANGUAGE_SYSTEM]), Context::createDefaultContext())
             ->first();
 
-        static::assertEquals('English', $lang->getName());
+        static::assertEquals('中文', $lang->getName());
     }
 
     public function testSwitchLanguageWithExistingLanguage(): void

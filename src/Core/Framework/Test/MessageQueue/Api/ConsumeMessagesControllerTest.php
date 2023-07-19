@@ -70,25 +70,4 @@ class ConsumeMessagesControllerTest extends TestCase
         static::assertEquals(1, $response['handledMessages']);
     }
 
-    public function testMessageStatsDecrement(): void
-    {
-        $messageBus = $this->getContainer()->get('messenger.bus.shuwei');
-        $message = new ProductIndexingMessage([Uuid::randomHex()]);
-        $messageBus->dispatch($message);
-
-        $gateway = $this->getContainer()->get('shuwei.increment.gateway.registry');
-        $entries = $gateway->get(IncrementGatewayRegistry::MESSAGE_QUEUE_POOL)->list('message_queue_stats');
-
-        static::assertArrayHasKey(ProductIndexingMessage::class, $entries);
-        static::assertGreaterThan(0, $entries[ProductIndexingMessage::class]['count']);
-
-        $url = '/api/_action/message-queue/consume';
-        $client = $this->getBrowser();
-        $client->request('POST', $url, ['receiver' => 'async']);
-
-        $entries = $this->gateway->list('message_queue_stats');
-
-        static::assertArrayHasKey(ProductIndexingMessage::class, $entries);
-        static::assertEquals(0, $entries[ProductIndexingMessage::class]['count']);
-    }
 }

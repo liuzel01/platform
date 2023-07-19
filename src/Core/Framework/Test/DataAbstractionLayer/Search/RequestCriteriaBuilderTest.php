@@ -84,7 +84,7 @@ class RequestCriteriaBuilderTest extends TestCase
             'limit' => 10,
             'page' => 1,
             'associations' => [
-                'prices' => [
+                'avatarMedia' => [
                     'limit' => 25,
                     'page' => 1,
                     'filter' => [
@@ -108,8 +108,8 @@ class RequestCriteriaBuilderTest extends TestCase
             Context::createDefaultContext()
         );
 
-        static::assertTrue($criteria->hasAssociation('prices'));
-        $nested = $criteria->getAssociation('prices');
+        static::assertTrue($criteria->hasAssociation('avatarMedia'));
+        $nested = $criteria->getAssociation('avatarMedia');
 
         static::assertInstanceOf(Criteria::class, $nested);
         static::assertCount(1, $nested->getFilters());
@@ -219,20 +219,20 @@ class RequestCriteriaBuilderTest extends TestCase
         $payload = [
             'associations' => [
                 'options' => ['limit' => 101],
-                'prices' => ['limit' => null],
-                'categories' => [],
+                'locale' => ['limit' => null],
+                'aclRoles' => [],
             ],
         ];
 
         $criteria = $builder->fromArray($payload, new Criteria(), $this->getContainer()->get(UserDefinition::class), Context::createDefaultContext());
 
         static::assertTrue($criteria->hasAssociation('options'));
-        static::assertTrue($criteria->hasAssociation('categories'));
+        static::assertTrue($criteria->hasAssociation('aclRoles'));
 
         static::assertEquals(100, $criteria->getLimit());
         static::assertEquals(101, $criteria->getAssociation('options')->getLimit());
-        static::assertNull($criteria->getAssociation('prices')->getLimit());
-        static::assertNull($criteria->getAssociation('categories')->getLimit());
+        static::assertNull($criteria->getAssociation('locale')->getLimit());
+        static::assertNull($criteria->getAssociation('aclRoles')->getLimit());
     }
 
     /**
