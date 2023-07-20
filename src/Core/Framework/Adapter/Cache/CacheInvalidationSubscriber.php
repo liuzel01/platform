@@ -3,30 +3,59 @@
 namespace Shuwei\Core\Framework\Adapter\Cache;
 
 use Doctrine\DBAL\Connection;
+use Shuwei\Core\Framework\Adapter\Translation\Translator;
+use Shuwei\Core\Framework\DataAbstractionLayer\Event\EntityWrittenContainerEvent;
 use Shuwei\Core\Framework\Log\Package;
-use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Shuwei\Core\System\Snippet\SnippetDefinition;
+use Shuwei\Core\System\SystemConfig\CachedSystemConfigLoader;
 
-/**
- * @internal - The functions inside this class are no public-api and can be changed without previous deprecation
- */
+
 #[Package('core')]
-class CacheInvalidationSubscriber implements EventSubscriberInterface
+class CacheInvalidationSubscriber
 {
+    /**
+     * @internal
+     */
     public function __construct(
         private readonly CacheInvalidator $cacheInvalidator,
-        private readonly Connection $connection
+        private readonly Connection $connection,
+        private readonly bool $fineGrainedCacheSnippet,
+        private readonly bool $fineGrainedCacheConfig
     ) {
     }
 
-    /**
-     * @return array<string, string|array{0: string, 1: int}|list<array{0: string, 1?: int}>>
-     */
-    public static function getSubscribedEvents(): array
+
+
+    public function invalidateConfig(): void
     {
-        return [
-
-        ];
+        // invalidates the complete cached config
+        $this->cacheInvalidator->invalidate([
+            CachedSystemConfigLoader::CACHE_TAG,
+        ]);
     }
+    
 
-   
+    public function invalidateSnippets(EntityWrittenContainerEvent $event): void
+    {
+        if (!$this->fineGrainedCacheSnippet) {
+            $this->cacheInvalidator->invalidate(['shuwei.translator']);
+
+            return;
+        }
+
+        // invalidates all http cache items where the snippets used
+        $snippets = $event->getEventByEntityName(SnippetDefinition::ENTITY_NAME);
+
+        if (!$snippets) {
+            return;
+        }
+
+        $tags = [];
+        foreach ($snippets->getPayloads() as $payload) {
+            if (isset($payload['translationKey'])) {
+                $tags[] = Translator::buildName($payload['translationKey']);
+            }
+        }
+        $this->cacheInvalidator->invalidate($tags);
+    }
 }

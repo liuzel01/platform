@@ -453,63 +453,6 @@ base-uri 'self';
             <tag name="shuwei.entity.definition"/>
         </service>
 
-        <service id="Shuwei\Core\Framework\Adapter\Cache\CacheIdLoader" public="true">
-            <argument type="service" id="Shuwei\Core\Framework\Adapter\Storage\AbstractKeyValueStorage" />
-            <argument type="service" id="cache.messenger.restart_workers_signal"/>
-        </service>
-
-
-        <service id="Shuwei\Core\Framework\Adapter\Cache\CacheTracer">
-            <argument type="service" id="Shuwei\Core\System\SystemConfig\SystemConfigService"/>
-            <argument type="service" id="Shuwei\Core\Framework\Adapter\Translation\Translator"/>
-            <argument type="service" id="Shuwei\Core\Framework\Adapter\Cache\CacheTagCollection"/>
-        </service>
-
-        <service id="Shuwei\Core\Framework\Adapter\Cache\CacheInvalidator">
-            <argument>%shuwei.cache.invalidation.delay%</argument>
-            <argument>%shuwei.cache.invalidation.count%</argument>
-            <argument type="collection">
-                <argument type="service" id="cache.object"/>
-                <argument type="service" id="cache.http"/>
-            </argument>
-            <argument type="service" id="cache.object"/>
-            <argument type="service" id="event_dispatcher"/>
-        </service>
-
-        <service id="Shuwei\Core\Framework\Adapter\Cache\InvalidateCacheTask">
-            <tag name="shuwei.scheduled.task" />
-        </service>
-
-        <service id="Shuwei\Core\Framework\Adapter\Cache\InvalidateCacheTaskHandler">
-            <argument type="service" id="scheduled_task.repository"/>
-            <argument type="service" id="Shuwei\Core\Framework\Adapter\Cache\CacheInvalidator"/>
-            <argument>%shuwei.cache.invalidation.delay%</argument>
-
-            <tag name="messenger.message_handler"/>
-        </service>
-
-        <service id="Shuwei\Core\Framework\Adapter\Cache\CacheClearer">
-            <argument type="collection">
-                <argument type="service" id="cache.object"/>
-                <argument type="service" id="cache.http"/>
-            </argument>
-            <argument type="service" id="cache_clearer"/>
-            <argument type="service" id="filesystem"/>
-            <argument>%kernel.cache_dir%</argument>
-            <argument>%kernel.environment%</argument>
-            <argument type="service" id="messenger.bus.shuwei"/>
-        </service>
-
-        <service id="Shuwei\Core\Framework\Adapter\Cache\Message\CleanupOldCacheFoldersHandler">
-            <argument type="service" id="Shuwei\Core\Framework\Adapter\Cache\CacheClearer"/>
-
-            <tag name="messenger.message_handler"/>
-        </service>
-
-        <service id="Shuwei\Core\Framework\Adapter\Cache\Script\Facade\CacheInvalidatorFacadeHookFactory" public="true">
-            <argument type="service" id="Shuwei\Core\Framework\Adapter\Cache\CacheInvalidator"/>
-        </service>
-
         <!-- Changelog -->
         <service id="Shuwei\Core\Framework\Changelog\Processor\ChangelogGenerator" public="false">
             <argument type="service" id="Shuwei\Core\Framework\Changelog\ChangelogParser"/>
@@ -590,19 +533,6 @@ base-uri 'self';
             <argument type="service" id="shuwei.filesystem.sitemap"/>
             <argument type="service" id="shuwei.filesystem.asset"/>
             <tag name="console.command"/>
-        </service>
-
-        <service id="Shuwei\Core\Framework\Adapter\Cache\CacheInvalidationSubscriber">
-            <argument type="service" id="Shuwei\Core\Framework\Adapter\Cache\CacheInvalidator"/>
-            <argument type="service" id="Doctrine\DBAL\Connection"/>
-            <tag name="kernel.event_subscriber"/>
-        </service>
-
-        <service id="Shuwei\Core\Framework\Adapter\Cache\CacheTagCollection"/>
-
-        <service id="Shuwei\Core\Framework\Adapter\Cache\CacheDecorator" decorates="cache.object">
-            <argument type="service" id="Shuwei\Core\Framework\Adapter\Cache\CacheDecorator.inner"/>
-            <argument type="service" id="Shuwei\Core\Framework\Adapter\Cache\CacheTagCollection"/>
         </service>
 
         <service id="Shuwei\Core\Framework\Util\HtmlSanitizer" public="true">

@@ -1,0 +1,80 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services https://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="Shuwei\Core\Framework\Adapter\Cache\CacheIdLoader" public="true">
+            <argument type="service" id="Shuwei\Core\Framework\Adapter\Storage\AbstractKeyValueStorage" />
+            <argument type="service" id="cache.messenger.restart_workers_signal"/>
+        </service>
+
+
+        <service id="Shuwei\Core\Framework\Adapter\Cache\CacheTracer">
+            <argument type="service" id="Shuwei\Core\System\SystemConfig\SystemConfigService"/>
+            <argument type="service" id="Shuwei\Core\Framework\Adapter\Translation\Translator"/>
+            <argument type="service" id="Shuwei\Core\Framework\Adapter\Cache\CacheTagCollection"/>
+        </service>
+
+        <service id="Shuwei\Core\Framework\Adapter\Cache\CacheInvalidator">
+            <argument>%shuwei.cache.invalidation.delay%</argument>
+            <argument>%shuwei.cache.invalidation.count%</argument>
+            <argument type="collection">
+                <argument type="service" id="cache.object"/>
+                <argument type="service" id="cache.http"/>
+            </argument>
+            <argument type="service" id="cache.object"/>
+            <argument type="service" id="event_dispatcher"/>
+        </service>
+
+        <service id="Shuwei\Core\Framework\Adapter\Cache\InvalidateCacheTask">
+            <tag name="shuwei.scheduled.task" />
+        </service>
+
+        <service id="Shuwei\Core\Framework\Adapter\Cache\InvalidateCacheTaskHandler">
+            <argument type="service" id="scheduled_task.repository"/>
+            <argument type="service" id="Shuwei\Core\Framework\Adapter\Cache\CacheInvalidator"/>
+            <argument>%shuwei.cache.invalidation.delay%</argument>
+
+            <tag name="messenger.message_handler"/>
+        </service>
+
+        <service id="Shuwei\Core\Framework\Adapter\Cache\CacheClearer">
+            <argument type="collection">
+                <argument type="service" id="cache.object"/>
+                <argument type="service" id="cache.http"/>
+            </argument>
+            <argument type="service" id="cache_clearer"/>
+            <argument type="service" id="filesystem"/>
+            <argument>%kernel.cache_dir%</argument>
+            <argument>%kernel.environment%</argument>
+            <argument type="service" id="messenger.bus.shuwei"/>
+        </service>
+
+        <service id="Shuwei\Core\Framework\Adapter\Cache\Message\CleanupOldCacheFoldersHandler">
+            <argument type="service" id="Shuwei\Core\Framework\Adapter\Cache\CacheClearer"/>
+
+            <tag name="messenger.message_handler"/>
+        </service>
+
+        <service id="Shuwei\Core\Framework\Adapter\Cache\Script\Facade\CacheInvalidatorFacadeHookFactory" public="true">
+            <argument type="service" id="Shuwei\Core\Framework\Adapter\Cache\CacheInvalidator"/>
+        </service>
+
+
+        <service id="Shuwei\Core\Framework\Adapter\Cache\CacheInvalidationSubscriber">
+            <argument type="service" id="Shuwei\Core\Framework\Adapter\Cache\CacheInvalidator"/>
+            <argument type="service" id="Doctrine\DBAL\Connection"/>
+            <argument>%shuwei.cache.tagging.each_snippet%</argument>
+            <argument>%shuwei.cache.tagging.each_config%</argument>
+        </service>
+
+        <service id="Shuwei\Core\Framework\Adapter\Cache\CacheTagCollection"/>
+
+        <service id="Shuwei\Core\Framework\Adapter\Cache\CacheDecorator" decorates="cache.object">
+            <argument type="service" id="Shuwei\Core\Framework\Adapter\Cache\CacheDecorator.inner"/>
+            <argument type="service" id="Shuwei\Core\Framework\Adapter\Cache\CacheTagCollection"/>
+        </service>
+    </services>
+</container>
