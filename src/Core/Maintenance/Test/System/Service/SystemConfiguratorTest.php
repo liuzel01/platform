@@ -48,7 +48,7 @@ class SystemConfiguratorTest extends TestCase
         $lang = $langRepo->search(new Criteria([Defaults::LANGUAGE_SYSTEM]), Context::createDefaultContext())
             ->first();
 
-        static::assertEquals('zh-CN', $lang->getName());
+        static::assertEquals('中文', $lang->getName());
     }
 
     public function testSwitchLanguageWithDefaultLocale(): void
@@ -61,7 +61,7 @@ class SystemConfiguratorTest extends TestCase
         $lang = $langRepo->search(new Criteria([Defaults::LANGUAGE_SYSTEM]), Context::createDefaultContext())
             ->first();
 
-        static::assertEquals('zh-CN', $lang->getName());
+        static::assertEquals('中文', $lang->getName());
     }
 
     public function testSwitchLanguageWithExistingLanguage(): void
@@ -74,7 +74,7 @@ class SystemConfiguratorTest extends TestCase
         $lang = $langRepo->search(new Criteria([Defaults::LANGUAGE_SYSTEM]), Context::createDefaultContext())
             ->first();
 
-        static::assertEquals('zh-CN', $lang->getName());
+        static::assertEquals('中文', $lang->getName());
     }
 
 }
