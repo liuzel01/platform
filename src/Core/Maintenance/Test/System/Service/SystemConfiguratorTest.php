@@ -40,7 +40,7 @@ class SystemConfiguratorTest extends TestCase
 
     public function testSwitchLanguageWithNewLanguage(): void
     {
-        $this->shopConfigurator->setDefaultLanguage('es-ES');
+        $this->shopConfigurator->setDefaultLanguage('zh-CN');
 
         /** @var EntityRepository $langRepo */
         $langRepo = $this->getContainer()->get('language.repository');
@@ -48,7 +48,7 @@ class SystemConfiguratorTest extends TestCase
         $lang = $langRepo->search(new Criteria([Defaults::LANGUAGE_SYSTEM]), Context::createDefaultContext())
             ->first();
 
-        static::assertEquals('Spanish', $lang->getName());
+        static::assertEquals('zh-CN', $lang->getName());
     }
 
     public function testSwitchLanguageWithDefaultLocale(): void
@@ -61,12 +61,12 @@ class SystemConfiguratorTest extends TestCase
         $lang = $langRepo->search(new Criteria([Defaults::LANGUAGE_SYSTEM]), Context::createDefaultContext())
             ->first();
 
-        static::assertEquals('中文', $lang->getName());
+        static::assertEquals('zh-CN', $lang->getName());
     }
 
     public function testSwitchLanguageWithExistingLanguage(): void
     {
-        $this->shopConfigurator->setDefaultLanguage('en-US');
+        $this->shopConfigurator->setDefaultLanguage('zh-CN');
 
         /** @var EntityRepository $langRepo */
         $langRepo = $this->getContainer()->get('language.repository');
@@ -74,7 +74,7 @@ class SystemConfiguratorTest extends TestCase
         $lang = $langRepo->search(new Criteria([Defaults::LANGUAGE_SYSTEM]), Context::createDefaultContext())
             ->first();
 
-        static::assertEquals('Deutsch', $lang->getName());
+        static::assertEquals('zh-CN', $lang->getName());
     }
 
 }

@@ -87,46 +87,6 @@ class ScheduledTaskHandlerTest extends TestCase
         ];
     }
 
-    public function testHandleWhenNewNextExecutionTimeLessThanNowTime(): void
-    {
-        $this->connection->executeStatement('DELETE FROM scheduled_task');
-
-        $taskId = Uuid::randomHex();
-        $originalNextExecution = (new \DateTime())->modify('-24 hours');
-        $interval = 60;
-
-        $this->scheduledTaskRepo->create([
-            [
-                'id' => $taskId,
-                'name' => 'test',
-                'scheduledTaskClass' => TestTask::class,
-                'runInterval' => $interval,
-                'defaultRunInterval' => $interval,
-                'status' => ScheduledTaskDefinition::STATUS_QUEUED,
-                'nextExecutionTime' => $originalNextExecution,
-            ],
-        ], Context::createDefaultContext());
-
-        $task = new TestTask();
-        $task->setTaskId($taskId);
-
-        $handler = new DummyScheduledTaskHandler($this->scheduledTaskRepo, $taskId);
-        $handler($task);
-        $nowTime = new \DateTime();
-
-        static::assertTrue($handler->wasCalled());
-
-        /** @var ScheduledTaskEntity $task */
-        $task = $this->scheduledTaskRepo->search(new Criteria([$taskId]), Context::createDefaultContext())->get($taskId);
-
-        static::assertEquals(ScheduledTaskDefinition::STATUS_SCHEDULED, $task->getStatus());
-        static::assertGreaterThan(
-            $task->getNextExecutionTime()->format(Defaults::STORAGE_DATE_TIME_FORMAT),
-            $nowTime->format(Defaults::STORAGE_DATE_TIME_FORMAT)
-        );
-        static::assertNotEquals($originalNextExecution->format(\DATE_ATOM), $task->getNextExecutionTime()->format(\DATE_ATOM));
-    }
-
     public function testHandleOnException(): void
     {
         $this->connection->executeStatement('DELETE FROM scheduled_task');

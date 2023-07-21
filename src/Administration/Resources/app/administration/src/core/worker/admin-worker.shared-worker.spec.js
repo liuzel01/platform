@@ -187,7 +187,7 @@ describe('core/worker/admin-worker.worker.js', () => {
                 apiResourcePath: 'api_resource_path',
             },
             bearerAuth: 'bearer_auth',
-            host: 'http://www.shopware.com',
+            host: 'http://www.shuwei.com',
             transports: ['default'],
         };
 
