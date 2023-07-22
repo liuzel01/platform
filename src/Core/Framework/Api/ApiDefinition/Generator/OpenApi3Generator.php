@@ -52,8 +52,6 @@ class OpenApi3Generator implements ApiDefinitionGeneratorInterface
      */
     public function generate(array $definitions, string $api, string $apiType = DefinitionService::TYPE_JSON_API): array
     {
-        $forWebsite = $this->containsWebsiteDefinition($definitions);
-
         $openApi = new OpenApi([]);
         $this->openApiBuilder->enrich($openApi, $api);
 
@@ -66,13 +64,12 @@ class OpenApi3Generator implements ApiDefinitionGeneratorInterface
 
             $onlyFlat = match ($apiType) {
                 DefinitionService::TYPE_JSON => true,
-                default => $this->shouldIncludeReferenceOnly($definition, $forWebsite),
+                default => $this->shouldIncludeReferenceOnly($definition),
             };
 
             $schema = $this->definitionSchemaBuilder->getSchemaByDefinition(
                 $definition,
                 $this->getResourceUri($definition),
-                $forWebsite,
                 $onlyFlat,
                 $apiType
             );
