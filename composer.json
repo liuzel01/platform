@@ -43,7 +43,8 @@
     "scripts-descriptions": {
         "build:js:admin": "Builds the Administration",
         "phpunit": "Launches the PHP unit test-suite",
-        "phpunit:quarantined": "Launches the PHP unit test-suite for quarantined tests"
+        "phpunit:quarantined": "Launches the PHP unit test-suite for quarantined tests",
+        "phpstan": "Launches the PHP static analysis tool"
     },
     "scripts": {
         "admin:generate-entity-schema-types": [
@@ -52,6 +53,13 @@
         ],
         "phpunit": [
             "phpunit --exclude-group=quarantined"
+        ],
+        "phpstan": [
+            "@php src/Core/DevOps/StaticAnalyze/phpstan-bootstrap.php",
+            "phpstan analyze --memory-limit=2G"
+        ],
+        "static-analyze": [
+            "@phpstan src/"
         ],
         "phpunit:quarantined": [
             "phpunit --group=quarantined"
