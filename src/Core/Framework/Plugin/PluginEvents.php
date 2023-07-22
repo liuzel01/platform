@@ -2,6 +2,7 @@
 
 namespace Shuwei\Core\Framework\Plugin;
 
+use Shuwei\Core\Framework\Event\Annotation\Event;
 use Shuwei\Core\Framework\Log\Package;
 
 #[Package('core')]

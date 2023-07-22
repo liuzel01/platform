@@ -34,7 +34,6 @@ class ExtensionStoreDataController extends AbstractController
     public function getInstalledExtensions(Context $context): Response
     {
         $context = $this->switchContext($context);
-
         return new JsonResponse(
             $this->extensionDataProvider->getInstalledExtensions($context)
         );

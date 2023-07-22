@@ -30,7 +30,6 @@ class ExtensionDataProvider extends AbstractExtensionDataProvider
         $criteria = $searchCriteria ?: new Criteria();
         $criteria->addAssociation('translations');
 
-
         /** @var PluginCollection $installedPlugins */
         $installedPlugins = $this->pluginRepository->search($criteria, $context)->getEntities();
         $pluginCollection = $this->extensionLoader->loadFromPluginCollection($context, $installedPlugins);

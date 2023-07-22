@@ -165,7 +165,7 @@ class ChangelogProcessor
             $platformRoot = $this->projectDir;
             $composerJson = json_decode((string) file_get_contents($this->projectDir . '/composer.json'), true, 512, \JSON_THROW_ON_ERROR);
 
-            if ($composerJson === null || $composerJson['name'] !== 'shuwei/platform') {
+            if ($composerJson === null || $composerJson['name'] !== '58shuwei/platform') {
                 $platformRoot .= '/platform';
             }
 
