@@ -1,0 +1,31 @@
+version: '3.7'
+services:
+  php:
+    container_name: sw-php
+    build: ./docker/php
+    volumes:
+      - "./public:/var/www/html"
+    links:
+      - mysql:mysql
+    environment:
+      - DEPLOY=dev
+
+
+  mysql:
+    container_name: sw-mysql
+    image: mysql:8.0
+    restart: unless-stopped
+    network_mode: host
+    user: "0"
+    environment:
+      MYSQL_ROOT_HOST: "%"
+      MYSQL_ROOT_PASSWORD: "root"
+      # DB_USER: "root"
+      # DB_NAMES: "58shuwei"
+    ports:
+      - 3306:3306
+    # command: sh -c "mysqld &&\
+    #   mysql -uroot -p${MYSQL_ROOT_PASSWORD} -e \'CREATE DATABASE 58shuwei;\'"
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+      - ./mysql/my8.cnf:/etc/my.cnf
