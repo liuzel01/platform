@@ -35,7 +35,7 @@
     "@lhci/cli": "0.11.0",
     "@58shuwei-ag/admin-extension-sdk": "3.0.11",
     "@58shuwei-ag/eslint-config-base": "2.0.0",
-    "@58shuwei-ag/meteor-icon-kit": "5.1.0",
+    "@58shuwei-ag/meteor-icon-kit": "5.1.1",
     "@58shuwei-ag/webpack-copy-after-build": "1.0.1",
     "@58shuwei-ag/webpack-kill-process-on-failed-build": "1.0.0",
     "@58shuwei-ag/webpack-plugin-injector": "1.0.7",
