@@ -261,7 +261,7 @@
       "labelContextMenuMove": "移动",
       "labelContextMenuShowMedia": "Show media",
       "labelContextMenuShowSettings": "Settings",
-      "labelContextMenuDissolve": "Dissolve",
+      "labelContextMenuDissolve": "解散",
       "notification": {
         "errorBlankItemName": {
           "message": "无法保存文件夹：请输入名称."
@@ -330,29 +330,29 @@
       }
     },
     "sw-media-modal-folder-dissolve": {
-      "dissolveMessage": "Are you sure you want to dissolve \"{folderName}\" ? | Are you sure you want to dissolve {count} folders?",
-      "buttonDissolve": "Dissolve",
+      "dissolveMessage": "您确定要解散 \"{folderName}\" 吗? | 您确定要解散 {count} 个文件夹吗?",
+      "buttonDissolve": "解散",
       "notification": {
         "successSingle": {
-          "message": "Folder \"{folderName}\" has been dissolved."
+          "message": "文件夹 \"{folderName}\" 已解散."
         },
         "errorSingle": {
-          "message": "Error dissolving \"{folderName}\"."
+          "message": "解散文件夹 \"{folderName}\" 时出错."
         },
         "successOverall": {
-          "message": "Folders have been dissolved."
+          "message": "文件夹已解散."
         },
         "errorOverall": {
-          "message": "Error dissolving folders."
+          "message": "解散文件夹时出错."
         }
       }
     },
     "sw-duplicated-media": {
-      "titleModal": "File already exists",
-      "description": "A file with the name \"{fileName}\" already exists.",
-      "buttonReplace": "Replace file",
-      "buttonRename": "Rename file",
-      "buttonSkip": "Skip file",
+      "titleModal": "文件已存在",
+      "description": "文件名 \"{fileName}\" 已存在.",
+      "buttonReplace": "替换文件",
+      "buttonRename": "重命名文件",
+      "buttonSkip": "跳过文件",
       "labelSaveSelection": "Save selection and apply to {count} more.",
       "labelOptionReplace": "Upload and replace",
       "labelOptionRename": "Upload and rename",
@@ -361,12 +361,12 @@
       "labelNewFile": "Uploaded file"
     },
     "sw-duplicated-media-v2": {
-      "titleModal": "File already exists",
-      "description": "A file with the name \"{fileName}\" already exists.",
-      "buttonReplace": "Replace file",
-      "buttonRename": "Rename file",
-      "buttonKeep": "Use file",
-      "buttonSkip": "Skip file",
+      "titleModal": "文件已存在",
+      "description": "文件名 \"{fileName}\" 已存在.",
+      "buttonReplace": "替换文件",
+      "buttonRename": "重命名文件",
+      "buttonKeep": "使用文件",
+      "buttonSkip": "跳过文件",
       "labelSaveSelection": "Save selection and apply to {count} more.",
       "labelOptionReplace": "Upload and replace",
       "labelOptionRename": "Upload and rename",
@@ -417,7 +417,7 @@
       "buttonOpenMedia": "打开媒体库",
       "notification": {
         "success": {
-          "message": "No file has been saved. | File has been saved. | {count} / {total} files have been saved."
+          "message": "未保存任何文件. | 文件已保存. | {count} / {total} 文件已保存."
         },
         "assigned": {
           "message": "Media file has been assigned."
