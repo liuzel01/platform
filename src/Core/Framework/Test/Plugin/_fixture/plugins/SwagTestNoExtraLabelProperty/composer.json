@@ -1,0 +1,37 @@
+{
+    "name": "swag/test-no-extra-label-property",
+    "description": "Test description",
+    "version": "v1.0.1",
+    "type": "shuwei-platform-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "shuwei AG",
+            "role": "Manufacturer"
+        }
+    ],
+    "require": {
+        "shuwei/core": ">=6.0"
+    },
+    "extra": {
+        "shuwei-plugin-class": "SwagTestNoExtraLabelProperty\\SwagTestNoExtraLabelProperty",
+        "copyright": "(c) by shuwei AG",
+        "description": {
+            "de-DE": "Deutsche Beschreibung",
+            "en-GB": "English description"
+        },
+        "manufacturerLink": {
+            "de-DE": "https://www.test.de/",
+            "en-GB": "https://www.test.com/"
+        },
+        "supportLink": {
+            "de-DE": "https://www.test.de/support",
+            "en-GB": "https://www.test.com/support"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+           "SwagTestNoExtraLabelProperty\\": "src"
+        }
+    }
+}
