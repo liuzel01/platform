@@ -10,6 +10,8 @@ use Shuwei\Core\Framework\DataAbstractionLayer\Pricing\CashRoundingConfig;
 use Shuwei\Core\Framework\Log\Package;
 use Shuwei\Core\Framework\Struct\StateAwareTrait;
 use Shuwei\Core\Framework\Struct\Struct;
+use Symfony\Component\Serializer\Annotation\Ignore;
+
 
 #[Package('core')]
 class Context extends Struct
@@ -20,6 +22,8 @@ class Context extends Struct
     final public const USER_SCOPE = 'user';
     final public const CRUD_API_SCOPE = 'crud';
 
+    #[Ignore]
+    protected $extensions = [];
     /**
      * @var non-empty-array<string>
      */
