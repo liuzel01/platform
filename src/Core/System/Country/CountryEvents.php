@@ -2,6 +2,7 @@
 
 namespace Shuwei\Core\System\Country;
 
+use Shuwei\Core\Framework\Event\Annotation\Event;
 use Shuwei\Core\Framework\Log\Package;
 
 #[Package('system-settings')]

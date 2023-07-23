@@ -2,8 +2,6 @@
 
 namespace Shuwei\Core\System\Country;
 
-use Shuwei\Core\Checkout\Customer\Aggregate\CustomerAddress\CustomerAddressCollection;
-use Shuwei\Core\Checkout\Order\Aggregate\OrderAddress\OrderAddressCollection;
 use Shuwei\Core\Framework\DataAbstractionLayer\Entity;
 use Shuwei\Core\Framework\DataAbstractionLayer\EntityCustomFieldsTrait;
 use Shuwei\Core\Framework\DataAbstractionLayer\EntityIdTrait;
@@ -11,9 +9,7 @@ use Shuwei\Core\Framework\DataAbstractionLayer\TaxFreeConfig;
 use Shuwei\Core\Framework\Log\Package;
 use Shuwei\Core\System\Country\Aggregate\CountryState\CountryStateCollection;
 use Shuwei\Core\System\Country\Aggregate\CountryTranslation\CountryTranslationCollection;
-use Shuwei\Core\System\Currency\Aggregate\CurrencyCountryRounding\CurrencyCountryRoundingCollection;
 use Frontend\Website\WebsiteCollection;
-use Shuwei\Core\System\Tax\Aggregate\TaxRule\TaxRuleCollection;
 
 #[Package('system-settings')]
 class CountryEntity extends Entity
@@ -255,25 +251,6 @@ class CountryEntity extends Entity
         $this->translations = $translations;
     }
 
-    public function getOrderAddresses(): ?OrderAddressCollection
-    {
-        return $this->orderAddresses;
-    }
-
-    public function setOrderAddresses(OrderAddressCollection $orderAddresses): void
-    {
-        $this->orderAddresses = $orderAddresses;
-    }
-
-    public function getCustomerAddresses(): ?CustomerAddressCollection
-    {
-        return $this->customerAddresses;
-    }
-
-    public function setCustomerAddresses(CustomerAddressCollection $customerAddresses): void
-    {
-        $this->customerAddresses = $customerAddresses;
-    }
 
     public function getWebsiteDefaultAssignments(): ?WebsiteCollection
     {
@@ -294,27 +271,6 @@ class CountryEntity extends Entity
     {
         $this->websites = $websites;
     }
-
-    public function getTaxRules(): ?TaxRuleCollection
-    {
-        return $this->taxRules;
-    }
-
-    public function setTaxRules(TaxRuleCollection $taxRules): void
-    {
-        $this->taxRules = $taxRules;
-    }
-
-    public function getCurrencyCountryRoundings(): ?CurrencyCountryRoundingCollection
-    {
-        return $this->currencyCountryRoundings;
-    }
-
-    public function setCurrencyCountryRoundings(CurrencyCountryRoundingCollection $currencyCountryRoundings): void
-    {
-        $this->currencyCountryRoundings = $currencyCountryRoundings;
-    }
-
     public function getVatIdRequired(): bool
     {
         return (bool) $this->vatIdRequired;

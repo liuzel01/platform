@@ -20,7 +20,6 @@ use Shuwei\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Shuwei\Core\Framework\Log\Package;
 use Shuwei\Core\System\Country\Aggregate\CountryState\CountryStateDefinition;
 use Shuwei\Core\System\Country\Aggregate\CountryTranslation\CountryTranslationDefinition;
-use Shuwei\Core\System\Currency\Aggregate\CurrencyCountryRounding\CurrencyCountryRoundingDefinition;
 
 #[Package('system-settings')]
 class CountryDefinition extends EntityDefinition
@@ -105,9 +104,6 @@ class CountryDefinition extends EntityDefinition
 
             (new TranslationsAssociationField(CountryTranslationDefinition::class, 'country_id'))
                 ->addFlags(new ApiAware(), new Required()),
-
-            (new OneToManyAssociationField('currencyCountryRoundings', CurrencyCountryRoundingDefinition::class, 'country_id'))
-                ->addFlags(new CascadeDelete()),
         ]);
     }
 }
