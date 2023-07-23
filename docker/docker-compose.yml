@@ -1,27 +1,37 @@
 version: '3.7'
 services:
   php:
-    container_name: sw-php
-    build: ./docker/php
+    container_name: l01-php
+    # container_name: sw-php
+    image: l01-php
+    build: ./php
+    restart: unless-stopped
+    networks: 
+      - shuwei
+    ports:
+      - 8080:80
     volumes:
-      - "./public:/var/www/html"
-    links:
-      - mysql:mysql
-    environment:
-      - DEPLOY=dev
-
+      - "./php/apache/http2.conf:/etc/apache2/conf-available/http2.conf"
+      - "./php/apache/apache2.conf:/etc/apache2/apache2.conf"
+      - "./php/apache/ports.conf:/etc/apache2/ports.conf"
+      - "./php/apache/sites.conf:/etc/apache2/sites-enabled/000-default.conf"
+      # - "./public:/var/www/html"
+      - "./php/general.ini:/usr/local/etc/php/conf.d/01-general.ini"
+      - "./php/cli.ini:/usr/local/etc/php/conf.d/01-general-cli.ini"
+      - "./php/xdebug-3.ini:/usr/local/etc/php/conf.d/20-xdebug.ini"
 
   mysql:
     container_name: sw-mysql
     image: mysql:8.0
     restart: unless-stopped
-    network_mode: host
     user: "0"
     environment:
       MYSQL_ROOT_HOST: "%"
       MYSQL_ROOT_PASSWORD: "root"
       # DB_USER: "root"
       # DB_NAMES: "58shuwei"
+    networks: 
+      - shuwei
     ports:
       - 3306:3306
     # command: sh -c "mysqld &&\
@@ -29,3 +39,7 @@ services:
     volumes:
       - ./mysql/data:/var/lib/mysql
       - ./mysql/my8.cnf:/etc/my.cnf
+
+networks:
+  shuwei:
+    driver: bridge 
