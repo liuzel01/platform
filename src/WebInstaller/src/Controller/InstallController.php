@@ -104,7 +104,6 @@ class InstallController extends AbstractController
         if (\function_exists('opcache_reset')) {
             opcache_reset();
         }
-
         exit;
     }
 }

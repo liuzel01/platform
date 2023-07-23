@@ -136,7 +136,7 @@ EOT;
         $composerJson['extra']['symfony'] = [
             'allow-contrib' => true,
             'endpoint' => [
-                'https://raw.githubusercontent.com/shuwei/recipes/flex/main/index.json',
+                'https://raw.githubusercontent.com/58shuwei/recipes/flex/main/index.json',
                 'flex://defaults',
             ],
         ];
