@@ -138,3 +138,5 @@ vendor-bin/**/composer.lock
 .devenv*
 devenv.local.nix
 
+# docker-compose
+docker/mysql/data
