@@ -49,7 +49,8 @@ RUN rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 # install shuwei
 RUN rm -rf ${WORKDIR}/* \
     && git clone --branch=trunk https://github.com/58shuwei/platform /var/www/html \
-    && composer install
+    && composer install \
+    && composer update 
 
 RUN echo "APP_ENV=dev" >> /var/www/html/.env \
     && echo "APP_SECRET=1" >> /var/www/html/.env \ 
